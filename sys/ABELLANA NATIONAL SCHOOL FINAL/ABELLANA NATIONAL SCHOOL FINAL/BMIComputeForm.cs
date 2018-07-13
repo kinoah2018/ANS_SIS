@@ -26,5 +26,10 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("");
+        }
     }
 }
