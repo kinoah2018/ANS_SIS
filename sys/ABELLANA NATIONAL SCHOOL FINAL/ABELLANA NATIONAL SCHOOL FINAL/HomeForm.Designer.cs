@@ -458,7 +458,7 @@
             this.menuRegistration.Location = new System.Drawing.Point(12, 4);
             this.menuRegistration.Name = "menuRegistration";
             this.menuRegistration.Padding = new System.Windows.Forms.Padding(6, 2, 6, 2);
-            this.menuRegistration.Size = new System.Drawing.Size(230, 94);
+            this.menuRegistration.Size = new System.Drawing.Size(138, 94);
             this.menuRegistration.TabIndex = 19;
             this.menuRegistration.Text = "menuStrip2";
             this.menuRegistration.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuRegistration_ItemClicked);

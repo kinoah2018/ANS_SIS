@@ -103,13 +103,13 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                             if (dialog == DialogResult.Yes)
                             {
                                 conn.Open();
-                                SqlCommand username = new SqlCommand("SELECT USER_USERNAME FROM TBL_USERS WHERE USER_ID LIKE '" + UserID.Text + "'", conn);
-                                SqlCommand password = new SqlCommand("SELECT USER_PASSWORD FROM TBL_USERS WHERE USER_ID LIKE '" + UserID.Text + "'", conn);
-                                SqlCommand userStat = new SqlCommand("SELECT ISACTIVE FROM TBL_USERS WHERE USER_ID LIKE '" + UserID.Text + "'", conn);
-                                SqlCommand FName = new SqlCommand("SELECT USER_FIRSTNAME FROM TBL_USERS WHERE USER_ID LIKE '" + UserID.Text + "'", conn);
-                                SqlCommand LName = new SqlCommand("SELECT USER_LASTNAME FROM TBL_USERS WHERE USER_ID LIKE '" + UserID.Text + "'", conn);
-                                SqlCommand position = new SqlCommand("SELECT USER_POSITION FROM TBL_USERS WHERE USER_ID LIKE '" + UserID.Text + "'", conn);
-                                SqlCommand command = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_ID LIKE '" + UserID.Text + "'", conn);
+                                SqlCommand username = new SqlCommand("SELECT USER_USERNAME FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
+                                SqlCommand password = new SqlCommand("SELECT USER_PASSWORD FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
+                                SqlCommand userStat = new SqlCommand("SELECT ISACTIVE FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
+                                SqlCommand FName = new SqlCommand("SELECT USER_FIRSTNAME FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
+                                SqlCommand LName = new SqlCommand("SELECT USER_LASTNAME FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
+                                SqlCommand Utype = new SqlCommand("SELECT USER_TYPEID FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
+                                SqlCommand command = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
 
                                 //CREATE STRING VARIABLES
 
@@ -118,14 +118,22 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                                 string stat = Convert.ToString(userStat.ExecuteScalar());
                                 string FIname = Convert.ToString(FName.ExecuteScalar());
                                 string LAname = Convert.ToString(LName.ExecuteScalar());
-                                string post = Convert.ToString(position.ExecuteScalar());
+                                string type = Convert.ToString(Utype.ExecuteScalar());
+                                if (type == "1")
+                                {
+                                    type = "Admin";
+                                }
+                                else
+                                {
+                                    type = "Registrar";
+                                }
 
                                 conn.Close();
                                 HomeForm h = new HomeForm();
 
                                 // GET PICTURE 
                                 conn.Open();
-                                SqlCommand get_pic = new SqlCommand("SELECT USER_IMAGE FROM TBL_USER WHERE USER_ID='" + UserID.Text + "'", conn);
+                                SqlCommand get_pic = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_ID='" + UserID.Text + "'", conn);
                                 Control_variables.img = Convert.ToString(get_pic.ExecuteScalar());
                                 h.pictureBox2.ImageLocation = Control_variables.img;
 

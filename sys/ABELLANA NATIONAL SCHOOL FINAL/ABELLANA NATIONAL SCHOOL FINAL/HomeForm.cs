@@ -31,22 +31,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             timer1.Start();
             LbDate.Text = DateTime.Now.ToLongDateString();
             LbTime.Text = DateTime.Now.ToLongTimeString();
-            MessageBox.Show("");
-            MessageBox.Show("G");
-            MessageBox.Show("");
-            MessageBox.Show("");
-            MessageBox.Show("");
-            MessageBox.Show("");
-            MessageBox.Show("");
-            MessageBox.Show("");
-            MessageBox.Show("");
-            MessageBox.Show("G");
-            MessageBox.Show("G");
-            MessageBox.Show("G");
-            MessageBox.Show("G");
-            MessageBox.Show("G");
-            MessageBox.Show("G");
-            MessageBox.Show("G");
+      
         }
 
         private void LbTime_Click(object sender, EventArgs e)
