@@ -40,7 +40,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                         if(txtNewpass.Text == txtRetypepass.Text)
                             {
                                 user.USER_PASSWORD = txtNewpass.Text;
-                                db.SP_CHANGEPASSWORD(Control_variables.current_id, user.USER_PASSWORD);
+                                //db.SP_CHANGEPASSWORD(Control_variables.current_id, user.USER_PASSWORD);
                                 TBL_USER user2 = new TBL_USER();
                                 MessageBox.Show("Password Successfully Changed","Success !",MessageBoxButtons.OK,MessageBoxIcon.Information);
 

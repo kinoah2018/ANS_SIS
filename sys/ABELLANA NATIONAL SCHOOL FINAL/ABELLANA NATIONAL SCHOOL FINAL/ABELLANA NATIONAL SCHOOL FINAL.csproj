@@ -62,10 +62,28 @@
     <Compile Include="BMIComputeForm.Designer.cs">
       <DependentUpon>BMIComputeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangePassForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassForm2.Designer.cs">
+      <DependentUpon>ChangePassForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassForm.Designer.cs">
+      <DependentUpon>ForgotPassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeStaffForm.Designer.cs">
+      <DependentUpon>HomeStaffForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentBookForm.cs">
       <SubType>Form</SubType>
@@ -93,11 +111,11 @@
       <DependentUpon>StudentGradeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Hashpass.cs" />
-    <Compile Include="HomeForm.cs">
+    <Compile Include="HomeAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomeForm.Designer.cs">
-      <DependentUpon>HomeForm.cs</DependentUpon>
+    <Compile Include="HomeAdminForm.Designer.cs">
+      <DependentUpon>HomeAdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -200,6 +218,15 @@
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="ChangePassForm2.resx">
+      <DependentUpon>ChangePassForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassForm.resx">
+      <DependentUpon>ForgotPassForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeStaffForm.resx">
+      <DependentUpon>HomeStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentBookForm.resx">
       <DependentUpon>StudentBookForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,8 +239,8 @@
     <EmbeddedResource Include="StudentGradeForm.resx">
       <DependentUpon>StudentGradeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeForm.resx">
-      <DependentUpon>HomeForm.cs</DependentUpon>
+    <EmbeddedResource Include="HomeAdminForm.resx">
+      <DependentUpon>HomeAdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

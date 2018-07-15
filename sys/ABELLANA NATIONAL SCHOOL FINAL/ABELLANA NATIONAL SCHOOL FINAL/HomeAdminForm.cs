@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 {
-    public partial class HomeForm : Form
+    public partial class HomeAdminForm : Form
     {
-        public HomeForm()
+        public HomeAdminForm()
         {
             InitializeComponent();
             
@@ -120,15 +120,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
+   
 
         private void ProfiletoolStripMenuItem10_Click(object sender, EventArgs e)
         {

@@ -52,77 +52,43 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             {
                 Control_variables.type = "Admin";
             }
-            else if (utype == 2)
-            {
-                Control_variables.type = "Registrar";
-            }
             else
             {
-                Control_variables.type = "Staff";
+                Control_variables.type = "Registrar";
             }
             conn.Close();
 
 
+
             if (txtUsername.Text != "" && txtPassword.Text != "")
             {
-                if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
-                {
-                    Control_variables.username = "Admin";
-                    Control_variables.type = "Admin";
-                    MessageBox.Show("Welcome Administrator");
-                    HomeForm h = new HomeForm();
-                    txtUsername.Clear();
-                    txtPassword.Clear();
-
-                    h.lbUsername.Text = Control_variables.username;
-                    h.lbPosition.Text = Control_variables.type;
-                    h.groupBox1.Visible = false;
-                    h.btnProfile.Visible = false;
-                    h.ShowDialog();
-
-                    this.Close();
-
-                }
-                else if (txtUsername.Text == usern && txtPassword.Text == pass)
+                if (txtUsername.Text == usern && txtPassword.Text == pass)
                 {
                     ChangePassForm changepass = new ChangePassForm();
                     Control_variables.username = FIname.ToString() + " " + LAname.ToString();
-                    if (utype == 1)
+                    if (stat == "True")
                     {
-                        Control_variables.type = "Admin";
-                    }
-                    else if (utype == 2)
-                    {
-                        Control_variables.type = "Registrar";
-                    }
-                    else
-                    {
-                        Control_variables.type = "Staff";
-                    }
-                    
-                       if (stat == "True")
-                       {
-                           if (pass == "1234")
-                           {
-                               conn.Open();
-                               SqlCommand get_id = new SqlCommand("SELECT USER_ID FROM TBL_USERS WHERE USER_USERNAME='"+txtUsername.Text+"'",conn);
-                               Control_variables.current_id = Convert.ToInt32(get_id.ExecuteScalar());
-                               changepass.lbusername.Text = Control_variables.username;
-                               changepass.UserID.Text =Control_variables.current_id.ToString();
-                               changepass.txtDefaultpass.Text = pass.ToString();
+                        if (pass == "1234")
+                        {
+                            conn.Open();
+                            SqlCommand get_id = new SqlCommand("SELECT USER_ID FROM TBL_USERS WHERE USER_USERNAME='"+txtUsername.Text+"'",conn);
+                            Control_variables.current_id = Convert.ToInt32(get_id.ExecuteScalar());
+                            changepass.lbusername.Text = Control_variables.username;
+                            changepass.txtuname.Text =Control_variables.current_id.ToString();
+                            changepass.txtDefaultpass.Text = pass.ToString();
 
-                               txtUsername.Clear();
-                               txtPassword.Clear();
-                               changepass.ShowDialog();
-                               conn.Close();
-                           }
-                           else
-                           {
-                               
-                               MessageBox.Show("Welcome " + Control_variables.username,"",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                            txtUsername.Clear();
+                            txtPassword.Clear();
+                            changepass.ShowDialog();
+                            conn.Close();
+                        }
+                        else
+                        {
+                            if (utype == 1)
+                            {
+                               MessageBox.Show("Welcome " + Control_variables.username,"ADMIN",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
-                               HomeForm h = new HomeForm();
-                               //MessageBox.Show(Control_variables.namePosition);                      
+                               HomeAdminForm h = new HomeAdminForm();                   
                                // GET PICTURE 
                                conn.Open();
                                SqlCommand get_pic = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_USERNAME LIKE'"+txtUsername.Text+"'",conn);
@@ -144,14 +110,43 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                               
                                
                                h.ShowDialog();
-                          }
-                       }
-                      else
-                       {
-                           MessageBox.Show("Your account is Inactive, contact your Administrator.","Ooops !",MessageBoxButtons.OK,MessageBoxIcon.Hand);
-                           txtPassword.Clear();
-                           txtUsername.Focus();
-                       }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Welcome " + Control_variables.username, "STAFF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                HomeStaffForm hs = new HomeStaffForm();
+                                // GET PICTURE 
+                                conn.Open();
+                                SqlCommand get_pic = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_USERNAME LIKE'" + txtUsername.Text + "'", conn);
+                                Control_variables.img = Convert.ToString(get_pic.ExecuteScalar());
+                                hs.pictureBox2.ImageLocation = Control_variables.img;
+                                SqlCommand get_id = new SqlCommand("SELECT USER_ID FROM TBL_USERS WHERE USER_USERNAME LIKE'" + txtUsername.Text + "'", conn);
+                                Control_variables.current_id = Convert.ToInt32(get_id.ExecuteScalar());
+
+                                conn.Close();
+
+                                //PASS VARIABLES
+                                hs.lbUsername.Text = Control_variables.username;
+                                hs.lbPosition.Text = Control_variables.type;
+
+                                //CLEAR TEXTBOXES
+                                txtUsername.Clear();
+                                txtPassword.Clear();
+
+
+
+                                hs.ShowDialog();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your account is Inactive, contact your Administrator.", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        txtPassword.Clear();
+                        txtUsername.Focus();
+                    }
+                    
                 }
                 else
                 {
@@ -159,7 +154,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                     txtPassword.Clear();
                     txtUsername.Focus();
                 }
-
             }
             else
             {
@@ -167,11 +161,17 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                 txtUsername.Focus();
             }
 
-            }
+   }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnfpass_Click(object sender, EventArgs e)
+        {
+            ForgotPassForm fpf = new ForgotPassForm();
+            fpf.ShowDialog();
         }
         }
     }

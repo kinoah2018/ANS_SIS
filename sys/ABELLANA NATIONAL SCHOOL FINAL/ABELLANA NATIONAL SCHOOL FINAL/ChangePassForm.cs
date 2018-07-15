@@ -22,70 +22,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
         private void btnChange_Click(object sender, EventArgs e)
         {
-            //int count = 0;
-            //var scan = db.VERIFYPASSWORD(UserID.Text, txtDefaultpass.Text);
-
-
-            //foreach (VERIFYPASSWORDResult user in scan)
-            //{
-            //    if (txtNewpass.Text == "" || txtRetypepass.Text == "")
-            //    {
-            //        MessageBox.Show("Please Input New Password");
-            //    }
-            //    else
-            //    {
-            //        count++;
-
-
-            //        if (txtNewpass.Text == txtRetypepass.Text)
-            //        {
-            //            user.USER_PASSWORD = txtNewpass.Text;
-            //            db.CHANGEPASSWORD(lbusername.Text, user.USER_PASSWORD);
-            //            TBL_USER user2 = new TBL_USER();
-            //            MessageBox.Show("Password Updated Successfully");
-
-            //            //CLEAR TEXTBOXES
-            //            txtDefaultpass.Clear();
-            //            txtNewpass.Clear();
-            //            txtRetypepass.Clear();
-
-            //            MessageBox.Show("Welcome " + Control_variables.username);
-            //            LoginForm log = new LoginForm();
-            //            log.txtUsername.Clear();
-            //            log.txtPassword.Clear();
-
-            //            HomeForm h = new HomeForm();
-
-                        
-            //            // GET PICTURE 
-            //            conn.Open();
-            //            SqlCommand command = new SqlCommand("SELECT USER_IMAGE FROM TBL_USER WHERE USER_ID = '" + txtID.Text+ "'", conn);
-            //            Control_variables.img = Convert.ToString(command.ExecuteScalar());
-            //            h.pictureBox2.ImageLocation = Control_variables.img;
-            //            conn.Close();
-            //            h.lbUsername.Text = Control_variables.username;
-            //            h.lbPosition.Text = Control_variables.namePosition;
-                        
-                        
-            //            h.ShowDialog();
-                        
-            //            this.Close();
-                        
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Password did not match");
-            //        }
-
-            //    }
-
-
-            //}
-            //if (count == 0)
-            //{
-            //    MessageBox.Show("Account does not Exist");
-            //}
-  
             if (txtNewpass.Text != "" && txtRetypepass.Text != "")
             {
                 if (txtNewpass.Text != "1234" && txtRetypepass.Text != "1234")
@@ -94,22 +30,18 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                     {
                         if (txtNewpass.Text == txtRetypepass.Text)
                         {
-                            //textBox1.Text = "UPDATE TBL_USER SET USER_PASSWORD = '" + txtNewpass.Text + "' WHERE USER_ID LIKE'" + txtID.Text + "'";
-                            conn.Open();
-                            SqlCommand updatePass = new SqlCommand("UPDATE TBL_USERS SET USER_PASSWORD = '" + txtNewpass.Text + "' WHERE USER_ID ='" + UserID.Text + "'", conn);
-                            updatePass.ExecuteNonQuery();
-                            conn.Close();
+                            db.SP_CHANGEPASS(txtuname.Text,txtNewpass.Text);
                             DialogResult dialog = MessageBox.Show("Password successfully changed ! \nDo you want to continue logging in ?", "Congrats !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                             if (dialog == DialogResult.Yes)
                             {
                                 conn.Open();
-                                SqlCommand username = new SqlCommand("SELECT USER_USERNAME FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
-                                SqlCommand password = new SqlCommand("SELECT USER_PASSWORD FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
-                                SqlCommand userStat = new SqlCommand("SELECT ISACTIVE FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
-                                SqlCommand FName = new SqlCommand("SELECT USER_FIRSTNAME FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
-                                SqlCommand LName = new SqlCommand("SELECT USER_LASTNAME FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
-                                SqlCommand Utype = new SqlCommand("SELECT USER_TYPEID FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
-                                SqlCommand command = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_ID = '" + UserID.Text + "'", conn);
+                                SqlCommand username = new SqlCommand("SELECT USER_USERNAME FROM TBL_USERS WHERE USER_ID = '" + txtuname.Text + "'", conn);
+                                SqlCommand password = new SqlCommand("SELECT USER_PASSWORD FROM TBL_USERS WHERE USER_ID = '" + txtuname.Text + "'", conn);
+                                SqlCommand userStat = new SqlCommand("SELECT ISACTIVE FROM TBL_USERS WHERE USER_ID = '" + txtuname.Text + "'", conn);
+                                SqlCommand FName = new SqlCommand("SELECT USER_FIRSTNAME FROM TBL_USERS WHERE USER_ID = '" + txtuname.Text + "'", conn);
+                                SqlCommand LName = new SqlCommand("SELECT USER_LASTNAME FROM TBL_USERS WHERE USER_ID = '" + txtuname.Text + "'", conn);
+                                SqlCommand Utype = new SqlCommand("SELECT USER_TYPEID FROM TBL_USERS WHERE USER_ID = '" + txtuname.Text + "'", conn);
+                                SqlCommand command = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_ID = '" + txtuname.Text + "'", conn);
 
                                 //CREATE STRING VARIABLES
 
@@ -129,11 +61,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                                 }
 
                                 conn.Close();
-                                HomeForm h = new HomeForm();
+                                HomeAdminForm h = new HomeAdminForm();
 
                                 // GET PICTURE 
                                 conn.Open();
-                                SqlCommand get_pic = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_ID='" + UserID.Text + "'", conn);
+                                SqlCommand get_pic = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_ID='" + txtuname.Text + "'", conn);
                                 Control_variables.img = Convert.ToString(get_pic.ExecuteScalar());
                                 h.pictureBox2.ImageLocation = Control_variables.img;
 

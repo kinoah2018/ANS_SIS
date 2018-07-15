@@ -141,23 +141,6 @@
       <Association Name="TBL_SECTION_TBL_TEACHERSECTION" Member="TBL_SECTION" ThisKey="SECSUB_ID" OtherKey="SEC_ID" Type="TBL_SECTION" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TBL_USERS" Member="TBL_USERs">
-    <Type Name="TBL_USER">
-      <Column Name="USER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="USER_LASTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="USER_FIRSTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="USER_MIDDLENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="USER_USERNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="USER_PASSWORD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="USER_CONTACT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="USER_DATEADDED" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="USER_CREATOR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="USER_TYPEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="USER_IMAGE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Association Name="TBL_USERTYPE_TBL_USER" Member="TBL_USERTYPE" ThisKey="USER_TYPEID" OtherKey="USER_TYPEID" Type="TBL_USERTYPE" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.View_User" Member="View_Users">
     <Type Name="View_User">
       <Column Name="USER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -173,37 +156,31 @@
       <Column Name="USER_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Function Name="dbo.SP_CHANGEPASSWORD" Method="SP_CHANGEPASSWORD">
-    <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="USER_PASSWORD" Parameter="uSER_PASSWORD" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
+  <Table Name="dbo.TBL_USERS" Member="TBL_USERs">
+    <Type Name="TBL_USER">
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USER_LASTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_FIRSTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_MIDDLENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="USER_USERNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_PASSWORD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_CONTACT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="USER_DATEADDED" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USER_CREATOR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_TYPEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_IMAGE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SECURITYQUESTION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ANSWER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_USERTYPE_TBL_USER" Member="TBL_USERTYPE" ThisKey="USER_TYPEID" OtherKey="USER_TYPEID" Type="TBL_USERTYPE" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.SP_VERIFYPASSWORD" Method="SP_VERIFYPASSWORD">
     <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="USER_PASSWORD" Parameter="uSER_PASSWORD" Type="System.String" DbType="VarChar(MAX)" />
     <ElementType Name="SP_VERIFYPASSWORDResult">
       <Column Name="USER_PASSWORD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.SP_STSAVE" Method="SP_STSAVE">
-    <Parameter Name="ST_FIRSTNAME" Parameter="sT_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_MIDDLENAME" Parameter="sT_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_LASTNAME" Parameter="sT_LASTNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_YEARLEVEL" Parameter="sT_YEARLEVEL" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_SCHOOLYEAR" Parameter="sT_SCHOOLYEAR" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_BIRTHDATE" Parameter="sT_BIRTHDATE" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="ST_AGE" Parameter="sT_AGE" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ST_BIRTHPLACE" Parameter="sT_BIRTHPLACE" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_ADDRESS" Parameter="sT_ADDRESS" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_GENDER" Parameter="sT_GENDER" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_CONTACTNUMBER" Parameter="sT_CONTACTNUMBER" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ISACTIVE" Parameter="iSACTIVE" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="ST_HEIGHT" Parameter="sT_HEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="ST_WEIGHT" Parameter="sT_WEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="ST_BLOODPRESSURE" Parameter="sT_BLOODPRESSURE" Type="System.Int32" DbType="Int" />
-    <Parameter Name="P_ID" Parameter="p_ID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="SEC_ID" Parameter="sEC_ID" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.SP_STSEARCH" Method="SP_STSEARCH">
     <Parameter Name="SEARCH_KEY" Parameter="sEARCH_KEY" Type="System.String" DbType="VarChar(MAX)" />
@@ -261,18 +238,6 @@
       <Column Name="USER_IMAGE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_USERSAVE" Method="SP_USERSAVE">
-    <Parameter Name="USER_LASTNAME" Parameter="uSER_LASTNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="USER_FIRSTNAME" Parameter="uSER_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="USER_MIDDLENAME" Parameter="uSER_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="USER_USERNAME" Parameter="uSER_USERNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="USER_PASSWORD" Parameter="uSER_PASSWORD" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="USER_CONTACTNO" Parameter="uSER_CONTACTNO" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="USER_CREATOR" Parameter="uSER_CREATOR" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="USER_TYPE" Parameter="uSER_TYPE" Type="System.Int32" DbType="Int" />
-    <Parameter Name="USER_IMAGE" Parameter="uSER_IMAGE" Type="System.String" DbType="VarChar(MAX)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.SP_STUPDATE" Method="SP_STUPDATE">
     <Parameter Name="ST_ID" Parameter="sT_ID" Type="System.Int32" DbType="Int" />
     <Parameter Name="ST_FIRSTNAME" Parameter="sT_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
@@ -304,5 +269,65 @@
     <Parameter Name="ISACTIVE" Parameter="iSACTIVE" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="USER_IMAGE" Parameter="uSER_IMAGE" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_STSAVE" Method="SP_STSAVE">
+    <Parameter Name="ST_FIRSTNAME" Parameter="sT_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_MIDDLENAME" Parameter="sT_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_LASTNAME" Parameter="sT_LASTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_YEARLEVEL" Parameter="sT_YEARLEVEL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_SCHOOLYEAR" Parameter="sT_SCHOOLYEAR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_BIRTHDATE" Parameter="sT_BIRTHDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ST_AGE" Parameter="sT_AGE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ST_BIRTHPLACE" Parameter="sT_BIRTHPLACE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_ADDRESS" Parameter="sT_ADDRESS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_GENDER" Parameter="sT_GENDER" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_CONTACTNUMBER" Parameter="sT_CONTACTNUMBER" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ISACTIVE" Parameter="iSACTIVE" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ST_HEIGHT" Parameter="sT_HEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="ST_WEIGHT" Parameter="sT_WEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="ST_BLOODPRESSURE" Parameter="sT_BLOODPRESSURE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="P_ID" Parameter="p_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SEC_ID" Parameter="sEC_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_USERSAVE" Method="SP_USERSAVE">
+    <Parameter Name="USER_LASTNAME" Parameter="uSER_LASTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="USER_FIRSTNAME" Parameter="uSER_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="USER_MIDDLENAME" Parameter="uSER_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="USER_USERNAME" Parameter="uSER_USERNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="USER_PASSWORD" Parameter="uSER_PASSWORD" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="USER_CONTACTNO" Parameter="uSER_CONTACTNO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="USER_CREATOR" Parameter="uSER_CREATOR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="USER_TYPE" Parameter="uSER_TYPE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="USER_IMAGE" Parameter="uSER_IMAGE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="SECURITYQUESTION" Parameter="sECURITYQUESTION" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ANSWER" Parameter="aNSWER" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_CHANGEPASS" Method="SP_CHANGEPASS">
+    <Parameter Name="USER_USERNAME" Parameter="uSER_USERNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="USER_PASSWORD" Parameter="uSER_PASSWORD" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACCOUNTRECOVERY" Method="SP_ACCOUNTRECOVERY">
+    <Parameter Name="USER_USERNAME" Parameter="uSER_USERNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SECURITYQUESTION" Parameter="sECURITYQUESTION" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ANSWER" Parameter="aNSWER" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="SP_ACCOUNTRECOVERYResult">
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USER_LASTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_FIRSTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_MIDDLENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="USER_USERNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_PASSWORD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_CONTACT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="USER_DATEADDED" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USER_CREATOR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USER_TYPEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_IMAGE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SECURITYQUESTION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ANSWER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

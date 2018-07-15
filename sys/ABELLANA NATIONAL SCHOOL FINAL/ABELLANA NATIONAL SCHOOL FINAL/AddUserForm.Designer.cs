@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUserForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtAns = new System.Windows.Forms.TextBox();
+            this.cmbquest = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtquestion = new System.Windows.Forms.Label();
             this.cmbutype = new System.Windows.Forms.ComboBox();
             this.tBLUSERTYPEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aNS_DATABASEDataSet = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet();
@@ -38,7 +42,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
-            this.txtUser_ID = new System.Windows.Forms.TextBox();
             this.txtMiddlename = new System.Windows.Forms.TextBox();
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.txtLastname = new System.Windows.Forms.TextBox();
@@ -46,7 +49,6 @@
             this.txtContactNo = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.Label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.Label3 = new System.Windows.Forms.Label();
@@ -71,12 +73,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtAns);
+            this.groupBox2.Controls.Add(this.cmbquest);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txtquestion);
             this.groupBox2.Controls.Add(this.cmbutype);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtUsername);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.btnBrowse);
-            this.groupBox2.Controls.Add(this.txtUser_ID);
             this.groupBox2.Controls.Add(this.txtMiddlename);
             this.groupBox2.Controls.Add(this.txtFirstname);
             this.groupBox2.Controls.Add(this.txtLastname);
@@ -84,7 +89,6 @@
             this.groupBox2.Controls.Add(this.txtContactNo);
             this.groupBox2.Controls.Add(this.txtPassword);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.Label1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.Label2);
             this.groupBox2.Controls.Add(this.Label3);
@@ -97,15 +101,68 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
             // 
+            // txtAns
+            // 
+            this.txtAns.AcceptsReturn = true;
+            this.txtAns.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAns.ForeColor = System.Drawing.Color.Black;
+            this.txtAns.Location = new System.Drawing.Point(185, 322);
+            this.txtAns.MaxLength = 11;
+            this.txtAns.Name = "txtAns";
+            this.txtAns.Size = new System.Drawing.Size(303, 27);
+            this.txtAns.TabIndex = 98;
+            // 
+            // cmbquest
+            // 
+            this.cmbquest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbquest.FormattingEnabled = true;
+            this.cmbquest.Items.AddRange(new object[] {
+            "What is your favorite place?",
+            "Who is the most handsome adviser you encountered?",
+            "Who is your crush in your school?",
+            "In what city were you born?",
+            "What is your mistake you made in school?",
+            "Who is your first gf/bf in your life?",
+            "What is your favorite hollywood actress/actor?",
+            "What is the name of your favorite pet?",
+            "What is your favorite movie?",
+            "what is your favorite social media website?"});
+            this.cmbquest.Location = new System.Drawing.Point(185, 288);
+            this.cmbquest.Name = "cmbquest";
+            this.cmbquest.Size = new System.Drawing.Size(303, 26);
+            this.cmbquest.TabIndex = 97;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(84, 325);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 18);
+            this.label11.TabIndex = 96;
+            this.label11.Text = "Answer :";
+            // 
+            // txtquestion
+            // 
+            this.txtquestion.AutoSize = true;
+            this.txtquestion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtquestion.ForeColor = System.Drawing.Color.Black;
+            this.txtquestion.Location = new System.Drawing.Point(13, 291);
+            this.txtquestion.Name = "txtquestion";
+            this.txtquestion.Size = new System.Drawing.Size(151, 18);
+            this.txtquestion.TabIndex = 95;
+            this.txtquestion.Text = "Security Answer :";
+            // 
             // cmbutype
             // 
             this.cmbutype.DataSource = this.tBLUSERTYPEBindingSource;
             this.cmbutype.DisplayMember = "USER_TYPE";
             this.cmbutype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbutype.FormattingEnabled = true;
-            this.cmbutype.Location = new System.Drawing.Point(185, 311);
+            this.cmbutype.Location = new System.Drawing.Point(185, 252);
             this.cmbutype.Name = "cmbutype";
-            this.cmbutype.Size = new System.Drawing.Size(168, 26);
+            this.cmbutype.Size = new System.Drawing.Size(145, 26);
             this.cmbutype.TabIndex = 94;
             this.cmbutype.ValueMember = "USER_TYPEID";
             this.cmbutype.SelectedIndexChanged += new System.EventHandler(this.cmbutype_SelectedIndexChanged);
@@ -125,7 +182,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(36, 314);
+            this.label10.Location = new System.Drawing.Point(69, 255);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(95, 18);
             this.label10.TabIndex = 93;
@@ -133,24 +190,27 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Enabled = false;
             this.txtUsername.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
-            this.txtUsername.Location = new System.Drawing.Point(185, 195);
+            this.txtUsername.Location = new System.Drawing.Point(185, 141);
             this.txtUsername.MaxLength = 50;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(303, 27);
             this.txtUsername.TabIndex = 91;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(36, 198);
+            this.label7.Location = new System.Drawing.Point(61, 144);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 18);
+            this.label7.Size = new System.Drawing.Size(103, 18);
             this.label7.TabIndex = 92;
-            this.label7.Text = "Username:";
+            this.label7.Text = "Username :";
             // 
             // btnBrowse
             // 
@@ -166,22 +226,11 @@
             this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnUpload_Click);
             // 
-            // txtUser_ID
-            // 
-            this.txtUser_ID.Enabled = false;
-            this.txtUser_ID.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser_ID.ForeColor = System.Drawing.Color.Black;
-            this.txtUser_ID.Location = new System.Drawing.Point(185, 51);
-            this.txtUser_ID.MaxLength = 50;
-            this.txtUser_ID.Name = "txtUser_ID";
-            this.txtUser_ID.Size = new System.Drawing.Size(303, 27);
-            this.txtUser_ID.TabIndex = 68;
-            // 
             // txtMiddlename
             // 
             this.txtMiddlename.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMiddlename.ForeColor = System.Drawing.Color.Black;
-            this.txtMiddlename.Location = new System.Drawing.Point(185, 156);
+            this.txtMiddlename.Location = new System.Drawing.Point(185, 106);
             this.txtMiddlename.MaxLength = 50;
             this.txtMiddlename.Name = "txtMiddlename";
             this.txtMiddlename.Size = new System.Drawing.Size(303, 27);
@@ -192,22 +241,25 @@
             // 
             this.txtFirstname.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstname.ForeColor = System.Drawing.Color.Black;
-            this.txtFirstname.Location = new System.Drawing.Point(185, 121);
+            this.txtFirstname.Location = new System.Drawing.Point(185, 71);
             this.txtFirstname.MaxLength = 50;
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(303, 27);
             this.txtFirstname.TabIndex = 3;
+            this.txtFirstname.TextChanged += new System.EventHandler(this.txtFirstname_TextChanged);
             this.txtFirstname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFirstname_KeyPress);
+            this.txtFirstname.Leave += new System.EventHandler(this.txtFirstname_Leave);
             // 
             // txtLastname
             // 
             this.txtLastname.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastname.ForeColor = System.Drawing.Color.Black;
-            this.txtLastname.Location = new System.Drawing.Point(185, 86);
+            this.txtLastname.Location = new System.Drawing.Point(185, 37);
             this.txtLastname.MaxLength = 50;
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(303, 27);
             this.txtLastname.TabIndex = 2;
+            this.txtLastname.TextChanged += new System.EventHandler(this.txtLastname_TextChanged);
             this.txtLastname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastname_KeyPress);
             // 
             // PB_image
@@ -226,7 +278,7 @@
             // 
             this.txtContactNo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContactNo.ForeColor = System.Drawing.Color.Black;
-            this.txtContactNo.Location = new System.Drawing.Point(185, 272);
+            this.txtContactNo.Location = new System.Drawing.Point(185, 216);
             this.txtContactNo.MaxLength = 11;
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(303, 27);
@@ -238,7 +290,7 @@
             this.txtPassword.Enabled = false;
             this.txtPassword.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(185, 233);
+            this.txtPassword.Location = new System.Drawing.Point(185, 179);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(303, 27);
@@ -249,29 +301,18 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(36, 159);
+            this.label9.Location = new System.Drawing.Point(45, 109);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(119, 18);
             this.label9.TabIndex = 74;
             this.label9.Text = "Middlename :";
-            // 
-            // Label1
-            // 
-            this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.ForeColor = System.Drawing.Color.Black;
-            this.Label1.Location = new System.Drawing.Point(36, 54);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(83, 18);
-            this.Label1.TabIndex = 73;
-            this.Label1.Text = "User ID :";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(36, 124);
+            this.label8.Location = new System.Drawing.Point(62, 74);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 18);
             this.label8.TabIndex = 74;
@@ -282,7 +323,7 @@
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.ForeColor = System.Drawing.Color.Black;
-            this.Label2.Location = new System.Drawing.Point(36, 89);
+            this.Label2.Location = new System.Drawing.Point(63, 40);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(101, 18);
             this.Label2.TabIndex = 74;
@@ -293,7 +334,7 @@
             this.Label3.AutoSize = true;
             this.Label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label3.ForeColor = System.Drawing.Color.Black;
-            this.Label3.Location = new System.Drawing.Point(36, 275);
+            this.Label3.Location = new System.Drawing.Point(52, 219);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(112, 18);
             this.Label3.TabIndex = 75;
@@ -304,7 +345,7 @@
             this.Label6.AutoSize = true;
             this.Label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label6.ForeColor = System.Drawing.Color.Black;
-            this.Label6.Location = new System.Drawing.Point(36, 240);
+            this.Label6.Location = new System.Drawing.Point(66, 182);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(98, 18);
             this.Label6.TabIndex = 78;
@@ -434,7 +475,6 @@
         internal System.Windows.Forms.TextBox txtUsername;
         internal System.Windows.Forms.Label label7;
         internal System.Windows.Forms.Button btnBrowse;
-        internal System.Windows.Forms.TextBox txtUser_ID;
         internal System.Windows.Forms.TextBox txtMiddlename;
         internal System.Windows.Forms.TextBox txtFirstname;
         internal System.Windows.Forms.TextBox txtLastname;
@@ -442,7 +482,6 @@
         internal System.Windows.Forms.TextBox txtContactNo;
         internal System.Windows.Forms.TextBox txtPassword;
         internal System.Windows.Forms.Label label9;
-        internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.Label label8;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Label Label3;
@@ -460,5 +499,9 @@
         private System.Windows.Forms.BindingSource tBLUSERTYPEBindingSource;
         private ANS_DATABASEDataSetTableAdapters.TBL_USERTYPETableAdapter tBL_USERTYPETableAdapter;
         private System.Windows.Forms.BindingSource tBLUSERTYPEBindingSource1;
+        internal System.Windows.Forms.Label label11;
+        internal System.Windows.Forms.Label txtquestion;
+        internal System.Windows.Forms.TextBox txtAns;
+        private System.Windows.Forms.ComboBox cmbquest;
     }
 }

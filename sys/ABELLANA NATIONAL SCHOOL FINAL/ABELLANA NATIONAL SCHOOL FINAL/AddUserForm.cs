@@ -133,7 +133,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void AddUserForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            HomeForm h = new HomeForm();
+            HomeAdminForm h = new HomeAdminForm();
             AddUserForm a = new AddUserForm();
             h.msRegistration.BackColor = Color.Black;
             h.Refresh();
@@ -155,7 +155,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             SqlCommand command = new SqlCommand("SELECT USER_USERNAME FROM TBL_USERS WHERE USER_USERNAME LIKE'" + txtUsername.Text + "'", conn);
             string get_uname = Convert.ToString(command.ExecuteScalar());
             conn.Close();
-            if (txtLastname.Text == "" || txtFirstname.Text == "" || txtMiddlename.Text == "" || txtUsername.Text == "" || txtPassword.Text == "" || txtContactNo.Text == "" || PB_image.ImageLocation == null)
+            if (txtLastname.Text == "" || txtFirstname.Text == "" || txtMiddlename.Text == "" || txtUsername.Text == "" || txtPassword.Text == "" || txtContactNo.Text == "" || PB_image.ImageLocation == null || txtUsername.Text == "" || cmbquest.Text == "" || txtquestion.Text == "")
             {
                 MessageBox.Show("Information Required! Please fill out the necessary fields", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
@@ -171,13 +171,58 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                 u.USER_IMAGE = Control_variables.img;
                 Image im = Image.FromFile(Control_variables.img);
                 u.USER_IMAGE = Photo.byteArrayToBase64String(Photo.imageToByteArray(im));
-                db.SP_USERSAVE(txtLastname.Text,txtFirstname.Text ,txtMiddlename.Text,txtUsername.Text,txtPassword.Text ,txtContactNo.Text,Control_variables.type,int.Parse(cmbutype.SelectedValue.ToString()),Control_variables.img);
-                MessageBox.Show("Successfully Saved!","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                db.SP_USERSAVE(txtLastname.Text, txtFirstname.Text, txtMiddlename.Text, txtUsername.Text, txtPassword.Text, txtContactNo.Text, Control_variables.type, int.Parse(cmbutype.SelectedValue.ToString()), Control_variables.img, cmbquest.Text, txtAns.Text);
+                MessageBox.Show("Successfully Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearAll();
             }
         }
+
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtLastname_TextChanged(object sender, EventArgs e)
+        {
+            string lname = txtLastname.Text;
+            if (lname.Length >= 3)
+            {
+                if (txtFirstname.TextLength >= 3)
+                {
+                    txtUsername.Text = lname.Substring(0, 3) + txtFirstname.Text.Substring(0, 3);
+                }
+                else
+                {
+                    txtUsername.Text = lname.Substring(0, 3);
+                }
+
+
+            }
+
+
+        }
+
+        private void txtFirstname_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtFirstname_Leave(object sender, EventArgs e)
+        {
+            string fname = txtFirstname.Text;
+            if (fname.Length >= 3)
+            {
+                txtUsername.Text = txtLastname.Text.Substring(0, 3) + fname.Substring(0, 3);
+            }
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+
     }
-        
 }
     
         

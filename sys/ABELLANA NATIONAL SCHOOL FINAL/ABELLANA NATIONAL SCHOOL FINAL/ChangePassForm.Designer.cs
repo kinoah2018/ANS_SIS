@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UserID = new System.Windows.Forms.Label();
+            this.txtuname = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbusername = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,15 +46,15 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // UserID
+            // txtuname
             // 
-            this.UserID.AutoSize = true;
-            this.UserID.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserID.Location = new System.Drawing.Point(367, 93);
-            this.UserID.Name = "UserID";
-            this.UserID.Size = new System.Drawing.Size(22, 16);
-            this.UserID.TabIndex = 149;
-            this.UserID.Text = "ID";
+            this.txtuname.AutoSize = true;
+            this.txtuname.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtuname.Location = new System.Drawing.Point(367, 93);
+            this.txtuname.Name = "txtuname";
+            this.txtuname.Size = new System.Drawing.Size(51, 16);
+            this.txtuname.TabIndex = 149;
+            this.txtuname.Text = "uname";
             // 
             // label7
             // 
@@ -62,9 +62,9 @@
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(262, 93);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 16);
+            this.label7.Size = new System.Drawing.Size(126, 16);
             this.label7.TabIndex = 148;
-            this.label7.Text = "Your User ID is ";
+            this.label7.Text = "Your Username is ";
             // 
             // lbusername
             // 
@@ -202,7 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 475);
-            this.Controls.Add(this.UserID);
+            this.Controls.Add(this.txtuname);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lbusername);
             this.Controls.Add(this.label6);
@@ -216,6 +216,7 @@
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChangePassForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -229,7 +230,7 @@
 
         #endregion
 
-        public System.Windows.Forms.Label UserID;
+        public System.Windows.Forms.Label txtuname;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label lbusername;
         private System.Windows.Forms.Label label6;
