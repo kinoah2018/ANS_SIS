@@ -235,6 +235,14 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
+		public System.Data.Linq.Table<PTANDST_VIEW> PTANDST_VIEWs
+		{
+			get
+			{
+				return this.GetTable<PTANDST_VIEW>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ACCOUNTRECOVERY")]
 		public ISingleResult<SP_ACCOUNTRECOVERYResult> SP_ACCOUNTRECOVERY([global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_USERNAME", DbType="VarChar(50)")] string uSER_USERNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SECU_QUESTION", DbType="VarChar(50)")] string sECU_QUESTION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SECU_ANSWER", DbType="VarChar(50)")] string sECU_ANSWER)
 		{
@@ -270,60 +278,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STSAVE")]
-		public int SP_STSAVE(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_FIRSTNAME", DbType="VarChar(50)")] string sT_FIRSTNAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_MIDDLENAME", DbType="VarChar(50)")] string sT_MIDDLENAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_LASTNAME", DbType="VarChar(50)")] string sT_LASTNAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_YEARLEVEL", DbType="VarChar(50)")] string sT_YEARLEVEL, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_SCHOOLYEAR", DbType="VarChar(50)")] string sT_SCHOOLYEAR, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHDATE", DbType="Date")] System.Nullable<System.DateTime> sT_BIRTHDATE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_AGE", DbType="Int")] System.Nullable<int> sT_AGE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHPLACE", DbType="VarChar(50)")] string sT_BIRTHPLACE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ADDRESS", DbType="VarChar(50)")] string sT_ADDRESS, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_GENDER", DbType="VarChar(50)")] string sT_GENDER, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_CONTACTNUMBER", DbType="VarChar(50)")] string sT_CONTACTNUMBER, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISACTIVE", DbType="Bit")] System.Nullable<bool> iSACTIVE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_HEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_HEIGHT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_WEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_WEIGHT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BLOODPRESSURE", DbType="Int")] System.Nullable<int> sT_BLOODPRESSURE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_ID", DbType="Int")] System.Nullable<int> p_ID, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_ID", DbType="Int")] System.Nullable<int> sEC_ID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sT_FIRSTNAME, sT_MIDDLENAME, sT_LASTNAME, sT_YEARLEVEL, sT_SCHOOLYEAR, sT_BIRTHDATE, sT_AGE, sT_BIRTHPLACE, sT_ADDRESS, sT_GENDER, sT_CONTACTNUMBER, iSACTIVE, sT_HEIGHT, sT_WEIGHT, sT_BLOODPRESSURE, p_ID, sEC_ID);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STSEARCH")]
 		public ISingleResult<SP_STSEARCHResult> SP_STSEARCH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEARCH_KEY", DbType="VarChar(MAX)")] string sEARCH_KEY)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEARCH_KEY);
 			return ((ISingleResult<SP_STSEARCHResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STUPDATE")]
-		public int SP_STUPDATE(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ID", DbType="Int")] System.Nullable<int> sT_ID, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_FIRSTNAME", DbType="VarChar(50)")] string sT_FIRSTNAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_MIDDLENAME", DbType="VarChar(50)")] string sT_MIDDLENAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_LASTNAME", DbType="VarChar(50)")] string sT_LASTNAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_YEARLEVEL", DbType="VarChar(50)")] string sT_YEARLEVEL, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_SCHOOLYEAR", DbType="VarChar(50)")] string sT_SCHOOLYEAR, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHDATE", DbType="Date")] System.Nullable<System.DateTime> sT_BIRTHDATE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_AGE", DbType="Int")] System.Nullable<int> sT_AGE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHPLACE", DbType="VarChar(50)")] string sT_BIRTHPLACE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ADDRESS", DbType="VarChar(50)")] string sT_ADDRESS, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_GENDER", DbType="VarChar(50)")] string sT_GENDER, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_CONTACTNUMBER", DbType="VarChar(50)")] string sT_CONTACTNUMBER, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISACTIVE", DbType="Bit")] System.Nullable<bool> iSACTIVE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_HEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_HEIGHT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_WEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_WEIGHT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BLOODPRESSURE", DbType="Int")] System.Nullable<int> sT_BLOODPRESSURE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_ID", DbType="Int")] System.Nullable<int> p_ID, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_ID", DbType="Int")] System.Nullable<int> sEC_ID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sT_ID, sT_FIRSTNAME, sT_MIDDLENAME, sT_LASTNAME, sT_YEARLEVEL, sT_SCHOOLYEAR, sT_BIRTHDATE, sT_AGE, sT_BIRTHPLACE, sT_ADDRESS, sT_GENDER, sT_CONTACTNUMBER, iSACTIVE, sT_HEIGHT, sT_WEIGHT, sT_BLOODPRESSURE, p_ID, sEC_ID);
-			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STVIEW")]
@@ -347,6 +306,38 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((ISingleResult<SP_USERSEARCHResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_USERVIEW")]
+		public ISingleResult<SP_USERVIEWResult> SP_USERVIEW()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_USERVIEWResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STSAVE")]
+		public int SP_STSAVE(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_FIRSTNAME", DbType="VarChar(50)")] string sT_FIRSTNAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_MIDDLENAME", DbType="VarChar(50)")] string sT_MIDDLENAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_LASTNAME", DbType="VarChar(50)")] string sT_LASTNAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_YEARLEVEL", DbType="VarChar(50)")] string sT_YEARLEVEL, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_SCHOOLYEAR", DbType="VarChar(50)")] string sT_SCHOOLYEAR, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHDATE", DbType="Date")] System.Nullable<System.DateTime> sT_BIRTHDATE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_AGE", DbType="Int")] System.Nullable<int> sT_AGE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHPLACE", DbType="VarChar(50)")] string sT_BIRTHPLACE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ADDRESS", DbType="VarChar(50)")] string sT_ADDRESS, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_GENDER", DbType="VarChar(50)")] string sT_GENDER, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_CONTACTNUMBER", DbType="VarChar(50)")] string sT_CONTACTNUMBER, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_HEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_HEIGHT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_WEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_WEIGHT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BLOODPRESSURE", DbType="VarChar(50)")] string sT_BLOODPRESSURE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NAME", DbType="VarChar(50)")] string nAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_CONTACT", DbType="VarChar(50)")] string p_CONTACT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_OCCUPATION", DbType="VarChar(50)")] string p_OCCUPATION, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_TYPE", DbType="VarChar(50)")] string p_TYPE)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sT_FIRSTNAME, sT_MIDDLENAME, sT_LASTNAME, sT_YEARLEVEL, sT_SCHOOLYEAR, sT_BIRTHDATE, sT_AGE, sT_BIRTHPLACE, sT_ADDRESS, sT_GENDER, sT_CONTACTNUMBER, sT_HEIGHT, sT_WEIGHT, sT_BLOODPRESSURE, nAME, p_CONTACT, p_OCCUPATION, p_TYPE);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_USERUPDATE")]
 		public int SP_USERUPDATE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_ID", DbType="Int")] System.Nullable<int> uSER_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_LASTNAME", DbType="VarChar(50)")] string uSER_LASTNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_FIRSTNAME", DbType="VarChar(50)")] string uSER_FIRSTNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_MIDDLENAME", DbType="VarChar(50)")] string uSER_MIDDLENAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_USERNAME", DbType="VarChar(50)")] string uSER_USERNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISACTIVE", DbType="Bit")] System.Nullable<bool> iSACTIVE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_IMAGE", DbType="VarChar(MAX)")] string uSER_IMAGE)
 		{
@@ -354,11 +345,32 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_USERVIEW")]
-		public ISingleResult<SP_USERVIEWResult> SP_USERVIEW()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STUPDATE")]
+		public int SP_STUPDATE(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ID", DbType="Int")] System.Nullable<int> sT_ID, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_FIRSTNAME", DbType="VarChar(50)")] string sT_FIRSTNAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_MIDDLENAME", DbType="VarChar(50)")] string sT_MIDDLENAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_LASTNAME", DbType="VarChar(50)")] string sT_LASTNAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_YEARLEVEL", DbType="VarChar(50)")] string sT_YEARLEVEL, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_SCHOOLYEAR", DbType="VarChar(50)")] string sT_SCHOOLYEAR, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHDATE", DbType="Date")] System.Nullable<System.DateTime> sT_BIRTHDATE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_AGE", DbType="Int")] System.Nullable<int> sT_AGE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHPLACE", DbType="VarChar(50)")] string sT_BIRTHPLACE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ADDRESS", DbType="VarChar(50)")] string sT_ADDRESS, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_GENDER", DbType="VarChar(50)")] string sT_GENDER, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_CONTACTNUMBER", DbType="VarChar(50)")] string sT_CONTACTNUMBER, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISACTIVE", DbType="Bit")] System.Nullable<bool> iSACTIVE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_HEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_HEIGHT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_WEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_WEIGHT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BLOODPRESSURE", DbType="VarChar(50)")] string sT_BLOODPRESSURE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_ID", DbType="Int")] System.Nullable<int> p_ID, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_NAME", DbType="VarChar(50)")] string p_NAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_CONTACT", DbType="VarChar(50)")] string p_CONTACT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_OCCUPATION", DbType="VarChar(50)")] string p_OCCUPATION, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_TYPE", DbType="VarChar(50)")] string p_TYPE)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<SP_USERVIEWResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sT_ID, sT_FIRSTNAME, sT_MIDDLENAME, sT_LASTNAME, sT_YEARLEVEL, sT_SCHOOLYEAR, sT_BIRTHDATE, sT_AGE, sT_BIRTHPLACE, sT_ADDRESS, sT_GENDER, sT_CONTACTNUMBER, iSACTIVE, sT_HEIGHT, sT_WEIGHT, sT_BLOODPRESSURE, p_ID, p_NAME, p_CONTACT, p_OCCUPATION, p_TYPE);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -1424,8 +1436,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private EntitySet<TBL_SECTIONSUBJECT> _TBL_SECTIONSUBJECTs;
 		
-		private EntitySet<TBL_STUDENT> _TBL_STUDENTs;
-		
 		private EntitySet<TBL_TEACHER> _TBL_TEACHERs;
 		
 		private EntitySet<TBL_TEACHERSECTION> _TBL_TEACHERSECTIONs;
@@ -1445,7 +1455,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		public TBL_SECTION()
 		{
 			this._TBL_SECTIONSUBJECTs = new EntitySet<TBL_SECTIONSUBJECT>(new Action<TBL_SECTIONSUBJECT>(this.attach_TBL_SECTIONSUBJECTs), new Action<TBL_SECTIONSUBJECT>(this.detach_TBL_SECTIONSUBJECTs));
-			this._TBL_STUDENTs = new EntitySet<TBL_STUDENT>(new Action<TBL_STUDENT>(this.attach_TBL_STUDENTs), new Action<TBL_STUDENT>(this.detach_TBL_STUDENTs));
 			this._TBL_TEACHERs = new EntitySet<TBL_TEACHER>(new Action<TBL_TEACHER>(this.attach_TBL_TEACHERs), new Action<TBL_TEACHER>(this.detach_TBL_TEACHERs));
 			this._TBL_TEACHERSECTIONs = new EntitySet<TBL_TEACHERSECTION>(new Action<TBL_TEACHERSECTION>(this.attach_TBL_TEACHERSECTIONs), new Action<TBL_TEACHERSECTION>(this.detach_TBL_TEACHERSECTIONs));
 			OnCreated();
@@ -1524,19 +1533,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_STUDENT", Storage="_TBL_STUDENTs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
-		public EntitySet<TBL_STUDENT> TBL_STUDENTs
-		{
-			get
-			{
-				return this._TBL_STUDENTs;
-			}
-			set
-			{
-				this._TBL_STUDENTs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHER", Storage="_TBL_TEACHERs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
 		public EntitySet<TBL_TEACHER> TBL_TEACHERs
 		{
@@ -1590,18 +1586,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 		
 		private void detach_TBL_SECTIONSUBJECTs(TBL_SECTIONSUBJECT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = null;
-		}
-		
-		private void attach_TBL_STUDENTs(TBL_STUDENT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = this;
-		}
-		
-		private void detach_TBL_STUDENTs(TBL_STUDENT entity)
 		{
 			this.SendPropertyChanging();
 			entity.TBL_SECTION = null;
@@ -2035,19 +2019,15 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private decimal _ST_WEIGHT;
 		
-		private int _ST_BLOODPRESSURE;
+		private string _ST_BLOODPRESSURE;
 		
 		private System.Nullable<int> _P_ID;
-		
-		private System.Nullable<int> _SEC_ID;
 		
 		private EntitySet<TBL_GRADE> _TBL_GRADEs;
 		
 		private EntitySet<TBL_PAYMENTDETAIL> _TBL_PAYMENTDETAILs;
 		
 		private EntitySet<TBL_REQUIRMENT> _TBL_REQUIRMENTs;
-		
-		private EntityRef<TBL_SECTION> _TBL_SECTION;
 		
 		private EntityRef<TBL_PARENT> _TBL_PARENT;
 		
@@ -2085,12 +2065,10 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
     partial void OnST_HEIGHTChanged();
     partial void OnST_WEIGHTChanging(decimal value);
     partial void OnST_WEIGHTChanged();
-    partial void OnST_BLOODPRESSUREChanging(int value);
+    partial void OnST_BLOODPRESSUREChanging(string value);
     partial void OnST_BLOODPRESSUREChanged();
     partial void OnP_IDChanging(System.Nullable<int> value);
     partial void OnP_IDChanged();
-    partial void OnSEC_IDChanging(System.Nullable<int> value);
-    partial void OnSEC_IDChanged();
     #endregion
 		
 		public TBL_STUDENT()
@@ -2098,7 +2076,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			this._TBL_GRADEs = new EntitySet<TBL_GRADE>(new Action<TBL_GRADE>(this.attach_TBL_GRADEs), new Action<TBL_GRADE>(this.detach_TBL_GRADEs));
 			this._TBL_PAYMENTDETAILs = new EntitySet<TBL_PAYMENTDETAIL>(new Action<TBL_PAYMENTDETAIL>(this.attach_TBL_PAYMENTDETAILs), new Action<TBL_PAYMENTDETAIL>(this.detach_TBL_PAYMENTDETAILs));
 			this._TBL_REQUIRMENTs = new EntitySet<TBL_REQUIRMENT>(new Action<TBL_REQUIRMENT>(this.attach_TBL_REQUIRMENTs), new Action<TBL_REQUIRMENT>(this.detach_TBL_REQUIRMENTs));
-			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
 			this._TBL_PARENT = default(EntityRef<TBL_PARENT>);
 			OnCreated();
 		}
@@ -2403,8 +2380,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BLOODPRESSURE", DbType="Int NOT NULL")]
-		public int ST_BLOODPRESSURE
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BLOODPRESSURE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_BLOODPRESSURE
 		{
 			get
 			{
@@ -2447,30 +2424,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int")]
-		public System.Nullable<int> SEC_ID
-		{
-			get
-			{
-				return this._SEC_ID;
-			}
-			set
-			{
-				if ((this._SEC_ID != value))
-				{
-					if (this._TBL_SECTION.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSEC_IDChanging(value);
-					this.SendPropertyChanging();
-					this._SEC_ID = value;
-					this.SendPropertyChanged("SEC_ID");
-					this.OnSEC_IDChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_STUDENT_TBL_GRADE", Storage="_TBL_GRADEs", ThisKey="ST_ID", OtherKey="ST_ID")]
 		public EntitySet<TBL_GRADE> TBL_GRADEs
 		{
@@ -2507,40 +2460,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			set
 			{
 				this._TBL_REQUIRMENTs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_STUDENT", Storage="_TBL_SECTION", ThisKey="SEC_ID", OtherKey="SEC_ID", IsForeignKey=true)]
-		public TBL_SECTION TBL_SECTION
-		{
-			get
-			{
-				return this._TBL_SECTION.Entity;
-			}
-			set
-			{
-				TBL_SECTION previousValue = this._TBL_SECTION.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_SECTION.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_SECTION.Entity = null;
-						previousValue.TBL_STUDENTs.Remove(this);
-					}
-					this._TBL_SECTION.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_STUDENTs.Add(this);
-						this._SEC_ID = value.SEC_ID;
-					}
-					else
-					{
-						this._SEC_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_SECTION");
-				}
 			}
 		}
 		
@@ -3950,6 +3869,393 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PTANDST_VIEW")]
+	public partial class PTANDST_VIEW
+	{
+		
+		private int _ST_ID;
+		
+		private string _ST_FIRSTNAME;
+		
+		private string _ST_MIDDLENAME;
+		
+		private string _ST_LASTNAME;
+		
+		private string _ST_YEARLEVEL;
+		
+		private string _ST_SCHOOLYEAR;
+		
+		private System.DateTime _ST_BIRTHDATE;
+		
+		private int _ST_AGE;
+		
+		private string _ST_BIRTHPLACE;
+		
+		private string _ST_ADDRESS;
+		
+		private string _ST_GENDER;
+		
+		private string _ST_CONTACTNUMBER;
+		
+		private System.Nullable<bool> _ISACTIVE;
+		
+		private decimal _ST_HEIGHT;
+		
+		private decimal _ST_WEIGHT;
+		
+		private string _ST_BLOODPRESSURE;
+		
+		private int _P_ID;
+		
+		private string _P_NAME;
+		
+		private string _P_CONTACT;
+		
+		private string _P_OCCUPATION;
+		
+		private string _P_TYPE;
+		
+		public PTANDST_VIEW()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_ID", DbType="Int NOT NULL")]
+		public int ST_ID
+		{
+			get
+			{
+				return this._ST_ID;
+			}
+			set
+			{
+				if ((this._ST_ID != value))
+				{
+					this._ST_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_FIRSTNAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_FIRSTNAME
+		{
+			get
+			{
+				return this._ST_FIRSTNAME;
+			}
+			set
+			{
+				if ((this._ST_FIRSTNAME != value))
+				{
+					this._ST_FIRSTNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_MIDDLENAME", DbType="VarChar(50)")]
+		public string ST_MIDDLENAME
+		{
+			get
+			{
+				return this._ST_MIDDLENAME;
+			}
+			set
+			{
+				if ((this._ST_MIDDLENAME != value))
+				{
+					this._ST_MIDDLENAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_LASTNAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_LASTNAME
+		{
+			get
+			{
+				return this._ST_LASTNAME;
+			}
+			set
+			{
+				if ((this._ST_LASTNAME != value))
+				{
+					this._ST_LASTNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_YEARLEVEL", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_YEARLEVEL
+		{
+			get
+			{
+				return this._ST_YEARLEVEL;
+			}
+			set
+			{
+				if ((this._ST_YEARLEVEL != value))
+				{
+					this._ST_YEARLEVEL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_SCHOOLYEAR", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_SCHOOLYEAR
+		{
+			get
+			{
+				return this._ST_SCHOOLYEAR;
+			}
+			set
+			{
+				if ((this._ST_SCHOOLYEAR != value))
+				{
+					this._ST_SCHOOLYEAR = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BIRTHDATE", DbType="Date NOT NULL")]
+		public System.DateTime ST_BIRTHDATE
+		{
+			get
+			{
+				return this._ST_BIRTHDATE;
+			}
+			set
+			{
+				if ((this._ST_BIRTHDATE != value))
+				{
+					this._ST_BIRTHDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_AGE", DbType="Int NOT NULL")]
+		public int ST_AGE
+		{
+			get
+			{
+				return this._ST_AGE;
+			}
+			set
+			{
+				if ((this._ST_AGE != value))
+				{
+					this._ST_AGE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BIRTHPLACE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_BIRTHPLACE
+		{
+			get
+			{
+				return this._ST_BIRTHPLACE;
+			}
+			set
+			{
+				if ((this._ST_BIRTHPLACE != value))
+				{
+					this._ST_BIRTHPLACE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_ADDRESS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_ADDRESS
+		{
+			get
+			{
+				return this._ST_ADDRESS;
+			}
+			set
+			{
+				if ((this._ST_ADDRESS != value))
+				{
+					this._ST_ADDRESS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_GENDER", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_GENDER
+		{
+			get
+			{
+				return this._ST_GENDER;
+			}
+			set
+			{
+				if ((this._ST_GENDER != value))
+				{
+					this._ST_GENDER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_CONTACTNUMBER", DbType="VarChar(50)")]
+		public string ST_CONTACTNUMBER
+		{
+			get
+			{
+				return this._ST_CONTACTNUMBER;
+			}
+			set
+			{
+				if ((this._ST_CONTACTNUMBER != value))
+				{
+					this._ST_CONTACTNUMBER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISACTIVE", DbType="Bit")]
+		public System.Nullable<bool> ISACTIVE
+		{
+			get
+			{
+				return this._ISACTIVE;
+			}
+			set
+			{
+				if ((this._ISACTIVE != value))
+				{
+					this._ISACTIVE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_HEIGHT", DbType="Decimal(18,0) NOT NULL")]
+		public decimal ST_HEIGHT
+		{
+			get
+			{
+				return this._ST_HEIGHT;
+			}
+			set
+			{
+				if ((this._ST_HEIGHT != value))
+				{
+					this._ST_HEIGHT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_WEIGHT", DbType="Decimal(18,0) NOT NULL")]
+		public decimal ST_WEIGHT
+		{
+			get
+			{
+				return this._ST_WEIGHT;
+			}
+			set
+			{
+				if ((this._ST_WEIGHT != value))
+				{
+					this._ST_WEIGHT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BLOODPRESSURE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_BLOODPRESSURE
+		{
+			get
+			{
+				return this._ST_BLOODPRESSURE;
+			}
+			set
+			{
+				if ((this._ST_BLOODPRESSURE != value))
+				{
+					this._ST_BLOODPRESSURE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_ID", DbType="Int NOT NULL")]
+		public int P_ID
+		{
+			get
+			{
+				return this._P_ID;
+			}
+			set
+			{
+				if ((this._P_ID != value))
+				{
+					this._P_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string P_NAME
+		{
+			get
+			{
+				return this._P_NAME;
+			}
+			set
+			{
+				if ((this._P_NAME != value))
+				{
+					this._P_NAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_CONTACT", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string P_CONTACT
+		{
+			get
+			{
+				return this._P_CONTACT;
+			}
+			set
+			{
+				if ((this._P_CONTACT != value))
+				{
+					this._P_CONTACT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_OCCUPATION", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string P_OCCUPATION
+		{
+			get
+			{
+				return this._P_OCCUPATION;
+			}
+			set
+			{
+				if ((this._P_OCCUPATION != value))
+				{
+					this._P_OCCUPATION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_TYPE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string P_TYPE
+		{
+			get
+			{
+				return this._P_TYPE;
+			}
+			set
+			{
+				if ((this._P_TYPE != value))
+				{
+					this._P_TYPE = value;
+				}
+			}
+		}
+	}
+	
 	public partial class SP_ACCOUNTRECOVERYResult
 	{
 		
@@ -4071,11 +4377,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private decimal _ST_WEIGHT;
 		
-		private int _ST_BLOODPRESSURE;
+		private string _ST_BLOODPRESSURE;
 		
 		private System.Nullable<int> _P_ID;
-		
-		private System.Nullable<int> _SEC_ID;
 		
 		public SP_STSEARCHResult()
 		{
@@ -4321,8 +4625,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BLOODPRESSURE", DbType="Int NOT NULL")]
-		public int ST_BLOODPRESSURE
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BLOODPRESSURE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_BLOODPRESSURE
 		{
 			get
 			{
@@ -4349,22 +4653,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 				if ((this._P_ID != value))
 				{
 					this._P_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int")]
-		public System.Nullable<int> SEC_ID
-		{
-			get
-			{
-				return this._SEC_ID;
-			}
-			set
-			{
-				if ((this._SEC_ID != value))
-				{
-					this._SEC_ID = value;
 				}
 			}
 		}
@@ -4403,11 +4691,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private decimal _ST_WEIGHT;
 		
-		private int _ST_BLOODPRESSURE;
+		private string _ST_BLOODPRESSURE;
 		
 		private System.Nullable<int> _P_ID;
-		
-		private System.Nullable<int> _SEC_ID;
 		
 		public SP_STVIEWResult()
 		{
@@ -4653,8 +4939,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BLOODPRESSURE", DbType="Int NOT NULL")]
-		public int ST_BLOODPRESSURE
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BLOODPRESSURE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_BLOODPRESSURE
 		{
 			get
 			{
@@ -4681,22 +4967,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 				if ((this._P_ID != value))
 				{
 					this._P_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int")]
-		public System.Nullable<int> SEC_ID
-		{
-			get
-			{
-				return this._SEC_ID;
-			}
-			set
-			{
-				if ((this._SEC_ID != value))
-				{
-					this._SEC_ID = value;
 				}
 			}
 		}

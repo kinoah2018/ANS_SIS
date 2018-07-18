@@ -193,5 +193,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             StudentBookForm bo = new StudentBookForm();
             bo.ShowDialog();
         }
+
+        private void ProfiletoolStripMenuItem10_Click_1(object sender, EventArgs e)
+        {
+            StudentProfileForm spf = new StudentProfileForm();
+            spf.ShowDialog();
+        }
     }
 }

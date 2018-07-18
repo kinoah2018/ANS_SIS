@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label18 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvstudent_view = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvstudent_view)).BeginInit();
             this.SuspendLayout();
             // 
             // label18
@@ -47,17 +47,19 @@
             this.label18.TabIndex = 108;
             this.label18.Text = "VIEW STUDENT";
             // 
-            // dataGridView1
+            // dgvstudent_view
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 98);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1295, 343);
-            this.dataGridView1.TabIndex = 115;
+            this.dgvstudent_view.AllowUserToAddRows = false;
+            this.dgvstudent_view.AllowUserToDeleteRows = false;
+            this.dgvstudent_view.BackgroundColor = System.Drawing.Color.White;
+            this.dgvstudent_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvstudent_view.Location = new System.Drawing.Point(45, 98);
+            this.dgvstudent_view.Name = "dgvstudent_view";
+            this.dgvstudent_view.ReadOnly = true;
+            this.dgvstudent_view.Size = new System.Drawing.Size(1295, 343);
+            this.dgvstudent_view.TabIndex = 115;
+            this.dgvstudent_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvstudent_view_CellContentClick);
+            this.dgvstudent_view.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvstudent_view_CellDoubleClick);
             // 
             // btnSearch
             // 
@@ -107,13 +109,14 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvstudent_view);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 223);
             this.Name = "ViewStudentProfileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "StudentProfileView";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ViewStudentProfileForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvstudent_view)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,7 +125,7 @@
         #endregion
 
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvstudent_view;
         internal System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         internal System.Windows.Forms.Button Button3;

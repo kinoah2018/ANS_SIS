@@ -143,7 +143,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                     }
                     else
                     {
-                        MessageBox.Show("Your account is Inactive, contact your Administrator.", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show("Your account is Inactive, Please contact your Administrator.", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         txtPassword.Clear();
                         txtUsername.Focus();
                     }

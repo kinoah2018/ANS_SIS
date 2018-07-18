@@ -128,6 +128,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Enabled = false;
             this.txtUsername.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.Location = new System.Drawing.Point(176, 187);

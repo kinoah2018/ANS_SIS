@@ -227,7 +227,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(188, 4);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 6, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(156, 94);
+            this.menuStrip1.Size = new System.Drawing.Size(248, 94);
             this.menuStrip1.TabIndex = 37;
             this.menuStrip1.Text = "menuStrip2";
             // 
@@ -258,6 +258,7 @@
             this.ProfiletoolStripMenuItem10.Name = "ProfiletoolStripMenuItem10";
             this.ProfiletoolStripMenuItem10.Size = new System.Drawing.Size(210, 22);
             this.ProfiletoolStripMenuItem10.Text = "Profile";
+            this.ProfiletoolStripMenuItem10.Click += new System.EventHandler(this.ProfiletoolStripMenuItem10_Click_1);
             // 
             // BMItoolStripMenuItem4
             // 

@@ -61,7 +61,6 @@
       <Column Name="SEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="SEC_CAPACITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="TBL_SECTION_TBL_SECTIONSUBJECT" Member="TBL_SECTIONSUBJECTs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_SECTIONSUBJECT" />
-      <Association Name="TBL_SECTION_TBL_STUDENT" Member="TBL_STUDENTs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_STUDENT" />
       <Association Name="TBL_SECTION_TBL_TEACHER" Member="TBL_TEACHERs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_TEACHER" />
       <Association Name="TBL_SECTION_TBL_TEACHERSECTION" Member="TBL_TEACHERSECTIONs" ThisKey="SEC_ID" OtherKey="SECSUB_ID" Type="TBL_TEACHERSECTION" />
     </Type>
@@ -101,13 +100,11 @@
       <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="ST_HEIGHT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="ST_WEIGHT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_BLOODPRESSURE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_BLOODPRESSURE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TBL_STUDENT_TBL_GRADE" Member="TBL_GRADEs" ThisKey="ST_ID" OtherKey="ST_ID" Type="TBL_GRADE" />
       <Association Name="TBL_STUDENT_TBL_PAYMENTDETAIL" Member="TBL_PAYMENTDETAILs" ThisKey="ST_ID" OtherKey="ST_ID" Type="TBL_PAYMENTDETAIL" />
       <Association Name="TBL_STUDENT_TBL_REQUIRMENT" Member="TBL_REQUIRMENTs" ThisKey="ST_ID" OtherKey="ST_ID" Type="TBL_REQUIRMENT" />
-      <Association Name="TBL_SECTION_TBL_STUDENT" Member="TBL_SECTION" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_SECTION" IsForeignKey="true" />
       <Association Name="TBL_PARENT_TBL_STUDENT" Member="TBL_PARENT" ThisKey="P_ID" OtherKey="P_ID" Type="TBL_PARENT" IsForeignKey="true" />
     </Type>
   </Table>
@@ -180,6 +177,31 @@
       <Column Name="USER_IMAGE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.PTANDST_VIEW" Member="PTANDST_VIEWs">
+    <Type Name="PTANDST_VIEW">
+      <Column Name="ST_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_FIRSTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_MIDDLENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ST_LASTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_YEARLEVEL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_SCHOOLYEAR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_BIRTHDATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ST_AGE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_BIRTHPLACE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_ADDRESS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_GENDER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_CONTACTNUMBER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ST_HEIGHT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_WEIGHT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_BLOODPRESSURE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="P_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_CONTACT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_OCCUPATION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_TYPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.SP_ACCOUNTRECOVERY" Method="SP_ACCOUNTRECOVERY">
     <Parameter Name="USER_USERNAME" Parameter="uSER_USERNAME" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="SECU_QUESTION" Parameter="sECU_QUESTION" Type="System.String" DbType="VarChar(50)" />
@@ -213,26 +235,6 @@
     <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SP_STSAVE" Method="SP_STSAVE">
-    <Parameter Name="ST_FIRSTNAME" Parameter="sT_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_MIDDLENAME" Parameter="sT_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_LASTNAME" Parameter="sT_LASTNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_YEARLEVEL" Parameter="sT_YEARLEVEL" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_SCHOOLYEAR" Parameter="sT_SCHOOLYEAR" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_BIRTHDATE" Parameter="sT_BIRTHDATE" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="ST_AGE" Parameter="sT_AGE" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ST_BIRTHPLACE" Parameter="sT_BIRTHPLACE" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_ADDRESS" Parameter="sT_ADDRESS" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_GENDER" Parameter="sT_GENDER" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_CONTACTNUMBER" Parameter="sT_CONTACTNUMBER" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ISACTIVE" Parameter="iSACTIVE" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="ST_HEIGHT" Parameter="sT_HEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="ST_WEIGHT" Parameter="sT_WEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="ST_BLOODPRESSURE" Parameter="sT_BLOODPRESSURE" Type="System.Int32" DbType="Int" />
-    <Parameter Name="P_ID" Parameter="p_ID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="SEC_ID" Parameter="sEC_ID" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.SP_STSEARCH" Method="SP_STSEARCH">
     <Parameter Name="SEARCH_KEY" Parameter="sEARCH_KEY" Type="System.String" DbType="VarChar(MAX)" />
     <ElementType Name="SP_STSEARCHResult">
@@ -251,31 +253,9 @@
       <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="ST_HEIGHT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="ST_WEIGHT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_BLOODPRESSURE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_BLOODPRESSURE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.SP_STUPDATE" Method="SP_STUPDATE">
-    <Parameter Name="ST_ID" Parameter="sT_ID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ST_FIRSTNAME" Parameter="sT_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_MIDDLENAME" Parameter="sT_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_LASTNAME" Parameter="sT_LASTNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_YEARLEVEL" Parameter="sT_YEARLEVEL" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_SCHOOLYEAR" Parameter="sT_SCHOOLYEAR" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_BIRTHDATE" Parameter="sT_BIRTHDATE" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="ST_AGE" Parameter="sT_AGE" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ST_BIRTHPLACE" Parameter="sT_BIRTHPLACE" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_ADDRESS" Parameter="sT_ADDRESS" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_GENDER" Parameter="sT_GENDER" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ST_CONTACTNUMBER" Parameter="sT_CONTACTNUMBER" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ISACTIVE" Parameter="iSACTIVE" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="ST_HEIGHT" Parameter="sT_HEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="ST_WEIGHT" Parameter="sT_WEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Parameter Name="ST_BLOODPRESSURE" Parameter="sT_BLOODPRESSURE" Type="System.Int32" DbType="Int" />
-    <Parameter Name="P_ID" Parameter="p_ID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="SEC_ID" Parameter="sEC_ID" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.SP_STVIEW" Method="SP_STVIEW">
     <ElementType Name="SP_STVIEWResult">
@@ -294,9 +274,8 @@
       <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="ST_HEIGHT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="ST_WEIGHT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_BLOODPRESSURE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_BLOODPRESSURE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.SP_USERSAVE" Method="SP_USERSAVE">
@@ -328,16 +307,6 @@
       <Column Name="USER_IMAGE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_USERUPDATE" Method="SP_USERUPDATE">
-    <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="USER_LASTNAME" Parameter="uSER_LASTNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="USER_FIRSTNAME" Parameter="uSER_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="USER_MIDDLENAME" Parameter="uSER_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="USER_USERNAME" Parameter="uSER_USERNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ISACTIVE" Parameter="iSACTIVE" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="USER_IMAGE" Parameter="uSER_IMAGE" Type="System.String" DbType="VarChar(MAX)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.SP_USERVIEW" Method="SP_USERVIEW">
     <ElementType Name="SP_USERVIEWResult">
       <Column Name="USER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -353,5 +322,60 @@
       <Column Name="USER_TYPEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="USER_IMAGE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.SP_STSAVE" Method="SP_STSAVE">
+    <Parameter Name="ST_FIRSTNAME" Parameter="sT_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_MIDDLENAME" Parameter="sT_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_LASTNAME" Parameter="sT_LASTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_YEARLEVEL" Parameter="sT_YEARLEVEL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_SCHOOLYEAR" Parameter="sT_SCHOOLYEAR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_BIRTHDATE" Parameter="sT_BIRTHDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ST_AGE" Parameter="sT_AGE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ST_BIRTHPLACE" Parameter="sT_BIRTHPLACE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_ADDRESS" Parameter="sT_ADDRESS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_GENDER" Parameter="sT_GENDER" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_CONTACTNUMBER" Parameter="sT_CONTACTNUMBER" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_HEIGHT" Parameter="sT_HEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="ST_WEIGHT" Parameter="sT_WEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="ST_BLOODPRESSURE" Parameter="sT_BLOODPRESSURE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NAME" Parameter="nAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="P_CONTACT" Parameter="p_CONTACT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="P_OCCUPATION" Parameter="p_OCCUPATION" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="P_TYPE" Parameter="p_TYPE" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_USERUPDATE" Method="SP_USERUPDATE">
+    <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="USER_LASTNAME" Parameter="uSER_LASTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="USER_FIRSTNAME" Parameter="uSER_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="USER_MIDDLENAME" Parameter="uSER_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="USER_USERNAME" Parameter="uSER_USERNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ISACTIVE" Parameter="iSACTIVE" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="USER_IMAGE" Parameter="uSER_IMAGE" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_STUPDATE" Method="SP_STUPDATE">
+    <Parameter Name="ST_ID" Parameter="sT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ST_FIRSTNAME" Parameter="sT_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_MIDDLENAME" Parameter="sT_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_LASTNAME" Parameter="sT_LASTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_YEARLEVEL" Parameter="sT_YEARLEVEL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_SCHOOLYEAR" Parameter="sT_SCHOOLYEAR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_BIRTHDATE" Parameter="sT_BIRTHDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ST_AGE" Parameter="sT_AGE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ST_BIRTHPLACE" Parameter="sT_BIRTHPLACE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_ADDRESS" Parameter="sT_ADDRESS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_GENDER" Parameter="sT_GENDER" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_CONTACTNUMBER" Parameter="sT_CONTACTNUMBER" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ISACTIVE" Parameter="iSACTIVE" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ST_HEIGHT" Parameter="sT_HEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="ST_WEIGHT" Parameter="sT_WEIGHT" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="ST_BLOODPRESSURE" Parameter="sT_BLOODPRESSURE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="P_ID" Parameter="p_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="P_NAME" Parameter="p_NAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="P_CONTACT" Parameter="p_CONTACT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="P_OCCUPATION" Parameter="p_OCCUPATION" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="P_TYPE" Parameter="p_TYPE" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

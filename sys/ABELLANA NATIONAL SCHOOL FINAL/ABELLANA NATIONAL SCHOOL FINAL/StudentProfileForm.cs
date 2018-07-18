@@ -43,16 +43,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtfname.Text == "" || txtlname.Text == "" || cmbylevel.Text == "" || cmbsyear.Text == "" || dtpbdate.Text == "" || txtage.Text == "" || cmbgen.Text == "" || txtcnumber.Text == "" || cmbstatus.Text == "" || txtheight.Text == "" || txtweight.Text == "" || txtbp.Text == "" || txtpid.Text == "" || txtsid.Text== "" )
-            {
-                MessageBox.Show("Input All Fields!","",MessageBoxButtons.OK,MessageBoxIcon.Hand);
-            }
-            else 
-            {
-                //db.ST_SAVE(txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, cmbsyear.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbp.Text, txtadd.Text, cmbgen.Text, txtcnumber.Text, cmbstatus.Text, int.Parse(txtheight.Text), int.Parse(txtweight.Text), int.Parse(txtbp.Text), int.Parse(txtpid.Text), int.Parse(txtsid.Text));
-                //MessageBox.Show("Successfully Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-           
+            
+            db.SP_STSAVE(txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, cmbsyear.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text
+               , txtadd.Text, cmbgen.Text, txtcnumber.Text, decimal.Parse(txtheight.Text), decimal.Parse(txtheight.Text), txtbp.Text, txtpname.Text, txtcnumber.Text, txtoccu.Text, txtptype.Text);
+            MessageBox.Show("Successfully Saved!");
+
         }
 
         private void dtpbdate_ValueChanged(object sender, EventArgs e)

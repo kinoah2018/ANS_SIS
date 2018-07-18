@@ -16,16 +16,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         public UpdateUserForm()
         {
             InitializeComponent();
-            //conn.Open();
-            //SqlCommand DropPosition = new SqlCommand("SELECT POSITION_TYPE FROM TBL_USERPOSITION", conn);
-            //SqlDataReader read = DropPosition.ExecuteReader();
-            //while (read.Read())
-            //{
-            //    txtPosition.Items.Add(read[0]);
-            //    txtPosition.Refresh();
-            //}
-
-            //conn.Close();
         }
         DataClasses1DataContext db = new DataClasses1DataContext();
         SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");

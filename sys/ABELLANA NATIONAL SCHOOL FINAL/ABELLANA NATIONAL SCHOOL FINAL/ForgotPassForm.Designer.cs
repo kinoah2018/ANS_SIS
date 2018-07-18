@@ -121,6 +121,7 @@
             this.txtans.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtans.Location = new System.Drawing.Point(176, 222);
             this.txtans.Name = "txtans";
+            this.txtans.PasswordChar = '●';
             this.txtans.Size = new System.Drawing.Size(294, 26);
             this.txtans.TabIndex = 33;
             // 

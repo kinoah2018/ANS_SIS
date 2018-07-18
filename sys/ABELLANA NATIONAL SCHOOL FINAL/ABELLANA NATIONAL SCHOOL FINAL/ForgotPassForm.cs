@@ -27,7 +27,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             }
             else if (result1 != 1)
             {
-                MessageBox.Show("You've input was not match!");
+                MessageBox.Show("The data you been input was not match!");
             }
             else
             {

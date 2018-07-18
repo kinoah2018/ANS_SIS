@@ -1,6 +1,6 @@
 ﻿namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 {
-    partial class StudentProfileForm
+    partial class StudentUpdateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentProfileForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentUpdateForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbgen = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtadd = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtcnumber = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtoccu = new System.Windows.Forms.TextBox();
@@ -67,14 +69,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtfname = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnView = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.Button3 = new System.Windows.Forms.Button();
-            this.txtcnumber = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtSTID = new System.Windows.Forms.TextBox();
+            this.txtPID = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -83,6 +85,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.txtSTID);
+            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.cmbgen);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.txtadd);
@@ -115,8 +119,8 @@
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(60, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(926, 380);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(926, 384);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student Information";
             // 
@@ -127,7 +131,7 @@
             this.cmbgen.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.cmbgen.Location = new System.Drawing.Point(639, 48);
+            this.cmbgen.Location = new System.Drawing.Point(639, 20);
             this.cmbgen.Name = "cmbgen";
             this.cmbgen.Size = new System.Drawing.Size(148, 26);
             this.cmbgen.TabIndex = 118;
@@ -135,7 +139,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(554, 51);
+            this.label15.Location = new System.Drawing.Point(554, 23);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(79, 18);
             this.label15.TabIndex = 117;
@@ -159,6 +163,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtPID);
+            this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.txtcnumber);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label14);
@@ -169,17 +175,33 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtptype);
-            this.groupBox2.Location = new System.Drawing.Point(469, 210);
+            this.groupBox2.Location = new System.Drawing.Point(469, 182);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(441, 162);
+            this.groupBox2.Size = new System.Drawing.Size(441, 190);
             this.groupBox2.TabIndex = 114;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Parent\'s Information";
             // 
+            // txtcnumber
+            // 
+            this.txtcnumber.Location = new System.Drawing.Point(170, 82);
+            this.txtcnumber.Name = "txtcnumber";
+            this.txtcnumber.Size = new System.Drawing.Size(181, 27);
+            this.txtcnumber.TabIndex = 123;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 85);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(153, 18);
+            this.label10.TabIndex = 122;
+            this.label10.Text = "Contact Number :";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 131);
+            this.label14.Location = new System.Drawing.Point(12, 151);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(152, 18);
             this.label14.TabIndex = 121;
@@ -188,7 +210,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(52, 98);
+            this.label13.Location = new System.Drawing.Point(52, 118);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(112, 18);
             this.label13.TabIndex = 120;
@@ -196,16 +218,15 @@
             // 
             // txtoccu
             // 
-            this.txtoccu.Location = new System.Drawing.Point(170, 95);
+            this.txtoccu.Location = new System.Drawing.Point(170, 115);
             this.txtoccu.Name = "txtoccu";
             this.txtoccu.Size = new System.Drawing.Size(181, 27);
             this.txtoccu.TabIndex = 119;
-            this.txtoccu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtoccu_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 35);
+            this.label1.Location = new System.Drawing.Point(24, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 18);
             this.label1.TabIndex = 116;
@@ -213,11 +234,10 @@
             // 
             // txtpname
             // 
-            this.txtpname.Location = new System.Drawing.Point(170, 29);
+            this.txtpname.Location = new System.Drawing.Point(170, 49);
             this.txtpname.Name = "txtpname";
             this.txtpname.Size = new System.Drawing.Size(241, 27);
             this.txtpname.TabIndex = 115;
-            this.txtpname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpname_KeyPress);
             // 
             // label8
             // 
@@ -239,11 +259,10 @@
             // 
             // txtptype
             // 
-            this.txtptype.Location = new System.Drawing.Point(170, 128);
+            this.txtptype.Location = new System.Drawing.Point(170, 148);
             this.txtptype.Name = "txtptype";
             this.txtptype.Size = new System.Drawing.Size(107, 27);
             this.txtptype.TabIndex = 16;
-            this.txtptype.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtptype_KeyPress);
             // 
             // label23
             // 
@@ -278,7 +297,6 @@
             this.txtlname.Name = "txtlname";
             this.txtlname.Size = new System.Drawing.Size(191, 27);
             this.txtlname.TabIndex = 32;
-            this.txtlname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlname_KeyPress);
             // 
             // txtmname
             // 
@@ -286,20 +304,18 @@
             this.txtmname.Name = "txtmname";
             this.txtmname.Size = new System.Drawing.Size(191, 27);
             this.txtmname.TabIndex = 31;
-            this.txtmname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmname_KeyPress);
             // 
             // txtbp
             // 
-            this.txtbp.Location = new System.Drawing.Point(639, 177);
+            this.txtbp.Location = new System.Drawing.Point(639, 149);
             this.txtbp.Name = "txtbp";
             this.txtbp.Size = new System.Drawing.Size(88, 27);
             this.txtbp.TabIndex = 30;
-            this.txtbp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbp_KeyPress);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(419, 180);
+            this.label21.Location = new System.Drawing.Point(419, 152);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(214, 18);
             this.label21.TabIndex = 29;
@@ -307,16 +323,15 @@
             // 
             // txtweight
             // 
-            this.txtweight.Location = new System.Drawing.Point(639, 145);
+            this.txtweight.Location = new System.Drawing.Point(639, 117);
             this.txtweight.Name = "txtweight";
             this.txtweight.Size = new System.Drawing.Size(88, 27);
             this.txtweight.TabIndex = 28;
-            this.txtweight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtweight_KeyPress);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(514, 148);
+            this.label20.Location = new System.Drawing.Point(514, 120);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(119, 18);
             this.label20.TabIndex = 27;
@@ -324,16 +339,15 @@
             // 
             // txtheight
             // 
-            this.txtheight.Location = new System.Drawing.Point(639, 114);
+            this.txtheight.Location = new System.Drawing.Point(639, 86);
             this.txtheight.Name = "txtheight";
             this.txtheight.Size = new System.Drawing.Size(88, 27);
             this.txtheight.TabIndex = 26;
-            this.txtheight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtheight_KeyPress);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(523, 117);
+            this.label19.Location = new System.Drawing.Point(523, 89);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(110, 18);
             this.label19.TabIndex = 25;
@@ -346,7 +360,7 @@
             this.cmbstatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.cmbstatus.Location = new System.Drawing.Point(639, 81);
+            this.cmbstatus.Location = new System.Drawing.Point(639, 53);
             this.cmbstatus.Name = "cmbstatus";
             this.cmbstatus.Size = new System.Drawing.Size(148, 26);
             this.cmbstatus.TabIndex = 24;
@@ -358,7 +372,6 @@
             this.dtpbdate.Name = "dtpbdate";
             this.dtpbdate.Size = new System.Drawing.Size(191, 27);
             this.dtpbdate.TabIndex = 22;
-            this.dtpbdate.ValueChanged += new System.EventHandler(this.dtpbdate_ValueChanged);
             // 
             // cmbsyear
             // 
@@ -391,7 +404,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(559, 84);
+            this.label11.Location = new System.Drawing.Point(559, 56);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 18);
             this.label11.TabIndex = 19;
@@ -466,18 +479,27 @@
             this.txtfname.Name = "txtfname";
             this.txtfname.Size = new System.Drawing.Size(191, 27);
             this.txtfname.TabIndex = 2;
-            this.txtfname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtfname_KeyPress);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(626, 18);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(192, 25);
+            this.label18.TabIndex = 109;
+            this.label18.Text = "UPDATE PROFILE";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnSave);
             this.groupBox3.Controls.Add(this.btnClear);
-            this.groupBox3.Controls.Add(this.btnView);
             this.groupBox3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(1051, 71);
+            this.groupBox3.Location = new System.Drawing.Point(1106, 71);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(191, 384);
-            this.groupBox3.TabIndex = 105;
+            this.groupBox3.TabIndex = 110;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Action";
             // 
@@ -487,11 +509,11 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(35, 92);
+            this.btnSave.Location = new System.Drawing.Point(35, 97);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(122, 38);
             this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Update";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -501,86 +523,60 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(35, 242);
+            this.btnClear.Location = new System.Drawing.Point(35, 149);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(122, 38);
             this.btnClear.TabIndex = 16;
-            this.btnClear.Text = "Clear";
+            this.btnClear.Text = "Cancel";
             this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // btnView
+            // label16
             // 
-            this.btnView.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnView.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.ForeColor = System.Drawing.Color.White;
-            this.btnView.Location = new System.Drawing.Point(35, 168);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(122, 38);
-            this.btnView.TabIndex = 15;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = false;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(26, 23);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(110, 18);
+            this.label16.TabIndex = 119;
+            this.label16.Text = "ID Student :";
             // 
-            // label18
+            // txtSTID
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(626, 18);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(209, 25);
-            this.label18.TabIndex = 108;
-            this.label18.Text = "STUDENT PROFILE";
+            this.txtSTID.Location = new System.Drawing.Point(142, 20);
+            this.txtSTID.Name = "txtSTID";
+            this.txtSTID.Size = new System.Drawing.Size(191, 27);
+            this.txtSTID.TabIndex = 120;
             // 
-            // Button3
+            // txtPID
             // 
-            this.Button3.BackColor = System.Drawing.Color.Red;
-            this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button3.ForeColor = System.Drawing.Color.White;
-            this.Button3.Location = new System.Drawing.Point(1324, 12);
-            this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(34, 31);
-            this.Button3.TabIndex = 184;
-            this.Button3.Text = "X";
-            this.Button3.UseVisualStyleBackColor = false;
-            this.Button3.Click += new System.EventHandler(this.Button3_Click_1);
+            this.txtPID.Location = new System.Drawing.Point(170, 16);
+            this.txtPID.Name = "txtPID";
+            this.txtPID.Size = new System.Drawing.Size(191, 27);
+            this.txtPID.TabIndex = 125;
             // 
-            // txtcnumber
+            // label17
             // 
-            this.txtcnumber.Location = new System.Drawing.Point(170, 62);
-            this.txtcnumber.Name = "txtcnumber";
-            this.txtcnumber.Size = new System.Drawing.Size(181, 27);
-            this.txtcnumber.TabIndex = 123;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(54, 19);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(99, 18);
+            this.label17.TabIndex = 124;
+            this.label17.Text = "ID Parent :";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(153, 18);
-            this.label10.TabIndex = 122;
-            this.label10.Text = "Contact Number :";
-            // 
-            // StudentProfileForm
+            // StudentUpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SeaShell;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 467);
-            this.Controls.Add(this.Button3);
-            this.Controls.Add(this.label18);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 223);
-            this.Name = "StudentProfileForm";
+            this.Name = "StudentUpdateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "StudentProfile";
-            this.Load += new System.EventHandler(this.StudentProfile_Load);
+            this.Text = "UpdateStudentForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -593,53 +589,53 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox3;
         internal System.Windows.Forms.Button btnSave;
         internal System.Windows.Forms.Button btnClear;
-        internal System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label1;
-        internal System.Windows.Forms.Button Button3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label10;
-        public System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        public System.Windows.Forms.TextBox txtSTID;
+        public System.Windows.Forms.ComboBox cmbgen;
+        public System.Windows.Forms.TextBox txtadd;
+        public System.Windows.Forms.TextBox txtcnumber;
+        public System.Windows.Forms.TextBox txtoccu;
+        public System.Windows.Forms.TextBox txtpname;
+        public System.Windows.Forms.TextBox txtptype;
+        public System.Windows.Forms.TextBox txtlname;
+        public System.Windows.Forms.TextBox txtmname;
+        public System.Windows.Forms.TextBox txtbp;
+        public System.Windows.Forms.TextBox txtweight;
+        public System.Windows.Forms.TextBox txtheight;
         public System.Windows.Forms.ComboBox cmbstatus;
         public System.Windows.Forms.DateTimePicker dtpbdate;
         public System.Windows.Forms.ComboBox cmbsyear;
         public System.Windows.Forms.ComboBox cmbylevel;
-        public System.Windows.Forms.TextBox txtptype;
         public System.Windows.Forms.TextBox txtbplace;
         public System.Windows.Forms.TextBox txtage;
         public System.Windows.Forms.TextBox txtfname;
-        public System.Windows.Forms.TextBox txtbp;
-        public System.Windows.Forms.TextBox txtweight;
-        public System.Windows.Forms.TextBox txtheight;
-        public System.Windows.Forms.TextBox txtlname;
-        public System.Windows.Forms.TextBox txtmname;
-        public System.Windows.Forms.TextBox txtoccu;
-        public System.Windows.Forms.TextBox txtpname;
-        public System.Windows.Forms.TextBox txtadd;
-        public System.Windows.Forms.ComboBox cmbgen;
-        public System.Windows.Forms.TextBox txtcnumber;
-
-
+        public System.Windows.Forms.TextBox txtPID;
     }
 }
