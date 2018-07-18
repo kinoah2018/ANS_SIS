@@ -130,9 +130,9 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.Color.White;
-            this.btncancel.Location = new System.Drawing.Point(395, 265);
+            this.btncancel.Location = new System.Drawing.Point(370, 265);
             this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(75, 33);
+            this.btncancel.Size = new System.Drawing.Size(100, 33);
             this.btncancel.TabIndex = 45;
             this.btncancel.Text = "Cancel";
             this.btncancel.UseVisualStyleBackColor = false;
@@ -144,9 +144,9 @@
             this.btnok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnok.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnok.ForeColor = System.Drawing.Color.White;
-            this.btnok.Location = new System.Drawing.Point(314, 265);
+            this.btnok.Location = new System.Drawing.Point(264, 265);
             this.btnok.Name = "btnok";
-            this.btnok.Size = new System.Drawing.Size(75, 33);
+            this.btnok.Size = new System.Drawing.Size(100, 33);
             this.btnok.TabIndex = 44;
             this.btnok.Text = "OK";
             this.btnok.UseVisualStyleBackColor = false;
@@ -159,7 +159,7 @@
             this.cmbSques.FormattingEnabled = true;
             this.cmbSques.Items.AddRange(new object[] {
             "What is your favorite place?",
-            "Who is the most handsome adviser you encountered?",
+            "What is your unforgettable moments?",
             "Who is your crush in your school?",
             "In what city were you born?",
             "What is your mistake you made in school?",

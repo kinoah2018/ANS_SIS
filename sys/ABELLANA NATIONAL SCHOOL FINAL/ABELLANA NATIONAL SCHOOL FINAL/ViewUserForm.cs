@@ -35,7 +35,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void ViewUserForm_Load(object sender, EventArgs e)
         {
             //this.tbL_USERTableAdapter1.Fill(this.ANS_DATABASE_V2Dataset1.TBL_USER);
-            dgViewUser.DataSource=db.View_Users;
+            dgViewUser.DataSource = db.View_Users;
         }
       
 
@@ -61,7 +61,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             uuf.txtFirstname.Text = dgViewUser.CurrentRow.Cells[2].Value.ToString();
             uuf.txtMiddlename.Text = dgViewUser.CurrentRow.Cells[3].Value.ToString();
             uuf.txtUsername.Text = dgViewUser.CurrentRow.Cells[4].Value.ToString();
-            uuf.txtContactNo.Text = dgViewUser.CurrentRow.Cells[5].Value.ToString();
             if (dgViewUser.CurrentRow.Cells[7].Value.ToString() == "True")
             {
                 uuf.cmbStatus.SelectedIndex = 0;

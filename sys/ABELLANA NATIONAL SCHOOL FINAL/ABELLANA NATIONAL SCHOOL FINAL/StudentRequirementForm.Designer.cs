@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentRequirementForm));
             this.label4 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Button3 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,20 +47,6 @@
             this.label4.Size = new System.Drawing.Size(134, 25);
             this.label4.TabIndex = 182;
             this.label4.Text = "Requirment";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1034, 55);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(155, 28);
-            this.btnSearch.TabIndex = 200;
-            this.btnSearch.Text = "VIEW REQUIRMENT";
-            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // txtSearch
             // 
@@ -97,6 +83,20 @@
             this.Button3.UseVisualStyleBackColor = false;
             this.Button3.Click += new System.EventHandler(this.Button3_Click_1);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1034, 55);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(155, 28);
+            this.btnSearch.TabIndex = 200;
+            this.btnSearch.Text = "VIEW STUDENT";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
             // StudentRequirementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,10 +123,10 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        internal System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataGridView2;
         internal System.Windows.Forms.Button Button3;
+        internal System.Windows.Forms.Button btnSearch;
 
     }
 }

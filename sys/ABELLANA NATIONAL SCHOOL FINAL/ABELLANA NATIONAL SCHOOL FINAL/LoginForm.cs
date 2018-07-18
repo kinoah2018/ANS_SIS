@@ -71,11 +71,12 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                         if (pass == "1234")
                         {
                             conn.Open();
-                            SqlCommand get_id = new SqlCommand("SELECT USER_ID FROM TBL_USERS WHERE USER_USERNAME='"+txtUsername.Text+"'",conn);
+                            SqlCommand get_id = new SqlCommand("SELECT USER_ID FROM TBL_USERS WHERE USER_USERNAME='" + txtUsername.Text + "'", conn);
                             Control_variables.current_id = Convert.ToInt32(get_id.ExecuteScalar());
-                            changepass.lbusername.Text = Control_variables.username;
-                            changepass.txtuname.Text =Control_variables.current_id.ToString();
+                            
+                            changepass.lbusername.Text = usern;
                             changepass.txtDefaultpass.Text = pass.ToString();
+
 
                             txtUsername.Clear();
                             txtPassword.Clear();
@@ -88,7 +89,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                             {
                                MessageBox.Show("Welcome " + Control_variables.username,"ADMIN",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
-                               HomeAdminForm h = new HomeAdminForm();                   
+                               HomeForm h = new HomeForm();                   
                                // GET PICTURE 
                                conn.Open();
                                SqlCommand get_pic = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_USERNAME LIKE'"+txtUsername.Text+"'",conn);
@@ -115,7 +116,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                             {
                                 MessageBox.Show("Welcome " + Control_variables.username, "STAFF", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                HomeStaffForm hs = new HomeStaffForm();
+                                HomeForm hs = new HomeForm();
                                 // GET PICTURE 
                                 conn.Open();
                                 SqlCommand get_pic = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_USERNAME LIKE'" + txtUsername.Text + "'", conn);
@@ -172,6 +173,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             ForgotPassForm fpf = new ForgotPassForm();
             fpf.ShowDialog();
+            txtUsername.Clear();
+            txtPassword.Clear();
         }
         }
     }

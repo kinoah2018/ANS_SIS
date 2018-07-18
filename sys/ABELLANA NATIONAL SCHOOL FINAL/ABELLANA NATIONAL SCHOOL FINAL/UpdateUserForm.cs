@@ -44,7 +44,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT USER_CREATOR FROM TBL_USERS WHERE USER_ID='"+txtUser_ID.Text+"'",conn);
             SqlCommand get_ident = new SqlCommand("SELECT USER_ID FROM TBL_USERS WHERE USER_ID='" + txtUser_ID.Text + "'", conn);
             Control_variables.identity_id = Convert.ToInt32(get_ident.ExecuteScalar());
             
@@ -58,14 +57,13 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             {
                 isactive = false;
             }
-            ViewUserForm vuf = new ViewUserForm();
+            
             int identity = Control_variables.identity_id;
             string datenow = DateTime.Now.ToShortDateString();
-            db.SP_USERUPDATE(int.Parse(txtUser_ID.Text), txtLastname.Text, txtFirstname.Text, txtMiddlename.Text, txtUsername.Text, txtContactNo.Text, isactive, PB_image.ImageLocation);
+            db.SP_USERUPDATE(int.Parse(txtUser_ID.Text), txtLastname.Text, txtFirstname.Text, txtMiddlename.Text, txtUsername.Text, isactive, PB_image.ImageLocation);
             MessageBox.Show("Successfully Updated","",MessageBoxButtons.OK,MessageBoxIcon.Information);
             this.Close();
-            ViewUserForm v = new ViewUserForm();
-            v.ShowDialog();
+            
             
         }
         public void ClearAll()
@@ -74,7 +72,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             txtLastname.Clear();
             txtMiddlename.Clear();
             txtUsername.Clear();
-            txtContactNo.Clear();
             PB_image.ImageLocation = null;
         }
 

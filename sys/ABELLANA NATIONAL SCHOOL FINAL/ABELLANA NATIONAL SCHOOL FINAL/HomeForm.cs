@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 {
-    public partial class HomeAdminForm : Form
+    public partial class HomeForm : Form
     {
-        public HomeAdminForm()
+        public HomeForm()
         {
             InitializeComponent();
             
@@ -109,15 +109,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             int utype = Convert.ToInt32(seltype.ExecuteScalar());
             conn.Close();
 
-            if (utype == 1)
-            {
-                AddUserForm addu = new AddUserForm();
-                addu.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Only the Admin can access this property!","",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
+            AddUserForm addu = new AddUserForm();
+            addu.ShowDialog();
+           
         }
 
    

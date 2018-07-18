@@ -59,7 +59,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(123, 28);
             this.btnSearch.TabIndex = 201;
-            this.btnSearch.Text = "VIEW SECTION";
+            this.btnSearch.Text = "VIEW STUDENT";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // txtSearch

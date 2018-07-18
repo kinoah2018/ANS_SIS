@@ -19,16 +19,17 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         DataClasses1DataContext db = new DataClasses1DataContext();
         private void btnok_Click(object sender, EventArgs e)
         {
-            int result1 = db.SP_ACCOUNTRECOVERY(txtUsername.Text,cmbSques.Text,txtans.Text).Count();
-            if (txtUsername.Text==""||cmbSques.Text==""||txtans.Text=="")
+
+            int result1 = db.SP_ACCOUNTRECOVERY(txtUsername.Text, cmbSques.Text, txtans.Text).Count();
+            if (txtUsername.Text == "" || cmbSques.Text == "" || txtans.Text == "")
             {
                 MessageBox.Show("Input all fields");
             }
-            else if(result1 != 1) 
+            else if (result1 != 1)
             {
-                MessageBox.Show("You've input was not match!");  
+                MessageBox.Show("You've input was not match!");
             }
-            else 
+            else
             {
                 MessageBox.Show("Proceed to Changepass !");
                 ChangePassForm2 cpf = new ChangePassForm2();

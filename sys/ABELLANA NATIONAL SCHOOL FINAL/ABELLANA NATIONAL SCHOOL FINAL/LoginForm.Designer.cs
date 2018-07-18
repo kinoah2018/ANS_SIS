@@ -193,10 +193,10 @@
         internal System.Windows.Forms.TextBox txtPassword;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Label Label1;
-        internal System.Windows.Forms.TextBox txtUsername;
         internal System.Windows.Forms.Label Label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         internal System.Windows.Forms.Button btnfpass;
+        public System.Windows.Forms.TextBox txtUsername;
     }
 }

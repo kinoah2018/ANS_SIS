@@ -29,7 +29,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             else
             {
 
-                var scan = db.SP_VERIFYPASSWORD(txtUserID.Text, txtOldpass.Text);
+                var scan = db.SP_VERIFYPASSWORD(int.Parse(txtUserID.Text), txtOldpass.Text);
                 db.SubmitChanges();
 
                 foreach (SP_VERIFYPASSWORDResult user in scan)
@@ -40,7 +40,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                         if(txtNewpass.Text == txtRetypepass.Text)
                             {
                                 user.USER_PASSWORD = txtNewpass.Text;
-                                //db.SP_CHANGEPASSWORD(Control_variables.current_id, user.USER_PASSWORD);
+                                db.SP_CHANGEUSERPASS(lbluname.Text,user.USER_PASSWORD);
                                 TBL_USER user2 = new TBL_USER();
                                 MessageBox.Show("Password Successfully Changed","Success !",MessageBoxButtons.OK,MessageBoxIcon.Information);
 

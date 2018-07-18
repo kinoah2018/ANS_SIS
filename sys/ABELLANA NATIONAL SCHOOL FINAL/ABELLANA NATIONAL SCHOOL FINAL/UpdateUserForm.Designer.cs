@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateUserForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -39,18 +40,15 @@
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.PB_image = new System.Windows.Forms.PictureBox();
-            this.txtContactNo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
-            this.Label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.Button3 = new System.Windows.Forms.Button();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_image)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -68,12 +66,10 @@
             this.groupBox2.Controls.Add(this.txtFirstname);
             this.groupBox2.Controls.Add(this.txtLastname);
             this.groupBox2.Controls.Add(this.PB_image);
-            this.groupBox2.Controls.Add(this.txtContactNo);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.Label1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.Label2);
-            this.groupBox2.Controls.Add(this.Label3);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(54, 51);
             this.groupBox2.Name = "groupBox2";
@@ -82,12 +78,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
             // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.ForeColor = System.Drawing.Color.Black;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Active",
+            "Inactive"});
+            this.cmbStatus.Location = new System.Drawing.Point(185, 256);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(303, 26);
+            this.cmbStatus.TabIndex = 95;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(36, 284);
+            this.label10.Location = new System.Drawing.Point(81, 259);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 18);
             this.label10.TabIndex = 96;
@@ -108,7 +118,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(36, 210);
+            this.label7.Location = new System.Drawing.Point(58, 210);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 18);
             this.label7.TabIndex = 94;
@@ -176,15 +186,6 @@
             this.PB_image.TabIndex = 90;
             this.PB_image.TabStop = false;
             // 
-            // txtContactNo
-            // 
-            this.txtContactNo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContactNo.ForeColor = System.Drawing.Color.Black;
-            this.txtContactNo.Location = new System.Drawing.Point(185, 244);
-            this.txtContactNo.Name = "txtContactNo";
-            this.txtContactNo.Size = new System.Drawing.Size(303, 27);
-            this.txtContactNo.TabIndex = 8;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -201,7 +202,7 @@
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.ForeColor = System.Drawing.Color.Black;
-            this.Label1.Location = new System.Drawing.Point(36, 65);
+            this.Label1.Location = new System.Drawing.Point(72, 65);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(83, 18);
             this.Label1.TabIndex = 73;
@@ -212,7 +213,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(36, 135);
+            this.label8.Location = new System.Drawing.Point(53, 135);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 18);
             this.label8.TabIndex = 74;
@@ -223,22 +224,11 @@
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.ForeColor = System.Drawing.Color.Black;
-            this.Label2.Location = new System.Drawing.Point(36, 100);
+            this.Label2.Location = new System.Drawing.Point(54, 100);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(101, 18);
             this.Label2.TabIndex = 74;
             this.Label2.Text = "Lastname :";
-            // 
-            // Label3
-            // 
-            this.Label3.AutoSize = true;
-            this.Label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.ForeColor = System.Drawing.Color.Black;
-            this.Label3.Location = new System.Drawing.Point(36, 247);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(112, 18);
-            this.Label3.TabIndex = 75;
-            this.Label3.Text = "Contact No :";
             // 
             // groupBox1
             // 
@@ -305,20 +295,6 @@
             this.Button3.UseVisualStyleBackColor = false;
             this.Button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // cmbStatus
-            // 
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbStatus.ForeColor = System.Drawing.Color.Black;
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Active",
-            "Inactive"});
-            this.cmbStatus.Location = new System.Drawing.Point(185, 281);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(303, 26);
-            this.cmbStatus.TabIndex = 95;
-            // 
             // UpdateUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,7 +330,6 @@
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.Label label8;
         internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.Label Label3;
         private System.Windows.Forms.GroupBox groupBox1;
         internal System.Windows.Forms.Button btnUpdate;
         internal System.Windows.Forms.Button button7;
@@ -364,7 +339,6 @@
         public System.Windows.Forms.TextBox txtMiddlename;
         public System.Windows.Forms.TextBox txtFirstname;
         public System.Windows.Forms.TextBox txtLastname;
-        public System.Windows.Forms.TextBox txtContactNo;
         internal System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox txtUsername;
         internal System.Windows.Forms.Label label10;

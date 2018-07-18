@@ -16,25 +16,10 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         public AddUserForm()
         {
             InitializeComponent();
-            /*conn.Open();
-            SqlCommand DropPosition = new SqlCommand("SELECT POSITION_TYPE FROM TBL_USERPOSITION", conn);
-            SqlDataReader read = DropPosition.ExecuteReader();
-            while (read.Read())
-            {
-                txtPosition.Items.Add(read[0]);
-                txtPosition.Refresh();
-            }
-
-            conn.Close();
-           */
         }
         SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
         DataClasses1DataContext db = new DataClasses1DataContext();
         Hashpass hp = new Hashpass();
-        //public int CurrentID()
-        //{
-        //    return Convert.ToInt32(db.CURRENT_ID());
-        //}
 
         private void btnView_Click(object sender, EventArgs e)
         {
@@ -52,29 +37,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             // TODO: This line of code loads data into the 'aNS_DATABASEDataSet.TBL_USERTYPE' table. You can move, or remove it, as needed.
             this.tBL_USERTYPETableAdapter.Fill(this.aNS_DATABASEDataSet.TBL_USERTYPE);
-            //if (CurrentID() == 1)
-            //{
-            //    txtUser_ID.Text = "User-" + (CurrentID().ToString().PadLeft(5,'0'));
-            //}
-            //else
-            //{
-            //    txtUser_ID.Text = "User-" + (CurrentID() + 1).ToString().PadLeft(5, '0');
-            //}
             txtPassword.Text = "1234";
-
-
         }
+
         public void ClearAll()
         {
-
-            //if (CurrentID() == 1)
-            //{
-            //    txtUser_ID.Text = "User-" + (CurrentID().ToString().PadLeft(5, '0'));
-            //}
-            //else
-            //{
-            //    txtUser_ID.Text = "User-" + (CurrentID() + 1).ToString().PadLeft(5, '0');
-            //}
             txtFirstname.Clear();
             txtLastname.Clear();
             txtMiddlename.Clear();
@@ -82,7 +49,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             txtPassword.Clear();
             txtContactNo.Clear();
             PB_image.ImageLocation = null;
-            cmbutype.SelectedItem = "";
+            cmbutype.SelectedItem = null;
+            
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
@@ -133,20 +101,10 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void AddUserForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            HomeAdminForm h = new HomeAdminForm();
+            HomeForm h = new HomeForm();
             AddUserForm a = new AddUserForm();
             h.msRegistration.BackColor = Color.Black;
             h.Refresh();
-        }
-
-        private void PB_image_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbutype_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -155,7 +113,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             SqlCommand command = new SqlCommand("SELECT USER_USERNAME FROM TBL_USERS WHERE USER_USERNAME LIKE'" + txtUsername.Text + "'", conn);
             string get_uname = Convert.ToString(command.ExecuteScalar());
             conn.Close();
-            if (txtLastname.Text == "" || txtFirstname.Text == "" || txtMiddlename.Text == "" || txtUsername.Text == "" || txtPassword.Text == "" || txtContactNo.Text == "" || PB_image.ImageLocation == null || txtUsername.Text == "" || cmbquest.Text == "" || txtquestion.Text == "")
+            if (txtLastname.Text == "" || txtFirstname.Text == "" || txtMiddlename.Text == "" || txtUsername.Text == "" || txtPassword.Text == "" || txtContactNo.Text == "" || PB_image.ImageLocation == null || txtUsername.Text == "")
             {
                 MessageBox.Show("Information Required! Please fill out the necessary fields", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
@@ -171,9 +129,10 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                 u.USER_IMAGE = Control_variables.img;
                 Image im = Image.FromFile(Control_variables.img);
                 u.USER_IMAGE = Photo.byteArrayToBase64String(Photo.imageToByteArray(im));
-                db.SP_USERSAVE(txtLastname.Text, txtFirstname.Text, txtMiddlename.Text, txtUsername.Text, txtPassword.Text, txtContactNo.Text, Control_variables.type, int.Parse(cmbutype.SelectedValue.ToString()), Control_variables.img, cmbquest.Text, txtAns.Text);
+                db.SP_USERSAVE(txtLastname.Text, txtFirstname.Text, txtMiddlename.Text, txtUsername.Text, txtPassword.Text, txtContactNo.Text, Control_variables.type, int.Parse(cmbutype.SelectedValue.ToString()), Control_variables.img);
                 MessageBox.Show("Successfully Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearAll();
+
             }
         }
 
@@ -185,15 +144,15 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void txtLastname_TextChanged(object sender, EventArgs e)
         {
             string lname = txtLastname.Text;
-            if (lname.Length >= 3)
+            if (lname.Length >= 4)
             {
-                if (txtFirstname.TextLength >= 3)
+                if (txtFirstname.TextLength >= 4)
                 {
-                    txtUsername.Text = lname.Substring(0, 3) + txtFirstname.Text.Substring(0, 3);
+                    txtUsername.Text = lname.Substring(0, 4) + txtFirstname.Text.Substring(0, 4);
                 }
                 else
                 {
-                    txtUsername.Text = lname.Substring(0, 3);
+                    txtUsername.Text = lname.Substring(0, 4);
                 }
 
 
@@ -210,9 +169,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void txtFirstname_Leave(object sender, EventArgs e)
         {
             string fname = txtFirstname.Text;
-            if (fname.Length >= 3)
+            if (fname.Length >= 4)
             {
-                txtUsername.Text = txtLastname.Text.Substring(0, 3) + fname.Substring(0, 3);
+                txtUsername.Text = txtLastname.Text.Substring(0, 4) + fname.Substring(0, 4);
             }
         }
 

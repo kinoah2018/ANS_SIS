@@ -52,7 +52,7 @@
             this.Label2 = new System.Windows.Forms.Label();
             this.Label3 = new System.Windows.Forms.Label();
             this.Label5 = new System.Windows.Forms.Label();
-            this.lbltype = new System.Windows.Forms.Label();
+            this.lbluname = new System.Windows.Forms.Label();
             this.groupChangePass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_image)).BeginInit();
             this.SuspendLayout();
@@ -330,18 +330,18 @@
             this.Label5.TabIndex = 123;
             this.Label5.Text = "Position :";
             // 
-            // lbltype
+            // lbluname
             // 
-            this.lbltype.AutoSize = true;
-            this.lbltype.BackColor = System.Drawing.Color.Transparent;
-            this.lbltype.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltype.ForeColor = System.Drawing.Color.Black;
-            this.lbltype.Location = new System.Drawing.Point(160, 240);
-            this.lbltype.Name = "lbltype";
-            this.lbltype.Size = new System.Drawing.Size(27, 18);
-            this.lbltype.TabIndex = 130;
-            this.lbltype.Text = "ID";
-            this.lbltype.Visible = false;
+            this.lbluname.AutoSize = true;
+            this.lbluname.BackColor = System.Drawing.Color.Transparent;
+            this.lbluname.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluname.ForeColor = System.Drawing.Color.Black;
+            this.lbluname.Location = new System.Drawing.Point(160, 240);
+            this.lbluname.Name = "lbluname";
+            this.lbluname.Size = new System.Drawing.Size(27, 18);
+            this.lbluname.TabIndex = 130;
+            this.lbluname.Text = "ID";
+            this.lbluname.Visible = false;
             // 
             // UserProfileForm
             // 
@@ -349,7 +349,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 467);
-            this.Controls.Add(this.lbltype);
+            this.Controls.Add(this.lbluname);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupChangePass);
             this.Controls.Add(this.btnChange);
@@ -405,6 +405,6 @@
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Label Label5;
-        internal System.Windows.Forms.Label lbltype;
+        internal System.Windows.Forms.Label lbluname;
     }
 }

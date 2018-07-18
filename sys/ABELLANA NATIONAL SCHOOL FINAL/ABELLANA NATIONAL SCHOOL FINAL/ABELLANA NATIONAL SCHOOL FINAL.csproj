@@ -79,12 +79,6 @@
     <Compile Include="ForgotPassForm.Designer.cs">
       <DependentUpon>ForgotPassForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeStaffForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HomeStaffForm.Designer.cs">
-      <DependentUpon>HomeStaffForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,11 +105,11 @@
       <DependentUpon>StudentGradeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Hashpass.cs" />
-    <Compile Include="HomeAdminForm.cs">
+    <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomeAdminForm.Designer.cs">
-      <DependentUpon>HomeAdminForm.cs</DependentUpon>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -224,9 +218,6 @@
     <EmbeddedResource Include="ForgotPassForm.resx">
       <DependentUpon>ForgotPassForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeStaffForm.resx">
-      <DependentUpon>HomeStaffForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StudentBookForm.resx">
       <DependentUpon>StudentBookForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,8 +230,8 @@
     <EmbeddedResource Include="StudentGradeForm.resx">
       <DependentUpon>StudentGradeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeAdminForm.resx">
-      <DependentUpon>HomeAdminForm.cs</DependentUpon>
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

@@ -94,7 +94,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(129, 28);
             this.btnSearch.TabIndex = 194;
-            this.btnSearch.Text = "VIEW GRADE";
+            this.btnSearch.Text = "VIEW STUDENT";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // StudentGradeForm

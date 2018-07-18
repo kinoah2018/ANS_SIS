@@ -1,6 +1,6 @@
 ﻿namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 {
-    partial class HomeAdminForm
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeAdminForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.menuStrip3 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.TProfiletoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSectiontoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.TScheduletoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSubjecttoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProfiletoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.BMItoolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.GradestoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SectiontoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.RequirmentstoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ComplimentarytoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
+            this.PaymenttoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip13 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
             this.YearReporttoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +81,16 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbUsername = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip8 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip12 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
+            this.menuStrip3.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.menuStrip13.SuspendLayout();
             this.menuStrip11.SuspendLayout();
             this.menuStrip9.SuspendLayout();
@@ -76,6 +104,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.menuStrip8.SuspendLayout();
+            this.menuStrip12.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -90,6 +120,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.menuStrip12);
+            this.panel2.Controls.Add(this.menuStrip8);
+            this.panel2.Controls.Add(this.menuStrip3);
+            this.panel2.Controls.Add(this.menuStrip2);
+            this.panel2.Controls.Add(this.menuStrip1);
             this.panel2.Controls.Add(this.menuStrip13);
             this.panel2.Controls.Add(this.menuStrip11);
             this.panel2.Controls.Add(this.menuStrip9);
@@ -101,6 +136,180 @@
             this.panel2.Size = new System.Drawing.Size(1334, 105);
             this.panel2.TabIndex = 25;
             // 
+            // menuStrip3
+            // 
+            this.menuStrip3.BackColor = System.Drawing.Color.White;
+            this.menuStrip3.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip3.GripMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3});
+            this.menuStrip3.Location = new System.Drawing.Point(534, 3);
+            this.menuStrip3.Name = "menuStrip3";
+            this.menuStrip3.Padding = new System.Windows.Forms.Padding(6, 2, 6, 2);
+            this.menuStrip3.Size = new System.Drawing.Size(94, 94);
+            this.menuStrip3.TabIndex = 39;
+            this.menuStrip3.Text = "menuStrip3";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
+            this.toolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem3.MergeIndex = 0;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(80, 90);
+            this.toolStripMenuItem3.Text = "Inquiry";
+            this.toolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.BackColor = System.Drawing.Color.White;
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2});
+            this.menuStrip2.Location = new System.Drawing.Point(361, 3);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(6, 2, 6, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(155, 94);
+            this.menuStrip2.TabIndex = 38;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TProfiletoolStripMenuItem10,
+            this.TSectiontoolStripMenuItem10,
+            this.TScheduletoolStripMenuItem10,
+            this.TSubjecttoolStripMenuItem10});
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
+            this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem2.MergeIndex = 0;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(141, 90);
+            this.toolStripMenuItem2.Text = "Teacher Information";
+            this.toolStripMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // TProfiletoolStripMenuItem10
+            // 
+            this.TProfiletoolStripMenuItem10.Name = "TProfiletoolStripMenuItem10";
+            this.TProfiletoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
+            this.TProfiletoolStripMenuItem10.Text = "Profile";
+            // 
+            // TSectiontoolStripMenuItem10
+            // 
+            this.TSectiontoolStripMenuItem10.Name = "TSectiontoolStripMenuItem10";
+            this.TSectiontoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
+            this.TSectiontoolStripMenuItem10.Text = "Section";
+            // 
+            // TScheduletoolStripMenuItem10
+            // 
+            this.TScheduletoolStripMenuItem10.Name = "TScheduletoolStripMenuItem10";
+            this.TScheduletoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
+            this.TScheduletoolStripMenuItem10.Text = "Schedule";
+            // 
+            // TSubjecttoolStripMenuItem10
+            // 
+            this.TSubjecttoolStripMenuItem10.Name = "TSubjecttoolStripMenuItem10";
+            this.TSubjecttoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
+            this.TSubjecttoolStripMenuItem10.Text = "Subject";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(188, 4);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 6, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(156, 94);
+            this.menuStrip1.TabIndex = 37;
+            this.menuStrip1.Text = "menuStrip2";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.White;
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ProfiletoolStripMenuItem10,
+            this.GradestoolStripMenuItem10,
+            this.SectiontoolStripMenuItem10,
+            this.RequirmentstoolStripMenuItem10,
+            this.ComplimentarytoolStripMenuItem10,
+            this.PaymenttoolStripMenuItem10});
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem1.MergeIndex = 0;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(142, 90);
+            this.toolStripMenuItem1.Text = "Student Information";
+            this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // ProfiletoolStripMenuItem10
+            // 
+            this.ProfiletoolStripMenuItem10.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BMItoolStripMenuItem4});
+            this.ProfiletoolStripMenuItem10.Name = "ProfiletoolStripMenuItem10";
+            this.ProfiletoolStripMenuItem10.Size = new System.Drawing.Size(210, 22);
+            this.ProfiletoolStripMenuItem10.Text = "Profile";
+            // 
+            // BMItoolStripMenuItem4
+            // 
+            this.BMItoolStripMenuItem4.Name = "BMItoolStripMenuItem4";
+            this.BMItoolStripMenuItem4.Size = new System.Drawing.Size(97, 22);
+            this.BMItoolStripMenuItem4.Text = "BMI";
+            // 
+            // GradestoolStripMenuItem10
+            // 
+            this.GradestoolStripMenuItem10.Name = "GradestoolStripMenuItem10";
+            this.GradestoolStripMenuItem10.Size = new System.Drawing.Size(210, 22);
+            this.GradestoolStripMenuItem10.Text = "Grades";
+            // 
+            // SectiontoolStripMenuItem10
+            // 
+            this.SectiontoolStripMenuItem10.Name = "SectiontoolStripMenuItem10";
+            this.SectiontoolStripMenuItem10.Size = new System.Drawing.Size(210, 22);
+            this.SectiontoolStripMenuItem10.Text = "Section";
+            // 
+            // RequirmentstoolStripMenuItem10
+            // 
+            this.RequirmentstoolStripMenuItem10.Name = "RequirmentstoolStripMenuItem10";
+            this.RequirmentstoolStripMenuItem10.Size = new System.Drawing.Size(210, 22);
+            this.RequirmentstoolStripMenuItem10.Text = "Requirments";
+            // 
+            // ComplimentarytoolStripMenuItem10
+            // 
+            this.ComplimentarytoolStripMenuItem10.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripComboBox2,
+            this.toolStripComboBox3});
+            this.ComplimentarytoolStripMenuItem10.Name = "ComplimentarytoolStripMenuItem10";
+            this.ComplimentarytoolStripMenuItem10.Size = new System.Drawing.Size(210, 22);
+            this.ComplimentarytoolStripMenuItem10.Text = "Complimentary Books";
+            // 
+            // toolStripComboBox2
+            // 
+            this.toolStripComboBox2.Name = "toolStripComboBox2";
+            this.toolStripComboBox2.Size = new System.Drawing.Size(121, 23);
+            this.toolStripComboBox2.Text = "Returning";
+            // 
+            // toolStripComboBox3
+            // 
+            this.toolStripComboBox3.Name = "toolStripComboBox3";
+            this.toolStripComboBox3.Size = new System.Drawing.Size(121, 23);
+            this.toolStripComboBox3.Text = "Releasing";
+            // 
+            // PaymenttoolStripMenuItem10
+            // 
+            this.PaymenttoolStripMenuItem10.Name = "PaymenttoolStripMenuItem10";
+            this.PaymenttoolStripMenuItem10.Size = new System.Drawing.Size(210, 22);
+            this.PaymenttoolStripMenuItem10.Text = "Payment Details";
+            // 
             // menuStrip13
             // 
             this.menuStrip13.BackColor = System.Drawing.Color.White;
@@ -108,7 +317,7 @@
             this.menuStrip13.GripMargin = new System.Windows.Forms.Padding(6, 2, 6, 2);
             this.menuStrip13.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem17});
-            this.menuStrip13.Location = new System.Drawing.Point(747, 3);
+            this.menuStrip13.Location = new System.Drawing.Point(1065, 3);
             this.menuStrip13.Name = "menuStrip13";
             this.menuStrip13.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
             this.menuStrip13.Size = new System.Drawing.Size(106, 94);
@@ -158,7 +367,7 @@
             this.menuStrip11.GripMargin = new System.Windows.Forms.Padding(6, 2, 6, 2);
             this.menuStrip11.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem11});
-            this.menuStrip11.Location = new System.Drawing.Point(575, 3);
+            this.menuStrip11.Location = new System.Drawing.Point(794, 2);
             this.menuStrip11.Name = "menuStrip11";
             this.menuStrip11.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
             this.menuStrip11.Size = new System.Drawing.Size(107, 94);
@@ -184,7 +393,7 @@
             this.menuStrip9.GripMargin = new System.Windows.Forms.Padding(6, 2, 6, 2);
             this.menuStrip9.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem7});
-            this.menuStrip9.Location = new System.Drawing.Point(913, 3);
+            this.menuStrip9.Location = new System.Drawing.Point(1197, 3);
             this.menuStrip9.Name = "menuStrip9";
             this.menuStrip9.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
             this.menuStrip9.Size = new System.Drawing.Size(106, 94);
@@ -211,7 +420,7 @@
             this.menuRegistration.GripMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.menuRegistration.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.msRegistration});
-            this.menuRegistration.Location = new System.Drawing.Point(384, 3);
+            this.menuRegistration.Location = new System.Drawing.Point(38, 3);
             this.menuRegistration.Name = "menuRegistration";
             this.menuRegistration.Padding = new System.Windows.Forms.Padding(6, 2, 6, 2);
             this.menuRegistration.Size = new System.Drawing.Size(138, 94);
@@ -437,26 +646,99 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // HomeAdminForm
+            // menuStrip8
+            // 
+            this.menuStrip8.BackColor = System.Drawing.Color.White;
+            this.menuStrip8.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip8.GripMargin = new System.Windows.Forms.Padding(6, 2, 6, 2);
+            this.menuStrip8.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem9});
+            this.menuStrip8.Location = new System.Drawing.Point(657, 5);
+            this.menuStrip8.Name = "menuStrip8";
+            this.menuStrip8.Padding = new System.Windows.Forms.Padding(2);
+            this.menuStrip8.Size = new System.Drawing.Size(108, 93);
+            this.menuStrip8.TabIndex = 41;
+            this.menuStrip8.Text = "menuStrip8";
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5});
+            this.toolStripMenuItem9.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem9.Image")));
+            this.toolStripMenuItem9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem9.MergeIndex = 0;
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(102, 89);
+            this.toolStripMenuItem9.Text = "Transactions";
+            this.toolStripMenuItem9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(235, 22);
+            this.toolStripMenuItem4.Text = "Requisition of Requirment";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(235, 22);
+            this.toolStripMenuItem5.Text = "Payment";
+            // 
+            // menuStrip12
+            // 
+            this.menuStrip12.BackColor = System.Drawing.Color.White;
+            this.menuStrip12.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip12.GripMargin = new System.Windows.Forms.Padding(6, 2, 6, 2);
+            this.menuStrip12.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem12});
+            this.menuStrip12.Location = new System.Drawing.Point(928, 3);
+            this.menuStrip12.Name = "menuStrip12";
+            this.menuStrip12.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
+            this.menuStrip12.Size = new System.Drawing.Size(106, 94);
+            this.menuStrip12.TabIndex = 40;
+            this.menuStrip12.Text = "menuStrip12";
+            // 
+            // toolStripMenuItem12
+            // 
+            this.toolStripMenuItem12.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem12.Image")));
+            this.toolStripMenuItem12.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem12.MergeIndex = 0;
+            this.toolStripMenuItem12.Name = "toolStripMenuItem12";
+            this.toolStripMenuItem12.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(88, 90);
+            this.toolStripMenuItem12.Text = "Inventory";
+            this.toolStripMenuItem12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1334, 650);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "HomeAdminForm";
+            this.Name = "HomeForm";
             this.Text = "HomeForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.HomeForm_Activated);
             this.Load += new System.EventHandler(this.HomeForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.menuStrip3.ResumeLayout(false);
+            this.menuStrip3.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.menuStrip13.ResumeLayout(false);
             this.menuStrip13.PerformLayout();
             this.menuStrip11.ResumeLayout(false);
@@ -480,6 +762,10 @@
             this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.menuStrip8.ResumeLayout(false);
+            this.menuStrip8.PerformLayout();
+            this.menuStrip12.ResumeLayout(false);
+            this.menuStrip12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -518,5 +804,30 @@
         private System.Windows.Forms.ToolStripMenuItem YearReporttoolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem HonStudtoolStripMenuItem10;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        public System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ProfiletoolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem BMItoolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem GradestoolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem SectiontoolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem RequirmentstoolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem ComplimentarytoolStripMenuItem10;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
+        private System.Windows.Forms.ToolStripMenuItem PaymenttoolStripMenuItem10;
+        public System.Windows.Forms.MenuStrip menuStrip2;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem TProfiletoolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem TSectiontoolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem TScheduletoolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem TSubjecttoolStripMenuItem10;
+        public System.Windows.Forms.MenuStrip menuStrip3;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.MenuStrip menuStrip8;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.MenuStrip menuStrip12;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
     }
 }
