@@ -23,15 +23,15 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             int result1 = db.SP_ACCOUNTRECOVERY(txtUsername.Text, cmbSques.Text, txtans.Text).Count();
             if (txtUsername.Text == "" || cmbSques.Text == "" || txtans.Text == "")
             {
-                MessageBox.Show("Input all fields");
+                MessageBox.Show("Please input all information needed", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (result1 != 1)
             {
-                MessageBox.Show("The data you been input was not match!");
+                MessageBox.Show("The data you been input was not exist or not match!", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else 
             {
-                MessageBox.Show("Proceed to Changepass !");
+                MessageBox.Show("You may now proceed to Changepass !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ChangePassForm2 cpf = new ChangePassForm2();
                 cpf.txtUsername.Text = txtUsername.Text;
                 this.Close();

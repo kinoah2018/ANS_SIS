@@ -73,7 +73,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                             conn.Open();
                             SqlCommand get_id = new SqlCommand("SELECT USER_ID FROM TBL_USERS WHERE USER_USERNAME='" + txtUsername.Text + "'", conn);
                             Control_variables.current_id = Convert.ToInt32(get_id.ExecuteScalar());
-                            
+
+                            changepass.lbname.Text = Control_variables.username;
                             changepass.lbusername.Text = usern;
                             changepass.txtDefaultpass.Text = pass.ToString();
 

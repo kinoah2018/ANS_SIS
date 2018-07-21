@@ -266,7 +266,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(122, 38);
             this.button7.TabIndex = 16;
-            this.button7.Text = "Clear";
+            this.button7.Text = "Cancel";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -275,7 +275,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(535, 5);
+            this.label4.Location = new System.Drawing.Point(626, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(159, 25);
             this.label4.TabIndex = 107;

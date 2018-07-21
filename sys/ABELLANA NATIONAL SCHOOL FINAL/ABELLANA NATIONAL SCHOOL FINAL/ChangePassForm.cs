@@ -35,7 +35,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                             int get_UID2 = Convert.ToInt32(get_UID.ExecuteScalar());
                             conn.Close();
 
-                            db.SP_CHANGEDEFAULTPASS(lbusername.Text,txtNewpass.Text);
+                            db.SP_CHANGEDEFAULTPASS(get_UID2,txtuname.Text,txtNewpass.Text);
                             db.SP_SECUSAVE(cmbsecq.Text,txtans.Text,get_UID2);
                             DialogResult dialog = MessageBox.Show("Information successfully changed ! \nDo you want to continue logging in ?", "Congrats !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                             if (dialog == DialogResult.Yes)
@@ -130,7 +130,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("You are changing your default pass! \nDo you want to close this form?","Oops.",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+            DialogResult dialog = MessageBox.Show("You are changing some of your Information! \nDo you want to close this form?","Ooops !",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
             if (DialogResult.Yes == dialog)
             {
                 this.Close();
@@ -144,6 +144,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void ChangePassForm_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void lbusername_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

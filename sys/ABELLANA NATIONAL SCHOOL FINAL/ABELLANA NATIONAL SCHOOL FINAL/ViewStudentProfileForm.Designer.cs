@@ -56,6 +56,7 @@
             this.dgvstudent_view.Location = new System.Drawing.Point(45, 98);
             this.dgvstudent_view.Name = "dgvstudent_view";
             this.dgvstudent_view.ReadOnly = true;
+            this.dgvstudent_view.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvstudent_view.Size = new System.Drawing.Size(1295, 343);
             this.dgvstudent_view.TabIndex = 115;
             this.dgvstudent_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvstudent_view_CellContentClick);
@@ -74,6 +75,7 @@
             this.btnSearch.TabIndex = 180;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -83,6 +85,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(310, 25);
             this.txtSearch.TabIndex = 179;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // Button3
             // 
@@ -110,6 +113,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.dgvstudent_view);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 223);
             this.Name = "ViewStudentProfileForm";

@@ -28,10 +28,41 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             {
                 isactive = false;
             }
-            db.SP_STUPDATE(int.Parse(txtSTID.Text),txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, cmbsyear.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text
-               , txtadd.Text, cmbgen.Text, txtcnumber.Text,isactive, decimal.Parse(txtheight.Text), decimal.Parse(txtheight.Text), txtbp.Text,int.Parse(txtPID.Text), txtpname.Text, txtcnumber.Text, txtoccu.Text, txtptype.Text );
-            MessageBox.Show("Wala na Finish na!");
-            
+            if (txtfname.Text == "" || txtlname.Text == "" || txtmname.Text == "" || cmbsyear.Text == "" || cmbylevel.Text == "" || dtpbdate.Text == "" || txtage.Text == "" || txtbplace.Text == "" || txtadd.Text == "" || cmbgen.Text == "" || txtcnumber.Text == "" || txtheight.Text == "" || txtweight.Text == "" || txtbp.Text == "" || txtpname.Text == "" || txtcnumber.Text == "" || txtoccu.Text == "")
+            {
+                MessageBox.Show("Input all fields.", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+            else
+            {
+                db.SP_STUPDATE(int.Parse(txtSTID.Text), txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, cmbsyear.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text, txtadd.Text, cmbgen.Text, txtcnumber.Text, isactive, float.Parse(txtheight.Text), float.Parse(txtheight.Text), txtbp.Text, int.Parse(txtPID.Text), txtpname.Text, txtcnumber.Text, txtoccu.Text);
+                MessageBox.Show("Student Successfully Update !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearALL();
+                this.Close();
+            }
+        }
+        public void ClearALL()
+        {
+            txtfname.Clear();
+            txtlname.Clear();
+            txtmname.Clear();
+            cmbsyear.SelectedText = "";
+            cmbylevel.SelectedText = "";
+            dtpbdate.ResetText();
+            txtage.Text = "0";
+            txtbplace.Clear();
+            txtadd.Clear();
+            cmbgen.SelectedText = "";
+            txtheight.Clear();
+            txtweight.Clear();
+            txtbp.Clear();
+            txtpname.Clear();
+            txtcnumber.Clear();
+            txtoccu.Clear();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

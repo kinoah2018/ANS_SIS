@@ -30,19 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentProfileForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtcstid = new System.Windows.Forms.TextBox();
             this.cmbgen = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtadd = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.txtcnumber = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtoccu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtpname = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtptype = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,8 +75,6 @@
             this.btnView = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.Button3 = new System.Windows.Forms.Button();
-            this.txtcnumber = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -83,6 +83,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.txtcstid);
             this.groupBox1.Controls.Add(this.cmbgen);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.txtadd);
@@ -120,6 +122,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student Information";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(10, 33);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(126, 18);
+            this.label16.TabIndex = 120;
+            this.label16.Text = "STUDENT_ID :";
+            // 
+            // txtcstid
+            // 
+            this.txtcstid.Enabled = false;
+            this.txtcstid.Location = new System.Drawing.Point(142, 30);
+            this.txtcstid.Name = "txtcstid";
+            this.txtcstid.Size = new System.Drawing.Size(191, 27);
+            this.txtcstid.TabIndex = 119;
+            // 
             // cmbgen
             // 
             this.cmbgen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -143,7 +162,7 @@
             // 
             // txtadd
             // 
-            this.txtadd.Location = new System.Drawing.Point(142, 320);
+            this.txtadd.Location = new System.Drawing.Point(142, 335);
             this.txtadd.Name = "txtadd";
             this.txtadd.Size = new System.Drawing.Size(191, 27);
             this.txtadd.TabIndex = 116;
@@ -151,7 +170,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(50, 323);
+            this.label12.Location = new System.Drawing.Point(50, 338);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 18);
             this.label12.TabIndex = 115;
@@ -161,29 +180,36 @@
             // 
             this.groupBox2.Controls.Add(this.txtcnumber);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.txtoccu);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtpname);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtptype);
             this.groupBox2.Location = new System.Drawing.Point(469, 210);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(441, 162);
             this.groupBox2.TabIndex = 114;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Parent\'s Information";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // label14
+            // txtcnumber
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 131);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(152, 18);
-            this.label14.TabIndex = 121;
-            this.label14.Text = "Type of Parent\'s :";
+            this.txtcnumber.Location = new System.Drawing.Point(170, 62);
+            this.txtcnumber.MaxLength = 11;
+            this.txtcnumber.Name = "txtcnumber";
+            this.txtcnumber.Size = new System.Drawing.Size(181, 27);
+            this.txtcnumber.TabIndex = 123;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(153, 18);
+            this.label10.TabIndex = 122;
+            this.label10.Text = "Contact Number :";
             // 
             // label13
             // 
@@ -237,18 +263,10 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Gender";
             // 
-            // txtptype
-            // 
-            this.txtptype.Location = new System.Drawing.Point(170, 128);
-            this.txtptype.Name = "txtptype";
-            this.txtptype.Size = new System.Drawing.Size(107, 27);
-            this.txtptype.TabIndex = 16;
-            this.txtptype.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtptype_KeyPress);
-            // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(27, 117);
+            this.label23.Location = new System.Drawing.Point(27, 132);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(109, 18);
             this.label23.TabIndex = 35;
@@ -257,7 +275,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(9, 84);
+            this.label22.Location = new System.Drawing.Point(9, 99);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(127, 18);
             this.label22.TabIndex = 34;
@@ -266,7 +284,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 51);
+            this.label2.Location = new System.Drawing.Point(26, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 18);
             this.label2.TabIndex = 33;
@@ -274,7 +292,7 @@
             // 
             // txtlname
             // 
-            this.txtlname.Location = new System.Drawing.Point(142, 114);
+            this.txtlname.Location = new System.Drawing.Point(142, 129);
             this.txtlname.Name = "txtlname";
             this.txtlname.Size = new System.Drawing.Size(191, 27);
             this.txtlname.TabIndex = 32;
@@ -282,7 +300,7 @@
             // 
             // txtmname
             // 
-            this.txtmname.Location = new System.Drawing.Point(142, 81);
+            this.txtmname.Location = new System.Drawing.Point(142, 96);
             this.txtmname.Name = "txtmname";
             this.txtmname.Size = new System.Drawing.Size(191, 27);
             this.txtmname.TabIndex = 31;
@@ -354,7 +372,7 @@
             // dtpbdate
             // 
             this.dtpbdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpbdate.Location = new System.Drawing.Point(142, 210);
+            this.dtpbdate.Location = new System.Drawing.Point(142, 225);
             this.dtpbdate.Name = "dtpbdate";
             this.dtpbdate.Size = new System.Drawing.Size(191, 27);
             this.dtpbdate.TabIndex = 22;
@@ -369,7 +387,7 @@
             "2019 - 2020",
             "2021 - 2022",
             "2022 - 2023"});
-            this.cmbsyear.Location = new System.Drawing.Point(142, 178);
+            this.cmbsyear.Location = new System.Drawing.Point(142, 193);
             this.cmbsyear.Name = "cmbsyear";
             this.cmbsyear.Size = new System.Drawing.Size(121, 26);
             this.cmbsyear.TabIndex = 21;
@@ -383,7 +401,7 @@
             "2ND YEAR",
             "3RD YEAR",
             "4TH YEAR"});
-            this.cmbylevel.Location = new System.Drawing.Point(142, 146);
+            this.cmbylevel.Location = new System.Drawing.Point(142, 161);
             this.cmbylevel.Name = "cmbylevel";
             this.cmbylevel.Size = new System.Drawing.Size(121, 26);
             this.cmbylevel.TabIndex = 20;
@@ -400,7 +418,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 281);
+            this.label7.Location = new System.Drawing.Point(27, 296);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 18);
             this.label7.TabIndex = 11;
@@ -408,7 +426,7 @@
             // 
             // txtbplace
             // 
-            this.txtbplace.Location = new System.Drawing.Point(142, 278);
+            this.txtbplace.Location = new System.Drawing.Point(142, 293);
             this.txtbplace.Multiline = true;
             this.txtbplace.Name = "txtbplace";
             this.txtbplace.Size = new System.Drawing.Size(315, 31);
@@ -417,7 +435,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(84, 245);
+            this.label6.Location = new System.Drawing.Point(84, 260);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 18);
             this.label6.TabIndex = 9;
@@ -426,7 +444,7 @@
             // txtage
             // 
             this.txtage.Enabled = false;
-            this.txtage.Location = new System.Drawing.Point(142, 242);
+            this.txtage.Location = new System.Drawing.Point(142, 257);
             this.txtage.Name = "txtage";
             this.txtage.Size = new System.Drawing.Size(46, 27);
             this.txtage.TabIndex = 8;
@@ -436,7 +454,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 216);
+            this.label5.Location = new System.Drawing.Point(39, 231);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 18);
             this.label5.TabIndex = 7;
@@ -445,7 +463,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 149);
+            this.label4.Location = new System.Drawing.Point(30, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 18);
             this.label4.TabIndex = 5;
@@ -454,7 +472,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 181);
+            this.label3.Location = new System.Drawing.Point(20, 196);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 18);
             this.label3.TabIndex = 5;
@@ -462,7 +480,7 @@
             // 
             // txtfname
             // 
-            this.txtfname.Location = new System.Drawing.Point(142, 48);
+            this.txtfname.Location = new System.Drawing.Point(142, 63);
             this.txtfname.Name = "txtfname";
             this.txtfname.Size = new System.Drawing.Size(191, 27);
             this.txtfname.TabIndex = 2;
@@ -547,22 +565,6 @@
             this.Button3.UseVisualStyleBackColor = false;
             this.Button3.Click += new System.EventHandler(this.Button3_Click_1);
             // 
-            // txtcnumber
-            // 
-            this.txtcnumber.Location = new System.Drawing.Point(170, 62);
-            this.txtcnumber.Name = "txtcnumber";
-            this.txtcnumber.Size = new System.Drawing.Size(181, 27);
-            this.txtcnumber.TabIndex = 123;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(153, 18);
-            this.label10.TabIndex = 122;
-            this.label10.Text = "Contact Number :";
-            // 
             // StudentProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,6 +577,7 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 223);
             this.Name = "StudentProfileForm";
@@ -613,7 +616,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Button Button3;
@@ -625,7 +627,6 @@
         public System.Windows.Forms.DateTimePicker dtpbdate;
         public System.Windows.Forms.ComboBox cmbsyear;
         public System.Windows.Forms.ComboBox cmbylevel;
-        public System.Windows.Forms.TextBox txtptype;
         public System.Windows.Forms.TextBox txtbplace;
         public System.Windows.Forms.TextBox txtage;
         public System.Windows.Forms.TextBox txtfname;
@@ -639,6 +640,8 @@
         public System.Windows.Forms.TextBox txtadd;
         public System.Windows.Forms.ComboBox cmbgen;
         public System.Windows.Forms.TextBox txtcnumber;
+        private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.TextBox txtcstid;
 
 
     }

@@ -130,7 +130,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                 Image im = Image.FromFile(Control_variables.img);
                 u.USER_IMAGE = Photo.byteArrayToBase64String(Photo.imageToByteArray(im));
                 db.SP_USERSAVE(txtLastname.Text, txtFirstname.Text, txtMiddlename.Text, txtUsername.Text, txtPassword.Text, txtContactNo.Text, Control_variables.type, int.Parse(cmbutype.SelectedValue.ToString()), Control_variables.img);
-                MessageBox.Show("Successfully Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("User Successfully Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearAll();
 
             }

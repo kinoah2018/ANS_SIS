@@ -27,7 +27,19 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void StudentProfile_Load(object sender, EventArgs e)
         {
-            
+            if (CurrentID()==1)
+            {
+                txtcstid.Text = "ST-" + (CurrentID().ToString().PadLeft(5, '0'));
+            }
+            else
+            {
+                txtcstid.Text = "ST-" + (CurrentID() + 1).ToString().PadLeft(5, '0');
+            }
+        }
+
+        public int CurrentID()
+        {
+            return Convert.ToInt32(db.ST_CURRENTID());
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -43,11 +55,48 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
-            db.SP_STSAVE(txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, cmbsyear.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text
-               , txtadd.Text, cmbgen.Text, txtcnumber.Text, decimal.Parse(txtheight.Text), decimal.Parse(txtheight.Text), txtbp.Text, txtpname.Text, txtcnumber.Text, txtoccu.Text, txtptype.Text);
-            MessageBox.Show("Successfully Saved!");
+            if (txtfname.Text==""||txtlname.Text==""||txtmname.Text==""||cmbsyear.Text==""||cmbylevel.Text==""||dtpbdate.Text==""||txtage.Text==""||txtbplace.Text==""||txtadd.Text==""||cmbgen.Text==""||txtcnumber.Text==""||txtheight.Text==""||txtweight.Text==""||txtbp.Text==""||txtpname.Text==""||txtcnumber.Text==""||txtoccu.Text=="")
+            {
+                MessageBox.Show("Input all fields.","Ooops !",MessageBoxButtons.OK,MessageBoxIcon.Hand);
+            }else
+	        {
+                db.SP_STSAVE(txtcstid.Text, txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, cmbsyear.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text, txtadd.Text, cmbgen.Text, txtcnumber.Text, float.Parse(txtheight.Text), float.Parse(txtweight.Text), txtbp.Text, txtpname.Text, txtcnumber.Text, txtoccu.Text);
+                 MessageBox.Show("Student Successfully Saved!");
+                 ClearALL();
+	        }
 
+            
+
+        }
+
+        public void ClearALL()
+        {
+            if (CurrentID() == 1)
+            {
+                txtcstid.Text = "ST-" + (CurrentID().ToString().PadLeft(5, '0'));
+            }
+            else
+            {
+                txtcstid.Text = "ST-" + (CurrentID() + 1).ToString().PadLeft(5, '0');
+            }
+            txtfname.Clear();
+            txtlname.Clear();
+            txtmname.Clear();
+            cmbsyear.SelectedItem = null;
+            cmbylevel.SelectedItem = null;
+            dtpbdate.ResetText();
+            txtage.Text = "0";
+            txtbplace.Clear();
+            txtadd.Clear();
+            cmbgen.SelectedItem = null;
+            cmbstatus.SelectedItem = null;
+            txtheight.Clear();
+            txtweight.Clear();
+            txtbp.Clear();
+            txtpname.Clear();
+            txtcnumber.Clear();
+            txtoccu.Clear();
+            
         }
 
         private void dtpbdate_ValueChanged(object sender, EventArgs e)
@@ -133,6 +182,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             {
                 e.Handled = true;
             }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
 
        

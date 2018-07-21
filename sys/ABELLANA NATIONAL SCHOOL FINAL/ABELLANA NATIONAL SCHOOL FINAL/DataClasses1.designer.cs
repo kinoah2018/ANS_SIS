@@ -30,48 +30,18 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertTBL_BOOK(TBL_BOOK instance);
-    partial void UpdateTBL_BOOK(TBL_BOOK instance);
-    partial void DeleteTBL_BOOK(TBL_BOOK instance);
-    partial void InsertTBL_USERTYPE(TBL_USERTYPE instance);
-    partial void UpdateTBL_USERTYPE(TBL_USERTYPE instance);
-    partial void DeleteTBL_USERTYPE(TBL_USERTYPE instance);
-    partial void InsertTBL_GRADE(TBL_GRADE instance);
-    partial void UpdateTBL_GRADE(TBL_GRADE instance);
-    partial void DeleteTBL_GRADE(TBL_GRADE instance);
     partial void InsertTBL_PARENT(TBL_PARENT instance);
     partial void UpdateTBL_PARENT(TBL_PARENT instance);
     partial void DeleteTBL_PARENT(TBL_PARENT instance);
-    partial void InsertTBL_PAYMENTDETAIL(TBL_PAYMENTDETAIL instance);
-    partial void UpdateTBL_PAYMENTDETAIL(TBL_PAYMENTDETAIL instance);
-    partial void DeleteTBL_PAYMENTDETAIL(TBL_PAYMENTDETAIL instance);
-    partial void InsertTBL_REQUIRMENT(TBL_REQUIRMENT instance);
-    partial void UpdateTBL_REQUIRMENT(TBL_REQUIRMENT instance);
-    partial void DeleteTBL_REQUIRMENT(TBL_REQUIRMENT instance);
-    partial void InsertTBL_SECTION(TBL_SECTION instance);
-    partial void UpdateTBL_SECTION(TBL_SECTION instance);
-    partial void DeleteTBL_SECTION(TBL_SECTION instance);
-    partial void InsertTBL_SECTIONSUBJECT(TBL_SECTIONSUBJECT instance);
-    partial void UpdateTBL_SECTIONSUBJECT(TBL_SECTIONSUBJECT instance);
-    partial void DeleteTBL_SECTIONSUBJECT(TBL_SECTIONSUBJECT instance);
+    partial void InsertTBL_USERTYPE(TBL_USERTYPE instance);
+    partial void UpdateTBL_USERTYPE(TBL_USERTYPE instance);
+    partial void DeleteTBL_USERTYPE(TBL_USERTYPE instance);
     partial void InsertTBL_SECURITY(TBL_SECURITY instance);
     partial void UpdateTBL_SECURITY(TBL_SECURITY instance);
     partial void DeleteTBL_SECURITY(TBL_SECURITY instance);
     partial void InsertTBL_STUDENT(TBL_STUDENT instance);
     partial void UpdateTBL_STUDENT(TBL_STUDENT instance);
     partial void DeleteTBL_STUDENT(TBL_STUDENT instance);
-    partial void InsertTBL_SUBJECT(TBL_SUBJECT instance);
-    partial void UpdateTBL_SUBJECT(TBL_SUBJECT instance);
-    partial void DeleteTBL_SUBJECT(TBL_SUBJECT instance);
-    partial void InsertTBL_TEACHER(TBL_TEACHER instance);
-    partial void UpdateTBL_TEACHER(TBL_TEACHER instance);
-    partial void DeleteTBL_TEACHER(TBL_TEACHER instance);
-    partial void InsertTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
-    partial void UpdateTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
-    partial void DeleteTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
-    partial void InsertTBL_TEACHERSECTION(TBL_TEACHERSECTION instance);
-    partial void UpdateTBL_TEACHERSECTION(TBL_TEACHERSECTION instance);
-    partial void DeleteTBL_TEACHERSECTION(TBL_TEACHERSECTION instance);
     partial void InsertTBL_USER(TBL_USER instance);
     partial void UpdateTBL_USER(TBL_USER instance);
     partial void DeleteTBL_USER(TBL_USER instance);
@@ -107,30 +77,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<TBL_BOOK> TBL_BOOKs
-		{
-			get
-			{
-				return this.GetTable<TBL_BOOK>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBL_USERTYPE> TBL_USERTYPEs
-		{
-			get
-			{
-				return this.GetTable<TBL_USERTYPE>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBL_GRADE> TBL_GRADEs
-		{
-			get
-			{
-				return this.GetTable<TBL_GRADE>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TBL_PARENT> TBL_PARENTs
 		{
 			get
@@ -139,35 +85,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		public System.Data.Linq.Table<TBL_PAYMENTDETAIL> TBL_PAYMENTDETAILs
+		public System.Data.Linq.Table<TBL_USERTYPE> TBL_USERTYPEs
 		{
 			get
 			{
-				return this.GetTable<TBL_PAYMENTDETAIL>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBL_REQUIRMENT> TBL_REQUIRMENTs
-		{
-			get
-			{
-				return this.GetTable<TBL_REQUIRMENT>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBL_SECTION> TBL_SECTIONs
-		{
-			get
-			{
-				return this.GetTable<TBL_SECTION>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBL_SECTIONSUBJECT> TBL_SECTIONSUBJECTs
-		{
-			get
-			{
-				return this.GetTable<TBL_SECTIONSUBJECT>();
+				return this.GetTable<TBL_USERTYPE>();
 			}
 		}
 		
@@ -187,43 +109,19 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		public System.Data.Linq.Table<TBL_SUBJECT> TBL_SUBJECTs
-		{
-			get
-			{
-				return this.GetTable<TBL_SUBJECT>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBL_TEACHER> TBL_TEACHERs
-		{
-			get
-			{
-				return this.GetTable<TBL_TEACHER>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBL_TEACHERSCHEDULE> TBL_TEACHERSCHEDULEs
-		{
-			get
-			{
-				return this.GetTable<TBL_TEACHERSCHEDULE>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBL_TEACHERSECTION> TBL_TEACHERSECTIONs
-		{
-			get
-			{
-				return this.GetTable<TBL_TEACHERSECTION>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TBL_USER> TBL_USERs
 		{
 			get
 			{
 				return this.GetTable<TBL_USER>();
+			}
+		}
+		
+		public System.Data.Linq.Table<View_STANDPT> View_STANDPTs
+		{
+			get
+			{
+				return this.GetTable<View_STANDPT>();
 			}
 		}
 		
@@ -235,14 +133,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		public System.Data.Linq.Table<PTANDST_VIEW> PTANDST_VIEWs
-		{
-			get
-			{
-				return this.GetTable<PTANDST_VIEW>();
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ACCOUNTRECOVERY")]
 		public ISingleResult<SP_ACCOUNTRECOVERYResult> SP_ACCOUNTRECOVERY([global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_USERNAME", DbType="VarChar(50)")] string uSER_USERNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SECU_QUESTION", DbType="VarChar(50)")] string sECU_QUESTION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SECU_ANSWER", DbType="VarChar(50)")] string sECU_ANSWER)
 		{
@@ -250,17 +140,17 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((ISingleResult<SP_ACCOUNTRECOVERYResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_VERIFYPASSWORD")]
-		public ISingleResult<SP_VERIFYPASSWORDResult> SP_VERIFYPASSWORD([global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_ID", DbType="Int")] System.Nullable<int> uSER_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_PASSWORD", DbType="VarChar(50)")] string uSER_PASSWORD)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ST_CURRENTID")]
+		public int ST_CURRENTID()
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), uSER_ID, uSER_PASSWORD);
-			return ((ISingleResult<SP_VERIFYPASSWORDResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CHANGEDEFAULTPASS")]
-		public int SP_CHANGEDEFAULTPASS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_USERNAME", DbType="VarChar(50)")] string uSER_USERNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_PASSWORD", DbType="VarChar(50)")] string uSER_PASSWORD)
+		public int SP_CHANGEDEFAULTPASS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_ID", DbType="Int")] System.Nullable<int> uSER_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_USERNAME", DbType="VarChar(50)")] string uSER_USERNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_PASSWORD", DbType="VarChar(50)")] string uSER_PASSWORD)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), uSER_USERNAME, uSER_PASSWORD);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), uSER_ID, uSER_USERNAME, uSER_PASSWORD);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -278,11 +168,63 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STSAVE")]
+		public int SP_STSAVE(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_CURRENTID", DbType="VarChar(50)")] string sT_CURRENTID, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_FIRSTNAME", DbType="VarChar(50)")] string sT_FIRSTNAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_MIDDLENAME", DbType="VarChar(50)")] string sT_MIDDLENAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_LASTNAME", DbType="VarChar(50)")] string sT_LASTNAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_YEARLEVEL", DbType="VarChar(50)")] string sT_YEARLEVEL, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_SCHOOLYEAR", DbType="VarChar(50)")] string sT_SCHOOLYEAR, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHDATE", DbType="Date")] System.Nullable<System.DateTime> sT_BIRTHDATE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_AGE", DbType="Int")] System.Nullable<int> sT_AGE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHPLACE", DbType="VarChar(50)")] string sT_BIRTHPLACE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ADDRESS", DbType="VarChar(50)")] string sT_ADDRESS, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_GENDER", DbType="VarChar(50)")] string sT_GENDER, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_CONTACTNUMBER", DbType="VarChar(50)")] string sT_CONTACTNUMBER, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_HEIGHT", DbType="Float")] System.Nullable<double> sT_HEIGHT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_WEIGHT", DbType="Float")] System.Nullable<double> sT_WEIGHT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BLOODPRESSURE", DbType="VarChar(50)")] string sT_BLOODPRESSURE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NAME", DbType="VarChar(50)")] string nAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_CONTACT", DbType="VarChar(50)")] string p_CONTACT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_OCCUPATION", DbType="VarChar(50)")] string p_OCCUPATION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sT_CURRENTID, sT_FIRSTNAME, sT_MIDDLENAME, sT_LASTNAME, sT_YEARLEVEL, sT_SCHOOLYEAR, sT_BIRTHDATE, sT_AGE, sT_BIRTHPLACE, sT_ADDRESS, sT_GENDER, sT_CONTACTNUMBER, sT_HEIGHT, sT_WEIGHT, sT_BLOODPRESSURE, nAME, p_CONTACT, p_OCCUPATION);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STSEARCH")]
 		public ISingleResult<SP_STSEARCHResult> SP_STSEARCH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEARCH_KEY", DbType="VarChar(MAX)")] string sEARCH_KEY)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEARCH_KEY);
 			return ((ISingleResult<SP_STSEARCHResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STUPDATE")]
+		public int SP_STUPDATE(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ID", DbType="Int")] System.Nullable<int> sT_ID, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_FIRSTNAME", DbType="VarChar(50)")] string sT_FIRSTNAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_MIDDLENAME", DbType="VarChar(50)")] string sT_MIDDLENAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_LASTNAME", DbType="VarChar(50)")] string sT_LASTNAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_YEARLEVEL", DbType="VarChar(50)")] string sT_YEARLEVEL, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_SCHOOLYEAR", DbType="VarChar(50)")] string sT_SCHOOLYEAR, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHDATE", DbType="Date")] System.Nullable<System.DateTime> sT_BIRTHDATE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_AGE", DbType="Int")] System.Nullable<int> sT_AGE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHPLACE", DbType="VarChar(50)")] string sT_BIRTHPLACE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ADDRESS", DbType="VarChar(50)")] string sT_ADDRESS, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_GENDER", DbType="VarChar(50)")] string sT_GENDER, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_CONTACTNUMBER", DbType="VarChar(50)")] string sT_CONTACTNUMBER, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISACTIVE", DbType="Bit")] System.Nullable<bool> iSACTIVE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_HEIGHT", DbType="Float")] System.Nullable<double> sT_HEIGHT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_WEIGHT", DbType="Float")] System.Nullable<double> sT_WEIGHT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BLOODPRESSURE", DbType="VarChar(50)")] string sT_BLOODPRESSURE, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_ID", DbType="Int")] System.Nullable<int> p_ID, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_NAME", DbType="VarChar(50)")] string p_NAME, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_CONTACT", DbType="VarChar(50)")] string p_CONTACT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_OCCUPATION", DbType="VarChar(50)")] string p_OCCUPATION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sT_ID, sT_FIRSTNAME, sT_MIDDLENAME, sT_LASTNAME, sT_YEARLEVEL, sT_SCHOOLYEAR, sT_BIRTHDATE, sT_AGE, sT_BIRTHPLACE, sT_ADDRESS, sT_GENDER, sT_CONTACTNUMBER, iSACTIVE, sT_HEIGHT, sT_WEIGHT, sT_BLOODPRESSURE, p_ID, p_NAME, p_CONTACT, p_OCCUPATION);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STVIEW")]
@@ -306,38 +248,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((ISingleResult<SP_USERSEARCHResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_USERVIEW")]
-		public ISingleResult<SP_USERVIEWResult> SP_USERVIEW()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<SP_USERVIEWResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STSAVE")]
-		public int SP_STSAVE(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_FIRSTNAME", DbType="VarChar(50)")] string sT_FIRSTNAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_MIDDLENAME", DbType="VarChar(50)")] string sT_MIDDLENAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_LASTNAME", DbType="VarChar(50)")] string sT_LASTNAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_YEARLEVEL", DbType="VarChar(50)")] string sT_YEARLEVEL, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_SCHOOLYEAR", DbType="VarChar(50)")] string sT_SCHOOLYEAR, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHDATE", DbType="Date")] System.Nullable<System.DateTime> sT_BIRTHDATE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_AGE", DbType="Int")] System.Nullable<int> sT_AGE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHPLACE", DbType="VarChar(50)")] string sT_BIRTHPLACE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ADDRESS", DbType="VarChar(50)")] string sT_ADDRESS, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_GENDER", DbType="VarChar(50)")] string sT_GENDER, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_CONTACTNUMBER", DbType="VarChar(50)")] string sT_CONTACTNUMBER, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_HEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_HEIGHT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_WEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_WEIGHT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BLOODPRESSURE", DbType="VarChar(50)")] string sT_BLOODPRESSURE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NAME", DbType="VarChar(50)")] string nAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_CONTACT", DbType="VarChar(50)")] string p_CONTACT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_OCCUPATION", DbType="VarChar(50)")] string p_OCCUPATION, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_TYPE", DbType="VarChar(50)")] string p_TYPE)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sT_FIRSTNAME, sT_MIDDLENAME, sT_LASTNAME, sT_YEARLEVEL, sT_SCHOOLYEAR, sT_BIRTHDATE, sT_AGE, sT_BIRTHPLACE, sT_ADDRESS, sT_GENDER, sT_CONTACTNUMBER, sT_HEIGHT, sT_WEIGHT, sT_BLOODPRESSURE, nAME, p_CONTACT, p_OCCUPATION, p_TYPE);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_USERUPDATE")]
 		public int SP_USERUPDATE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_ID", DbType="Int")] System.Nullable<int> uSER_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_LASTNAME", DbType="VarChar(50)")] string uSER_LASTNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_FIRSTNAME", DbType="VarChar(50)")] string uSER_FIRSTNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_MIDDLENAME", DbType="VarChar(50)")] string uSER_MIDDLENAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_USERNAME", DbType="VarChar(50)")] string uSER_USERNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISACTIVE", DbType="Bit")] System.Nullable<bool> iSACTIVE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_IMAGE", DbType="VarChar(MAX)")] string uSER_IMAGE)
 		{
@@ -345,121 +255,147 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STUPDATE")]
-		public int SP_STUPDATE(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ID", DbType="Int")] System.Nullable<int> sT_ID, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_FIRSTNAME", DbType="VarChar(50)")] string sT_FIRSTNAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_MIDDLENAME", DbType="VarChar(50)")] string sT_MIDDLENAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_LASTNAME", DbType="VarChar(50)")] string sT_LASTNAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_YEARLEVEL", DbType="VarChar(50)")] string sT_YEARLEVEL, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_SCHOOLYEAR", DbType="VarChar(50)")] string sT_SCHOOLYEAR, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHDATE", DbType="Date")] System.Nullable<System.DateTime> sT_BIRTHDATE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_AGE", DbType="Int")] System.Nullable<int> sT_AGE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BIRTHPLACE", DbType="VarChar(50)")] string sT_BIRTHPLACE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_ADDRESS", DbType="VarChar(50)")] string sT_ADDRESS, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_GENDER", DbType="VarChar(50)")] string sT_GENDER, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_CONTACTNUMBER", DbType="VarChar(50)")] string sT_CONTACTNUMBER, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISACTIVE", DbType="Bit")] System.Nullable<bool> iSACTIVE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_HEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_HEIGHT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_WEIGHT", DbType="Decimal(18,0)")] System.Nullable<decimal> sT_WEIGHT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ST_BLOODPRESSURE", DbType="VarChar(50)")] string sT_BLOODPRESSURE, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_ID", DbType="Int")] System.Nullable<int> p_ID, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_NAME", DbType="VarChar(50)")] string p_NAME, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_CONTACT", DbType="VarChar(50)")] string p_CONTACT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_OCCUPATION", DbType="VarChar(50)")] string p_OCCUPATION, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="P_TYPE", DbType="VarChar(50)")] string p_TYPE)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_USERVIEW")]
+		public ISingleResult<SP_USERVIEWResult> SP_USERVIEW()
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sT_ID, sT_FIRSTNAME, sT_MIDDLENAME, sT_LASTNAME, sT_YEARLEVEL, sT_SCHOOLYEAR, sT_BIRTHDATE, sT_AGE, sT_BIRTHPLACE, sT_ADDRESS, sT_GENDER, sT_CONTACTNUMBER, iSACTIVE, sT_HEIGHT, sT_WEIGHT, sT_BLOODPRESSURE, p_ID, p_NAME, p_CONTACT, p_OCCUPATION, p_TYPE);
-			return ((int)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_USERVIEWResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_VERIFYPASSWORD")]
+		public ISingleResult<SP_VERIFYPASSWORDResult> SP_VERIFYPASSWORD([global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_ID", DbType="Int")] System.Nullable<int> uSER_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_PASSWORD", DbType="VarChar(50)")] string uSER_PASSWORD)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), uSER_ID, uSER_PASSWORD);
+			return ((ISingleResult<SP_VERIFYPASSWORDResult>)(result.ReturnValue));
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_BOOKS")]
-	public partial class TBL_BOOK : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_PARENT")]
+	public partial class TBL_PARENT : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _B_ID;
+		private int _P_ID;
 		
-		private string _B_BOOKNAME;
+		private string _P_NAME;
 		
-		private string _B_YEARLEVEL;
+		private string _P_CONTACT;
+		
+		private string _P_OCCUPATION;
+		
+		private EntitySet<TBL_STUDENT> _TBL_STUDENTs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnB_IDChanging(int value);
-    partial void OnB_IDChanged();
-    partial void OnB_BOOKNAMEChanging(string value);
-    partial void OnB_BOOKNAMEChanged();
-    partial void OnB_YEARLEVELChanging(string value);
-    partial void OnB_YEARLEVELChanged();
+    partial void OnP_IDChanging(int value);
+    partial void OnP_IDChanged();
+    partial void OnP_NAMEChanging(string value);
+    partial void OnP_NAMEChanged();
+    partial void OnP_CONTACTChanging(string value);
+    partial void OnP_CONTACTChanged();
+    partial void OnP_OCCUPATIONChanging(string value);
+    partial void OnP_OCCUPATIONChanged();
     #endregion
 		
-		public TBL_BOOK()
+		public TBL_PARENT()
 		{
+			this._TBL_STUDENTs = new EntitySet<TBL_STUDENT>(new Action<TBL_STUDENT>(this.attach_TBL_STUDENTs), new Action<TBL_STUDENT>(this.detach_TBL_STUDENTs));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int B_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int P_ID
 		{
 			get
 			{
-				return this._B_ID;
+				return this._P_ID;
 			}
 			set
 			{
-				if ((this._B_ID != value))
+				if ((this._P_ID != value))
 				{
-					this.OnB_IDChanging(value);
+					this.OnP_IDChanging(value);
 					this.SendPropertyChanging();
-					this._B_ID = value;
-					this.SendPropertyChanged("B_ID");
-					this.OnB_IDChanged();
+					this._P_ID = value;
+					this.SendPropertyChanged("P_ID");
+					this.OnP_IDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B_BOOKNAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string B_BOOKNAME
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string P_NAME
 		{
 			get
 			{
-				return this._B_BOOKNAME;
+				return this._P_NAME;
 			}
 			set
 			{
-				if ((this._B_BOOKNAME != value))
+				if ((this._P_NAME != value))
 				{
-					this.OnB_BOOKNAMEChanging(value);
+					this.OnP_NAMEChanging(value);
 					this.SendPropertyChanging();
-					this._B_BOOKNAME = value;
-					this.SendPropertyChanged("B_BOOKNAME");
-					this.OnB_BOOKNAMEChanged();
+					this._P_NAME = value;
+					this.SendPropertyChanged("P_NAME");
+					this.OnP_NAMEChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B_YEARLEVEL", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string B_YEARLEVEL
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_CONTACT", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string P_CONTACT
 		{
 			get
 			{
-				return this._B_YEARLEVEL;
+				return this._P_CONTACT;
 			}
 			set
 			{
-				if ((this._B_YEARLEVEL != value))
+				if ((this._P_CONTACT != value))
 				{
-					this.OnB_YEARLEVELChanging(value);
+					this.OnP_CONTACTChanging(value);
 					this.SendPropertyChanging();
-					this._B_YEARLEVEL = value;
-					this.SendPropertyChanged("B_YEARLEVEL");
-					this.OnB_YEARLEVELChanged();
+					this._P_CONTACT = value;
+					this.SendPropertyChanged("P_CONTACT");
+					this.OnP_CONTACTChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_OCCUPATION", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string P_OCCUPATION
+		{
+			get
+			{
+				return this._P_OCCUPATION;
+			}
+			set
+			{
+				if ((this._P_OCCUPATION != value))
+				{
+					this.OnP_OCCUPATIONChanging(value);
+					this.SendPropertyChanging();
+					this._P_OCCUPATION = value;
+					this.SendPropertyChanged("P_OCCUPATION");
+					this.OnP_OCCUPATIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_PARENT_TBL_STUDENT", Storage="_TBL_STUDENTs", ThisKey="P_ID", OtherKey="P_ID")]
+		public EntitySet<TBL_STUDENT> TBL_STUDENTs
+		{
+			get
+			{
+				return this._TBL_STUDENTs;
+			}
+			set
+			{
+				this._TBL_STUDENTs.Assign(value);
 			}
 		}
 		
@@ -481,6 +417,18 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_TBL_STUDENTs(TBL_STUDENT entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_PARENT = this;
+		}
+		
+		private void detach_TBL_STUDENTs(TBL_STUDENT entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_PARENT = null;
 		}
 	}
 	
@@ -595,1216 +543,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		{
 			this.SendPropertyChanging();
 			entity.TBL_USERTYPE = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_GRADE")]
-	public partial class TBL_GRADE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _GRADE_ID;
-		
-		private System.Nullable<int> _ST_ID;
-		
-		private string _GRADEPERIOD;
-		
-		private decimal _GRADE;
-		
-		private string _GRADESUBJECT;
-		
-		private System.Nullable<int> _SUBJECT_ID;
-		
-		private EntityRef<TBL_STUDENT> _TBL_STUDENT;
-		
-		private EntityRef<TBL_SUBJECT> _TBL_SUBJECT;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnGRADE_IDChanging(int value);
-    partial void OnGRADE_IDChanged();
-    partial void OnST_IDChanging(System.Nullable<int> value);
-    partial void OnST_IDChanged();
-    partial void OnGRADEPERIODChanging(string value);
-    partial void OnGRADEPERIODChanged();
-    partial void OnGRADEChanging(decimal value);
-    partial void OnGRADEChanged();
-    partial void OnGRADESUBJECTChanging(string value);
-    partial void OnGRADESUBJECTChanged();
-    partial void OnSUBJECT_IDChanging(System.Nullable<int> value);
-    partial void OnSUBJECT_IDChanged();
-    #endregion
-		
-		public TBL_GRADE()
-		{
-			this._TBL_STUDENT = default(EntityRef<TBL_STUDENT>);
-			this._TBL_SUBJECT = default(EntityRef<TBL_SUBJECT>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRADE_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int GRADE_ID
-		{
-			get
-			{
-				return this._GRADE_ID;
-			}
-			set
-			{
-				if ((this._GRADE_ID != value))
-				{
-					this.OnGRADE_IDChanging(value);
-					this.SendPropertyChanging();
-					this._GRADE_ID = value;
-					this.SendPropertyChanged("GRADE_ID");
-					this.OnGRADE_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_ID", DbType="Int")]
-		public System.Nullable<int> ST_ID
-		{
-			get
-			{
-				return this._ST_ID;
-			}
-			set
-			{
-				if ((this._ST_ID != value))
-				{
-					if (this._TBL_STUDENT.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnST_IDChanging(value);
-					this.SendPropertyChanging();
-					this._ST_ID = value;
-					this.SendPropertyChanged("ST_ID");
-					this.OnST_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRADEPERIOD", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string GRADEPERIOD
-		{
-			get
-			{
-				return this._GRADEPERIOD;
-			}
-			set
-			{
-				if ((this._GRADEPERIOD != value))
-				{
-					this.OnGRADEPERIODChanging(value);
-					this.SendPropertyChanging();
-					this._GRADEPERIOD = value;
-					this.SendPropertyChanged("GRADEPERIOD");
-					this.OnGRADEPERIODChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRADE", DbType="Decimal(18,0) NOT NULL")]
-		public decimal GRADE
-		{
-			get
-			{
-				return this._GRADE;
-			}
-			set
-			{
-				if ((this._GRADE != value))
-				{
-					this.OnGRADEChanging(value);
-					this.SendPropertyChanging();
-					this._GRADE = value;
-					this.SendPropertyChanged("GRADE");
-					this.OnGRADEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GRADESUBJECT", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string GRADESUBJECT
-		{
-			get
-			{
-				return this._GRADESUBJECT;
-			}
-			set
-			{
-				if ((this._GRADESUBJECT != value))
-				{
-					this.OnGRADESUBJECTChanging(value);
-					this.SendPropertyChanging();
-					this._GRADESUBJECT = value;
-					this.SendPropertyChanged("GRADESUBJECT");
-					this.OnGRADESUBJECTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUBJECT_ID", DbType="Int")]
-		public System.Nullable<int> SUBJECT_ID
-		{
-			get
-			{
-				return this._SUBJECT_ID;
-			}
-			set
-			{
-				if ((this._SUBJECT_ID != value))
-				{
-					if (this._TBL_SUBJECT.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSUBJECT_IDChanging(value);
-					this.SendPropertyChanging();
-					this._SUBJECT_ID = value;
-					this.SendPropertyChanged("SUBJECT_ID");
-					this.OnSUBJECT_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_STUDENT_TBL_GRADE", Storage="_TBL_STUDENT", ThisKey="ST_ID", OtherKey="ST_ID", IsForeignKey=true)]
-		public TBL_STUDENT TBL_STUDENT
-		{
-			get
-			{
-				return this._TBL_STUDENT.Entity;
-			}
-			set
-			{
-				TBL_STUDENT previousValue = this._TBL_STUDENT.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_STUDENT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_STUDENT.Entity = null;
-						previousValue.TBL_GRADEs.Remove(this);
-					}
-					this._TBL_STUDENT.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_GRADEs.Add(this);
-						this._ST_ID = value.ST_ID;
-					}
-					else
-					{
-						this._ST_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_STUDENT");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SUBJECT_TBL_GRADE", Storage="_TBL_SUBJECT", ThisKey="SUBJECT_ID", OtherKey="SUBJECT_ID", IsForeignKey=true)]
-		public TBL_SUBJECT TBL_SUBJECT
-		{
-			get
-			{
-				return this._TBL_SUBJECT.Entity;
-			}
-			set
-			{
-				TBL_SUBJECT previousValue = this._TBL_SUBJECT.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_SUBJECT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_SUBJECT.Entity = null;
-						previousValue.TBL_GRADEs.Remove(this);
-					}
-					this._TBL_SUBJECT.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_GRADEs.Add(this);
-						this._SUBJECT_ID = value.SUBJECT_ID;
-					}
-					else
-					{
-						this._SUBJECT_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_SUBJECT");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_PARENT")]
-	public partial class TBL_PARENT : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _P_ID;
-		
-		private string _P_NAME;
-		
-		private string _P_CONTACT;
-		
-		private string _P_OCCUPATION;
-		
-		private string _P_TYPE;
-		
-		private EntitySet<TBL_STUDENT> _TBL_STUDENTs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnP_IDChanging(int value);
-    partial void OnP_IDChanged();
-    partial void OnP_NAMEChanging(string value);
-    partial void OnP_NAMEChanged();
-    partial void OnP_CONTACTChanging(string value);
-    partial void OnP_CONTACTChanged();
-    partial void OnP_OCCUPATIONChanging(string value);
-    partial void OnP_OCCUPATIONChanged();
-    partial void OnP_TYPEChanging(string value);
-    partial void OnP_TYPEChanged();
-    #endregion
-		
-		public TBL_PARENT()
-		{
-			this._TBL_STUDENTs = new EntitySet<TBL_STUDENT>(new Action<TBL_STUDENT>(this.attach_TBL_STUDENTs), new Action<TBL_STUDENT>(this.detach_TBL_STUDENTs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int P_ID
-		{
-			get
-			{
-				return this._P_ID;
-			}
-			set
-			{
-				if ((this._P_ID != value))
-				{
-					this.OnP_IDChanging(value);
-					this.SendPropertyChanging();
-					this._P_ID = value;
-					this.SendPropertyChanged("P_ID");
-					this.OnP_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string P_NAME
-		{
-			get
-			{
-				return this._P_NAME;
-			}
-			set
-			{
-				if ((this._P_NAME != value))
-				{
-					this.OnP_NAMEChanging(value);
-					this.SendPropertyChanging();
-					this._P_NAME = value;
-					this.SendPropertyChanged("P_NAME");
-					this.OnP_NAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_CONTACT", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string P_CONTACT
-		{
-			get
-			{
-				return this._P_CONTACT;
-			}
-			set
-			{
-				if ((this._P_CONTACT != value))
-				{
-					this.OnP_CONTACTChanging(value);
-					this.SendPropertyChanging();
-					this._P_CONTACT = value;
-					this.SendPropertyChanged("P_CONTACT");
-					this.OnP_CONTACTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_OCCUPATION", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string P_OCCUPATION
-		{
-			get
-			{
-				return this._P_OCCUPATION;
-			}
-			set
-			{
-				if ((this._P_OCCUPATION != value))
-				{
-					this.OnP_OCCUPATIONChanging(value);
-					this.SendPropertyChanging();
-					this._P_OCCUPATION = value;
-					this.SendPropertyChanged("P_OCCUPATION");
-					this.OnP_OCCUPATIONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_TYPE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string P_TYPE
-		{
-			get
-			{
-				return this._P_TYPE;
-			}
-			set
-			{
-				if ((this._P_TYPE != value))
-				{
-					this.OnP_TYPEChanging(value);
-					this.SendPropertyChanging();
-					this._P_TYPE = value;
-					this.SendPropertyChanged("P_TYPE");
-					this.OnP_TYPEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_PARENT_TBL_STUDENT", Storage="_TBL_STUDENTs", ThisKey="P_ID", OtherKey="P_ID")]
-		public EntitySet<TBL_STUDENT> TBL_STUDENTs
-		{
-			get
-			{
-				return this._TBL_STUDENTs;
-			}
-			set
-			{
-				this._TBL_STUDENTs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TBL_STUDENTs(TBL_STUDENT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_PARENT = this;
-		}
-		
-		private void detach_TBL_STUDENTs(TBL_STUDENT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_PARENT = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_PAYMENTDETAILS")]
-	public partial class TBL_PAYMENTDETAIL : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _PD_ID;
-		
-		private System.Nullable<int> _ST_ID;
-		
-		private string _PAYMENTDESC;
-		
-		private decimal _PAYMENTAMOUNT;
-		
-		private EntityRef<TBL_STUDENT> _TBL_STUDENT;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPD_IDChanging(int value);
-    partial void OnPD_IDChanged();
-    partial void OnST_IDChanging(System.Nullable<int> value);
-    partial void OnST_IDChanged();
-    partial void OnPAYMENTDESCChanging(string value);
-    partial void OnPAYMENTDESCChanged();
-    partial void OnPAYMENTAMOUNTChanging(decimal value);
-    partial void OnPAYMENTAMOUNTChanged();
-    #endregion
-		
-		public TBL_PAYMENTDETAIL()
-		{
-			this._TBL_STUDENT = default(EntityRef<TBL_STUDENT>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PD_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int PD_ID
-		{
-			get
-			{
-				return this._PD_ID;
-			}
-			set
-			{
-				if ((this._PD_ID != value))
-				{
-					this.OnPD_IDChanging(value);
-					this.SendPropertyChanging();
-					this._PD_ID = value;
-					this.SendPropertyChanged("PD_ID");
-					this.OnPD_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_ID", DbType="Int")]
-		public System.Nullable<int> ST_ID
-		{
-			get
-			{
-				return this._ST_ID;
-			}
-			set
-			{
-				if ((this._ST_ID != value))
-				{
-					if (this._TBL_STUDENT.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnST_IDChanging(value);
-					this.SendPropertyChanging();
-					this._ST_ID = value;
-					this.SendPropertyChanged("ST_ID");
-					this.OnST_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PAYMENTDESC", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string PAYMENTDESC
-		{
-			get
-			{
-				return this._PAYMENTDESC;
-			}
-			set
-			{
-				if ((this._PAYMENTDESC != value))
-				{
-					this.OnPAYMENTDESCChanging(value);
-					this.SendPropertyChanging();
-					this._PAYMENTDESC = value;
-					this.SendPropertyChanged("PAYMENTDESC");
-					this.OnPAYMENTDESCChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PAYMENTAMOUNT", DbType="Money NOT NULL")]
-		public decimal PAYMENTAMOUNT
-		{
-			get
-			{
-				return this._PAYMENTAMOUNT;
-			}
-			set
-			{
-				if ((this._PAYMENTAMOUNT != value))
-				{
-					this.OnPAYMENTAMOUNTChanging(value);
-					this.SendPropertyChanging();
-					this._PAYMENTAMOUNT = value;
-					this.SendPropertyChanged("PAYMENTAMOUNT");
-					this.OnPAYMENTAMOUNTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_STUDENT_TBL_PAYMENTDETAIL", Storage="_TBL_STUDENT", ThisKey="ST_ID", OtherKey="ST_ID", IsForeignKey=true)]
-		public TBL_STUDENT TBL_STUDENT
-		{
-			get
-			{
-				return this._TBL_STUDENT.Entity;
-			}
-			set
-			{
-				TBL_STUDENT previousValue = this._TBL_STUDENT.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_STUDENT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_STUDENT.Entity = null;
-						previousValue.TBL_PAYMENTDETAILs.Remove(this);
-					}
-					this._TBL_STUDENT.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_PAYMENTDETAILs.Add(this);
-						this._ST_ID = value.ST_ID;
-					}
-					else
-					{
-						this._ST_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_STUDENT");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_REQUIRMENTS")]
-	public partial class TBL_REQUIRMENT : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _REQ_ID;
-		
-		private string _REQ_NAME;
-		
-		private string _REQ_DETAILS;
-		
-		private System.Nullable<int> _ST_ID;
-		
-		private System.DateTime _REQ_ADDED;
-		
-		private EntityRef<TBL_STUDENT> _TBL_STUDENT;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnREQ_IDChanging(int value);
-    partial void OnREQ_IDChanged();
-    partial void OnREQ_NAMEChanging(string value);
-    partial void OnREQ_NAMEChanged();
-    partial void OnREQ_DETAILSChanging(string value);
-    partial void OnREQ_DETAILSChanged();
-    partial void OnST_IDChanging(System.Nullable<int> value);
-    partial void OnST_IDChanged();
-    partial void OnREQ_ADDEDChanging(System.DateTime value);
-    partial void OnREQ_ADDEDChanged();
-    #endregion
-		
-		public TBL_REQUIRMENT()
-		{
-			this._TBL_STUDENT = default(EntityRef<TBL_STUDENT>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_REQ_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int REQ_ID
-		{
-			get
-			{
-				return this._REQ_ID;
-			}
-			set
-			{
-				if ((this._REQ_ID != value))
-				{
-					this.OnREQ_IDChanging(value);
-					this.SendPropertyChanging();
-					this._REQ_ID = value;
-					this.SendPropertyChanged("REQ_ID");
-					this.OnREQ_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_REQ_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string REQ_NAME
-		{
-			get
-			{
-				return this._REQ_NAME;
-			}
-			set
-			{
-				if ((this._REQ_NAME != value))
-				{
-					this.OnREQ_NAMEChanging(value);
-					this.SendPropertyChanging();
-					this._REQ_NAME = value;
-					this.SendPropertyChanged("REQ_NAME");
-					this.OnREQ_NAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_REQ_DETAILS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string REQ_DETAILS
-		{
-			get
-			{
-				return this._REQ_DETAILS;
-			}
-			set
-			{
-				if ((this._REQ_DETAILS != value))
-				{
-					this.OnREQ_DETAILSChanging(value);
-					this.SendPropertyChanging();
-					this._REQ_DETAILS = value;
-					this.SendPropertyChanged("REQ_DETAILS");
-					this.OnREQ_DETAILSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_ID", DbType="Int")]
-		public System.Nullable<int> ST_ID
-		{
-			get
-			{
-				return this._ST_ID;
-			}
-			set
-			{
-				if ((this._ST_ID != value))
-				{
-					if (this._TBL_STUDENT.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnST_IDChanging(value);
-					this.SendPropertyChanging();
-					this._ST_ID = value;
-					this.SendPropertyChanged("ST_ID");
-					this.OnST_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_REQ_ADDED", DbType="DateTime NOT NULL")]
-		public System.DateTime REQ_ADDED
-		{
-			get
-			{
-				return this._REQ_ADDED;
-			}
-			set
-			{
-				if ((this._REQ_ADDED != value))
-				{
-					this.OnREQ_ADDEDChanging(value);
-					this.SendPropertyChanging();
-					this._REQ_ADDED = value;
-					this.SendPropertyChanged("REQ_ADDED");
-					this.OnREQ_ADDEDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_STUDENT_TBL_REQUIRMENT", Storage="_TBL_STUDENT", ThisKey="ST_ID", OtherKey="ST_ID", IsForeignKey=true)]
-		public TBL_STUDENT TBL_STUDENT
-		{
-			get
-			{
-				return this._TBL_STUDENT.Entity;
-			}
-			set
-			{
-				TBL_STUDENT previousValue = this._TBL_STUDENT.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_STUDENT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_STUDENT.Entity = null;
-						previousValue.TBL_REQUIRMENTs.Remove(this);
-					}
-					this._TBL_STUDENT.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_REQUIRMENTs.Add(this);
-						this._ST_ID = value.ST_ID;
-					}
-					else
-					{
-						this._ST_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_STUDENT");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_SECTION")]
-	public partial class TBL_SECTION : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _SEC_ID;
-		
-		private string _SEC_NAME;
-		
-		private int _SEC_CAPACITY;
-		
-		private EntitySet<TBL_SECTIONSUBJECT> _TBL_SECTIONSUBJECTs;
-		
-		private EntitySet<TBL_TEACHER> _TBL_TEACHERs;
-		
-		private EntitySet<TBL_TEACHERSECTION> _TBL_TEACHERSECTIONs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSEC_IDChanging(int value);
-    partial void OnSEC_IDChanged();
-    partial void OnSEC_NAMEChanging(string value);
-    partial void OnSEC_NAMEChanged();
-    partial void OnSEC_CAPACITYChanging(int value);
-    partial void OnSEC_CAPACITYChanged();
-    #endregion
-		
-		public TBL_SECTION()
-		{
-			this._TBL_SECTIONSUBJECTs = new EntitySet<TBL_SECTIONSUBJECT>(new Action<TBL_SECTIONSUBJECT>(this.attach_TBL_SECTIONSUBJECTs), new Action<TBL_SECTIONSUBJECT>(this.detach_TBL_SECTIONSUBJECTs));
-			this._TBL_TEACHERs = new EntitySet<TBL_TEACHER>(new Action<TBL_TEACHER>(this.attach_TBL_TEACHERs), new Action<TBL_TEACHER>(this.detach_TBL_TEACHERs));
-			this._TBL_TEACHERSECTIONs = new EntitySet<TBL_TEACHERSECTION>(new Action<TBL_TEACHERSECTION>(this.attach_TBL_TEACHERSECTIONs), new Action<TBL_TEACHERSECTION>(this.detach_TBL_TEACHERSECTIONs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int SEC_ID
-		{
-			get
-			{
-				return this._SEC_ID;
-			}
-			set
-			{
-				if ((this._SEC_ID != value))
-				{
-					this.OnSEC_IDChanging(value);
-					this.SendPropertyChanging();
-					this._SEC_ID = value;
-					this.SendPropertyChanged("SEC_ID");
-					this.OnSEC_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SEC_NAME
-		{
-			get
-			{
-				return this._SEC_NAME;
-			}
-			set
-			{
-				if ((this._SEC_NAME != value))
-				{
-					this.OnSEC_NAMEChanging(value);
-					this.SendPropertyChanging();
-					this._SEC_NAME = value;
-					this.SendPropertyChanged("SEC_NAME");
-					this.OnSEC_NAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_CAPACITY", DbType="Int NOT NULL")]
-		public int SEC_CAPACITY
-		{
-			get
-			{
-				return this._SEC_CAPACITY;
-			}
-			set
-			{
-				if ((this._SEC_CAPACITY != value))
-				{
-					this.OnSEC_CAPACITYChanging(value);
-					this.SendPropertyChanging();
-					this._SEC_CAPACITY = value;
-					this.SendPropertyChanged("SEC_CAPACITY");
-					this.OnSEC_CAPACITYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_SECTIONSUBJECT", Storage="_TBL_SECTIONSUBJECTs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
-		public EntitySet<TBL_SECTIONSUBJECT> TBL_SECTIONSUBJECTs
-		{
-			get
-			{
-				return this._TBL_SECTIONSUBJECTs;
-			}
-			set
-			{
-				this._TBL_SECTIONSUBJECTs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHER", Storage="_TBL_TEACHERs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
-		public EntitySet<TBL_TEACHER> TBL_TEACHERs
-		{
-			get
-			{
-				return this._TBL_TEACHERs;
-			}
-			set
-			{
-				this._TBL_TEACHERs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHERSECTION", Storage="_TBL_TEACHERSECTIONs", ThisKey="SEC_ID", OtherKey="SECSUB_ID")]
-		public EntitySet<TBL_TEACHERSECTION> TBL_TEACHERSECTIONs
-		{
-			get
-			{
-				return this._TBL_TEACHERSECTIONs;
-			}
-			set
-			{
-				this._TBL_TEACHERSECTIONs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TBL_SECTIONSUBJECTs(TBL_SECTIONSUBJECT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = this;
-		}
-		
-		private void detach_TBL_SECTIONSUBJECTs(TBL_SECTIONSUBJECT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = null;
-		}
-		
-		private void attach_TBL_TEACHERs(TBL_TEACHER entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = this;
-		}
-		
-		private void detach_TBL_TEACHERs(TBL_TEACHER entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = null;
-		}
-		
-		private void attach_TBL_TEACHERSECTIONs(TBL_TEACHERSECTION entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = this;
-		}
-		
-		private void detach_TBL_TEACHERSECTIONs(TBL_TEACHERSECTION entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_SECTIONSUBJECT")]
-	public partial class TBL_SECTIONSUBJECT : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _SECSUB_ID;
-		
-		private System.Nullable<int> _SUBJECT_ID;
-		
-		private System.Nullable<int> _SEC_ID;
-		
-		private EntityRef<TBL_SECTION> _TBL_SECTION;
-		
-		private EntityRef<TBL_SUBJECT> _TBL_SUBJECT;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSECSUB_IDChanging(int value);
-    partial void OnSECSUB_IDChanged();
-    partial void OnSUBJECT_IDChanging(System.Nullable<int> value);
-    partial void OnSUBJECT_IDChanged();
-    partial void OnSEC_IDChanging(System.Nullable<int> value);
-    partial void OnSEC_IDChanged();
-    #endregion
-		
-		public TBL_SECTIONSUBJECT()
-		{
-			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
-			this._TBL_SUBJECT = default(EntityRef<TBL_SUBJECT>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SECSUB_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int SECSUB_ID
-		{
-			get
-			{
-				return this._SECSUB_ID;
-			}
-			set
-			{
-				if ((this._SECSUB_ID != value))
-				{
-					this.OnSECSUB_IDChanging(value);
-					this.SendPropertyChanging();
-					this._SECSUB_ID = value;
-					this.SendPropertyChanged("SECSUB_ID");
-					this.OnSECSUB_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUBJECT_ID", DbType="Int")]
-		public System.Nullable<int> SUBJECT_ID
-		{
-			get
-			{
-				return this._SUBJECT_ID;
-			}
-			set
-			{
-				if ((this._SUBJECT_ID != value))
-				{
-					if (this._TBL_SUBJECT.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSUBJECT_IDChanging(value);
-					this.SendPropertyChanging();
-					this._SUBJECT_ID = value;
-					this.SendPropertyChanged("SUBJECT_ID");
-					this.OnSUBJECT_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int")]
-		public System.Nullable<int> SEC_ID
-		{
-			get
-			{
-				return this._SEC_ID;
-			}
-			set
-			{
-				if ((this._SEC_ID != value))
-				{
-					if (this._TBL_SECTION.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSEC_IDChanging(value);
-					this.SendPropertyChanging();
-					this._SEC_ID = value;
-					this.SendPropertyChanged("SEC_ID");
-					this.OnSEC_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_SECTIONSUBJECT", Storage="_TBL_SECTION", ThisKey="SEC_ID", OtherKey="SEC_ID", IsForeignKey=true)]
-		public TBL_SECTION TBL_SECTION
-		{
-			get
-			{
-				return this._TBL_SECTION.Entity;
-			}
-			set
-			{
-				TBL_SECTION previousValue = this._TBL_SECTION.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_SECTION.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_SECTION.Entity = null;
-						previousValue.TBL_SECTIONSUBJECTs.Remove(this);
-					}
-					this._TBL_SECTION.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_SECTIONSUBJECTs.Add(this);
-						this._SEC_ID = value.SEC_ID;
-					}
-					else
-					{
-						this._SEC_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_SECTION");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SUBJECT_TBL_SECTIONSUBJECT", Storage="_TBL_SUBJECT", ThisKey="SUBJECT_ID", OtherKey="SUBJECT_ID", IsForeignKey=true)]
-		public TBL_SUBJECT TBL_SUBJECT
-		{
-			get
-			{
-				return this._TBL_SUBJECT.Entity;
-			}
-			set
-			{
-				TBL_SUBJECT previousValue = this._TBL_SUBJECT.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_SUBJECT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_SUBJECT.Entity = null;
-						previousValue.TBL_SECTIONSUBJECTs.Remove(this);
-					}
-					this._TBL_SUBJECT.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_SECTIONSUBJECTs.Add(this);
-						this._SUBJECT_ID = value.SUBJECT_ID;
-					}
-					else
-					{
-						this._SUBJECT_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_SUBJECT");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -1991,6 +729,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private int _ST_ID;
 		
+		private string _ST_CURRENTID;
+		
 		private string _ST_FIRSTNAME;
 		
 		private string _ST_MIDDLENAME;
@@ -2015,19 +755,13 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private System.Nullable<bool> _ISACTIVE;
 		
-		private decimal _ST_HEIGHT;
+		private double _ST_HEIGHT;
 		
-		private decimal _ST_WEIGHT;
+		private double _ST_WEIGHT;
 		
 		private string _ST_BLOODPRESSURE;
 		
 		private System.Nullable<int> _P_ID;
-		
-		private EntitySet<TBL_GRADE> _TBL_GRADEs;
-		
-		private EntitySet<TBL_PAYMENTDETAIL> _TBL_PAYMENTDETAILs;
-		
-		private EntitySet<TBL_REQUIRMENT> _TBL_REQUIRMENTs;
 		
 		private EntityRef<TBL_PARENT> _TBL_PARENT;
 		
@@ -2037,6 +771,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
     partial void OnCreated();
     partial void OnST_IDChanging(int value);
     partial void OnST_IDChanged();
+    partial void OnST_CURRENTIDChanging(string value);
+    partial void OnST_CURRENTIDChanged();
     partial void OnST_FIRSTNAMEChanging(string value);
     partial void OnST_FIRSTNAMEChanged();
     partial void OnST_MIDDLENAMEChanging(string value);
@@ -2061,9 +797,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
     partial void OnST_CONTACTNUMBERChanged();
     partial void OnISACTIVEChanging(System.Nullable<bool> value);
     partial void OnISACTIVEChanged();
-    partial void OnST_HEIGHTChanging(decimal value);
+    partial void OnST_HEIGHTChanging(double value);
     partial void OnST_HEIGHTChanged();
-    partial void OnST_WEIGHTChanging(decimal value);
+    partial void OnST_WEIGHTChanging(double value);
     partial void OnST_WEIGHTChanged();
     partial void OnST_BLOODPRESSUREChanging(string value);
     partial void OnST_BLOODPRESSUREChanged();
@@ -2073,14 +809,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		public TBL_STUDENT()
 		{
-			this._TBL_GRADEs = new EntitySet<TBL_GRADE>(new Action<TBL_GRADE>(this.attach_TBL_GRADEs), new Action<TBL_GRADE>(this.detach_TBL_GRADEs));
-			this._TBL_PAYMENTDETAILs = new EntitySet<TBL_PAYMENTDETAIL>(new Action<TBL_PAYMENTDETAIL>(this.attach_TBL_PAYMENTDETAILs), new Action<TBL_PAYMENTDETAIL>(this.detach_TBL_PAYMENTDETAILs));
-			this._TBL_REQUIRMENTs = new EntitySet<TBL_REQUIRMENT>(new Action<TBL_REQUIRMENT>(this.attach_TBL_REQUIRMENTs), new Action<TBL_REQUIRMENT>(this.detach_TBL_REQUIRMENTs));
 			this._TBL_PARENT = default(EntityRef<TBL_PARENT>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_ID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
 		public int ST_ID
 		{
 			get
@@ -2096,6 +829,26 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 					this._ST_ID = value;
 					this.SendPropertyChanged("ST_ID");
 					this.OnST_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_CURRENTID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ST_CURRENTID
+		{
+			get
+			{
+				return this._ST_CURRENTID;
+			}
+			set
+			{
+				if ((this._ST_CURRENTID != value))
+				{
+					this.OnST_CURRENTIDChanging(value);
+					this.SendPropertyChanging();
+					this._ST_CURRENTID = value;
+					this.SendPropertyChanged("ST_CURRENTID");
+					this.OnST_CURRENTIDChanged();
 				}
 			}
 		}
@@ -2340,8 +1093,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_HEIGHT", DbType="Decimal(18,0) NOT NULL")]
-		public decimal ST_HEIGHT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_HEIGHT", DbType="Float NOT NULL")]
+		public double ST_HEIGHT
 		{
 			get
 			{
@@ -2360,8 +1113,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_WEIGHT", DbType="Decimal(18,0) NOT NULL")]
-		public decimal ST_WEIGHT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_WEIGHT", DbType="Float NOT NULL")]
+		public double ST_WEIGHT
 		{
 			get
 			{
@@ -2424,45 +1177,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_STUDENT_TBL_GRADE", Storage="_TBL_GRADEs", ThisKey="ST_ID", OtherKey="ST_ID")]
-		public EntitySet<TBL_GRADE> TBL_GRADEs
-		{
-			get
-			{
-				return this._TBL_GRADEs;
-			}
-			set
-			{
-				this._TBL_GRADEs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_STUDENT_TBL_PAYMENTDETAIL", Storage="_TBL_PAYMENTDETAILs", ThisKey="ST_ID", OtherKey="ST_ID")]
-		public EntitySet<TBL_PAYMENTDETAIL> TBL_PAYMENTDETAILs
-		{
-			get
-			{
-				return this._TBL_PAYMENTDETAILs;
-			}
-			set
-			{
-				this._TBL_PAYMENTDETAILs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_STUDENT_TBL_REQUIRMENT", Storage="_TBL_REQUIRMENTs", ThisKey="ST_ID", OtherKey="ST_ID")]
-		public EntitySet<TBL_REQUIRMENT> TBL_REQUIRMENTs
-		{
-			get
-			{
-				return this._TBL_REQUIRMENTs;
-			}
-			set
-			{
-				this._TBL_REQUIRMENTs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_PARENT_TBL_STUDENT", Storage="_TBL_PARENT", ThisKey="P_ID", OtherKey="P_ID", IsForeignKey=true)]
 		public TBL_PARENT TBL_PARENT
 		{
@@ -2515,809 +1229,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_TBL_GRADEs(TBL_GRADE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_STUDENT = this;
-		}
-		
-		private void detach_TBL_GRADEs(TBL_GRADE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_STUDENT = null;
-		}
-		
-		private void attach_TBL_PAYMENTDETAILs(TBL_PAYMENTDETAIL entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_STUDENT = this;
-		}
-		
-		private void detach_TBL_PAYMENTDETAILs(TBL_PAYMENTDETAIL entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_STUDENT = null;
-		}
-		
-		private void attach_TBL_REQUIRMENTs(TBL_REQUIRMENT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_STUDENT = this;
-		}
-		
-		private void detach_TBL_REQUIRMENTs(TBL_REQUIRMENT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_STUDENT = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_SUBJECT")]
-	public partial class TBL_SUBJECT : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _SUBJECT_ID;
-		
-		private string _SUBJECT;
-		
-		private EntitySet<TBL_GRADE> _TBL_GRADEs;
-		
-		private EntitySet<TBL_SECTIONSUBJECT> _TBL_SECTIONSUBJECTs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSUBJECT_IDChanging(int value);
-    partial void OnSUBJECT_IDChanged();
-    partial void OnSUBJECTChanging(string value);
-    partial void OnSUBJECTChanged();
-    #endregion
-		
-		public TBL_SUBJECT()
-		{
-			this._TBL_GRADEs = new EntitySet<TBL_GRADE>(new Action<TBL_GRADE>(this.attach_TBL_GRADEs), new Action<TBL_GRADE>(this.detach_TBL_GRADEs));
-			this._TBL_SECTIONSUBJECTs = new EntitySet<TBL_SECTIONSUBJECT>(new Action<TBL_SECTIONSUBJECT>(this.attach_TBL_SECTIONSUBJECTs), new Action<TBL_SECTIONSUBJECT>(this.detach_TBL_SECTIONSUBJECTs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUBJECT_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int SUBJECT_ID
-		{
-			get
-			{
-				return this._SUBJECT_ID;
-			}
-			set
-			{
-				if ((this._SUBJECT_ID != value))
-				{
-					this.OnSUBJECT_IDChanging(value);
-					this.SendPropertyChanging();
-					this._SUBJECT_ID = value;
-					this.SendPropertyChanged("SUBJECT_ID");
-					this.OnSUBJECT_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUBJECT", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SUBJECT
-		{
-			get
-			{
-				return this._SUBJECT;
-			}
-			set
-			{
-				if ((this._SUBJECT != value))
-				{
-					this.OnSUBJECTChanging(value);
-					this.SendPropertyChanging();
-					this._SUBJECT = value;
-					this.SendPropertyChanged("SUBJECT");
-					this.OnSUBJECTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SUBJECT_TBL_GRADE", Storage="_TBL_GRADEs", ThisKey="SUBJECT_ID", OtherKey="SUBJECT_ID")]
-		public EntitySet<TBL_GRADE> TBL_GRADEs
-		{
-			get
-			{
-				return this._TBL_GRADEs;
-			}
-			set
-			{
-				this._TBL_GRADEs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SUBJECT_TBL_SECTIONSUBJECT", Storage="_TBL_SECTIONSUBJECTs", ThisKey="SUBJECT_ID", OtherKey="SUBJECT_ID")]
-		public EntitySet<TBL_SECTIONSUBJECT> TBL_SECTIONSUBJECTs
-		{
-			get
-			{
-				return this._TBL_SECTIONSUBJECTs;
-			}
-			set
-			{
-				this._TBL_SECTIONSUBJECTs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TBL_GRADEs(TBL_GRADE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SUBJECT = this;
-		}
-		
-		private void detach_TBL_GRADEs(TBL_GRADE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SUBJECT = null;
-		}
-		
-		private void attach_TBL_SECTIONSUBJECTs(TBL_SECTIONSUBJECT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SUBJECT = this;
-		}
-		
-		private void detach_TBL_SECTIONSUBJECTs(TBL_SECTIONSUBJECT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SUBJECT = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_TEACHER")]
-	public partial class TBL_TEACHER : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _T_ID;
-		
-		private string _T_FIRSTNAME;
-		
-		private string _T_MIDDLENAME;
-		
-		private string _T_LASTNAME;
-		
-		private string _T_GENDER;
-		
-		private System.DateTime _T_BIRTHDATE;
-		
-		private System.Nullable<bool> _ISACTIVE;
-		
-		private string _T_CONTACTNUMBER;
-		
-		private System.Nullable<int> _SEC_ID;
-		
-		private EntityRef<TBL_SECTION> _TBL_SECTION;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnT_IDChanging(int value);
-    partial void OnT_IDChanged();
-    partial void OnT_FIRSTNAMEChanging(string value);
-    partial void OnT_FIRSTNAMEChanged();
-    partial void OnT_MIDDLENAMEChanging(string value);
-    partial void OnT_MIDDLENAMEChanged();
-    partial void OnT_LASTNAMEChanging(string value);
-    partial void OnT_LASTNAMEChanged();
-    partial void OnT_GENDERChanging(string value);
-    partial void OnT_GENDERChanged();
-    partial void OnT_BIRTHDATEChanging(System.DateTime value);
-    partial void OnT_BIRTHDATEChanged();
-    partial void OnISACTIVEChanging(System.Nullable<bool> value);
-    partial void OnISACTIVEChanged();
-    partial void OnT_CONTACTNUMBERChanging(string value);
-    partial void OnT_CONTACTNUMBERChanged();
-    partial void OnSEC_IDChanging(System.Nullable<int> value);
-    partial void OnSEC_IDChanged();
-    #endregion
-		
-		public TBL_TEACHER()
-		{
-			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int T_ID
-		{
-			get
-			{
-				return this._T_ID;
-			}
-			set
-			{
-				if ((this._T_ID != value))
-				{
-					this.OnT_IDChanging(value);
-					this.SendPropertyChanging();
-					this._T_ID = value;
-					this.SendPropertyChanged("T_ID");
-					this.OnT_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_FIRSTNAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string T_FIRSTNAME
-		{
-			get
-			{
-				return this._T_FIRSTNAME;
-			}
-			set
-			{
-				if ((this._T_FIRSTNAME != value))
-				{
-					this.OnT_FIRSTNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._T_FIRSTNAME = value;
-					this.SendPropertyChanged("T_FIRSTNAME");
-					this.OnT_FIRSTNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_MIDDLENAME", DbType="VarChar(50)")]
-		public string T_MIDDLENAME
-		{
-			get
-			{
-				return this._T_MIDDLENAME;
-			}
-			set
-			{
-				if ((this._T_MIDDLENAME != value))
-				{
-					this.OnT_MIDDLENAMEChanging(value);
-					this.SendPropertyChanging();
-					this._T_MIDDLENAME = value;
-					this.SendPropertyChanged("T_MIDDLENAME");
-					this.OnT_MIDDLENAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_LASTNAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string T_LASTNAME
-		{
-			get
-			{
-				return this._T_LASTNAME;
-			}
-			set
-			{
-				if ((this._T_LASTNAME != value))
-				{
-					this.OnT_LASTNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._T_LASTNAME = value;
-					this.SendPropertyChanged("T_LASTNAME");
-					this.OnT_LASTNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_GENDER", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string T_GENDER
-		{
-			get
-			{
-				return this._T_GENDER;
-			}
-			set
-			{
-				if ((this._T_GENDER != value))
-				{
-					this.OnT_GENDERChanging(value);
-					this.SendPropertyChanging();
-					this._T_GENDER = value;
-					this.SendPropertyChanged("T_GENDER");
-					this.OnT_GENDERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_BIRTHDATE", DbType="Date NOT NULL")]
-		public System.DateTime T_BIRTHDATE
-		{
-			get
-			{
-				return this._T_BIRTHDATE;
-			}
-			set
-			{
-				if ((this._T_BIRTHDATE != value))
-				{
-					this.OnT_BIRTHDATEChanging(value);
-					this.SendPropertyChanging();
-					this._T_BIRTHDATE = value;
-					this.SendPropertyChanged("T_BIRTHDATE");
-					this.OnT_BIRTHDATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISACTIVE", DbType="Bit")]
-		public System.Nullable<bool> ISACTIVE
-		{
-			get
-			{
-				return this._ISACTIVE;
-			}
-			set
-			{
-				if ((this._ISACTIVE != value))
-				{
-					this.OnISACTIVEChanging(value);
-					this.SendPropertyChanging();
-					this._ISACTIVE = value;
-					this.SendPropertyChanged("ISACTIVE");
-					this.OnISACTIVEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_CONTACTNUMBER", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string T_CONTACTNUMBER
-		{
-			get
-			{
-				return this._T_CONTACTNUMBER;
-			}
-			set
-			{
-				if ((this._T_CONTACTNUMBER != value))
-				{
-					this.OnT_CONTACTNUMBERChanging(value);
-					this.SendPropertyChanging();
-					this._T_CONTACTNUMBER = value;
-					this.SendPropertyChanged("T_CONTACTNUMBER");
-					this.OnT_CONTACTNUMBERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int")]
-		public System.Nullable<int> SEC_ID
-		{
-			get
-			{
-				return this._SEC_ID;
-			}
-			set
-			{
-				if ((this._SEC_ID != value))
-				{
-					if (this._TBL_SECTION.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSEC_IDChanging(value);
-					this.SendPropertyChanging();
-					this._SEC_ID = value;
-					this.SendPropertyChanged("SEC_ID");
-					this.OnSEC_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHER", Storage="_TBL_SECTION", ThisKey="SEC_ID", OtherKey="SEC_ID", IsForeignKey=true)]
-		public TBL_SECTION TBL_SECTION
-		{
-			get
-			{
-				return this._TBL_SECTION.Entity;
-			}
-			set
-			{
-				TBL_SECTION previousValue = this._TBL_SECTION.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_SECTION.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_SECTION.Entity = null;
-						previousValue.TBL_TEACHERs.Remove(this);
-					}
-					this._TBL_SECTION.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_TEACHERs.Add(this);
-						this._SEC_ID = value.SEC_ID;
-					}
-					else
-					{
-						this._SEC_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_SECTION");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_TEACHERSCHEDULE")]
-	public partial class TBL_TEACHERSCHEDULE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _TSCHED_ID;
-		
-		private System.Nullable<int> _TS_ID;
-		
-		private System.TimeSpan _TIMESTART;
-		
-		private System.TimeSpan _TIMEEND;
-		
-		private EntityRef<TBL_TEACHERSECTION> _TBL_TEACHERSECTION;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTSCHED_IDChanging(int value);
-    partial void OnTSCHED_IDChanged();
-    partial void OnTS_IDChanging(System.Nullable<int> value);
-    partial void OnTS_IDChanged();
-    partial void OnTIMESTARTChanging(System.TimeSpan value);
-    partial void OnTIMESTARTChanged();
-    partial void OnTIMEENDChanging(System.TimeSpan value);
-    partial void OnTIMEENDChanged();
-    #endregion
-		
-		public TBL_TEACHERSCHEDULE()
-		{
-			this._TBL_TEACHERSECTION = default(EntityRef<TBL_TEACHERSECTION>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TSCHED_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int TSCHED_ID
-		{
-			get
-			{
-				return this._TSCHED_ID;
-			}
-			set
-			{
-				if ((this._TSCHED_ID != value))
-				{
-					this.OnTSCHED_IDChanging(value);
-					this.SendPropertyChanging();
-					this._TSCHED_ID = value;
-					this.SendPropertyChanged("TSCHED_ID");
-					this.OnTSCHED_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TS_ID", DbType="Int")]
-		public System.Nullable<int> TS_ID
-		{
-			get
-			{
-				return this._TS_ID;
-			}
-			set
-			{
-				if ((this._TS_ID != value))
-				{
-					if (this._TBL_TEACHERSECTION.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTS_IDChanging(value);
-					this.SendPropertyChanging();
-					this._TS_ID = value;
-					this.SendPropertyChanged("TS_ID");
-					this.OnTS_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIMESTART", DbType="Time NOT NULL")]
-		public System.TimeSpan TIMESTART
-		{
-			get
-			{
-				return this._TIMESTART;
-			}
-			set
-			{
-				if ((this._TIMESTART != value))
-				{
-					this.OnTIMESTARTChanging(value);
-					this.SendPropertyChanging();
-					this._TIMESTART = value;
-					this.SendPropertyChanged("TIMESTART");
-					this.OnTIMESTARTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIMEEND", DbType="Time NOT NULL")]
-		public System.TimeSpan TIMEEND
-		{
-			get
-			{
-				return this._TIMEEND;
-			}
-			set
-			{
-				if ((this._TIMEEND != value))
-				{
-					this.OnTIMEENDChanging(value);
-					this.SendPropertyChanging();
-					this._TIMEEND = value;
-					this.SendPropertyChanged("TIMEEND");
-					this.OnTIMEENDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_TEACHERSECTION_TBL_TEACHERSCHEDULE", Storage="_TBL_TEACHERSECTION", ThisKey="TS_ID", OtherKey="TS_ID", IsForeignKey=true)]
-		public TBL_TEACHERSECTION TBL_TEACHERSECTION
-		{
-			get
-			{
-				return this._TBL_TEACHERSECTION.Entity;
-			}
-			set
-			{
-				TBL_TEACHERSECTION previousValue = this._TBL_TEACHERSECTION.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_TEACHERSECTION.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_TEACHERSECTION.Entity = null;
-						previousValue.TBL_TEACHERSCHEDULEs.Remove(this);
-					}
-					this._TBL_TEACHERSECTION.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_TEACHERSCHEDULEs.Add(this);
-						this._TS_ID = value.TS_ID;
-					}
-					else
-					{
-						this._TS_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_TEACHERSECTION");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_TEACHERSECTION")]
-	public partial class TBL_TEACHERSECTION : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _TS_ID;
-		
-		private System.Nullable<int> _SECSUB_ID;
-		
-		private EntitySet<TBL_TEACHERSCHEDULE> _TBL_TEACHERSCHEDULEs;
-		
-		private EntityRef<TBL_SECTION> _TBL_SECTION;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTS_IDChanging(int value);
-    partial void OnTS_IDChanged();
-    partial void OnSECSUB_IDChanging(System.Nullable<int> value);
-    partial void OnSECSUB_IDChanged();
-    #endregion
-		
-		public TBL_TEACHERSECTION()
-		{
-			this._TBL_TEACHERSCHEDULEs = new EntitySet<TBL_TEACHERSCHEDULE>(new Action<TBL_TEACHERSCHEDULE>(this.attach_TBL_TEACHERSCHEDULEs), new Action<TBL_TEACHERSCHEDULE>(this.detach_TBL_TEACHERSCHEDULEs));
-			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TS_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int TS_ID
-		{
-			get
-			{
-				return this._TS_ID;
-			}
-			set
-			{
-				if ((this._TS_ID != value))
-				{
-					this.OnTS_IDChanging(value);
-					this.SendPropertyChanging();
-					this._TS_ID = value;
-					this.SendPropertyChanged("TS_ID");
-					this.OnTS_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SECSUB_ID", DbType="Int")]
-		public System.Nullable<int> SECSUB_ID
-		{
-			get
-			{
-				return this._SECSUB_ID;
-			}
-			set
-			{
-				if ((this._SECSUB_ID != value))
-				{
-					if (this._TBL_SECTION.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSECSUB_IDChanging(value);
-					this.SendPropertyChanging();
-					this._SECSUB_ID = value;
-					this.SendPropertyChanged("SECSUB_ID");
-					this.OnSECSUB_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_TEACHERSECTION_TBL_TEACHERSCHEDULE", Storage="_TBL_TEACHERSCHEDULEs", ThisKey="TS_ID", OtherKey="TS_ID")]
-		public EntitySet<TBL_TEACHERSCHEDULE> TBL_TEACHERSCHEDULEs
-		{
-			get
-			{
-				return this._TBL_TEACHERSCHEDULEs;
-			}
-			set
-			{
-				this._TBL_TEACHERSCHEDULEs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHERSECTION", Storage="_TBL_SECTION", ThisKey="SECSUB_ID", OtherKey="SEC_ID", IsForeignKey=true)]
-		public TBL_SECTION TBL_SECTION
-		{
-			get
-			{
-				return this._TBL_SECTION.Entity;
-			}
-			set
-			{
-				TBL_SECTION previousValue = this._TBL_SECTION.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_SECTION.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_SECTION.Entity = null;
-						previousValue.TBL_TEACHERSECTIONs.Remove(this);
-					}
-					this._TBL_SECTION.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_TEACHERSECTIONs.Add(this);
-						this._SECSUB_ID = value.SEC_ID;
-					}
-					else
-					{
-						this._SECSUB_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_SECTION");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TBL_TEACHERSCHEDULEs(TBL_TEACHERSCHEDULE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_TEACHERSECTION = this;
-		}
-		
-		private void detach_TBL_TEACHERSCHEDULEs(TBL_TEACHERSCHEDULE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_TEACHERSECTION = null;
 		}
 	}
 	
@@ -3716,6 +1627,393 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_STANDPT")]
+	public partial class View_STANDPT
+	{
+		
+		private int _ST_ID;
+		
+		private string _ST_CURRENTID;
+		
+		private string _ST_FIRSTNAME;
+		
+		private string _ST_MIDDLENAME;
+		
+		private string _ST_LASTNAME;
+		
+		private string _ST_YEARLEVEL;
+		
+		private string _ST_SCHOOLYEAR;
+		
+		private System.DateTime _ST_BIRTHDATE;
+		
+		private int _ST_AGE;
+		
+		private string _ST_BIRTHPLACE;
+		
+		private string _ST_ADDRESS;
+		
+		private string _ST_GENDER;
+		
+		private string _ST_CONTACTNUMBER;
+		
+		private System.Nullable<bool> _ISACTIVE;
+		
+		private double _ST_HEIGHT;
+		
+		private double _ST_WEIGHT;
+		
+		private string _ST_BLOODPRESSURE;
+		
+		private int _P_ID;
+		
+		private string _P_NAME;
+		
+		private string _P_CONTACT;
+		
+		private string _P_OCCUPATION;
+		
+		public View_STANDPT()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_ID", DbType="Int NOT NULL")]
+		public int ST_ID
+		{
+			get
+			{
+				return this._ST_ID;
+			}
+			set
+			{
+				if ((this._ST_ID != value))
+				{
+					this._ST_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_CURRENTID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_CURRENTID
+		{
+			get
+			{
+				return this._ST_CURRENTID;
+			}
+			set
+			{
+				if ((this._ST_CURRENTID != value))
+				{
+					this._ST_CURRENTID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_FIRSTNAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_FIRSTNAME
+		{
+			get
+			{
+				return this._ST_FIRSTNAME;
+			}
+			set
+			{
+				if ((this._ST_FIRSTNAME != value))
+				{
+					this._ST_FIRSTNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_MIDDLENAME", DbType="VarChar(50)")]
+		public string ST_MIDDLENAME
+		{
+			get
+			{
+				return this._ST_MIDDLENAME;
+			}
+			set
+			{
+				if ((this._ST_MIDDLENAME != value))
+				{
+					this._ST_MIDDLENAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_LASTNAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_LASTNAME
+		{
+			get
+			{
+				return this._ST_LASTNAME;
+			}
+			set
+			{
+				if ((this._ST_LASTNAME != value))
+				{
+					this._ST_LASTNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_YEARLEVEL", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_YEARLEVEL
+		{
+			get
+			{
+				return this._ST_YEARLEVEL;
+			}
+			set
+			{
+				if ((this._ST_YEARLEVEL != value))
+				{
+					this._ST_YEARLEVEL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_SCHOOLYEAR", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_SCHOOLYEAR
+		{
+			get
+			{
+				return this._ST_SCHOOLYEAR;
+			}
+			set
+			{
+				if ((this._ST_SCHOOLYEAR != value))
+				{
+					this._ST_SCHOOLYEAR = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BIRTHDATE", DbType="Date NOT NULL")]
+		public System.DateTime ST_BIRTHDATE
+		{
+			get
+			{
+				return this._ST_BIRTHDATE;
+			}
+			set
+			{
+				if ((this._ST_BIRTHDATE != value))
+				{
+					this._ST_BIRTHDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_AGE", DbType="Int NOT NULL")]
+		public int ST_AGE
+		{
+			get
+			{
+				return this._ST_AGE;
+			}
+			set
+			{
+				if ((this._ST_AGE != value))
+				{
+					this._ST_AGE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BIRTHPLACE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_BIRTHPLACE
+		{
+			get
+			{
+				return this._ST_BIRTHPLACE;
+			}
+			set
+			{
+				if ((this._ST_BIRTHPLACE != value))
+				{
+					this._ST_BIRTHPLACE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_ADDRESS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_ADDRESS
+		{
+			get
+			{
+				return this._ST_ADDRESS;
+			}
+			set
+			{
+				if ((this._ST_ADDRESS != value))
+				{
+					this._ST_ADDRESS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_GENDER", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_GENDER
+		{
+			get
+			{
+				return this._ST_GENDER;
+			}
+			set
+			{
+				if ((this._ST_GENDER != value))
+				{
+					this._ST_GENDER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_CONTACTNUMBER", DbType="VarChar(50)")]
+		public string ST_CONTACTNUMBER
+		{
+			get
+			{
+				return this._ST_CONTACTNUMBER;
+			}
+			set
+			{
+				if ((this._ST_CONTACTNUMBER != value))
+				{
+					this._ST_CONTACTNUMBER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISACTIVE", DbType="Bit")]
+		public System.Nullable<bool> ISACTIVE
+		{
+			get
+			{
+				return this._ISACTIVE;
+			}
+			set
+			{
+				if ((this._ISACTIVE != value))
+				{
+					this._ISACTIVE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_HEIGHT", DbType="Float NOT NULL")]
+		public double ST_HEIGHT
+		{
+			get
+			{
+				return this._ST_HEIGHT;
+			}
+			set
+			{
+				if ((this._ST_HEIGHT != value))
+				{
+					this._ST_HEIGHT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_WEIGHT", DbType="Float NOT NULL")]
+		public double ST_WEIGHT
+		{
+			get
+			{
+				return this._ST_WEIGHT;
+			}
+			set
+			{
+				if ((this._ST_WEIGHT != value))
+				{
+					this._ST_WEIGHT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BLOODPRESSURE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_BLOODPRESSURE
+		{
+			get
+			{
+				return this._ST_BLOODPRESSURE;
+			}
+			set
+			{
+				if ((this._ST_BLOODPRESSURE != value))
+				{
+					this._ST_BLOODPRESSURE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_ID", DbType="Int NOT NULL")]
+		public int P_ID
+		{
+			get
+			{
+				return this._P_ID;
+			}
+			set
+			{
+				if ((this._P_ID != value))
+				{
+					this._P_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string P_NAME
+		{
+			get
+			{
+				return this._P_NAME;
+			}
+			set
+			{
+				if ((this._P_NAME != value))
+				{
+					this._P_NAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_CONTACT", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string P_CONTACT
+		{
+			get
+			{
+				return this._P_CONTACT;
+			}
+			set
+			{
+				if ((this._P_CONTACT != value))
+				{
+					this._P_CONTACT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_OCCUPATION", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string P_OCCUPATION
+		{
+			get
+			{
+				return this._P_OCCUPATION;
+			}
+			set
+			{
+				if ((this._P_OCCUPATION != value))
+				{
+					this._P_OCCUPATION = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_User")]
 	public partial class View_User
 	{
@@ -3869,393 +2167,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PTANDST_VIEW")]
-	public partial class PTANDST_VIEW
-	{
-		
-		private int _ST_ID;
-		
-		private string _ST_FIRSTNAME;
-		
-		private string _ST_MIDDLENAME;
-		
-		private string _ST_LASTNAME;
-		
-		private string _ST_YEARLEVEL;
-		
-		private string _ST_SCHOOLYEAR;
-		
-		private System.DateTime _ST_BIRTHDATE;
-		
-		private int _ST_AGE;
-		
-		private string _ST_BIRTHPLACE;
-		
-		private string _ST_ADDRESS;
-		
-		private string _ST_GENDER;
-		
-		private string _ST_CONTACTNUMBER;
-		
-		private System.Nullable<bool> _ISACTIVE;
-		
-		private decimal _ST_HEIGHT;
-		
-		private decimal _ST_WEIGHT;
-		
-		private string _ST_BLOODPRESSURE;
-		
-		private int _P_ID;
-		
-		private string _P_NAME;
-		
-		private string _P_CONTACT;
-		
-		private string _P_OCCUPATION;
-		
-		private string _P_TYPE;
-		
-		public PTANDST_VIEW()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_ID", DbType="Int NOT NULL")]
-		public int ST_ID
-		{
-			get
-			{
-				return this._ST_ID;
-			}
-			set
-			{
-				if ((this._ST_ID != value))
-				{
-					this._ST_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_FIRSTNAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string ST_FIRSTNAME
-		{
-			get
-			{
-				return this._ST_FIRSTNAME;
-			}
-			set
-			{
-				if ((this._ST_FIRSTNAME != value))
-				{
-					this._ST_FIRSTNAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_MIDDLENAME", DbType="VarChar(50)")]
-		public string ST_MIDDLENAME
-		{
-			get
-			{
-				return this._ST_MIDDLENAME;
-			}
-			set
-			{
-				if ((this._ST_MIDDLENAME != value))
-				{
-					this._ST_MIDDLENAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_LASTNAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string ST_LASTNAME
-		{
-			get
-			{
-				return this._ST_LASTNAME;
-			}
-			set
-			{
-				if ((this._ST_LASTNAME != value))
-				{
-					this._ST_LASTNAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_YEARLEVEL", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string ST_YEARLEVEL
-		{
-			get
-			{
-				return this._ST_YEARLEVEL;
-			}
-			set
-			{
-				if ((this._ST_YEARLEVEL != value))
-				{
-					this._ST_YEARLEVEL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_SCHOOLYEAR", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string ST_SCHOOLYEAR
-		{
-			get
-			{
-				return this._ST_SCHOOLYEAR;
-			}
-			set
-			{
-				if ((this._ST_SCHOOLYEAR != value))
-				{
-					this._ST_SCHOOLYEAR = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BIRTHDATE", DbType="Date NOT NULL")]
-		public System.DateTime ST_BIRTHDATE
-		{
-			get
-			{
-				return this._ST_BIRTHDATE;
-			}
-			set
-			{
-				if ((this._ST_BIRTHDATE != value))
-				{
-					this._ST_BIRTHDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_AGE", DbType="Int NOT NULL")]
-		public int ST_AGE
-		{
-			get
-			{
-				return this._ST_AGE;
-			}
-			set
-			{
-				if ((this._ST_AGE != value))
-				{
-					this._ST_AGE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BIRTHPLACE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string ST_BIRTHPLACE
-		{
-			get
-			{
-				return this._ST_BIRTHPLACE;
-			}
-			set
-			{
-				if ((this._ST_BIRTHPLACE != value))
-				{
-					this._ST_BIRTHPLACE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_ADDRESS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string ST_ADDRESS
-		{
-			get
-			{
-				return this._ST_ADDRESS;
-			}
-			set
-			{
-				if ((this._ST_ADDRESS != value))
-				{
-					this._ST_ADDRESS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_GENDER", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string ST_GENDER
-		{
-			get
-			{
-				return this._ST_GENDER;
-			}
-			set
-			{
-				if ((this._ST_GENDER != value))
-				{
-					this._ST_GENDER = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_CONTACTNUMBER", DbType="VarChar(50)")]
-		public string ST_CONTACTNUMBER
-		{
-			get
-			{
-				return this._ST_CONTACTNUMBER;
-			}
-			set
-			{
-				if ((this._ST_CONTACTNUMBER != value))
-				{
-					this._ST_CONTACTNUMBER = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISACTIVE", DbType="Bit")]
-		public System.Nullable<bool> ISACTIVE
-		{
-			get
-			{
-				return this._ISACTIVE;
-			}
-			set
-			{
-				if ((this._ISACTIVE != value))
-				{
-					this._ISACTIVE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_HEIGHT", DbType="Decimal(18,0) NOT NULL")]
-		public decimal ST_HEIGHT
-		{
-			get
-			{
-				return this._ST_HEIGHT;
-			}
-			set
-			{
-				if ((this._ST_HEIGHT != value))
-				{
-					this._ST_HEIGHT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_WEIGHT", DbType="Decimal(18,0) NOT NULL")]
-		public decimal ST_WEIGHT
-		{
-			get
-			{
-				return this._ST_WEIGHT;
-			}
-			set
-			{
-				if ((this._ST_WEIGHT != value))
-				{
-					this._ST_WEIGHT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_BLOODPRESSURE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string ST_BLOODPRESSURE
-		{
-			get
-			{
-				return this._ST_BLOODPRESSURE;
-			}
-			set
-			{
-				if ((this._ST_BLOODPRESSURE != value))
-				{
-					this._ST_BLOODPRESSURE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_ID", DbType="Int NOT NULL")]
-		public int P_ID
-		{
-			get
-			{
-				return this._P_ID;
-			}
-			set
-			{
-				if ((this._P_ID != value))
-				{
-					this._P_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string P_NAME
-		{
-			get
-			{
-				return this._P_NAME;
-			}
-			set
-			{
-				if ((this._P_NAME != value))
-				{
-					this._P_NAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_CONTACT", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string P_CONTACT
-		{
-			get
-			{
-				return this._P_CONTACT;
-			}
-			set
-			{
-				if ((this._P_CONTACT != value))
-				{
-					this._P_CONTACT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_OCCUPATION", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string P_OCCUPATION
-		{
-			get
-			{
-				return this._P_OCCUPATION;
-			}
-			set
-			{
-				if ((this._P_OCCUPATION != value))
-				{
-					this._P_OCCUPATION = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_TYPE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string P_TYPE
-		{
-			get
-			{
-				return this._P_TYPE;
-			}
-			set
-			{
-				if ((this._P_TYPE != value))
-				{
-					this._P_TYPE = value;
-				}
-			}
-		}
-	}
-	
 	public partial class SP_ACCOUNTRECOVERYResult
 	{
 		
@@ -4318,36 +2229,12 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 	}
 	
-	public partial class SP_VERIFYPASSWORDResult
-	{
-		
-		private string _USER_PASSWORD;
-		
-		public SP_VERIFYPASSWORDResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USER_PASSWORD", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string USER_PASSWORD
-		{
-			get
-			{
-				return this._USER_PASSWORD;
-			}
-			set
-			{
-				if ((this._USER_PASSWORD != value))
-				{
-					this._USER_PASSWORD = value;
-				}
-			}
-		}
-	}
-	
 	public partial class SP_STSEARCHResult
 	{
 		
 		private int _ST_ID;
+		
+		private string _ST_CURRENTID;
 		
 		private string _ST_FIRSTNAME;
 		
@@ -4373,9 +2260,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private System.Nullable<bool> _ISACTIVE;
 		
-		private decimal _ST_HEIGHT;
+		private double _ST_HEIGHT;
 		
-		private decimal _ST_WEIGHT;
+		private double _ST_WEIGHT;
 		
 		private string _ST_BLOODPRESSURE;
 		
@@ -4397,6 +2284,22 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 				if ((this._ST_ID != value))
 				{
 					this._ST_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_CURRENTID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_CURRENTID
+		{
+			get
+			{
+				return this._ST_CURRENTID;
+			}
+			set
+			{
+				if ((this._ST_CURRENTID != value))
+				{
+					this._ST_CURRENTID = value;
 				}
 			}
 		}
@@ -4593,8 +2496,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_HEIGHT", DbType="Decimal(18,0) NOT NULL")]
-		public decimal ST_HEIGHT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_HEIGHT", DbType="Float NOT NULL")]
+		public double ST_HEIGHT
 		{
 			get
 			{
@@ -4609,8 +2512,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_WEIGHT", DbType="Decimal(18,0) NOT NULL")]
-		public decimal ST_WEIGHT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_WEIGHT", DbType="Float NOT NULL")]
+		public double ST_WEIGHT
 		{
 			get
 			{
@@ -4663,6 +2566,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private int _ST_ID;
 		
+		private string _ST_CURRENTID;
+		
 		private string _ST_FIRSTNAME;
 		
 		private string _ST_MIDDLENAME;
@@ -4687,9 +2592,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private System.Nullable<bool> _ISACTIVE;
 		
-		private decimal _ST_HEIGHT;
+		private double _ST_HEIGHT;
 		
-		private decimal _ST_WEIGHT;
+		private double _ST_WEIGHT;
 		
 		private string _ST_BLOODPRESSURE;
 		
@@ -4711,6 +2616,22 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 				if ((this._ST_ID != value))
 				{
 					this._ST_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_CURRENTID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_CURRENTID
+		{
+			get
+			{
+				return this._ST_CURRENTID;
+			}
+			set
+			{
+				if ((this._ST_CURRENTID != value))
+				{
+					this._ST_CURRENTID = value;
 				}
 			}
 		}
@@ -4907,8 +2828,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_HEIGHT", DbType="Decimal(18,0) NOT NULL")]
-		public decimal ST_HEIGHT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_HEIGHT", DbType="Float NOT NULL")]
+		public double ST_HEIGHT
 		{
 			get
 			{
@@ -4923,8 +2844,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_WEIGHT", DbType="Decimal(18,0) NOT NULL")]
-		public decimal ST_WEIGHT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_WEIGHT", DbType="Float NOT NULL")]
+		public double ST_WEIGHT
 		{
 			get
 			{
@@ -5415,6 +3336,32 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 				if ((this._USER_IMAGE != value))
 				{
 					this._USER_IMAGE = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_VERIFYPASSWORDResult
+	{
+		
+		private string _USER_PASSWORD;
+		
+		public SP_VERIFYPASSWORDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USER_PASSWORD", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string USER_PASSWORD
+		{
+			get
+			{
+				return this._USER_PASSWORD;
+			}
+			set
+			{
+				if ((this._USER_PASSWORD != value))
+				{
+					this._USER_PASSWORD = value;
 				}
 			}
 		}

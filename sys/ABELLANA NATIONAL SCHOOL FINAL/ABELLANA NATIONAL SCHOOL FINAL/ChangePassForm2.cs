@@ -28,7 +28,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                         if (txtnewpass.Text == txtrepass.Text)
                         {
                             db.SP_CHANGEUSERPASS(txtUsername.Text,txtnewpass.Text);
-                            MessageBox.Show("Successfully Update !");
+                            MessageBox.Show("Successfully Update !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                             LoginForm lf = new LoginForm();
                             txtUsername.Text = lf.txtUsername.Text;

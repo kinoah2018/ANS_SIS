@@ -275,7 +275,7 @@
             this.txtUserID.BackColor = System.Drawing.Color.Transparent;
             this.txtUserID.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserID.ForeColor = System.Drawing.Color.Black;
-            this.txtUserID.Location = new System.Drawing.Point(160, 213);
+            this.txtUserID.Location = new System.Drawing.Point(59, 213);
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.Size = new System.Drawing.Size(27, 18);
             this.txtUserID.TabIndex = 118;
@@ -336,7 +336,7 @@
             this.lbluname.BackColor = System.Drawing.Color.Transparent;
             this.lbluname.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbluname.ForeColor = System.Drawing.Color.Black;
-            this.lbluname.Location = new System.Drawing.Point(160, 240);
+            this.lbluname.Location = new System.Drawing.Point(259, 213);
             this.lbluname.Name = "lbluname";
             this.lbluname.Size = new System.Drawing.Size(27, 18);
             this.lbluname.TabIndex = 130;

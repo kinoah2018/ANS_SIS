@@ -47,6 +47,7 @@
             this.txtans = new System.Windows.Forms.TextBox();
             this.txtuname = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.lbname = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,11 +55,11 @@
             // 
             this.lbusername.AutoSize = true;
             this.lbusername.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbusername.Location = new System.Drawing.Point(357, 69);
+            this.lbusername.Location = new System.Drawing.Point(461, 69);
             this.lbusername.Name = "lbusername";
-            this.lbusername.Size = new System.Drawing.Size(103, 23);
+            this.lbusername.Size = new System.Drawing.Size(0, 23);
             this.lbusername.TabIndex = 147;
-            this.lbusername.Text = "username";
+            this.lbusername.Click += new System.EventHandler(this.lbusername_Click);
             // 
             // label6
             // 
@@ -255,12 +256,23 @@
             this.label9.TabIndex = 153;
             this.label9.Text = "Username :";
             // 
+            // lbname
+            // 
+            this.lbname.AutoSize = true;
+            this.lbname.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbname.Location = new System.Drawing.Point(361, 69);
+            this.lbname.Name = "lbname";
+            this.lbname.Size = new System.Drawing.Size(103, 23);
+            this.lbname.TabIndex = 154;
+            this.lbname.Text = "username";
+            // 
             // ChangePassForm
             // 
             this.AcceptButton = this.btnChange;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 475);
+            this.Controls.Add(this.lbname);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtuname);
             this.Controls.Add(this.txtans);
@@ -313,5 +325,6 @@
         private System.Windows.Forms.TextBox txtans;
         private System.Windows.Forms.TextBox txtuname;
         private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label lbname;
     }
 }

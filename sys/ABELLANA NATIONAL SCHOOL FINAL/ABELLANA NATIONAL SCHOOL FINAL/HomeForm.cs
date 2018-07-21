@@ -109,8 +109,18 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             int utype = Convert.ToInt32(seltype.ExecuteScalar());
             conn.Close();
 
-            AddUserForm addu = new AddUserForm();
-            addu.ShowDialog();
+            if (utype == 1)
+            {
+                AddUserForm addu = new AddUserForm();
+                addu.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Only the Administrator was authorized to use!", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+
+
            
         }
 
@@ -198,6 +208,17 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             StudentProfileForm spf = new StudentProfileForm();
             spf.ShowDialog();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BMItoolStripMenuItem4_Click_1(object sender, EventArgs e)
+        {
+            BMIComputeForm bcf = new BMIComputeForm();
+            bcf.ShowDialog();
         }
     }
 }

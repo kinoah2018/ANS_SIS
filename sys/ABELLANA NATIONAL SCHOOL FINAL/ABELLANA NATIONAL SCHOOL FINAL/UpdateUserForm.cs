@@ -38,7 +38,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             Control_variables.identity_id = Convert.ToInt32(get_ident.ExecuteScalar());
             
             conn.Close();
-            bool isactive = false;
+            bool isactive = true;
             if (cmbStatus.Text == "Active")
             {
                 isactive = true;
@@ -51,7 +51,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             int identity = Control_variables.identity_id;
             string datenow = DateTime.Now.ToShortDateString();
             db.SP_USERUPDATE(int.Parse(txtUser_ID.Text), txtLastname.Text, txtFirstname.Text, txtMiddlename.Text, txtUsername.Text, isactive, PB_image.ImageLocation);
-            MessageBox.Show("Successfully Updated","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("User Successfully Updated","",MessageBoxButtons.OK,MessageBoxIcon.Information);
             this.Close();
             
             
@@ -67,7 +67,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void button7_Click(object sender, EventArgs e)
         {
-            ClearAll();
+            this.Close();
         }
         
         private void UpdateUserForm_Load(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             conn.Open();
 
-            SqlCommand get_picsure = new SqlCommand("SELECT USER_IMAGE FROM TBL_USER WHERE USER_ID = '"+txtUser_ID+"'",conn);
+            SqlCommand get_picsure = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_ID = '"+txtUser_ID.Text+"'",conn);
             string pic = Convert.ToString(get_picsure.ExecuteScalar());
             OpenFileDialog op = new OpenFileDialog();
             op.Filter = "All Images | *.jpg";

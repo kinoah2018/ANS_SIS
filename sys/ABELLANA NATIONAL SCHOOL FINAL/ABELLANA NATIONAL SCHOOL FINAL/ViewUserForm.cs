@@ -43,7 +43,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             if (txtSearch.Text == "")
             {
-                MessageBox.Show("No data to be Search","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("No data to be search","Ooops !",MessageBoxButtons.OK,MessageBoxIcon.Hand);
             }
             else
             {
@@ -63,11 +63,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             uuf.txtUsername.Text = dgViewUser.CurrentRow.Cells[4].Value.ToString();
             if (dgViewUser.CurrentRow.Cells[7].Value.ToString() == "True")
             {
-                uuf.cmbStatus.SelectedIndex = 0;
+                uuf.cmbStatus.SelectedIndex = 1;
             }
             else
             {
-                uuf.cmbStatus.SelectedIndex = 1;
+                uuf.cmbStatus.SelectedIndex = 0;
             }
             
             conn.Open();
