@@ -55,10 +55,11 @@
             // 
             this.lbusername.AutoSize = true;
             this.lbusername.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbusername.Location = new System.Drawing.Point(461, 69);
+            this.lbusername.Location = new System.Drawing.Point(469, 69);
             this.lbusername.Name = "lbusername";
             this.lbusername.Size = new System.Drawing.Size(0, 23);
             this.lbusername.TabIndex = 147;
+            this.lbusername.Visible = false;
             this.lbusername.Click += new System.EventHandler(this.lbusername_Click);
             // 
             // label6
@@ -260,7 +261,7 @@
             // 
             this.lbname.AutoSize = true;
             this.lbname.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbname.Location = new System.Drawing.Point(361, 69);
+            this.lbname.Location = new System.Drawing.Point(361, 70);
             this.lbname.Name = "lbname";
             this.lbname.Size = new System.Drawing.Size(103, 23);
             this.lbname.TabIndex = 154;

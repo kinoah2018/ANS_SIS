@@ -133,15 +133,5 @@
         public System.Windows.Forms.DataGridView dgViewUser;
         private System.Windows.Forms.Label label4;
         internal System.Windows.Forms.Button Button3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERLASTNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERFIRSTNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERMIDDLENAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERPOSITIONDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERUSERNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERCONTACTNODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERSTATUSDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERDATEADDEDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uSERCREATORDataGridViewTextBoxColumn;
     }
 }

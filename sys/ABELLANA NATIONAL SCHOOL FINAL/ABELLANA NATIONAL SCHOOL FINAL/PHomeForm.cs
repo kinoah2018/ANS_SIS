@@ -19,9 +19,10 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
+           
             LoginForm lf = new LoginForm();
             lf.ShowDialog();
+            
 
             
            

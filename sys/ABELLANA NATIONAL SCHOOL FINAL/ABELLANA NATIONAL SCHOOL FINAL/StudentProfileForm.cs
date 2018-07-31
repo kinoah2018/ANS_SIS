@@ -55,14 +55,16 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtfname.Text==""||txtlname.Text==""||txtmname.Text==""||cmbsyear.Text==""||cmbylevel.Text==""||dtpbdate.Text==""||txtage.Text==""||txtbplace.Text==""||txtadd.Text==""||cmbgen.Text==""||txtcnumber.Text==""||txtheight.Text==""||txtweight.Text==""||txtbp.Text==""||txtpname.Text==""||txtcnumber.Text==""||txtoccu.Text=="")
+            if (txtfname.Text==""||txtlname.Text==""||txtmname.Text==""||cmbsyear.Text==""||cmbylevel.Text==""||dtpbdate.Text==""||txtage.Text==""||txtbplace.Text==""||txtadd.Text==""||cmbgen.Text==""||txtcnumber.Text==""||txtheight.Text==""||txtweight.Text==""||txtSystolic.Text==""||txtpname.Text==""||txtcnumber.Text==""||txtoccu.Text=="")
             {
                 MessageBox.Show("Input all fields.","Ooops !",MessageBoxButtons.OK,MessageBoxIcon.Hand);
             }else
 	        {
-                db.SP_STSAVE(txtcstid.Text, txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, cmbsyear.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text, txtadd.Text, cmbgen.Text, txtcnumber.Text, float.Parse(txtheight.Text), float.Parse(txtweight.Text), txtbp.Text, txtpname.Text, txtcnumber.Text, txtoccu.Text);
-                 MessageBox.Show("Student Successfully Saved!");
+                
+                db.SP_STSAVE(txtcstid.Text, txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, cmbsyear.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text, txtadd.Text, cmbgen.Text, Convert.ToDecimal(txtheight.Text), Convert.ToDecimal(txtweight.Text), int.Parse(txtSystolic.Text),int.Parse(txtDiastolic.Text), txtpname.Text, txtcnumber.Text, txtoccu.Text);
+                MessageBox.Show("Student Successfully Saved","", MessageBoxButtons.OK, MessageBoxIcon.Information);
                  ClearALL();
+                 txtDiastolic.Text = "";
 	        }
 
             
@@ -89,10 +91,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             txtbplace.Clear();
             txtadd.Clear();
             cmbgen.SelectedItem = null;
-            cmbstatus.SelectedItem = null;
             txtheight.Clear();
             txtweight.Clear();
-            txtbp.Clear();
+            txtSystolic.Clear();
             txtpname.Clear();
             txtcnumber.Clear();
             txtoccu.Clear();

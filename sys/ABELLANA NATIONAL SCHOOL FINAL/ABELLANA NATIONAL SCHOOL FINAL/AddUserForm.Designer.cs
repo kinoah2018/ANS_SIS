@@ -104,6 +104,7 @@
             this.cmbutype.Size = new System.Drawing.Size(152, 26);
             this.cmbutype.TabIndex = 94;
             this.cmbutype.ValueMember = "USER_TYPEID";
+            this.cmbutype.SelectedIndexChanged += new System.EventHandler(this.cmbutype_SelectedIndexChanged);
             // 
             // tBLUSERTYPEBindingSource
             // 

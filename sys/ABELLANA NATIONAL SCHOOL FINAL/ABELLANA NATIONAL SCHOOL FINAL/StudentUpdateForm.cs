@@ -28,13 +28,13 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             {
                 isactive = false;
             }
-            if (txtfname.Text == "" || txtlname.Text == "" || txtmname.Text == "" || cmbsyear.Text == "" || cmbylevel.Text == "" || dtpbdate.Text == "" || txtage.Text == "" || txtbplace.Text == "" || txtadd.Text == "" || cmbgen.Text == "" || txtcnumber.Text == "" || txtheight.Text == "" || txtweight.Text == "" || txtbp.Text == "" || txtpname.Text == "" || txtcnumber.Text == "" || txtoccu.Text == "")
+            if (txtfname.Text == "" || txtlname.Text == "" || txtmname.Text == "" || cmbsyear.Text == "" || cmbylevel.Text == "" || dtpbdate.Text == "" || txtage.Text == "" || txtbplace.Text == "" || txtadd.Text == "" || cmbgen.Text == "" || txtcnumber.Text == "" || txtheight.Text == "" || txtweight.Text == "" || txtSystolic.Text == "" || txtpname.Text == "" || txtcnumber.Text == "" || txtoccu.Text == "")
             {
                 MessageBox.Show("Input all fields.", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             else
             {
-                db.SP_STUPDATE(int.Parse(txtSTID.Text), txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, cmbsyear.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text, txtadd.Text, cmbgen.Text, txtcnumber.Text, isactive, float.Parse(txtheight.Text), float.Parse(txtheight.Text), txtbp.Text, int.Parse(txtPID.Text), txtpname.Text, txtcnumber.Text, txtoccu.Text);
+                db.SP_STUPDATE(int.Parse(txtSID.Text), txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, cmbsyear.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text, txtadd.Text, cmbgen.Text, isactive, Convert.ToDecimal(txtheight.Text), Convert.ToDecimal(txtweight.Text),int.Parse(txtSystolic.Text), int.Parse(txtDiasltolic.Text), int.Parse(txtPID.Text), txtpname.Text, txtcnumber.Text, txtoccu.Text);
                 MessageBox.Show("Student Successfully Update !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearALL();
                 this.Close();
@@ -54,7 +54,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             cmbgen.SelectedText = "";
             txtheight.Clear();
             txtweight.Clear();
-            txtbp.Clear();
+            txtSystolic.Clear();
             txtpname.Clear();
             txtcnumber.Clear();
             txtoccu.Clear();

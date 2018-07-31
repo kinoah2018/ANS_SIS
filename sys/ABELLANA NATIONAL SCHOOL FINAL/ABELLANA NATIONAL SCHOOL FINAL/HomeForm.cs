@@ -220,5 +220,53 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             BMIComputeForm bcf = new BMIComputeForm();
             bcf.ShowDialog();
         }
+
+        private void GradestoolStripMenuItem10_Click_1(object sender, EventArgs e)
+        {
+            StudentGradeForm sgf = new StudentGradeForm();
+            sgf.ShowDialog();  
+        }
+
+        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SectiontoolStripMenuItem10_Click_1(object sender, EventArgs e)
+        {
+            StudentSectionForm sec = new StudentSectionForm();
+            sec.ShowDialog();
+        }
+
+        private void RequirmentstoolStripMenuItem10_Click_1(object sender, EventArgs e)
+        {
+            StudentRequirementForm strec = new StudentRequirementForm();
+            strec.ShowDialog();
+
+        }
+
+        private void ComplimentarytoolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            StudentBookForm sbf = new StudentBookForm();
+            sbf.ShowDialog();
+        }
+
+        private void PaymenttoolStripMenuItem10_Click_1(object sender, EventArgs e)
+        {
+            StudentPaymentDetailsForm spf = new StudentPaymentDetailsForm();
+            spf.ShowDialog();
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            StudentSectionForm ssf = new StudentSectionForm();
+            ssf.ShowDialog();
+        }
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            StudentBookForm sbf = new StudentBookForm();
+            sbf.ShowDialog();
+        }
     }
 }

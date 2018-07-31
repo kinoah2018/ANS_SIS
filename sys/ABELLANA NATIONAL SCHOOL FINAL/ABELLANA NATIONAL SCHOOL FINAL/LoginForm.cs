@@ -109,8 +109,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                                txtUsername.Clear();
                                txtPassword.Clear();
 
-                              
-                               
+                               PHomeForm pf = new PHomeForm();
                                h.ShowDialog();
                             }
                             else

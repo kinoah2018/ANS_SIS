@@ -180,6 +180,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
           
         }
 
+        private void cmbutype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

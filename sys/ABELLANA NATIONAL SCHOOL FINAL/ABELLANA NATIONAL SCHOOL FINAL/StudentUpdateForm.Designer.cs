@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentUpdateForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtSTID = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtDiasltolic = new System.Windows.Forms.TextBox();
             this.cmbgen = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtadd = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtPID = new System.Windows.Forms.Label();
             this.txtcnumber = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -45,12 +46,12 @@
             this.txtpname = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtSystolic = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtlname = new System.Windows.Forms.TextBox();
             this.txtmname = new System.Windows.Forms.TextBox();
-            this.txtbp = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtweight = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -73,7 +74,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.txtPID = new System.Windows.Forms.Label();
+            this.txtSID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -82,19 +83,20 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.txtSTID);
+            this.groupBox1.Controls.Add(this.txtSID);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.txtDiasltolic);
             this.groupBox1.Controls.Add(this.cmbgen);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.txtadd);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.txtSystolic);
             this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtlname);
             this.groupBox1.Controls.Add(this.txtmname);
-            this.groupBox1.Controls.Add(this.txtbp);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.txtweight);
             this.groupBox1.Controls.Add(this.label20);
@@ -121,23 +123,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student Information";
             // 
-            // label16
+            // label14
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(22, 25);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(116, 18);
-            this.label16.TabIndex = 120;
-            this.label16.Text = "Student ID  :";
-            this.label16.Visible = false;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(707, 183);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(15, 18);
+            this.label14.TabIndex = 122;
+            this.label14.Text = "/";
             // 
-            // txtSTID
+            // txtDiasltolic
             // 
-            this.txtSTID.Location = new System.Drawing.Point(144, 22);
-            this.txtSTID.Name = "txtSTID";
-            this.txtSTID.Size = new System.Drawing.Size(191, 27);
-            this.txtSTID.TabIndex = 119;
-            this.txtSTID.Visible = false;
+            this.txtDiasltolic.Location = new System.Drawing.Point(724, 178);
+            this.txtDiasltolic.Name = "txtDiasltolic";
+            this.txtDiasltolic.Size = new System.Drawing.Size(63, 27);
+            this.txtDiasltolic.TabIndex = 121;
             // 
             // cmbgen
             // 
@@ -162,7 +162,7 @@
             // 
             // txtadd
             // 
-            this.txtadd.Location = new System.Drawing.Point(144, 347);
+            this.txtadd.Location = new System.Drawing.Point(162, 330);
             this.txtadd.Name = "txtadd";
             this.txtadd.Size = new System.Drawing.Size(191, 27);
             this.txtadd.TabIndex = 116;
@@ -170,7 +170,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(53, 350);
+            this.label12.Location = new System.Drawing.Point(71, 333);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 18);
             this.label12.TabIndex = 115;
@@ -193,6 +193,15 @@
             this.groupBox2.TabIndex = 114;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Parent\'s Information";
+            // 
+            // txtPID
+            // 
+            this.txtPID.AutoSize = true;
+            this.txtPID.Location = new System.Drawing.Point(370, 110);
+            this.txtPID.Name = "txtPID";
+            this.txtPID.Size = new System.Drawing.Size(0, 18);
+            this.txtPID.TabIndex = 125;
+            this.txtPID.Visible = false;
             // 
             // txtcnumber
             // 
@@ -260,10 +269,17 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Gender";
             // 
+            // txtSystolic
+            // 
+            this.txtSystolic.Location = new System.Drawing.Point(639, 179);
+            this.txtSystolic.Name = "txtSystolic";
+            this.txtSystolic.Size = new System.Drawing.Size(63, 27);
+            this.txtSystolic.TabIndex = 30;
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(30, 130);
+            this.label23.Location = new System.Drawing.Point(48, 113);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(109, 18);
             this.label23.TabIndex = 35;
@@ -272,7 +288,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(11, 94);
+            this.label22.Location = new System.Drawing.Point(29, 77);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(127, 18);
             this.label22.TabIndex = 34;
@@ -281,7 +297,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 57);
+            this.label2.Location = new System.Drawing.Point(47, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 18);
             this.label2.TabIndex = 33;
@@ -289,24 +305,17 @@
             // 
             // txtlname
             // 
-            this.txtlname.Location = new System.Drawing.Point(144, 127);
+            this.txtlname.Location = new System.Drawing.Point(162, 110);
             this.txtlname.Name = "txtlname";
             this.txtlname.Size = new System.Drawing.Size(191, 27);
             this.txtlname.TabIndex = 32;
             // 
             // txtmname
             // 
-            this.txtmname.Location = new System.Drawing.Point(144, 91);
+            this.txtmname.Location = new System.Drawing.Point(162, 74);
             this.txtmname.Name = "txtmname";
             this.txtmname.Size = new System.Drawing.Size(191, 27);
             this.txtmname.TabIndex = 31;
-            // 
-            // txtbp
-            // 
-            this.txtbp.Location = new System.Drawing.Point(639, 178);
-            this.txtbp.Name = "txtbp";
-            this.txtbp.Size = new System.Drawing.Size(88, 27);
-            this.txtbp.TabIndex = 30;
             // 
             // label21
             // 
@@ -364,7 +373,7 @@
             // dtpbdate
             // 
             this.dtpbdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpbdate.Location = new System.Drawing.Point(144, 235);
+            this.dtpbdate.Location = new System.Drawing.Point(162, 218);
             this.dtpbdate.Name = "dtpbdate";
             this.dtpbdate.Size = new System.Drawing.Size(191, 27);
             this.dtpbdate.TabIndex = 22;
@@ -378,7 +387,7 @@
             "2019 - 2020",
             "2021 - 2022",
             "2022 - 2023"});
-            this.cmbsyear.Location = new System.Drawing.Point(144, 198);
+            this.cmbsyear.Location = new System.Drawing.Point(162, 181);
             this.cmbsyear.Name = "cmbsyear";
             this.cmbsyear.Size = new System.Drawing.Size(121, 26);
             this.cmbsyear.TabIndex = 21;
@@ -392,7 +401,7 @@
             "2ND YEAR",
             "3RD YEAR",
             "4TH YEAR"});
-            this.cmbylevel.Location = new System.Drawing.Point(144, 162);
+            this.cmbylevel.Location = new System.Drawing.Point(162, 145);
             this.cmbylevel.Name = "cmbylevel";
             this.cmbylevel.Size = new System.Drawing.Size(121, 26);
             this.cmbylevel.TabIndex = 20;
@@ -409,7 +418,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 308);
+            this.label7.Location = new System.Drawing.Point(47, 291);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 18);
             this.label7.TabIndex = 11;
@@ -417,7 +426,7 @@
             // 
             // txtbplace
             // 
-            this.txtbplace.Location = new System.Drawing.Point(144, 305);
+            this.txtbplace.Location = new System.Drawing.Point(162, 288);
             this.txtbplace.Multiline = true;
             this.txtbplace.Name = "txtbplace";
             this.txtbplace.Size = new System.Drawing.Size(315, 31);
@@ -426,7 +435,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(86, 272);
+            this.label6.Location = new System.Drawing.Point(104, 255);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 18);
             this.label6.TabIndex = 9;
@@ -435,7 +444,7 @@
             // txtage
             // 
             this.txtage.Enabled = false;
-            this.txtage.Location = new System.Drawing.Point(144, 269);
+            this.txtage.Location = new System.Drawing.Point(162, 252);
             this.txtage.Name = "txtage";
             this.txtage.Size = new System.Drawing.Size(46, 27);
             this.txtage.TabIndex = 8;
@@ -445,7 +454,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(41, 237);
+            this.label5.Location = new System.Drawing.Point(59, 220);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 18);
             this.label5.TabIndex = 7;
@@ -454,7 +463,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 165);
+            this.label4.Location = new System.Drawing.Point(50, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 18);
             this.label4.TabIndex = 5;
@@ -463,7 +472,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 201);
+            this.label3.Location = new System.Drawing.Point(40, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 18);
             this.label3.TabIndex = 5;
@@ -471,7 +480,7 @@
             // 
             // txtfname
             // 
-            this.txtfname.Location = new System.Drawing.Point(144, 54);
+            this.txtfname.Location = new System.Drawing.Point(162, 37);
             this.txtfname.Name = "txtfname";
             this.txtfname.Size = new System.Drawing.Size(191, 27);
             this.txtfname.TabIndex = 2;
@@ -527,14 +536,14 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // txtPID
+            // txtSID
             // 
-            this.txtPID.AutoSize = true;
-            this.txtPID.Location = new System.Drawing.Point(366, 110);
-            this.txtPID.Name = "txtPID";
-            this.txtPID.Size = new System.Drawing.Size(0, 18);
-            this.txtPID.TabIndex = 125;
-            this.txtPID.Visible = false;
+            this.txtSID.AutoSize = true;
+            this.txtSID.Location = new System.Drawing.Point(359, 40);
+            this.txtSID.Name = "txtSID";
+            this.txtSID.Size = new System.Drawing.Size(0, 18);
+            this.txtSID.TabIndex = 126;
+            this.txtSID.Visible = false;
             // 
             // StudentUpdateForm
             // 
@@ -596,7 +605,7 @@
         public System.Windows.Forms.TextBox txtpname;
         public System.Windows.Forms.TextBox txtlname;
         public System.Windows.Forms.TextBox txtmname;
-        public System.Windows.Forms.TextBox txtbp;
+        public System.Windows.Forms.TextBox txtSystolic;
         public System.Windows.Forms.TextBox txtweight;
         public System.Windows.Forms.TextBox txtheight;
         public System.Windows.Forms.ComboBox cmbstatus;
@@ -606,8 +615,9 @@
         public System.Windows.Forms.TextBox txtbplace;
         public System.Windows.Forms.TextBox txtage;
         public System.Windows.Forms.TextBox txtfname;
-        private System.Windows.Forms.Label label16;
-        public System.Windows.Forms.TextBox txtSTID;
         public System.Windows.Forms.Label txtPID;
+        private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.TextBox txtDiasltolic;
+        public System.Windows.Forms.Label txtSID;
     }
 }

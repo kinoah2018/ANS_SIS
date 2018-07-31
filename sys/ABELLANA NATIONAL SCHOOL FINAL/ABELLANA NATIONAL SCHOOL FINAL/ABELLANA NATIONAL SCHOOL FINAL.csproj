@@ -56,6 +56,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ANS_DATABASEDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ANS_DATABASEDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANS_DATABASEDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BMIComputeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,8 +208,26 @@
     <Compile Include="ViewUserForm.Designer.cs">
       <DependentUpon>ViewUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View_SelectStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_SelectStudentForm.Designer.cs">
+      <DependentUpon>View_SelectStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View_Student1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Student1Form.Designer.cs">
+      <DependentUpon>View_Student1Form.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_SelectStudentForm.resx">
+      <DependentUpon>View_SelectStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Student1Form.resx">
+      <DependentUpon>View_Student1Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ANS_DATABASEDataSet.xsc">
       <DependentUpon>ANS_DATABASEDataSet.xsd</DependentUpon>
@@ -215,6 +243,28 @@
     <EmbeddedResource Include="BMIComputeForm.resx">
       <DependentUpon>BMIComputeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ANS_DATABASEDataSet1.xsc">
+      <DependentUpon>ANS_DATABASEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet1.xss">
+      <DependentUpon>ANS_DATABASEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet2.xsc">
+      <DependentUpon>ANS_DATABASEDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet2.xss">
+      <DependentUpon>ANS_DATABASEDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
