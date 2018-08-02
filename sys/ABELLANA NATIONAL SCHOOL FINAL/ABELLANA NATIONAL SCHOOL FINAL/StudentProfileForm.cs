@@ -27,6 +27,10 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void StudentProfile_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'aNS_DATABASEDataSet5.TBL_SCHOOLYEAR' table. You can move, or remove it, as needed.
+            this.tBL_SCHOOLYEARTableAdapter.Fill(this.aNS_DATABASEDataSet5.TBL_SCHOOLYEAR);
+            // TODO: This line of code loads data into the 'aNS_DATABASEDataSet4.TBL_SECTION' table. You can move, or remove it, as needed.
+            this.tBL_SECTIONTableAdapter.Fill(this.aNS_DATABASEDataSet4.TBL_SECTION);
             if (CurrentID()==1)
             {
                 txtcstid.Text = "ST-" + (CurrentID().ToString().PadLeft(5, '0'));
@@ -44,8 +48,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            ViewStudentProfileForm spv = new ViewStudentProfileForm();
-            spv.ShowDialog();
+           
         }
 
         private void Button3_Click_1(object sender, EventArgs e)
@@ -55,18 +58,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtfname.Text==""||txtlname.Text==""||txtmname.Text==""||cmbsyear.Text==""||cmbylevel.Text==""||dtpbdate.Text==""||txtage.Text==""||txtbplace.Text==""||txtadd.Text==""||cmbgen.Text==""||txtcnumber.Text==""||txtheight.Text==""||txtweight.Text==""||txtSystolic.Text==""||txtpname.Text==""||txtcnumber.Text==""||txtoccu.Text=="")
-            {
-                MessageBox.Show("Input all fields.","Ooops !",MessageBoxButtons.OK,MessageBoxIcon.Hand);
-            }else
-	        {
-                
-                db.SP_STSAVE(txtcstid.Text, txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, cmbsyear.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text, txtadd.Text, cmbgen.Text, Convert.ToDecimal(txtheight.Text), Convert.ToDecimal(txtweight.Text), int.Parse(txtSystolic.Text),int.Parse(txtDiastolic.Text), txtpname.Text, txtcnumber.Text, txtoccu.Text);
-                MessageBox.Show("Student Successfully Saved","", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 ClearALL();
-                 txtDiastolic.Text = "";
-	        }
-
+            
             
 
         }
@@ -97,7 +89,15 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             txtpname.Clear();
             txtcnumber.Clear();
             txtoccu.Clear();
-            
+            txtSecname.SelectedIndex = -1;
+            chk_subform137.Checked = false;
+            chk_subform138.Checked = false;
+            chk_subgrademoral.Checked = false;
+            chk_subnso.Checked = false;
+            check1.Checked = false;
+            check2.Checked = false;
+            check3.Checked = false;
+            check4.Checked = false;
         }
 
         private void dtpbdate_ValueChanged(object sender, EventArgs e)
@@ -189,6 +189,154 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
 
         }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void btnView_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnView_Click_2(object sender, EventArgs e)
+        {
+            ViewStudentProfileForm spv = new ViewStudentProfileForm();
+            spv.ShowDialog();
+        }
+
+        private void btnSave_Click_2(object sender, EventArgs e)
+        {
+            if (txtfname.Text == "" || txtlname.Text == "" || txtmname.Text == "" || cmbsyear.Text == "" || cmbylevel.Text == "" || dtpbdate.Text == "" || txtage.Text == "" || txtbplace.Text == "" || txtadd.Text == "" || cmbgen.Text == "" || txtcnumber.Text == "" || txtheight.Text == "" || txtweight.Text == "" || txtSystolic.Text == "" || txtpname.Text == "" || txtcnumber.Text == "" || txtoccu.Text == "")
+            {
+                MessageBox.Show("Input all fields.", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+            else
+            {
+                string chek;
+                if (chk_subform137.Checked)
+                {
+                    chek = "Submitted";
+                }
+                else if (chk_subform138.Checked)
+                {
+                    chek = "Submitted";
+                }
+                else if (chk_subgrademoral.Checked)
+                {
+                    chek = "Submitted";
+                }
+                else if (chk_subnso.Checked)
+                {
+                    chek = "Submitted";
+                }
+                else
+                {
+                    chek = "Not Submitted";
+                }
+                db.SP_STSAVE(txtcstid.Text, txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text, txtadd.Text, cmbgen.Text, decimal.Parse(txtheight.Text), decimal.Parse(txtweight.Text), int.Parse(txtSystolic.Text), int.Parse(txtDiastolic.Text), chek, chek, chek, chek, txtpname.Text, txtcnumber.Text, txtoccu.Text, Convert.ToInt32(txtSecname.SelectedValue), Convert.ToInt32(cmbsyear.SelectedValue));
+                MessageBox.Show("Student Successfully Saved", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearALL();
+                txtDiastolic.Text = "";
+            }
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        private void chk_subform137_CheckedChanged(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        private void chk_subform137_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void chk_subform137_Click(object sender, EventArgs e)
+        {
+            if (chk_subform137.Checked)
+            {
+                check1.Checked = false;
+            }
+           
+            
+        }
+
+        private void chk_subform138_Click(object sender, EventArgs e)
+        {
+            if (chk_subform138.Checked)
+            {
+                check2.Checked = false;
+            }
+            
+        }
+
+        private void chk_subgrademoral_Click(object sender, EventArgs e)
+        {
+            if (chk_subgrademoral.Checked)
+            {
+                check3.Checked = false;
+            }
+           
+        }
+
+        private void chk_subnso_Click(object sender, EventArgs e)
+        {
+            if (chk_subnso.Checked)
+            {
+                check4.Checked = false;
+            }
+           
+        }
+
+        private void check1_Click(object sender, EventArgs e)
+        {
+             if (check1.Checked)
+            {
+                chk_subform137.Checked = false;
+            }
+        }
+
+        private void check2_Click(object sender, EventArgs e)
+        {
+            if (check2.Checked)
+            {
+                chk_subform138.Checked = false;
+            }
+        }
+
+        private void check3_Click(object sender, EventArgs e)
+        {
+            if (check3.Checked)
+            {
+                chk_subgrademoral.Checked = false;
+            }
+        }
+
+        private void check4_Click(object sender, EventArgs e)
+        {
+             if (check4.Checked)
+            {
+                chk_subnso.Checked = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StudentSchoolYearForm ssyf = new StudentSchoolYearForm();
+            ssyf.ShowDialog();
+            this.Close();
+        }
+
+       
 
        
 

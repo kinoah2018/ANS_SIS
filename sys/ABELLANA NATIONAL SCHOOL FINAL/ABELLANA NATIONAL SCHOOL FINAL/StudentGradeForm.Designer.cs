@@ -88,7 +88,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(626, 18);
+            this.label4.Location = new System.Drawing.Point(615, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 25);
             this.label4.TabIndex = 187;
@@ -109,7 +109,7 @@
             this.THIRD_GRADING,
             this.FOURTH_GRADING});
             this.dgvGrade.Enabled = false;
-            this.dgvGrade.Location = new System.Drawing.Point(572, 69);
+            this.dgvGrade.Location = new System.Drawing.Point(591, 69);
             this.dgvGrade.Name = "dgvGrade";
             this.dgvGrade.ReadOnly = true;
             this.dgvGrade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -180,7 +180,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(76, 69);
+            this.groupBox2.Location = new System.Drawing.Point(96, 69);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(451, 253);
             this.groupBox2.TabIndex = 196;
@@ -241,7 +241,7 @@
             this.txtsub.DisplayMember = "SUBJECT";
             this.txtsub.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtsub.FormattingEnabled = true;
-            this.txtsub.Location = new System.Drawing.Point(160, 145);
+            this.txtsub.Location = new System.Drawing.Point(160, 176);
             this.txtsub.Name = "txtsub";
             this.txtsub.Size = new System.Drawing.Size(250, 26);
             this.txtsub.TabIndex = 14;
@@ -275,7 +275,7 @@
             "Second Grading",
             "Third Grading",
             "Fourth Grading"});
-            this.txtgrper.Location = new System.Drawing.Point(160, 178);
+            this.txtgrper.Location = new System.Drawing.Point(160, 144);
             this.txtgrper.Name = "txtgrper";
             this.txtgrper.Size = new System.Drawing.Size(250, 26);
             this.txtgrper.TabIndex = 9;
@@ -293,7 +293,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 181);
+            this.label7.Location = new System.Drawing.Point(7, 153);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(147, 18);
             this.label7.TabIndex = 9;
@@ -303,7 +303,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(72, 148);
+            this.label8.Location = new System.Drawing.Point(72, 179);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 18);
             this.label8.TabIndex = 8;
@@ -349,7 +349,7 @@
             this.groupBox3.Controls.Add(this.btnSave);
             this.groupBox3.Controls.Add(this.btnUpdate);
             this.groupBox3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(76, 328);
+            this.groupBox3.Location = new System.Drawing.Point(96, 328);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(451, 104);
             this.groupBox3.TabIndex = 197;

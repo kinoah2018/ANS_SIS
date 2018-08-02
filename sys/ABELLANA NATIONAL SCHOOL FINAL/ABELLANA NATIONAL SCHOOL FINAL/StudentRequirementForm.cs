@@ -16,7 +16,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             InitializeComponent();
         }
-
+        DataClasses1DataContext db = new DataClasses1DataContext();
         private void Button3_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -26,6 +26,16 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void Button3_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void StudentRequirementForm_Load(object sender, EventArgs e)
+        {
+            dgvRequirment.DataSource = db.View_Requirments;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dgvRequirment.DataSource = db.SP_STREQSEARCH(textBox1.Text);
         }
 
  

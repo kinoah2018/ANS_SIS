@@ -48,26 +48,26 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                                              
             //                             };
 
-            dgvstudent_view.DataSource = db.View_STANDPTs;
+            dgvstudent_view.DataSource = db.SP_STVIEW();
 
         }
 
         private void dgvstudent_view_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             StudentUpdateForm suf = new StudentUpdateForm();
 
-            suf.txtSID.Text = dgvstudent_view.CurrentRow.Cells[0].Value.ToString();
-            suf.txtfname.Text = dgvstudent_view.CurrentRow.Cells[2].Value.ToString();
-            suf.txtmname.Text = dgvstudent_view.CurrentRow.Cells[3].Value.ToString();
-            suf.txtlname.Text = dgvstudent_view.CurrentRow.Cells[4].Value.ToString();
-            suf.cmbylevel.Text = dgvstudent_view.CurrentRow.Cells[5].Value.ToString();
-            suf.cmbsyear.Text = dgvstudent_view.CurrentRow.Cells[6].Value.ToString();
-            suf.dtpbdate.Text =dgvstudent_view.CurrentRow.Cells[7].Value.ToString();
-            suf.txtage.Text = dgvstudent_view.CurrentRow.Cells[8].Value.ToString();
-            suf.txtbplace.Text = dgvstudent_view.CurrentRow.Cells[9].Value.ToString();
-            suf.txtadd.Text = dgvstudent_view.CurrentRow.Cells[10].Value.ToString();
-            suf.cmbgen.Text = dgvstudent_view.CurrentRow.Cells[11].Value.ToString();
-            if (dgvstudent_view.CurrentRow.Cells[12].Value.ToString() == "True")
+            suf.txtcstid.Text = dgvstudent_view.CurrentRow.Cells[0].Value.ToString();
+            suf.txtfname.Text = dgvstudent_view.CurrentRow.Cells[1].Value.ToString();
+            suf.txtmname.Text = dgvstudent_view.CurrentRow.Cells[2].Value.ToString();
+            suf.txtlname.Text = dgvstudent_view.CurrentRow.Cells[3].Value.ToString();
+            suf.cmbylevel.Text = dgvstudent_view.CurrentRow.Cells[4].Value.ToString();
+            suf.dtpbdate.Text =dgvstudent_view.CurrentRow.Cells[5].Value.ToString();
+            suf.txtage.Text = dgvstudent_view.CurrentRow.Cells[6].Value.ToString();
+            suf.txtbplace.Text = dgvstudent_view.CurrentRow.Cells[7].Value.ToString();
+            suf.txtadd.Text = dgvstudent_view.CurrentRow.Cells[8].Value.ToString();
+            suf.cmbgen.Text = dgvstudent_view.CurrentRow.Cells[9].Value.ToString();
+            if (dgvstudent_view.CurrentRow.Cells[10].Value.ToString() == "True")
             {
                 suf.cmbstatus.SelectedIndex = 0;
             }
@@ -75,14 +75,55 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             {
                 suf.cmbstatus.SelectedIndex = 1;
             }
-            suf.txtheight.Text = dgvstudent_view.CurrentRow.Cells[13].Value.ToString();
-            suf.txtweight.Text = dgvstudent_view.CurrentRow.Cells[14].Value.ToString();
-            suf.txtSystolic.Text = dgvstudent_view.CurrentRow.Cells[15].Value.ToString();
-            suf.txtDiasltolic.Text = dgvstudent_view.CurrentRow.Cells[16].Value.ToString();
-            suf.txtPID.Text = dgvstudent_view.CurrentRow.Cells[17].Value.ToString();
-            suf.txtpname.Text = dgvstudent_view.CurrentRow.Cells[18].Value.ToString();
-            suf.txtcnumber.Text = dgvstudent_view.CurrentRow.Cells[19].Value.ToString();
-            suf.txtoccu.Text = dgvstudent_view.CurrentRow.Cells[20].Value.ToString();
+            suf.txtheight.Text = dgvstudent_view.CurrentRow.Cells[11].Value.ToString();
+            suf.txtweight.Text = dgvstudent_view.CurrentRow.Cells[12].Value.ToString();
+            suf.txtSystolic.Text = dgvstudent_view.CurrentRow.Cells[13].Value.ToString();
+            suf.txtDiastolic.Text = dgvstudent_view.CurrentRow.Cells[14].Value.ToString();
+
+            if (dgvstudent_view.CurrentRow.Cells[15].Value.ToString() == "Submitted")
+            {
+                suf.chk_subform137.Checked = true;
+                suf.check1.Enabled = false;
+            }
+            else
+            {
+                suf.check1.Checked = true;
+            }
+            if (dgvstudent_view.CurrentRow.Cells[16].Value.ToString() == "Submitted")
+            {
+                suf.chk_subform138.Checked = true;
+                suf.check2.Enabled = false;
+            }
+            else
+            {
+                suf.check2.Checked = true;
+
+            }
+            if (dgvstudent_view.CurrentRow.Cells[17].Value.ToString() == "Submitted")
+            {
+                suf.chk_subgrademoral.Checked = true;
+                suf.check3.Enabled = false;
+            }
+            else
+            {
+                suf.check3.Checked = true;
+            }
+            if (dgvstudent_view.CurrentRow.Cells[18].Value.ToString() == "Submitted")
+            {
+                suf.chk_subnso.Checked = true;
+                suf.check4.Enabled = false;
+            }
+            else
+            {
+                suf.check4.Checked = true;
+            }
+            suf.lbPID.Text = dgvstudent_view.CurrentRow.Cells[19].Value.ToString();
+            suf.txtpname.Text = dgvstudent_view.CurrentRow.Cells[20].Value.ToString();
+            suf.txtcnumber.Text = dgvstudent_view.CurrentRow.Cells[21].Value.ToString();
+            suf.txtoccu.Text = dgvstudent_view.CurrentRow.Cells[22].Value.ToString();
+            suf.lbSecID.Text = dgvstudent_view.CurrentRow.Cells[23].Value.ToString();
+            suf.txtSecname.SelectedText = dgvstudent_view.CurrentRow.Cells[24].Value.ToString();
+            suf.cmbsyear.SelectedText = dgvstudent_view.CurrentRow.Cells[25].Value.ToString();
             suf.ShowDialog();
             this.Close();
         }

@@ -437,6 +437,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void btnViewStud_Click(object sender, EventArgs e)
         {
             View_Student1Form vsf = new View_Student1Form();
+            this.Close();
             vsf.ShowDialog();
             
         }

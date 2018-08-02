@@ -16,7 +16,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             InitializeComponent();
         }
-
+        DataClasses1DataContext db = new DataClasses1DataContext();
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -35,6 +35,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void StudentSection_Load(object sender, EventArgs e)
         {
 
+            dgvSection.DataSource = db.View_Sections;
         }
 
         private void Button3_Click(object sender, EventArgs e)

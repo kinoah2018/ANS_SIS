@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ANS_DATABASEDataSet3" targetNamespace="http://tempuri.org/ANS_DATABASEDataSet3.xsd" xmlns:mstns="http://tempuri.org/ANS_DATABASEDataSet3.xsd" xmlns="http://tempuri.org/ANS_DATABASEDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ANS_DATABASEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ANS_DATABASEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ABELLANA_NATIONAL_SCHOOL_FINAL.Properties.Settings.GlobalReference.Default.ANS_DATABASEConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TBL_SECTIONTableAdapter" GeneratorDataComponentClassName="TBL_SECTIONTableAdapter" Name="TBL_SECTION" UserDataComponentName="TBL_SECTIONTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ANS_DATABASEConnectionString (Settings)" DbObjectName="ANS_DATABASE.dbo.TBL_SECTION" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SEC_NAME FROM dbo.TBL_SECTION</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SEC_NAME" DataSetColumn="SEC_NAME" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ANS_DATABASEDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ANS_DATABASEDataSet3" msprop:Generator_UserDSName="ANS_DATABASEDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TBL_SECTION" msprop:Generator_TableClassName="TBL_SECTIONDataTable" msprop:Generator_TableVarName="tableTBL_SECTION" msprop:Generator_TablePropName="TBL_SECTION" msprop:Generator_RowDeletingName="TBL_SECTIONRowDeleting" msprop:Generator_RowChangingName="TBL_SECTIONRowChanging" msprop:Generator_RowEvHandlerName="TBL_SECTIONRowChangeEventHandler" msprop:Generator_RowDeletedName="TBL_SECTIONRowDeleted" msprop:Generator_UserTableName="TBL_SECTION" msprop:Generator_RowChangedName="TBL_SECTIONRowChanged" msprop:Generator_RowEvArgName="TBL_SECTIONRowChangeEvent" msprop:Generator_RowClassName="TBL_SECTIONRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SEC_NAME" msprop:Generator_ColumnVarNameInTable="columnSEC_NAME" msprop:Generator_ColumnPropNameInRow="SEC_NAME" msprop:Generator_ColumnPropNameInTable="SEC_NAMEColumn" msprop:Generator_UserColumnName="SEC_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

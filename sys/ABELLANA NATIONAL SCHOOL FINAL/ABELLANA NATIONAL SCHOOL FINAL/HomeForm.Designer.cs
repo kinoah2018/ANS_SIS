@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.menuStrip5 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip4 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip12 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip8 = new System.Windows.Forms.MenuStrip();
@@ -83,11 +87,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbUsername = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.menuStrip4 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip5 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
+            this.menuStrip5.SuspendLayout();
+            this.menuStrip4.SuspendLayout();
             this.menuStrip12.SuspendLayout();
             this.menuStrip8.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -106,8 +108,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.menuStrip4.SuspendLayout();
-            this.menuStrip5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -140,6 +140,60 @@
             this.panel2.Size = new System.Drawing.Size(1334, 105);
             this.panel2.TabIndex = 25;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // menuStrip5
+            // 
+            this.menuStrip5.BackColor = System.Drawing.Color.White;
+            this.menuStrip5.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip5.GripMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.menuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem8});
+            this.menuStrip5.Location = new System.Drawing.Point(570, 3);
+            this.menuStrip5.Name = "menuStrip5";
+            this.menuStrip5.Padding = new System.Windows.Forms.Padding(6, 2, 6, 2);
+            this.menuStrip5.Size = new System.Drawing.Size(94, 94);
+            this.menuStrip5.TabIndex = 43;
+            this.menuStrip5.Text = "menuStrip5";
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem8.Image")));
+            this.toolStripMenuItem8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem8.MergeIndex = 0;
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(80, 90);
+            this.toolStripMenuItem8.Text = "Books";
+            this.toolStripMenuItem8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
+            // 
+            // menuStrip4
+            // 
+            this.menuStrip4.BackColor = System.Drawing.Color.White;
+            this.menuStrip4.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip4.GripMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem6});
+            this.menuStrip4.Location = new System.Drawing.Point(454, 1);
+            this.menuStrip4.Name = "menuStrip4";
+            this.menuStrip4.Padding = new System.Windows.Forms.Padding(6, 2, 6, 2);
+            this.menuStrip4.Size = new System.Drawing.Size(97, 97);
+            this.menuStrip4.TabIndex = 42;
+            this.menuStrip4.Text = "menuStrip4";
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem6.Image")));
+            this.toolStripMenuItem6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem6.MergeIndex = 0;
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(83, 93);
+            this.toolStripMenuItem6.Text = "Section";
+            this.toolStripMenuItem6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
             // menuStrip12
             // 
@@ -268,25 +322,25 @@
             // TProfiletoolStripMenuItem10
             // 
             this.TProfiletoolStripMenuItem10.Name = "TProfiletoolStripMenuItem10";
-            this.TProfiletoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
+            this.TProfiletoolStripMenuItem10.Size = new System.Drawing.Size(131, 22);
             this.TProfiletoolStripMenuItem10.Text = "Profile";
             // 
             // TSectiontoolStripMenuItem10
             // 
             this.TSectiontoolStripMenuItem10.Name = "TSectiontoolStripMenuItem10";
-            this.TSectiontoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
+            this.TSectiontoolStripMenuItem10.Size = new System.Drawing.Size(131, 22);
             this.TSectiontoolStripMenuItem10.Text = "Section";
             // 
             // TScheduletoolStripMenuItem10
             // 
             this.TScheduletoolStripMenuItem10.Name = "TScheduletoolStripMenuItem10";
-            this.TScheduletoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
+            this.TScheduletoolStripMenuItem10.Size = new System.Drawing.Size(131, 22);
             this.TScheduletoolStripMenuItem10.Text = "Schedule";
             // 
             // TSubjecttoolStripMenuItem10
             // 
             this.TSubjecttoolStripMenuItem10.Name = "TSubjecttoolStripMenuItem10";
-            this.TSubjecttoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
+            this.TSubjecttoolStripMenuItem10.Size = new System.Drawing.Size(131, 22);
             this.TSubjecttoolStripMenuItem10.Text = "Subject";
             // 
             // menuStrip1
@@ -695,60 +749,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // menuStrip4
-            // 
-            this.menuStrip4.BackColor = System.Drawing.Color.White;
-            this.menuStrip4.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip4.GripMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem6});
-            this.menuStrip4.Location = new System.Drawing.Point(454, 1);
-            this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Padding = new System.Windows.Forms.Padding(6, 2, 6, 2);
-            this.menuStrip4.Size = new System.Drawing.Size(97, 97);
-            this.menuStrip4.TabIndex = 42;
-            this.menuStrip4.Text = "menuStrip4";
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem6.Image")));
-            this.toolStripMenuItem6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem6.MergeIndex = 0;
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(83, 93);
-            this.toolStripMenuItem6.Text = "Section";
-            this.toolStripMenuItem6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
-            // 
-            // menuStrip5
-            // 
-            this.menuStrip5.BackColor = System.Drawing.Color.White;
-            this.menuStrip5.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip5.GripMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.menuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem8});
-            this.menuStrip5.Location = new System.Drawing.Point(570, 3);
-            this.menuStrip5.Name = "menuStrip5";
-            this.menuStrip5.Padding = new System.Windows.Forms.Padding(6, 2, 6, 2);
-            this.menuStrip5.Size = new System.Drawing.Size(186, 94);
-            this.menuStrip5.TabIndex = 43;
-            this.menuStrip5.Text = "menuStrip5";
-            // 
-            // toolStripMenuItem8
-            // 
-            this.toolStripMenuItem8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem8.Image")));
-            this.toolStripMenuItem8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem8.MergeIndex = 0;
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(80, 90);
-            this.toolStripMenuItem8.Text = "Books";
-            this.toolStripMenuItem8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -769,6 +769,10 @@
             this.Load += new System.EventHandler(this.HomeForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.menuStrip5.ResumeLayout(false);
+            this.menuStrip5.PerformLayout();
+            this.menuStrip4.ResumeLayout(false);
+            this.menuStrip4.PerformLayout();
             this.menuStrip12.ResumeLayout(false);
             this.menuStrip12.PerformLayout();
             this.menuStrip8.ResumeLayout(false);
@@ -802,10 +806,6 @@
             this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.menuStrip4.ResumeLayout(false);
-            this.menuStrip4.PerformLayout();
-            this.menuStrip5.ResumeLayout(false);
-            this.menuStrip5.PerformLayout();
             this.ResumeLayout(false);
 
         }
