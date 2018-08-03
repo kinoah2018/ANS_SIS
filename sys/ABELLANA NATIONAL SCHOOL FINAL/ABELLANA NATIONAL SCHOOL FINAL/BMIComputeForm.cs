@@ -228,14 +228,15 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void loadbmitable()
         {
-            // linq display data table in dgv 
-            dgvViewBmi.DataSource = from z in db.TBL_BMICOMPs
-                                    select new
-                                    {
-                                        z.ST_CURRENTID,
-                                        z.BMI_HWRESULT,
-                                        z.BMI_BPRESULT
-                                    };
+            //// linq display data table in dgv 
+            //dgvViewBmi.DataSource = from z in db.TBL_BMICOMPs
+            //                        select new
+            //                        {
+            //                            z.ST_CURRENTID,
+            //                            z.BMI_HWRESULT,
+            //                            z.BMI_BPRESULT
+            //                        };
+            dgvViewBmi.DataSource = db.SP_VIEWBMI();
         }
 
         private void dgvViewBmi_CellContentClick(object sender, DataGridViewCellEventArgs e)

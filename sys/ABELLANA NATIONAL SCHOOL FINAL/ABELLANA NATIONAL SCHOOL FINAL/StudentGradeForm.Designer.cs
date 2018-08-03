@@ -60,6 +60,8 @@
             this.tBL_SUBJECTTableAdapter = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet1TableAdapters.TBL_SUBJECTTableAdapter();
             this.tBL_STUDENTTableAdapter = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet2TableAdapters.TBL_STUDENTTableAdapter();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtSY = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLSTUDENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet2)).BeginInit();
@@ -167,6 +169,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtSY);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtFname);
             this.groupBox2.Controls.Add(this.txtscid);
@@ -182,7 +186,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(96, 69);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(451, 253);
+            this.groupBox2.Size = new System.Drawing.Size(451, 275);
             this.groupBox2.TabIndex = 196;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Input Grade";
@@ -199,7 +203,7 @@
             // txtFname
             // 
             this.txtFname.Enabled = false;
-            this.txtFname.Location = new System.Drawing.Point(160, 111);
+            this.txtFname.Location = new System.Drawing.Point(160, 107);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(250, 27);
             this.txtFname.TabIndex = 22;
@@ -207,7 +211,7 @@
             // txtscid
             // 
             this.txtscid.Enabled = false;
-            this.txtscid.Location = new System.Drawing.Point(160, 78);
+            this.txtscid.Location = new System.Drawing.Point(160, 75);
             this.txtscid.Name = "txtscid";
             this.txtscid.Size = new System.Drawing.Size(250, 27);
             this.txtscid.TabIndex = 21;
@@ -227,7 +231,7 @@
             this.btnViewStud.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnViewStud.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewStud.ForeColor = System.Drawing.Color.White;
-            this.btnViewStud.Location = new System.Drawing.Point(10, 26);
+            this.btnViewStud.Location = new System.Drawing.Point(10, 22);
             this.btnViewStud.Name = "btnViewStud";
             this.btnViewStud.Size = new System.Drawing.Size(435, 38);
             this.btnViewStud.TabIndex = 19;
@@ -241,7 +245,7 @@
             this.txtsub.DisplayMember = "SUBJECT";
             this.txtsub.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtsub.FormattingEnabled = true;
-            this.txtsub.Location = new System.Drawing.Point(160, 176);
+            this.txtsub.Location = new System.Drawing.Point(160, 208);
             this.txtsub.Name = "txtsub";
             this.txtsub.Size = new System.Drawing.Size(250, 26);
             this.txtsub.TabIndex = 14;
@@ -260,7 +264,7 @@
             // 
             // txtgrade
             // 
-            this.txtgrade.Location = new System.Drawing.Point(160, 211);
+            this.txtgrade.Location = new System.Drawing.Point(160, 241);
             this.txtgrade.Name = "txtgrade";
             this.txtgrade.Size = new System.Drawing.Size(250, 27);
             this.txtgrade.TabIndex = 11;
@@ -275,7 +279,7 @@
             "Second Grading",
             "Third Grading",
             "Fourth Grading"});
-            this.txtgrper.Location = new System.Drawing.Point(160, 144);
+            this.txtgrper.Location = new System.Drawing.Point(160, 174);
             this.txtgrper.Name = "txtgrper";
             this.txtgrper.Size = new System.Drawing.Size(250, 26);
             this.txtgrper.TabIndex = 9;
@@ -284,7 +288,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(79, 214);
+            this.label6.Location = new System.Drawing.Point(79, 246);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 18);
             this.label6.TabIndex = 10;
@@ -293,7 +297,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 153);
+            this.label7.Location = new System.Drawing.Point(7, 179);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(147, 18);
             this.label7.TabIndex = 9;
@@ -303,7 +307,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(72, 179);
+            this.label8.Location = new System.Drawing.Point(72, 211);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 18);
             this.label8.TabIndex = 8;
@@ -315,7 +319,7 @@
             this.btnUpdate.Enabled = false;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(259, 38);
+            this.btnUpdate.Location = new System.Drawing.Point(259, 26);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(151, 40);
             this.btnUpdate.TabIndex = 13;
@@ -328,7 +332,7 @@
             this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(82, 38);
+            this.btnSave.Location = new System.Drawing.Point(82, 26);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(151, 40);
             this.btnSave.TabIndex = 12;
@@ -349,12 +353,29 @@
             this.groupBox3.Controls.Add(this.btnSave);
             this.groupBox3.Controls.Add(this.btnUpdate);
             this.groupBox3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(96, 328);
+            this.groupBox3.Location = new System.Drawing.Point(96, 350);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(451, 104);
+            this.groupBox3.Size = new System.Drawing.Size(451, 82);
             this.groupBox3.TabIndex = 197;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Action";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(38, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 18);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "School Year :";
+            // 
+            // txtSY
+            // 
+            this.txtSY.Enabled = false;
+            this.txtSY.Location = new System.Drawing.Point(160, 140);
+            this.txtSY.Name = "txtSY";
+            this.txtSY.Size = new System.Drawing.Size(250, 27);
+            this.txtSY.TabIndex = 25;
             // 
             // StudentGradeForm
             // 
@@ -420,5 +441,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SECOND_GRADING;
         private System.Windows.Forms.DataGridViewTextBoxColumn THIRD_GRADING;
         private System.Windows.Forms.DataGridViewTextBoxColumn FOURTH_GRADING;
+        public System.Windows.Forms.TextBox txtSY;
+        private System.Windows.Forms.Label label3;
     }
 }

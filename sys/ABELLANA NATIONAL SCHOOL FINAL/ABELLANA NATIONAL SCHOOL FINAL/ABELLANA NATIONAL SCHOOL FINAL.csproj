@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPaymentForm.Designer.cs">
+      <DependentUpon>AddPaymentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ANS_DATABASEDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANS_DATABASEDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet6.xsd</DependentUpon>
     </Compile>
     <Compile Include="BMIComputeForm.cs">
       <SubType>Form</SubType>
@@ -175,6 +186,12 @@
     <Compile Include="StudentUpdateForm.Designer.cs">
       <DependentUpon>StudentUpdateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPaymentForm.Designer.cs">
+      <DependentUpon>ViewPaymentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewStudentProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,11 +258,17 @@
     <Compile Include="View_Student1Form.Designer.cs">
       <DependentUpon>View_Student1Form.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddPaymentForm.resx">
+      <DependentUpon>AddPaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentSchoolYearForm.resx">
       <DependentUpon>StudentSchoolYearForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPaymentForm.resx">
+      <DependentUpon>ViewPaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View_SelectStudentForm.resx">
       <DependentUpon>View_SelectStudentForm.cs</DependentUpon>
@@ -321,6 +344,17 @@
     </None>
     <None Include="ANS_DATABASEDataSet5.xss">
       <DependentUpon>ANS_DATABASEDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet6.xsc">
+      <DependentUpon>ANS_DATABASEDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet6.xss">
+      <DependentUpon>ANS_DATABASEDataSet6.xsd</DependentUpon>
     </None>
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>

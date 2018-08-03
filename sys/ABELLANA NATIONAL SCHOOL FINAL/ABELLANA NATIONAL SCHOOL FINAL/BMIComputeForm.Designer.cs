@@ -242,6 +242,7 @@
             // 
             // txtResult
             // 
+            this.txtResult.Enabled = false;
             this.txtResult.Location = new System.Drawing.Point(157, 264);
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(123, 28);

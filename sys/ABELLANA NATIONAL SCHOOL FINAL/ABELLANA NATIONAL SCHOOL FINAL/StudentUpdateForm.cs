@@ -37,19 +37,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             else
             {
                 string chek;
-                if (chk_subform137.Checked)
-                {
-                    chek = "Submitted";
-                }
-                else if (chk_subform138.Checked)
-                {
-                    chek = "Submitted";
-                }
-                else if (chk_subgrademoral.Checked)
-                {
-                    chek = "Submitted";
-                }
-                else if (chk_subnso.Checked)
+                if (chk_subform137.Checked || chk_subform138.Checked||chk_subgrademoral.Checked||chk_subnso.Checked)
                 {
                     chek = "Submitted";
                 }
@@ -95,12 +83,17 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void StudentUpdateForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'aNS_DATABASEDataSet5.TBL_SCHOOLYEAR' table. You can move, or remove it, as needed.
+            this.tBL_SCHOOLYEARTableAdapter.Fill(this.aNS_DATABASEDataSet5.TBL_SCHOOLYEAR);
             // TODO: This line of code loads data into the 'aNS_DATABASEDataSet4.TBL_SECTION' table. You can move, or remove it, as needed.
             this.tBL_SECTIONTableAdapter.Fill(this.aNS_DATABASEDataSet4.TBL_SECTION);
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT SEC_NAME FROM TBL_SECTION WHERE SEC_ID='"+lbSecID.Text+"'",conn);
+            SqlCommand get_sy = new SqlCommand("SELECT SCHOOLYEAR FROM TBL_SCHOOLYEAR WHERE SCHOOLYEAR_ID='" + lbSYID.Text + "'", conn);
             string cmd1 = Convert.ToString(cmd.ExecuteScalar());
+            string get_sy1 = Convert.ToString(get_sy.ExecuteScalar());
             txtSecname.Text = cmd1;
+            cmbstatus.Text = get_sy1;
             conn.Close();
 
         }

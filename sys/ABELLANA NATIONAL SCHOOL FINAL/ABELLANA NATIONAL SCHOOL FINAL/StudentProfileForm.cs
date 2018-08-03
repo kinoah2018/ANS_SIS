@@ -94,15 +94,20 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             chk_subform138.Checked = false;
             chk_subgrademoral.Checked = false;
             chk_subnso.Checked = false;
-            check1.Checked = false;
-            check2.Checked = false;
-            check3.Checked = false;
-            check4.Checked = false;
         }
 
         private void dtpbdate_ValueChanged(object sender, EventArgs e)
         {
-            txtage.Text = (DateTime.Today.Year - dtpbdate.Value.Year).ToString();
+            if (DateTime.Now<dtpbdate.Value)
+            {
+                MessageBox.Show("Lapas naka");
+                dtpbdate.ResetText();
+            }
+            else
+            {
+                txtage.Text = (DateTime.Today.Year - dtpbdate.Value.Year).ToString();    
+            }
+            
         }
 
         private void txtfname_KeyPress(object sender, KeyPressEventArgs e)
@@ -262,71 +267,23 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void chk_subform137_Click(object sender, EventArgs e)
         {
-            if (chk_subform137.Checked)
-            {
-                check1.Checked = false;
-            }
            
             
         }
 
         private void chk_subform138_Click(object sender, EventArgs e)
         {
-            if (chk_subform138.Checked)
-            {
-                check2.Checked = false;
-            }
-            
+
         }
 
         private void chk_subgrademoral_Click(object sender, EventArgs e)
         {
-            if (chk_subgrademoral.Checked)
-            {
-                check3.Checked = false;
-            }
            
         }
 
         private void chk_subnso_Click(object sender, EventArgs e)
         {
-            if (chk_subnso.Checked)
-            {
-                check4.Checked = false;
-            }
            
-        }
-
-        private void check1_Click(object sender, EventArgs e)
-        {
-             if (check1.Checked)
-            {
-                chk_subform137.Checked = false;
-            }
-        }
-
-        private void check2_Click(object sender, EventArgs e)
-        {
-            if (check2.Checked)
-            {
-                chk_subform138.Checked = false;
-            }
-        }
-
-        private void check3_Click(object sender, EventArgs e)
-        {
-            if (check3.Checked)
-            {
-                chk_subgrademoral.Checked = false;
-            }
-        }
-
-        private void check4_Click(object sender, EventArgs e)
-        {
-             if (check4.Checked)
-            {
-                chk_subnso.Checked = false;
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -334,6 +291,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             StudentSchoolYearForm ssyf = new StudentSchoolYearForm();
             ssyf.ShowDialog();
             this.Close();
+        }
+
+        private void check1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
        

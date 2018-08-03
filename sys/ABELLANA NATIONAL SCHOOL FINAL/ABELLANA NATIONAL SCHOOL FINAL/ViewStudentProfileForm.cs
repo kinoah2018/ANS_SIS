@@ -48,7 +48,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                                              
             //                             };
 
-            dgvstudent_view.DataSource = db.SP_STVIEW();
+            dgvstudent_view.DataSource = db.View_STUDENTPROFILEs;
 
         }
 
@@ -83,49 +83,30 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             if (dgvstudent_view.CurrentRow.Cells[15].Value.ToString() == "Submitted")
             {
                 suf.chk_subform137.Checked = true;
-                suf.check1.Enabled = false;
-            }
-            else
-            {
-                suf.check1.Checked = true;
             }
             if (dgvstudent_view.CurrentRow.Cells[16].Value.ToString() == "Submitted")
             {
                 suf.chk_subform138.Checked = true;
-                suf.check2.Enabled = false;
-            }
-            else
-            {
-                suf.check2.Checked = true;
-
             }
             if (dgvstudent_view.CurrentRow.Cells[17].Value.ToString() == "Submitted")
             {
                 suf.chk_subgrademoral.Checked = true;
-                suf.check3.Enabled = false;
-            }
-            else
-            {
-                suf.check3.Checked = true;
             }
             if (dgvstudent_view.CurrentRow.Cells[18].Value.ToString() == "Submitted")
             {
                 suf.chk_subnso.Checked = true;
-                suf.check4.Enabled = false;
-            }
-            else
-            {
-                suf.check4.Checked = true;
             }
             suf.lbPID.Text = dgvstudent_view.CurrentRow.Cells[19].Value.ToString();
             suf.txtpname.Text = dgvstudent_view.CurrentRow.Cells[20].Value.ToString();
             suf.txtcnumber.Text = dgvstudent_view.CurrentRow.Cells[21].Value.ToString();
             suf.txtoccu.Text = dgvstudent_view.CurrentRow.Cells[22].Value.ToString();
-            suf.lbSecID.Text = dgvstudent_view.CurrentRow.Cells[23].Value.ToString();
-            suf.txtSecname.SelectedText = dgvstudent_view.CurrentRow.Cells[24].Value.ToString();
-            suf.cmbsyear.SelectedText = dgvstudent_view.CurrentRow.Cells[25].Value.ToString();
-            suf.ShowDialog();
+            suf.lbSYID.Text = dgvstudent_view.CurrentRow.Cells[23].Value.ToString();
+            suf.cmbsyear.SelectedText = dgvstudent_view.CurrentRow.Cells[24].Value.ToString();
+            suf.lbSecID.Text = dgvstudent_view.CurrentRow.Cells[25].Value.ToString();
+            suf.txtSecname.SelectedText = dgvstudent_view.CurrentRow.Cells[26].Value.ToString();
             this.Close();
+            suf.ShowDialog();
+            
         }
 
         private void dgvstudent_view_CellContentClick(object sender, DataGridViewCellEventArgs e)

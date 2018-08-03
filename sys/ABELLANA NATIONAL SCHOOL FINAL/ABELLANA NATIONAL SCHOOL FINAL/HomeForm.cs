@@ -265,8 +265,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void toolStripMenuItem8_Click(object sender, EventArgs e)
         {
-            StudentBookForm sbf = new StudentBookForm();
-            sbf.ShowDialog();
+            
         }
     }
 }

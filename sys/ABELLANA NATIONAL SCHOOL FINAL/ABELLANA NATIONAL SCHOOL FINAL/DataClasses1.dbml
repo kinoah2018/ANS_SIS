@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ANS_DATABASE" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True" SettingsObjectName="ABELLANA_NATIONAL_SCHOOL_FINAL.Properties.Settings" SettingsPropertyName="ANS_DATABASEConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TBL_PARENT" Member="TBL_PARENTs">
-    <Type Name="TBL_PARENT">
-      <Column Name="P_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="P_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="P_CONTACT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="P_OCCUPATION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="TBL_PARENT_TBL_STUDENT" Member="TBL_STUDENTs" ThisKey="P_ID" OtherKey="P_ID" Type="TBL_STUDENT" />
+  <Table Name="dbo.TBL_BMICOMP" Member="TBL_BMICOMPs">
+    <Type Name="TBL_BMICOMP">
+      <Column Name="BMI_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BMI_HWRESULT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BMI_BPRESULT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TBL_STUDENT_TBL_BMICOMP" Member="TBL_STUDENT" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_STUDENT" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_USERTYPE" Member="TBL_USERTYPEs">
@@ -16,13 +16,51 @@
       <Association Name="TBL_USERTYPE_TBL_USER" Member="TBL_USERs" ThisKey="USER_TYPEID" OtherKey="USER_TYPEID" Type="TBL_USER" />
     </Type>
   </Table>
+  <Table Name="dbo.TBL_BOOKS" Member="TBL_BOOKs">
+    <Type Name="TBL_BOOK">
+      <Column Name="B_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="B_BOOKNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="B_BOOKDESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BOOK_YEARLEVEL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_GRADE" Member="TBL_GRADEs">
+    <Type Name="TBL_GRADE">
+      <Column Name="GRADE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GRADEPERIOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GRADE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUBJECT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TBL_STUDENT_TBL_GRADE" Member="TBL_STUDENT" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_STUDENT" IsForeignKey="true" />
+      <Association Name="TBL_SUBJECT_TBL_GRADE" Member="TBL_SUBJECT" ThisKey="SUBJECT_ID" OtherKey="SUBJECT_ID" Type="TBL_SUBJECT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_PARENT" Member="TBL_PARENTs">
+    <Type Name="TBL_PARENT">
+      <Column Name="P_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="P_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_CONTACT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_OCCUPATION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_PARENT_TBL_STUDENT" Member="TBL_STUDENTs" ThisKey="P_ID" OtherKey="P_ID" Type="TBL_STUDENT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_PAYMENT" Member="TBL_PAYMENTs">
+    <Type Name="TBL_PAYMENT">
+      <Column Name="PAYMENT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PAYMENT_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PAYMENT_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TBL_PAYMENT_TBL_PAYMENTDETAIL" Member="TBL_PAYMENTDETAILs" ThisKey="PAYMENT_ID" OtherKey="PAYMENT_ID" Type="TBL_PAYMENTDETAIL" />
+    </Type>
+  </Table>
   <Table Name="dbo.TBL_PAYMENTDETAILS" Member="TBL_PAYMENTDETAILs">
     <Type Name="TBL_PAYMENTDETAIL">
       <Column Name="PD_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="PAYMENTFOR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="PAYMENTAMOUNT" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="SCHOOLYEAR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PAYMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TBL_PAYMENTDETAIL_TBL_STANDPAY" Member="TBL_STANDPAYs" ThisKey="PD_ID" OtherKey="PD_ID" Type="TBL_STANDPAY" />
+      <Association Name="TBL_PAYMENT_TBL_PAYMENTDETAIL" Member="TBL_PAYMENT" ThisKey="PAYMENT_ID" OtherKey="PAYMENT_ID" Type="TBL_PAYMENT" IsForeignKey="true" />
       <Association Name="TBL_SCHOOLYEAR_TBL_PAYMENTDETAIL" Member="TBL_SCHOOLYEAR" ThisKey="SCHOOLYEAR_ID" OtherKey="SCHOOLYEAR_ID" Type="TBL_SCHOOLYEAR" IsForeignKey="true" />
     </Type>
   </Table>
@@ -85,9 +123,9 @@
       <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SCHOOLYEAR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TBL_STUDENT_TBL_STANDPAY" Member="TBL_STANDPAYs" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_STANDPAY" />
       <Association Name="TBL_STUDENT_TBL_BMICOMP" Member="TBL_BMICOMPs" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_BMICOMP" />
       <Association Name="TBL_STUDENT_TBL_GRADE" Member="TBL_GRADEs" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_GRADE" />
+      <Association Name="TBL_STUDENT_TBL_STANDPAY" Member="TBL_STANDPAYs" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_STANDPAY" />
       <Association Name="TBL_SCHOOLYEAR_TBL_STUDENT" Member="TBL_SCHOOLYEAR" ThisKey="SCHOOLYEAR_ID" OtherKey="SCHOOLYEAR_ID" Type="TBL_SCHOOLYEAR" IsForeignKey="true" />
       <Association Name="TBL_SECTION_TBL_STUDENT" Member="TBL_SECTION" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_SECTION" IsForeignKey="true" />
       <Association Name="TBL_PARENT_TBL_STUDENT" Member="TBL_PARENT" ThisKey="P_ID" OtherKey="P_ID" Type="TBL_PARENT" IsForeignKey="true" />
@@ -118,13 +156,13 @@
       <Association Name="TBL_USERTYPE_TBL_USER" Member="TBL_USERTYPE" ThisKey="USER_TYPEID" OtherKey="USER_TYPEID" Type="TBL_USERTYPE" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.View_Requirment" Member="View_Requirments">
-    <Type Name="View_Requirment">
-      <Column Name="[STUDENT NAME]" Member="STUDENT_NAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
-      <Column Name="FORM137" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="FORM138" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="GOODMORAL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_NSO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.View_BMIRES" Member="View_BMIREs">
+    <Type Name="View_BMIRE">
+      <Column Name="ST_FIRSTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_MIDDLENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ST_LASTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BMI_HWRESULT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BMI_BPRESULT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.View_User" Member="View_Users">
@@ -139,20 +177,31 @@
       <Column Name="USER_IMAGE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.View_Section" Member="View_Sections">
-    <Type Name="View_Section">
-      <Column Name="[SECTION NAME]" Member="SECTION_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="[SECTION CAPACITY]" Member="SECTION_CAPACITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.View_Requirment" Member="View_Requirments">
+    <Type Name="View_Requirment">
+      <Column Name="[STUDENT NAME]" Member="STUDENT_NAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="FORM137" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FORM138" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GOODMORAL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_NSO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.View_STANDPT" Member="View_STANDPTs">
-    <Type Name="View_STANDPT">
+  <Table Name="dbo.View_Student1" Member="View_Student1s">
+    <Type Name="View_Student1">
+      <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_FIRSTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_MIDDLENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ST_LASTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SCHOOLYEAR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_STUDENTPROFILE" Member="View_STUDENTPROFILEs">
+    <Type Name="View_STUDENTPROFILE">
       <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ST_FIRSTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ST_MIDDLENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="ST_LASTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ST_YEARLEVEL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_SCHOOLYEAR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ST_BIRTHDATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="ST_AGE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ST_BIRTHPLACE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -171,45 +220,10 @@
       <Column Name="P_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="P_CONTACT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="P_OCCUPATION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.View_Student1" Member="View_Student1s">
-    <Type Name="View_Student1">
-      <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_FIRSTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_MIDDLENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ST_LASTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TBL_BMICOMP" Member="TBL_BMICOMPs">
-    <Type Name="TBL_BMICOMP">
-      <Column Name="BMI_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="BMI_HWRESULT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="BMI_BPRESULT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="TBL_STUDENT_TBL_BMICOMP" Member="TBL_STUDENT" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_STUDENT" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TBL_GRADE" Member="TBL_GRADEs">
-    <Type Name="TBL_GRADE">
-      <Column Name="GRADE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="GRADEPERIOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="GRADE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SUBJECT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TBL_STUDENT_TBL_GRADE" Member="TBL_STUDENT" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_STUDENT" IsForeignKey="true" />
-      <Association Name="TBL_SUBJECT_TBL_GRADE" Member="TBL_SUBJECT" ThisKey="SUBJECT_ID" OtherKey="SUBJECT_ID" Type="TBL_SUBJECT" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.View_PAYDET" Member="View_PAYDETs">
-    <Type Name="View_PAYDET">
-      <Column Name="PD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PAYMENTFOR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="PAYMENTAMOUNT" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="SCHOOLYEAR_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="SCHOOLYEAR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SEC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.SP_ACCOUNTRECOVERY" Method="SP_ACCOUNTRECOVERY">
@@ -225,6 +239,15 @@
   <Function Name="dbo.ST_CURRENTID" Method="ST_CURRENTID">
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_BOOKSEARCH" Method="SP_BOOKSEARCH">
+    <Parameter Name="SEARCHKEY" Parameter="sEARCHKEY" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="SP_BOOKSEARCHResult">
+      <Column Name="B_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="B_BOOKNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="B_BOOKDESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.SP_CHANGEDEFAULTPASS" Method="SP_CHANGEDEFAULTPASS">
     <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
     <Parameter Name="USER_USERNAME" Parameter="uSER_USERNAME" Type="System.String" DbType="VarChar(50)" />
@@ -236,10 +259,32 @@
     <Parameter Name="USER_PASSWORD" Parameter="uSER_PASSWORD" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_PAYDETVIEW" Method="SP_PAYDETVIEW">
+    <ElementType Name="SP_PAYDETVIEWResult">
+      <Column Name="PD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PAYMENTFOR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PAYMENTAMOUNT" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="SCHOOLYEAR_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SCHOOLYEAR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_PAYMENTSAVE" Method="SP_PAYMENTSAVE">
+    <Parameter Name="PAYMENT_NAME" Parameter="pAYMENT_NAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PAYMENT_DESC" Parameter="pAYMENT_DESC" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_PAYMENTVIEW" Method="SP_PAYMENTVIEW">
+    <ElementType Name="SP_PAYMENTVIEWResult">
+      <Column Name="PAYMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PAYMENT_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PAYMENT_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.SP_PAYSAVE" Method="SP_PAYSAVE">
     <Parameter Name="PAYMENTFOR" Parameter="pAYMENTFOR" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="PAYMENTAMOUNT" Parameter="pAYMENTAMOUNT" Type="System.Decimal" DbType="Money" />
     <Parameter Name="SCHOOLYEAR_ID" Parameter="sCHOOLYEAR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PAYMENT_ID" Parameter="pAYMENT_ID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.SP_PAYUPDATE" Method="SP_PAYUPDATE">
@@ -249,11 +294,23 @@
     <Parameter Name="SCHOOLYEAR_ID" Parameter="sCHOOLYEAR_ID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_SECTIONSAVE" Method="SP_SECTIONSAVE">
+    <Parameter Name="SEC_NAME" Parameter="sEC_NAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SEC_CAPACITY" Parameter="sEC_CAPACITY" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.SP_SECUSAVE" Method="SP_SECUSAVE">
     <Parameter Name="SECU_QUESTION" Parameter="sECU_QUESTION" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="SECU_ANSWER" Parameter="sECU_ANSWER" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_SECVIEW" Method="SP_SECVIEW">
+    <ElementType Name="SP_SECVIEWResult">
+      <Column Name="SEC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_CAPACITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
   <Function Name="dbo.SP_STREQSEARCH" Method="SP_STREQSEARCH">
     <Parameter Name="SEARCH_KEY" Parameter="sEARCH_KEY" Type="System.String" DbType="VarChar(MAX)" />
@@ -349,6 +406,33 @@
     <Parameter Name="SCHOOLYEAR" Parameter="sCHOOLYEAR" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_STVIEW" Method="SP_STVIEW">
+    <ElementType Name="SP_STVIEWResult">
+      <Column Name="ST_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_FIRSTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_MIDDLENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ST_LASTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_YEARLEVEL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_BIRTHDATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ST_AGE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_BIRTHPLACE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_ADDRESS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_GENDER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ST_HEIGHT" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="ST_WEIGHT" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="ST_BPSYSTOLIC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_BPDIASTOLIC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_FORM137" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_FORM138" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_GOODMORAL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ST_NSO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCHOOLYEAR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.SP_SYSAVE" Method="SP_SYSAVE">
     <Parameter Name="SCHOOLYEAR" Parameter="sCHOOLYEAR" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
@@ -426,31 +510,39 @@
       <Column Name="USER_PASSWORD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_STVIEW" Method="SP_STVIEW">
-    <ElementType Name="SP_STVIEWResult">
-      <Column Name="ST_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_FIRSTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_MIDDLENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ST_LASTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_YEARLEVEL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_BIRTHDATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="ST_AGE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ST_BIRTHPLACE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_ADDRESS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_GENDER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ST_HEIGHT" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Column Name="ST_WEIGHT" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Column Name="ST_BPSYSTOLIC" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ST_BPDIASTOLIC" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ST_FORM137" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_FORM138" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_GOODMORAL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ST_NSO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="P_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SCHOOLYEAR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Function Name="dbo.SP_VIEWBMI" Method="SP_VIEWBMI">
+    <ElementType Name="SP_VIEWBMIResult">
+      <Column Name="FULLNAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="[BMI RESULT]" Member="BMI_RESULT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[BLOODPRESSURE RESULT]" Member="BLOODPRESSURE_RESULT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.SP_BOOKSSAVE" Method="SP_BOOKSSAVE">
+    <Parameter Name="B_BOOKNAME" Parameter="b_BOOKNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="B_BOOKDESC" Parameter="b_BOOKDESC" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BOOK_YEARLEVEL" Parameter="bOOK_YEARLEVEL" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_BOOKSUPDATE" Method="SP_BOOKSUPDATE">
+    <Parameter Name="B_ID" Parameter="b_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="B_BOOKNAME" Parameter="b_BOOKNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="B_BOOKDESC" Parameter="b_BOOKDESC" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ST_CURRENTID" Parameter="sT_CURRENTID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BOOK_YEARLEVEL" Parameter="bOOK_YEARLEVEL" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_BOOKVIEW" Method="SP_BOOKVIEW">
+    <ElementType Name="SP_BOOKVIEWResult">
+      <Column Name="B_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="B_BOOKNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="B_BOOKDESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BOOK_YEARLEVEL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_SECTIONUPDATE" Method="SP_SECTIONUPDATE">
+    <Parameter Name="SEC_ID" Parameter="sEC_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SEC_NAME" Parameter="sEC_NAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SEC_CAPACITY" Parameter="sEC_CAPACITY" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

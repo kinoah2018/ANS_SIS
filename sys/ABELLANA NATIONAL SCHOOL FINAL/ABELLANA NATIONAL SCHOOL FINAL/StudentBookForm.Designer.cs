@@ -30,21 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentBookForm));
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbYLevel = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBookName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtsname = new System.Windows.Forms.TextBox();
+            this.txtBookDesc = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSAVE = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.txtBookID = new System.Windows.Forms.TextBox();
+            this.txtSTID = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,18 +63,20 @@
             this.label4.TabIndex = 183;
             this.label4.Text = "Complimentary Book";
             // 
-            // dataGridView2
+            // dgvBooks
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(650, 108);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(571, 318);
-            this.dataGridView2.TabIndex = 201;
+            this.dgvBooks.AllowUserToAddRows = false;
+            this.dgvBooks.AllowUserToDeleteRows = false;
+            this.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBooks.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBooks.Location = new System.Drawing.Point(552, 108);
+            this.dgvBooks.Name = "dgvBooks";
+            this.dgvBooks.ReadOnly = true;
+            this.dgvBooks.Size = new System.Drawing.Size(703, 318);
+            this.dgvBooks.TabIndex = 201;
+            this.dgvBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentClick);
+            this.dgvBooks.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentDoubleClick);
             // 
             // button1
             // 
@@ -91,37 +95,46 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(945, 77);
+            this.textBox1.Location = new System.Drawing.Point(979, 77);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(276, 25);
             this.textBox1.TabIndex = 206;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.txtSTID);
+            this.groupBox1.Controls.Add(this.txtBookID);
+            this.groupBox1.Controls.Add(this.cmbYLevel);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtBookName);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtsname);
+            this.groupBox1.Controls.Add(this.txtBookDesc);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(173, 108);
+            this.groupBox1.Location = new System.Drawing.Point(104, 108);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(442, 169);
             this.groupBox1.TabIndex = 208;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input Books";
             // 
-            // comboBox1
+            // cmbYLevel
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(171, 121);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(184, 26);
-            this.comboBox1.TabIndex = 6;
+            this.cmbYLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbYLevel.FormattingEnabled = true;
+            this.cmbYLevel.Items.AddRange(new object[] {
+            "1ST YEAR",
+            "2ND YEAR",
+            "3RD YEAR",
+            "4TH YEAR"});
+            this.cmbYLevel.Location = new System.Drawing.Point(171, 121);
+            this.cmbYLevel.Name = "cmbYLevel";
+            this.cmbYLevel.Size = new System.Drawing.Size(184, 26);
+            this.cmbYLevel.TabIndex = 6;
             // 
             // label3
             // 
@@ -132,13 +145,12 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Year Level :";
             // 
-            // textBox2
+            // txtBookName
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(172, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 27);
-            this.textBox2.TabIndex = 4;
+            this.txtBookName.Location = new System.Drawing.Point(172, 38);
+            this.txtBookName.Name = "txtBookName";
+            this.txtBookName.Size = new System.Drawing.Size(250, 27);
+            this.txtBookName.TabIndex = 4;
             // 
             // label2
             // 
@@ -158,62 +170,82 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Book Name :";
             // 
-            // txtsname
+            // txtBookDesc
             // 
-            this.txtsname.Enabled = false;
-            this.txtsname.Location = new System.Drawing.Point(171, 79);
-            this.txtsname.Name = "txtsname";
-            this.txtsname.Size = new System.Drawing.Size(250, 27);
-            this.txtsname.TabIndex = 0;
+            this.txtBookDesc.Location = new System.Drawing.Point(171, 79);
+            this.txtBookDesc.Name = "txtBookDesc";
+            this.txtBookDesc.Size = new System.Drawing.Size(250, 27);
+            this.txtBookDesc.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.btnUpdate);
+            this.groupBox2.Controls.Add(this.btnSAVE);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(173, 283);
+            this.groupBox2.Location = new System.Drawing.Point(104, 283);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(442, 98);
             this.groupBox2.TabIndex = 209;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Action";
             // 
-            // button3
+            // btnUpdate
             // 
-            this.button3.BackColor = System.Drawing.Color.SteelBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(300, 35);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 38);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(300, 35);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(122, 38);
+            this.btnUpdate.TabIndex = 20;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // button4
+            // btnSAVE
             // 
-            this.button4.BackColor = System.Drawing.Color.SteelBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(172, 35);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 38);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Save";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnSAVE.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSAVE.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSAVE.ForeColor = System.Drawing.Color.White;
+            this.btnSAVE.Location = new System.Drawing.Point(172, 35);
+            this.btnSAVE.Name = "btnSAVE";
+            this.btnSAVE.Size = new System.Drawing.Size(122, 38);
+            this.btnSAVE.TabIndex = 19;
+            this.btnSAVE.Text = "Save";
+            this.btnSAVE.UseVisualStyleBackColor = false;
+            this.btnSAVE.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(1190, 79);
+            this.pictureBox1.Location = new System.Drawing.Point(1224, 79);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 20);
             this.pictureBox1.TabIndex = 210;
             this.pictureBox1.TabStop = false;
+            // 
+            // txtBookID
+            // 
+            this.txtBookID.Enabled = false;
+            this.txtBookID.Location = new System.Drawing.Point(426, 38);
+            this.txtBookID.Name = "txtBookID";
+            this.txtBookID.Size = new System.Drawing.Size(10, 27);
+            this.txtBookID.TabIndex = 7;
+            this.txtBookID.Visible = false;
+            // 
+            // txtSTID
+            // 
+            this.txtSTID.Enabled = false;
+            this.txtSTID.Location = new System.Drawing.Point(361, 121);
+            this.txtSTID.Name = "txtSTID";
+            this.txtSTID.Size = new System.Drawing.Size(10, 27);
+            this.txtSTID.TabIndex = 8;
+            this.txtSTID.Visible = false;
             // 
             // StudentBookForm
             // 
@@ -227,14 +259,15 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvBooks);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 223);
             this.Name = "StudentBookForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Book";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Load += new System.EventHandler(this.StudentBookForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -247,19 +280,21 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvBooks;
         internal System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbYLevel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBookName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtsname;
+        private System.Windows.Forms.TextBox txtBookDesc;
         private System.Windows.Forms.GroupBox groupBox2;
-        internal System.Windows.Forms.Button button3;
-        internal System.Windows.Forms.Button button4;
+        internal System.Windows.Forms.Button btnUpdate;
+        internal System.Windows.Forms.Button btnSAVE;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtBookID;
+        private System.Windows.Forms.TextBox txtSTID;
     }
 }

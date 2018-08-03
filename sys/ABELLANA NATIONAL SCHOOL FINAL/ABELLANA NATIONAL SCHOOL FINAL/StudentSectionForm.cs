@@ -35,12 +35,46 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void StudentSection_Load(object sender, EventArgs e)
         {
 
-            dgvSection.DataSource = db.View_Sections;
+            loadtable();
+        }
+
+        public void loadtable()
+        {
+            dgvSection.DataSource = db.SP_SECVIEW();
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvSection_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtSecID.Text = dgvSection.CurrentRow.Cells[0].Value.ToString();
+            txtsname.Text = dgvSection.CurrentRow.Cells[1].Value.ToString();
+            txtSecCap.Text = dgvSection.CurrentRow.Cells[2].Value.ToString();
+            btnSave.Enabled = false;
+            btnUpdate.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            db.SP_SECTIONUPDATE(int.Parse(txtSecID.Text),txtsname.Text, txtSecCap.Text);
+            MessageBox.Show("Succesfully Update");
+            txtsname.Clear();
+            txtSecCap.Clear();
+            loadtable();
+            btnSave.Enabled = true;
+            btnUpdate.Enabled = false;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            db.SP_SECTIONSAVE(txtsname.Text,txtSecCap.Text);
+            MessageBox.Show("Succesfully Saved");
+            txtsname.Clear();
+            txtSecCap.Clear();
+            loadtable();
         }
 
        

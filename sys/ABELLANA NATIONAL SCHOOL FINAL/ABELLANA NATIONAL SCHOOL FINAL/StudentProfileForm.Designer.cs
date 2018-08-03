@@ -32,25 +32,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentProfileForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtSecname = new System.Windows.Forms.ComboBox();
             this.tBLSECTIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aNS_DATABASEDataSet4 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet4();
             this.label26 = new System.Windows.Forms.Label();
             this.cmbsyear = new System.Windows.Forms.ComboBox();
+            this.tBLSCHOOLYEARBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aNS_DATABASEDataSet5 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet5();
             this.cmbylevel = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.check4 = new System.Windows.Forms.CheckBox();
             this.chk_subnso = new System.Windows.Forms.CheckBox();
-            this.check3 = new System.Windows.Forms.CheckBox();
             this.chk_subgrademoral = new System.Windows.Forms.CheckBox();
-            this.check2 = new System.Windows.Forms.CheckBox();
             this.chk_subform138 = new System.Windows.Forms.CheckBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.check1 = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.chk_subform137 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -97,21 +96,18 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.aNS_DATABASEDataSet5 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet5();
-            this.tBLSCHOOLYEARBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tBL_SCHOOLYEARTableAdapter = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet5TableAdapters.TBL_SCHOOLYEARTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBLSECTIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLSCHOOLYEARBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet5)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet3)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLSCHOOLYEARBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -156,12 +152,26 @@
             this.groupBox6.Controls.Add(this.cmbylevel);
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.label3);
-            this.groupBox6.Location = new System.Drawing.Point(824, 192);
+            this.groupBox6.Location = new System.Drawing.Point(783, 201);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(325, 188);
+            this.groupBox6.Size = new System.Drawing.Size(366, 188);
             this.groupBox6.TabIndex = 125;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Section Area";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(13, 143);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(298, 37);
+            this.button1.TabIndex = 128;
+            this.button1.Text = "Manage School Year";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtSecname
             // 
@@ -206,6 +216,16 @@
             this.cmbsyear.TabIndex = 25;
             this.cmbsyear.ValueMember = "SCHOOLYEAR_ID";
             // 
+            // tBLSCHOOLYEARBindingSource
+            // 
+            this.tBLSCHOOLYEARBindingSource.DataMember = "TBL_SCHOOLYEAR";
+            this.tBLSCHOOLYEARBindingSource.DataSource = this.aNS_DATABASEDataSet5;
+            // 
+            // aNS_DATABASEDataSet5
+            // 
+            this.aNS_DATABASEDataSet5.DataSetName = "ANS_DATABASEDataSet5";
+            this.aNS_DATABASEDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmbylevel
             // 
             this.cmbylevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -240,88 +260,51 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.check4);
             this.groupBox5.Controls.Add(this.chk_subnso);
-            this.groupBox5.Controls.Add(this.check3);
             this.groupBox5.Controls.Add(this.chk_subgrademoral);
-            this.groupBox5.Controls.Add(this.check2);
             this.groupBox5.Controls.Add(this.chk_subform138);
             this.groupBox5.Controls.Add(this.label25);
             this.groupBox5.Controls.Add(this.label24);
             this.groupBox5.Controls.Add(this.label17);
-            this.groupBox5.Controls.Add(this.check1);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.chk_subform137);
-            this.groupBox5.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Font = new System.Drawing.Font("Verdana", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(458, 192);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(356, 192);
+            this.groupBox5.Size = new System.Drawing.Size(319, 192);
             this.groupBox5.TabIndex = 124;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Requirment";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
-            // check4
-            // 
-            this.check4.AutoSize = true;
-            this.check4.Location = new System.Drawing.Point(218, 154);
-            this.check4.Name = "check4";
-            this.check4.Size = new System.Drawing.Size(135, 22);
-            this.check4.TabIndex = 139;
-            this.check4.Text = "Not Submitted";
-            this.check4.UseVisualStyleBackColor = true;
-            this.check4.Click += new System.EventHandler(this.check4_Click);
-            // 
             // chk_subnso
             // 
             this.chk_subnso.AutoSize = true;
-            this.chk_subnso.Location = new System.Drawing.Point(116, 154);
+            this.chk_subnso.Location = new System.Drawing.Point(155, 154);
             this.chk_subnso.Name = "chk_subnso";
-            this.chk_subnso.Size = new System.Drawing.Size(103, 22);
+            this.chk_subnso.Size = new System.Drawing.Size(119, 24);
             this.chk_subnso.TabIndex = 138;
             this.chk_subnso.Text = "Submitted";
             this.chk_subnso.UseVisualStyleBackColor = true;
             this.chk_subnso.Click += new System.EventHandler(this.chk_subnso_Click);
             // 
-            // check3
-            // 
-            this.check3.AutoSize = true;
-            this.check3.Location = new System.Drawing.Point(218, 116);
-            this.check3.Name = "check3";
-            this.check3.Size = new System.Drawing.Size(135, 22);
-            this.check3.TabIndex = 137;
-            this.check3.Text = "Not Submitted";
-            this.check3.UseVisualStyleBackColor = true;
-            this.check3.Click += new System.EventHandler(this.check3_Click);
-            // 
             // chk_subgrademoral
             // 
             this.chk_subgrademoral.AutoSize = true;
-            this.chk_subgrademoral.Location = new System.Drawing.Point(116, 116);
+            this.chk_subgrademoral.Location = new System.Drawing.Point(157, 116);
             this.chk_subgrademoral.Name = "chk_subgrademoral";
-            this.chk_subgrademoral.Size = new System.Drawing.Size(103, 22);
+            this.chk_subgrademoral.Size = new System.Drawing.Size(119, 24);
             this.chk_subgrademoral.TabIndex = 136;
             this.chk_subgrademoral.Text = "Submitted";
             this.chk_subgrademoral.UseVisualStyleBackColor = true;
             this.chk_subgrademoral.Click += new System.EventHandler(this.chk_subgrademoral_Click);
             // 
-            // check2
-            // 
-            this.check2.AutoSize = true;
-            this.check2.Location = new System.Drawing.Point(218, 78);
-            this.check2.Name = "check2";
-            this.check2.Size = new System.Drawing.Size(135, 22);
-            this.check2.TabIndex = 135;
-            this.check2.Text = "Not Submitted";
-            this.check2.UseVisualStyleBackColor = true;
-            this.check2.Click += new System.EventHandler(this.check2_Click);
-            // 
             // chk_subform138
             // 
             this.chk_subform138.AutoSize = true;
-            this.chk_subform138.Location = new System.Drawing.Point(116, 78);
+            this.chk_subform138.Location = new System.Drawing.Point(157, 78);
             this.chk_subform138.Name = "chk_subform138";
-            this.chk_subform138.Size = new System.Drawing.Size(103, 22);
+            this.chk_subform138.Size = new System.Drawing.Size(119, 24);
             this.chk_subform138.TabIndex = 134;
             this.chk_subform138.Text = "Submitted";
             this.chk_subform138.UseVisualStyleBackColor = true;
@@ -330,56 +313,45 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(60, 153);
+            this.label25.Location = new System.Drawing.Point(84, 153);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(53, 18);
+            this.label25.Size = new System.Drawing.Size(61, 20);
             this.label25.TabIndex = 133;
             this.label25.Text = "NSO :";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 116);
+            this.label24.Location = new System.Drawing.Point(30, 116);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(107, 18);
+            this.label24.Size = new System.Drawing.Size(119, 20);
             this.label24.TabIndex = 130;
             this.label24.Text = "Good Moral :";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(18, 78);
+            this.label17.Location = new System.Drawing.Point(42, 78);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(95, 18);
+            this.label17.Size = new System.Drawing.Size(106, 20);
             this.label17.TabIndex = 127;
             this.label17.Text = "Form 138 :";
-            // 
-            // check1
-            // 
-            this.check1.AutoSize = true;
-            this.check1.Location = new System.Drawing.Point(218, 41);
-            this.check1.Name = "check1";
-            this.check1.Size = new System.Drawing.Size(135, 22);
-            this.check1.TabIndex = 125;
-            this.check1.Text = "Not Submitted";
-            this.check1.UseVisualStyleBackColor = true;
-            this.check1.Click += new System.EventHandler(this.check1_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 40);
+            this.label11.Location = new System.Drawing.Point(42, 40);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 18);
+            this.label11.Size = new System.Drawing.Size(106, 20);
             this.label11.TabIndex = 124;
             this.label11.Text = "Form 137 :";
             // 
             // chk_subform137
             // 
             this.chk_subform137.AutoSize = true;
-            this.chk_subform137.Location = new System.Drawing.Point(116, 41);
+            this.chk_subform137.Location = new System.Drawing.Point(157, 37);
             this.chk_subform137.Name = "chk_subform137";
-            this.chk_subform137.Size = new System.Drawing.Size(103, 22);
+            this.chk_subform137.Size = new System.Drawing.Size(119, 24);
             this.chk_subform137.TabIndex = 0;
             this.chk_subform137.Text = "Submitted";
             this.chk_subform137.UseVisualStyleBackColor = true;
@@ -751,6 +723,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox3.Controls.Add(this.btnClear);
             this.groupBox3.Controls.Add(this.btnView);
             this.groupBox3.Controls.Add(this.btnSave);
@@ -803,30 +776,6 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_2);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(13, 143);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(298, 37);
-            this.button1.TabIndex = 128;
-            this.button1.Text = "Manage School Year";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // aNS_DATABASEDataSet5
-            // 
-            this.aNS_DATABASEDataSet5.DataSetName = "ANS_DATABASEDataSet5";
-            this.aNS_DATABASEDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBLSCHOOLYEARBindingSource
-            // 
-            this.tBLSCHOOLYEARBindingSource.DataMember = "TBL_SCHOOLYEAR";
-            this.tBLSCHOOLYEARBindingSource.DataSource = this.aNS_DATABASEDataSet5;
-            // 
             // tBL_SCHOOLYEARTableAdapter
             // 
             this.tBL_SCHOOLYEARTableAdapter.ClearBeforeFill = true;
@@ -856,6 +805,8 @@
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tBLSECTIONBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLSCHOOLYEARBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet5)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -864,8 +815,6 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet3)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLSCHOOLYEARBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -913,16 +862,12 @@
         private System.Windows.Forms.Label label20;
         public System.Windows.Forms.TextBox txtheight;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.CheckBox check4;
         private System.Windows.Forms.CheckBox chk_subnso;
-        private System.Windows.Forms.CheckBox check3;
         private System.Windows.Forms.CheckBox chk_subgrademoral;
-        private System.Windows.Forms.CheckBox check2;
         private System.Windows.Forms.CheckBox chk_subform138;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.CheckBox check1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.CheckBox chk_subform137;
         private System.Windows.Forms.GroupBox groupBox6;
