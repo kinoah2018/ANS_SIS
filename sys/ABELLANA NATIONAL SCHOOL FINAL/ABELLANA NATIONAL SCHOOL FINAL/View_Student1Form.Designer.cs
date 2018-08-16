@@ -52,10 +52,10 @@
             this.dgvStudView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvStudView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudView.Location = new System.Drawing.Point(54, 69);
+            this.dgvStudView.Location = new System.Drawing.Point(31, 69);
             this.dgvStudView.Name = "dgvStudView";
             this.dgvStudView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudView.Size = new System.Drawing.Size(712, 362);
+            this.dgvStudView.Size = new System.Drawing.Size(748, 362);
             this.dgvStudView.TabIndex = 185;
             this.dgvStudView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudView_CellContentClick);
             this.dgvStudView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudView_CellContentDoubleClick);
@@ -64,12 +64,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 467);
+            this.ClientSize = new System.Drawing.Size(814, 467);
             this.Controls.Add(this.dgvStudView);
             this.Controls.Add(this.Button3);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(565, 223);
+            this.Location = new System.Drawing.Point(554, 223);
             this.Name = "View_Student1Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "View_Student1Form";

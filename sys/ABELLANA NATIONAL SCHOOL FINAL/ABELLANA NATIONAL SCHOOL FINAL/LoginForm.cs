@@ -18,7 +18,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             InitializeComponent();
             
         }
-        DataClasses1DataContext db = new DataClasses1DataContext();
+        DataClasses2DataContext db = new DataClasses2DataContext();
         SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -52,10 +52,15 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             {
                 Control_variables.type = "Admin";
             }
-            else
+            else if (utype == 2)
             {
                 Control_variables.type = "Registrar";
             }
+            else
+            {
+                Control_variables.type = "Personnel";
+            }
+           
             conn.Close();
 
 
@@ -112,9 +117,36 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                                PHomeForm pf = new PHomeForm();
                                h.ShowDialog();
                             }
-                            else
+                            else if (utype == 2)
                             {
                                 MessageBox.Show("Welcome " + Control_variables.username, "STAFF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                HomeForm hs = new HomeForm();
+                                // GET PICTURE 
+                                conn.Open();
+                                SqlCommand get_pic = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_USERNAME LIKE'" + txtUsername.Text + "'", conn);
+                                Control_variables.img = Convert.ToString(get_pic.ExecuteScalar());
+                                hs.pictureBox2.ImageLocation = Control_variables.img;
+                                SqlCommand get_id = new SqlCommand("SELECT USER_ID FROM TBL_USERS WHERE USER_USERNAME LIKE'" + txtUsername.Text + "'", conn);
+                                Control_variables.current_id = Convert.ToInt32(get_id.ExecuteScalar());
+
+                                conn.Close();
+
+                                //PASS VARIABLES
+                                hs.lbUsername.Text = Control_variables.username;
+                                hs.lbPosition.Text = Control_variables.type;
+
+                                //CLEAR TEXTBOXES
+                                txtUsername.Clear();
+                                txtPassword.Clear();
+
+
+
+                                hs.ShowDialog();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Welcome " + Control_variables.username, "PERSONNEL", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 HomeForm hs = new HomeForm();
                                 // GET PICTURE 

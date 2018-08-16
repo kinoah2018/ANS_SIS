@@ -91,7 +91,7 @@
             this.groupBox2.Size = new System.Drawing.Size(890, 382);
             this.groupBox2.TabIndex = 105;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Information";
+            this.groupBox2.Text = "User Information";
             // 
             // cmbutype
             // 
@@ -332,6 +332,7 @@
             this.btnClear.TabIndex = 16;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnView
             // 

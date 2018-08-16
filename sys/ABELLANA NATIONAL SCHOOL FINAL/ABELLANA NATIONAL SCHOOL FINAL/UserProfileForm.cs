@@ -19,7 +19,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void btnUpdatepass_Click(object sender, EventArgs e)
         {
-            DataClasses1DataContext db = new DataClasses1DataContext();
+            DataClasses2DataContext db = new DataClasses2DataContext();
             int count = 0;
 
             if (txtOldpass.Text == "" || txtNewpass.Text == "" || txtRetypepass.Text == "")

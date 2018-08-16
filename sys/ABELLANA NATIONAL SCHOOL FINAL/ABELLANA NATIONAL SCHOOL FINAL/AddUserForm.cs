@@ -18,7 +18,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             InitializeComponent();
         }
         SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
-        DataClasses1DataContext db = new DataClasses1DataContext();
+        DataClasses2DataContext db = new DataClasses2DataContext();
         Hashpass hp = new Hashpass();
 
         private void btnView_Click(object sender, EventArgs e)
@@ -183,6 +183,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void cmbutype_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearAll();
         }
 
 

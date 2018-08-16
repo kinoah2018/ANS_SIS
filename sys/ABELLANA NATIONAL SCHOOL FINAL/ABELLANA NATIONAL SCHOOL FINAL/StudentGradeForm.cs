@@ -13,7 +13,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
     public partial class StudentGradeForm : Form
     {
         SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
-        DataClasses1DataContext db = new DataClasses1DataContext();
+        DataClasses2DataContext db = new DataClasses2DataContext();
 
         public StudentGradeForm()
         {
@@ -29,10 +29,12 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void StudentGrade_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'aNS_DATABASEDataSet9.TBL_SUBJECT' table. You can move, or remove it, as needed.
+            this.tBL_SUBJECTTableAdapter1.Fill(this.aNS_DATABASEDataSet9.TBL_SUBJECT);
             // TODO: This line of code loads data into the 'aNS_DATABASEDataSet2.TBL_STUDENT' table. You can move, or remove it, as needed.
             this.tBL_STUDENTTableAdapter.Fill(this.aNS_DATABASEDataSet2.TBL_STUDENT);
             // TODO: This line of code loads data into the 'aNS_DATABASEDataSet1.TBL_SUBJECT' table. You can move, or remove it, as needed.
-            this.tBL_SUBJECTTableAdapter.Fill(this.aNS_DATABASEDataSet1.TBL_SUBJECT);
+            //this.tBL_SUBJECTTableAdapter.Fill(this.aNS_DATABASEDataSet1.TBL_SUBJECT);
 
             loadsubject();
 
@@ -107,8 +109,14 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                 read.Close();
                 cmd4.Dispose();
             }
+
+          
+            
+
+
             conn.Close();
 
+             
         }
 
         public void loadsubject()
@@ -207,7 +215,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             if (btnSave.Text == "Save")
             {
-                db = new DataClasses1DataContext();
+                db = new DataClasses2DataContext();
                 var checkIfExist = from grade in db.TBL_GRADEs
                                    where grade.ST_CURRENTID == txtscid.Text && grade.GRADEPERIOD == txtgrper.Text && grade.SUBJECT_ID == Convert.ToInt32(txtsub.SelectedValue)
                                    select grade;
@@ -303,7 +311,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                         }
                     }
                     else
-                    { 
+                    {
                             conn.Open();
                             SqlCommand cmd = new SqlCommand("INSERT INTO TBL_GRADE VALUES('" + txtscid.Text + "','" + txtgrper.Text + "','" + txtgrade.Text + "','" + txtsub.SelectedValue + "')", conn);
                             cmd.ExecuteNonQuery();
@@ -313,7 +321,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
                             conn.Close();
                             StudentGrade_Load(this, null);
-                            if (txtsub.Items.Count-1 == currentindex)
+                            if (txtsub.Items.Count - 1 == currentindex)
                             {
                                 currentindex = -1;
                             }
@@ -361,7 +369,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            db = new DataClasses1DataContext();
+            db = new DataClasses2DataContext();
             var grade = db.TBL_GRADEs.FirstOrDefault(g => g.ST_CURRENTID.Equals(txtscid.Text)&&g.SUBJECT_ID.Equals(Convert.ToInt32(txtsub.SelectedValue))&&g.GRADEPERIOD.Equals(txtgrper.Text));
             grade.GRADE = int.Parse(txtgrade.Text);
             db.SubmitChanges();
@@ -371,7 +379,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             txtgrade.Text = "";
             txtgrper.SelectedItem = null;
             txtsub.SelectedValue = -1;
-            btnSave.Text = "Save";
         }
 
         private void dgvGrade_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -382,12 +389,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             string sub =Convert.ToString(dgvGrade.Rows[selectedrowindex].Cells["SUBJECT"].Value);
             txtgrper.Text = columnHeader;
             txtgrade.Text = cellValue;
-            btnSave.Text = "Cancel";
             txtsub.Text = sub;
             btnUpdate.Enabled = true;
             txtsub.Enabled = false;
             txtgrper.Enabled = false;
-            btnViewStud.Enabled = false;
+            
         }
 
         private void dgvGrade_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -439,6 +445,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             View_Student1Form vsf = new View_Student1Form();
             this.Close();
             vsf.ShowDialog();
+            
+            
             
         }
 

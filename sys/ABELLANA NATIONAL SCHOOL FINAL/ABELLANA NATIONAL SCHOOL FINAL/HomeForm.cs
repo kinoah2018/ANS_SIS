@@ -19,7 +19,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             
         }
 
-        DataClasses1DataContext db = new DataClasses1DataContext();
+        DataClasses2DataContext db = new DataClasses2DataContext();
         SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
         private void msRegistration_Click(object sender, EventArgs e)
         {
@@ -67,7 +67,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             SqlCommand Utype = new SqlCommand("SELECT USER_TYPEID FROM TBL_USERTYPE WHERE USER_TYPEID = '" + Control_variables.current_id + "'", conn);
             SqlCommand ContactNo = new SqlCommand("SELECT USER_CONTACT FROM TBL_USERS WHERE USER_ID = '" + Control_variables.current_id + "'", conn);
             SqlCommand command = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_ID = '" + Control_variables.current_id + "'", conn);
-            
+            SqlCommand cmd = new SqlCommand("SELECT USER_USERNAME FROM TBL_USERS WHERE USER_ID = '" + Control_variables.current_id + "'", conn);
 
             string fname = Convert.ToString(Firstname.ExecuteScalar());
             string lname = Convert.ToString(Lastname.ExecuteScalar());
@@ -75,7 +75,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             int pos = Convert.ToInt32(Utype.ExecuteScalar());
             string contactno = Convert.ToString(ContactNo.ExecuteScalar());
             string image = Convert.ToString(command.ExecuteScalar());
-
+            string usern = Convert.ToString(cmd.ExecuteScalar());
             pro.txtFirstname.Text = fname;
             pro.txtLastname.Text = lname;
             pro.txtMiddlename.Text = midname;
@@ -91,7 +91,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             pro.txtContactNo.Text = contactno;
             pro.txtUserID.Text = Control_variables.current_id.ToString();
             pro.PB_image.ImageLocation = image;
-
+            pro.lbluname.Text = usern;
            
             conn.Close();
             pro.ShowDialog();
@@ -146,7 +146,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void SectiontoolStripMenuItem10_Click(object sender, EventArgs e)
         {
-            StudentSectionForm ss = new StudentSectionForm();
+            AddSectionForm ss = new AddSectionForm();
             ss.ShowDialog();
         }
 
@@ -170,8 +170,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void TSectiontoolStripMenuItem10_Click(object sender, EventArgs e)
         {
-            TeacherSectionForm ts = new TeacherSectionForm();
-            ts.ShowDialog();
+            
         }
 
         private void TScheduletoolStripMenuItem10_Click(object sender, EventArgs e)
@@ -200,7 +199,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         
         private void ComplimentarytoolStripMenuItem10_Click_1(object sender, EventArgs e)
         {
-            StudentBookForm bo = new StudentBookForm();
+            AddBookForm bo = new AddBookForm();
             bo.ShowDialog();
         }
 
@@ -234,7 +233,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void SectiontoolStripMenuItem10_Click_1(object sender, EventArgs e)
         {
-            StudentSectionForm sec = new StudentSectionForm();
+            AddSectionForm sec = new AddSectionForm();
             sec.ShowDialog();
         }
 
@@ -247,7 +246,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void ComplimentarytoolStripMenuItem10_Click(object sender, EventArgs e)
         {
-            StudentBookForm sbf = new StudentBookForm();
+            AddBookForm sbf = new AddBookForm();
             sbf.ShowDialog();
         }
 
@@ -259,13 +258,37 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
         {
-            StudentSectionForm ssf = new StudentSectionForm();
+            AddSectionForm ssf = new AddSectionForm();
             ssf.ShowDialog();
         }
 
         private void toolStripMenuItem8_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void BooktoolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            AddBookForm sbf = new AddBookForm();
+            sbf.ShowDialog();
+        }
+
+        private void TProfiletoolStripMenuItem10_Click_1(object sender, EventArgs e)
+        {
+            TeacherProfileForm tpf = new TeacherProfileForm();
+            tpf.ShowDialog();
+        }
+
+        private void TScheduletoolStripMenuItem10_Click_1(object sender, EventArgs e)
+        {
+            TeacherScheduleForm tsf = new TeacherScheduleForm();
+            tsf.ShowDialog();
+        }
+
+        private void TSubjecttoolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            AddSubjectForm tsf = new AddSubjectForm();
+            tsf.ShowDialog();
         }
     }
 }

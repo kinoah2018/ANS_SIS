@@ -16,7 +16,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             InitializeComponent();
         }
-        DataClasses1DataContext db = new DataClasses1DataContext();
+        DataClasses2DataContext db = new DataClasses2DataContext();
         private void btnSave_Click(object sender, EventArgs e)
         {
             db.SP_PAYMENTSAVE(txtPaymentName.Text,txtPayment_Desc.Text);

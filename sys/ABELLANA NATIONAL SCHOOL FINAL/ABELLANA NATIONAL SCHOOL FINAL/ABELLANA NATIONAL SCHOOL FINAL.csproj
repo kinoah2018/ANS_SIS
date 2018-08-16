@@ -51,6 +51,12 @@
     <Compile Include="AddPaymentForm.Designer.cs">
       <DependentUpon>AddPaymentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddScheduleForm.Designer.cs">
+      <DependentUpon>AddScheduleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ANS_DATABASEDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANS_DATABASEDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANS_DATABASEDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANS_DATABASEDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANS_DATABASEDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet13.xsd</DependentUpon>
     </Compile>
     <Compile Include="ANS_DATABASEDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,6 +118,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ANS_DATABASEDataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ANS_DATABASEDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANS_DATABASEDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANS_DATABASEDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet9.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BMIComputeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,10 +145,10 @@
     <Compile Include="ChangePassForm2.Designer.cs">
       <DependentUpon>ChangePassForm2.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses1.designer.cs">
+    <Compile Include="DataClasses2.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
+      <DependentUpon>DataClasses2.dbml</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassForm.cs">
       <SubType>Form</SubType>
@@ -115,11 +156,11 @@
     <Compile Include="ForgotPassForm.Designer.cs">
       <DependentUpon>ForgotPassForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentBookForm.cs">
+    <Compile Include="AddBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentBookForm.Designer.cs">
-      <DependentUpon>StudentBookForm.cs</DependentUpon>
+    <Compile Include="AddBookForm.Designer.cs">
+      <DependentUpon>AddBookForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ChangePassForm.cs">
       <SubType>Form</SubType>
@@ -174,11 +215,11 @@
     <Compile Include="StudentProfileForm.Designer.cs">
       <DependentUpon>StudentProfileForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentSchoolYearForm.cs">
+    <Compile Include="AddSchoolYearForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentSchoolYearForm.Designer.cs">
-      <DependentUpon>StudentSchoolYearForm.cs</DependentUpon>
+    <Compile Include="AddSchoolYearForm.Designer.cs">
+      <DependentUpon>AddSchoolYearForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentUpdateForm.cs">
       <SubType>Form</SubType>
@@ -186,11 +227,23 @@
     <Compile Include="StudentUpdateForm.Designer.cs">
       <DependentUpon>StudentUpdateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSubjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSubjectForm.Designer.cs">
+      <DependentUpon>AddSubjectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewPaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewPaymentForm.Designer.cs">
       <DependentUpon>ViewPaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewScheduleTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewScheduleTimeForm.Designer.cs">
+      <DependentUpon>ViewScheduleTimeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewStudentProfileForm.cs">
       <SubType>Form</SubType>
@@ -204,11 +257,11 @@
     <Compile Include="StudentRequirementForm.Designer.cs">
       <DependentUpon>StudentRequirementForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentSectionForm.cs">
+    <Compile Include="AddSectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentSectionForm.Designer.cs">
-      <DependentUpon>StudentSectionForm.cs</DependentUpon>
+    <Compile Include="AddSectionForm.Designer.cs">
+      <DependentUpon>AddSectionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherProfileForm.cs">
       <SubType>Form</SubType>
@@ -222,12 +275,6 @@
     <Compile Include="TeacherScheduleForm.Designer.cs">
       <DependentUpon>TeacherScheduleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherSectionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TeacherSectionForm.Designer.cs">
-      <DependentUpon>TeacherSectionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UpdateUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,17 +287,17 @@
     <Compile Include="UserProfileForm.Designer.cs">
       <DependentUpon>UserProfileForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewTeacherToScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTeacherToScheduleForm.Designer.cs">
+      <DependentUpon>ViewTeacherToScheduleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewUserForm.Designer.cs">
       <DependentUpon>ViewUserForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View_SelectStudentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View_SelectStudentForm.Designer.cs">
-      <DependentUpon>View_SelectStudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View_Student1Form.cs">
       <SubType>Form</SubType>
@@ -261,17 +308,106 @@
     <EmbeddedResource Include="AddPaymentForm.resx">
       <DependentUpon>AddPaymentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddScheduleForm.resx">
+      <DependentUpon>AddScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentSchoolYearForm.resx">
-      <DependentUpon>StudentSchoolYearForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddSchoolYearForm.resx">
+      <DependentUpon>AddSchoolYearForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddSubjectForm.resx">
+      <DependentUpon>AddSubjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ANS_DATABASEDataSet10.xsc">
+      <DependentUpon>ANS_DATABASEDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet10.xss">
+      <DependentUpon>ANS_DATABASEDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet11.xsc">
+      <DependentUpon>ANS_DATABASEDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet11.xss">
+      <DependentUpon>ANS_DATABASEDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet12.xsc">
+      <DependentUpon>ANS_DATABASEDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet12.xss">
+      <DependentUpon>ANS_DATABASEDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet13.xsc">
+      <DependentUpon>ANS_DATABASEDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet13.xss">
+      <DependentUpon>ANS_DATABASEDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet7.xsc">
+      <DependentUpon>ANS_DATABASEDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet7.xss">
+      <DependentUpon>ANS_DATABASEDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet8.xsc">
+      <DependentUpon>ANS_DATABASEDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet8.xss">
+      <DependentUpon>ANS_DATABASEDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet9.xsc">
+      <DependentUpon>ANS_DATABASEDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet9.xss">
+      <DependentUpon>ANS_DATABASEDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="DataClasses2.dbml.layout">
+      <DependentUpon>DataClasses2.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="ViewPaymentForm.resx">
       <DependentUpon>ViewPaymentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View_SelectStudentForm.resx">
-      <DependentUpon>View_SelectStudentForm.cs</DependentUpon>
+    <EmbeddedResource Include="ViewScheduleTimeForm.resx">
+      <DependentUpon>ViewScheduleTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTeacherToScheduleForm.resx">
+      <DependentUpon>ViewTeacherToScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View_Student1Form.resx">
       <DependentUpon>View_Student1Form.cs</DependentUpon>
@@ -356,17 +492,14 @@
     <None Include="ANS_DATABASEDataSet6.xss">
       <DependentUpon>ANS_DATABASEDataSet6.xsd</DependentUpon>
     </None>
-    <None Include="DataClasses1.dbml.layout">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="ChangePassForm2.resx">
       <DependentUpon>ChangePassForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPassForm.resx">
       <DependentUpon>ForgotPassForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentBookForm.resx">
-      <DependentUpon>StudentBookForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddBookForm.resx">
+      <DependentUpon>AddBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePassForm.resx">
       <DependentUpon>ChangePassForm.cs</DependentUpon>
@@ -410,17 +543,14 @@
     <EmbeddedResource Include="StudentRequirementForm.resx">
       <DependentUpon>StudentRequirementForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentSectionForm.resx">
-      <DependentUpon>StudentSectionForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddSectionForm.resx">
+      <DependentUpon>AddSectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherProfileForm.resx">
       <DependentUpon>TeacherProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherScheduleForm.resx">
       <DependentUpon>TeacherScheduleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TeacherSectionForm.resx">
-      <DependentUpon>TeacherSectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateUserForm.resx">
       <DependentUpon>UpdateUserForm.cs</DependentUpon>
@@ -431,9 +561,9 @@
     <EmbeddedResource Include="ViewUserForm.resx">
       <DependentUpon>ViewUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataClasses1.dbml">
+    <None Include="DataClasses2.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <LastGenOutput>DataClasses2.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ANS_DATABASEDataSet12" targetNamespace="http://tempuri.org/ANS_DATABASEDataSet12.xsd" xmlns:mstns="http://tempuri.org/ANS_DATABASEDataSet12.xsd" xmlns="http://tempuri.org/ANS_DATABASEDataSet12.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ANS_DATABASEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ANS_DATABASEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ABELLANA_NATIONAL_SCHOOL_FINAL.Properties.Settings.GlobalReference.Default.ANS_DATABASEConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_CombScheduleTableAdapter" GeneratorDataComponentClassName="View_CombScheduleTableAdapter" Name="View_CombSchedule" UserDataComponentName="View_CombScheduleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ANS_DATABASEConnectionString (Settings)" DbObjectName="ANS_DATABASE.dbo.View_CombSchedule" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TIME_ID, SCHEDULE FROM dbo.View_CombSchedule</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TIME_ID" DataSetColumn="TIME_ID" />
+              <Mapping SourceColumn="SCHEDULE" DataSetColumn="SCHEDULE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ANS_DATABASEDataSet12" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ANS_DATABASEDataSet12" msprop:Generator_UserDSName="ANS_DATABASEDataSet12">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_CombSchedule" msprop:Generator_TableClassName="View_CombScheduleDataTable" msprop:Generator_TableVarName="tableView_CombSchedule" msprop:Generator_TablePropName="View_CombSchedule" msprop:Generator_RowDeletingName="View_CombScheduleRowDeleting" msprop:Generator_RowChangingName="View_CombScheduleRowChanging" msprop:Generator_RowEvHandlerName="View_CombScheduleRowChangeEventHandler" msprop:Generator_RowDeletedName="View_CombScheduleRowDeleted" msprop:Generator_UserTableName="View_CombSchedule" msprop:Generator_RowChangedName="View_CombScheduleRowChanged" msprop:Generator_RowEvArgName="View_CombScheduleRowChangeEvent" msprop:Generator_RowClassName="View_CombScheduleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TIME_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTIME_ID" msprop:Generator_ColumnPropNameInRow="TIME_ID" msprop:Generator_ColumnPropNameInTable="TIME_IDColumn" msprop:Generator_UserColumnName="TIME_ID" type="xs:int" />
+              <xs:element name="SCHEDULE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSCHEDULE" msprop:Generator_ColumnPropNameInRow="SCHEDULE" msprop:Generator_ColumnPropNameInTable="SCHEDULEColumn" msprop:Generator_UserColumnName="SCHEDULE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_CombSchedule" />
+      <xs:field xpath="mstns:TIME_ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

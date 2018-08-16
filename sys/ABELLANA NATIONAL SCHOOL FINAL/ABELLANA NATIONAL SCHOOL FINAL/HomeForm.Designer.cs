@@ -34,6 +34,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip5 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.BooktoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ReltoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.RettoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip4 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip12 = new System.Windows.Forms.MenuStrip();
@@ -47,13 +50,11 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.TProfiletoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSectiontoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.TScheduletoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.TSubjecttoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ProfiletoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.BMItoolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.GradestoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.RequirmentstoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.PaymenttoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +65,13 @@
             this.HonStudtoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip11 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip9 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRegistration = new System.Windows.Forms.MenuStrip();
@@ -87,17 +95,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbUsername = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.SchedtoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.BooktoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ReltoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.RettoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.menuStrip5.SuspendLayout();
             this.menuStrip4.SuspendLayout();
@@ -182,6 +179,25 @@
             this.toolStripMenuItem8.Text = "Books";
             this.toolStripMenuItem8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
+            // 
+            // BooktoolStripMenuItem10
+            // 
+            this.BooktoolStripMenuItem10.Name = "BooktoolStripMenuItem10";
+            this.BooktoolStripMenuItem10.Size = new System.Drawing.Size(203, 22);
+            this.BooktoolStripMenuItem10.Text = "Complimentary Book";
+            this.BooktoolStripMenuItem10.Click += new System.EventHandler(this.BooktoolStripMenuItem10_Click);
+            // 
+            // ReltoolStripMenuItem10
+            // 
+            this.ReltoolStripMenuItem10.Name = "ReltoolStripMenuItem10";
+            this.ReltoolStripMenuItem10.Size = new System.Drawing.Size(203, 22);
+            this.ReltoolStripMenuItem10.Text = "Releasing Book";
+            // 
+            // RettoolStripMenuItem10
+            // 
+            this.RettoolStripMenuItem10.Name = "RettoolStripMenuItem10";
+            this.RettoolStripMenuItem10.Size = new System.Drawing.Size(203, 22);
+            this.RettoolStripMenuItem10.Text = "Returning Book";
             // 
             // menuStrip4
             // 
@@ -321,7 +337,6 @@
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TProfiletoolStripMenuItem10,
-            this.TSectiontoolStripMenuItem10,
             this.TScheduletoolStripMenuItem10,
             this.TSubjecttoolStripMenuItem10});
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -337,28 +352,23 @@
             // TProfiletoolStripMenuItem10
             // 
             this.TProfiletoolStripMenuItem10.Name = "TProfiletoolStripMenuItem10";
-            this.TProfiletoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
+            this.TProfiletoolStripMenuItem10.Size = new System.Drawing.Size(131, 22);
             this.TProfiletoolStripMenuItem10.Text = "Profile";
-            // 
-            // TSectiontoolStripMenuItem10
-            // 
-            this.TSectiontoolStripMenuItem10.Name = "TSectiontoolStripMenuItem10";
-            this.TSectiontoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
-            this.TSectiontoolStripMenuItem10.Text = "Section";
+            this.TProfiletoolStripMenuItem10.Click += new System.EventHandler(this.TProfiletoolStripMenuItem10_Click_1);
             // 
             // TScheduletoolStripMenuItem10
             // 
-            this.TScheduletoolStripMenuItem10.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SchedtoolStripMenuItem10});
             this.TScheduletoolStripMenuItem10.Name = "TScheduletoolStripMenuItem10";
-            this.TScheduletoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
+            this.TScheduletoolStripMenuItem10.Size = new System.Drawing.Size(131, 22);
             this.TScheduletoolStripMenuItem10.Text = "Schedule";
+            this.TScheduletoolStripMenuItem10.Click += new System.EventHandler(this.TScheduletoolStripMenuItem10_Click_1);
             // 
             // TSubjecttoolStripMenuItem10
             // 
             this.TSubjecttoolStripMenuItem10.Name = "TSubjecttoolStripMenuItem10";
-            this.TSubjecttoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
+            this.TSubjecttoolStripMenuItem10.Size = new System.Drawing.Size(131, 22);
             this.TSubjecttoolStripMenuItem10.Text = "Subject";
+            this.TSubjecttoolStripMenuItem10.Click += new System.EventHandler(this.TSubjecttoolStripMenuItem10_Click);
             // 
             // menuStrip1
             // 
@@ -395,19 +405,10 @@
             // 
             // ProfiletoolStripMenuItem10
             // 
-            this.ProfiletoolStripMenuItem10.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BMItoolStripMenuItem4});
             this.ProfiletoolStripMenuItem10.Name = "ProfiletoolStripMenuItem10";
             this.ProfiletoolStripMenuItem10.Size = new System.Drawing.Size(176, 22);
             this.ProfiletoolStripMenuItem10.Text = "Profile";
             this.ProfiletoolStripMenuItem10.Click += new System.EventHandler(this.ProfiletoolStripMenuItem10_Click_1);
-            // 
-            // BMItoolStripMenuItem4
-            // 
-            this.BMItoolStripMenuItem4.Name = "BMItoolStripMenuItem4";
-            this.BMItoolStripMenuItem4.Size = new System.Drawing.Size(97, 22);
-            this.BMItoolStripMenuItem4.Text = "BMI";
-            this.BMItoolStripMenuItem4.Click += new System.EventHandler(this.BMItoolStripMenuItem4_Click_1);
             // 
             // GradestoolStripMenuItem10
             // 
@@ -513,6 +514,48 @@
             this.toolStripMenuItem11.Size = new System.Drawing.Size(89, 90);
             this.toolStripMenuItem11.Text = "Monitoring";
             this.toolStripMenuItem11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripMenuItem10
+            // 
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(243, 22);
+            this.toolStripMenuItem10.Text = "Requisition of Requirment";
+            // 
+            // toolStripMenuItem13
+            // 
+            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(243, 22);
+            this.toolStripMenuItem13.Text = "Requirments of Student";
+            // 
+            // toolStripMenuItem14
+            // 
+            this.toolStripMenuItem14.Name = "toolStripMenuItem14";
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(243, 22);
+            this.toolStripMenuItem14.Text = "Balance of Student";
+            // 
+            // toolStripMenuItem15
+            // 
+            this.toolStripMenuItem15.Name = "toolStripMenuItem15";
+            this.toolStripMenuItem15.Size = new System.Drawing.Size(243, 22);
+            this.toolStripMenuItem15.Text = "Book of Student";
+            // 
+            // toolStripMenuItem16
+            // 
+            this.toolStripMenuItem16.Name = "toolStripMenuItem16";
+            this.toolStripMenuItem16.Size = new System.Drawing.Size(243, 22);
+            this.toolStripMenuItem16.Text = "Honor Student";
+            // 
+            // toolStripMenuItem18
+            // 
+            this.toolStripMenuItem18.Name = "toolStripMenuItem18";
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(243, 22);
+            this.toolStripMenuItem18.Text = "Student Health Status";
+            // 
+            // toolStripMenuItem19
+            // 
+            this.toolStripMenuItem19.Name = "toolStripMenuItem19";
+            this.toolStripMenuItem19.Size = new System.Drawing.Size(243, 22);
+            this.toolStripMenuItem19.Text = "Announcement and Events";
             // 
             // menuStrip9
             // 
@@ -774,72 +817,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // SchedtoolStripMenuItem10
-            // 
-            this.SchedtoolStripMenuItem10.Name = "SchedtoolStripMenuItem10";
-            this.SchedtoolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
-            this.SchedtoolStripMenuItem10.Text = "Scheduling";
-            // 
-            // BooktoolStripMenuItem10
-            // 
-            this.BooktoolStripMenuItem10.Name = "BooktoolStripMenuItem10";
-            this.BooktoolStripMenuItem10.Size = new System.Drawing.Size(203, 22);
-            this.BooktoolStripMenuItem10.Text = "Complimentary Book";
-            // 
-            // ReltoolStripMenuItem10
-            // 
-            this.ReltoolStripMenuItem10.Name = "ReltoolStripMenuItem10";
-            this.ReltoolStripMenuItem10.Size = new System.Drawing.Size(203, 22);
-            this.ReltoolStripMenuItem10.Text = "Releasing Book";
-            // 
-            // RettoolStripMenuItem10
-            // 
-            this.RettoolStripMenuItem10.Name = "RettoolStripMenuItem10";
-            this.RettoolStripMenuItem10.Size = new System.Drawing.Size(203, 22);
-            this.RettoolStripMenuItem10.Text = "Returning Book";
-            // 
-            // toolStripMenuItem10
-            // 
-            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(243, 22);
-            this.toolStripMenuItem10.Text = "Requisition of Requirment";
-            // 
-            // toolStripMenuItem13
-            // 
-            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(243, 22);
-            this.toolStripMenuItem13.Text = "Requirments of Student";
-            // 
-            // toolStripMenuItem14
-            // 
-            this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            this.toolStripMenuItem14.Size = new System.Drawing.Size(243, 22);
-            this.toolStripMenuItem14.Text = "Balance of Student";
-            // 
-            // toolStripMenuItem15
-            // 
-            this.toolStripMenuItem15.Name = "toolStripMenuItem15";
-            this.toolStripMenuItem15.Size = new System.Drawing.Size(243, 22);
-            this.toolStripMenuItem15.Text = "Book of Student";
-            // 
-            // toolStripMenuItem16
-            // 
-            this.toolStripMenuItem16.Name = "toolStripMenuItem16";
-            this.toolStripMenuItem16.Size = new System.Drawing.Size(243, 22);
-            this.toolStripMenuItem16.Text = "Honor Student";
-            // 
-            // toolStripMenuItem18
-            // 
-            this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            this.toolStripMenuItem18.Size = new System.Drawing.Size(243, 22);
-            this.toolStripMenuItem18.Text = "Student Health Status";
-            // 
-            // toolStripMenuItem19
-            // 
-            this.toolStripMenuItem19.Name = "toolStripMenuItem19";
-            this.toolStripMenuItem19.Size = new System.Drawing.Size(243, 22);
-            this.toolStripMenuItem19.Text = "Announcement and Events";
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -938,14 +915,12 @@
         public System.Windows.Forms.MenuStrip menuStrip1;
         public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ProfiletoolStripMenuItem10;
-        private System.Windows.Forms.ToolStripMenuItem BMItoolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem GradestoolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem RequirmentstoolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem PaymenttoolStripMenuItem10;
         public System.Windows.Forms.MenuStrip menuStrip2;
         public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem TProfiletoolStripMenuItem10;
-        private System.Windows.Forms.ToolStripMenuItem TSectiontoolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem TScheduletoolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem TSubjecttoolStripMenuItem10;
         public System.Windows.Forms.MenuStrip menuStrip3;
@@ -960,7 +935,6 @@
         public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         public System.Windows.Forms.MenuStrip menuStrip4;
         public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
-        private System.Windows.Forms.ToolStripMenuItem SchedtoolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem BooktoolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem ReltoolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem RettoolStripMenuItem10;

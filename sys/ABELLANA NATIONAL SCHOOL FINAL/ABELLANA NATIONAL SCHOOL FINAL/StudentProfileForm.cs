@@ -18,7 +18,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             InitializeComponent();
         }
-        DataClasses1DataContext db = new DataClasses1DataContext();
+        DataClasses2DataContext db = new DataClasses2DataContext();
         SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
         private void Button3_Click(object sender, EventArgs e)
         {
@@ -220,32 +220,158 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             }
             else
             {
-                string chek;
+                string chek1;
                 if (chk_subform137.Checked)
                 {
-                    chek = "Submitted";
-                }
-                else if (chk_subform138.Checked)
-                {
-                    chek = "Submitted";
-                }
-                else if (chk_subgrademoral.Checked)
-                {
-                    chek = "Submitted";
-                }
-                else if (chk_subnso.Checked)
-                {
-                    chek = "Submitted";
+                    chek1 = "Submitted";
                 }
                 else
                 {
-                    chek = "Not Submitted";
+                    chek1 = "Not Submitted";
                 }
-                db.SP_STSAVE(txtcstid.Text, txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text, txtadd.Text, cmbgen.Text, decimal.Parse(txtheight.Text), decimal.Parse(txtweight.Text), int.Parse(txtSystolic.Text), int.Parse(txtDiastolic.Text), chek, chek, chek, chek, txtpname.Text, txtcnumber.Text, txtoccu.Text, Convert.ToInt32(txtSecname.SelectedValue), Convert.ToInt32(cmbsyear.SelectedValue));
+                string chek2;
+                if (chk_subform138.Checked)
+                {
+                     chek2 = "Submitted";
+                }
+                else
+                {
+                    chek2 = "Not Submitted";
+                }
+                string chek3;
+                if (chk_subgrademoral.Checked)
+                {
+                    chek3 = "Submitted";
+                }
+                else
+                {
+                    chek3 = "Not Submitted";
+                }
+                string chek4;
+                if (chk_subnso.Checked)
+                {
+                    chek4 = "Submitted";
+                }
+                else
+                {
+                    chek4 = "Not Submitted";   
+                }
+
+                #region Calculation BMI
+                double BMI_Total;
+                double wttotal;
+
+                double get_height = double.Parse(txtheight.Text);
+                double get_weight = double.Parse(txtweight.Text);
+
+                //[ kg / ( ft / 3.28 = m) ] = Ans.
+                wttotal = get_height / 3.28;
+
+                //[ kg / (ft * 3.28 = m2(m*m) ) ] = Ans.
+                BMI_Total = (get_weight / Math.Pow((wttotal), 2));
+
+                BMI_Total = Math.Round(BMI_Total, 2);//roundoff 2 decimal places
+                //step 3: Get the result of the meter then divide it with your weight. 
+                //txtResult.Text = BMI_Total.ToString();
+                #endregion
+
+                #region bmi category
+                //BMI	BMI Category
+                //Less than 15	Very severely underweight
+                //Between 15 and 16	Severely underweight
+                //Between 16 and 18.5	Underweight
+                //Between 18.5 and 25	Normal (healthy weight)
+                //Between 25 and 30	Overweight
+                //Between 30 and 35	Moderately obese
+                //Between 35 and 40	Severely obese
+                //Over 40	Very severely obese
+                string BmiCat;
+                if (BMI_Total < 15)
+                {
+                    BmiCat = "Very severely underweight";
+                }
+                else if (BMI_Total >= 15 && BMI_Total < 16)
+                {
+                    BmiCat = "Severely underweight";
+                }
+                else if (BMI_Total >= 16 && BMI_Total < 18.5)
+                {
+                    BmiCat = "Underweight";
+                }
+                else if (BMI_Total >= 18.5 && BMI_Total < 25)
+                {
+                    BmiCat = "Normal (healthy weight)";
+                }
+                else if (BMI_Total >= 25 && BMI_Total < 30)
+                {
+                    BmiCat = "Overweight";
+                }
+                else if (BMI_Total >= 30 && BMI_Total < 35)
+                {
+                    BmiCat = "Moderately obese";
+                }
+                else if (BMI_Total >= 35 && BMI_Total < 40)
+                {
+                    BmiCat = "Severely obese";
+                }
+                else
+                {
+                    BmiCat = "Very severely obese";
+                }
+                //lblBmi_Cat.Text = BmiCat;
+                #endregion
+
+                #region bloodpresure category
+                int systolic = 0, diatolic = 0;
+                if (!(int.TryParse(txtSystolic.Text, out systolic) && int.TryParse(txtDiastolic.Text, out diatolic)))
+                {
+                    MessageBox.Show("Please input a valid value");
+                }
+
+                var bloodpressureLevel = "";
+                if (systolic <= 90 && diatolic <= 60)
+                {
+                    bloodpressureLevel = "Low Blood Pressure";
+                }
+                else if ((systolic >= 90 && systolic <= 120) && (diatolic >= 60 && diatolic <= 80))
+                {
+                    bloodpressureLevel = "Ideal and Helthy Blood Pressure";
+                }
+                else if ((systolic >= 120 && systolic <= 140) && (diatolic >= 80 && diatolic <= 90))
+                {
+                    bloodpressureLevel = "Normal blood pressure ";
+                }
+                else if (systolic >= 140 && diatolic >= 90)
+                {
+                    bloodpressureLevel = "High blood pressure";
+                }
+                else if (systolic >= 140 || diatolic >= 110)
+                {
+                    bloodpressureLevel = "High blood pressure";
+                }
+                else if (systolic <= 90 || diatolic <= 60)
+                {
+                    bloodpressureLevel = "Low blood pressure";
+                }
+                //lblBlood_Cat.Text = bloodpressureLevel;
+                #endregion
+
+                db.SP_STSAVE(txtcstid.Text, txtfname.Text, txtmname.Text, txtlname.Text, cmbylevel.Text, DateTime.Parse(dtpbdate.Text), int.Parse(txtage.Text), txtbplace.Text, txtadd.Text, cmbgen.Text, decimal.Parse(txtheight.Text), decimal.Parse(txtweight.Text), int.Parse(txtSystolic.Text), int.Parse(txtDiastolic.Text), chek1, chek2, chek3, chek4, txtpname.Text, txtcnumber.Text, txtoccu.Text, Convert.ToInt32(txtSecname.SelectedValue), Convert.ToInt32(cmbsyear.SelectedValue));
                 MessageBox.Show("Student Successfully Saved", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //linq insert
+                TBL_BMICOMP bmi = new TBL_BMICOMP
+                {
+                    BMI_HWRESULT = BmiCat,
+                    BMI_BPRESULT = bloodpressureLevel,
+                    ST_CURRENTID = txtcstid.Text
+                };
+                db.TBL_BMICOMPs.InsertOnSubmit(bmi);
+                db.SubmitChanges();
+                
                 ClearALL();
                 txtDiastolic.Text = "";
-            }
+            }         
         }
 
         private void groupBox5_Enter(object sender, EventArgs e)
@@ -288,14 +414,32 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StudentSchoolYearForm ssyf = new StudentSchoolYearForm();
+            AddSchoolYearForm ssyf = new AddSchoolYearForm();
             ssyf.ShowDialog();
-            this.Close();
         }
 
         private void check1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearALL();
+        }
+
+        private void txtcnumber_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnBMI_Click(object sender, EventArgs e)
+        {
+            BMIComputeForm bmi = new BMIComputeForm();
+            bmi.ShowDialog();
         }
 
        

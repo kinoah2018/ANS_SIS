@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 {
@@ -16,7 +17,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             InitializeComponent();
         }
-        DataClasses1DataContext db = new DataClasses1DataContext();
+        DataClasses2DataContext db = new DataClasses2DataContext();
+        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
         private void View_Student1Form_Load(object sender, EventArgs e)
         {
             dgvStudView.DataSource = db.View_Student1s;
@@ -29,9 +31,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             sgf.txtscid.Text = dgvStudView.CurrentRow.Cells[0].Value.ToString();
             sgf.txtFname.Text = dgvStudView.CurrentRow.Cells[1].Value.ToString() + " " + dgvStudView.CurrentRow.Cells[2].Value.ToString() + " " + dgvStudView.CurrentRow.Cells[3].Value.ToString();
             sgf.txtSY.Text = dgvStudView.CurrentRow.Cells[4].Value.ToString();
+
             this.Close();
-            sgf.ShowDialog();
             sgf.dgvGrade.Enabled = true;
+            sgf.ShowDialog();
+            
             
         }
 

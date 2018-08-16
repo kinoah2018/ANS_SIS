@@ -19,7 +19,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             InitializeComponent();
         }
-        DataClasses1DataContext db = new DataClasses1DataContext();
+        DataClasses2DataContext db = new DataClasses2DataContext();
         SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
         private void Button3_Click(object sender, EventArgs e)
         {
@@ -61,13 +61,13 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             uuf.txtFirstname.Text = dgViewUser.CurrentRow.Cells[2].Value.ToString();
             uuf.txtMiddlename.Text = dgViewUser.CurrentRow.Cells[3].Value.ToString();
             uuf.txtUsername.Text = dgViewUser.CurrentRow.Cells[4].Value.ToString();
-            if (dgViewUser.CurrentRow.Cells[7].Value.ToString() == "True")
+            if (dgViewUser.CurrentRow.Cells[5].Value.ToString() == "True")
             {
-                uuf.cmbStatus.SelectedIndex = 1;
+                uuf.cmbStatus.SelectedIndex = 0;
             }
             else
             {
-                uuf.cmbStatus.SelectedIndex = 0;
+                uuf.cmbStatus.SelectedIndex = 1;
             }
             
             conn.Open();

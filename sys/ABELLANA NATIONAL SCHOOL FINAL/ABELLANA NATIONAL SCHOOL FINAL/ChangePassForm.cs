@@ -18,11 +18,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             InitializeComponent();
         }
-        DataClasses1DataContext db = new DataClasses1DataContext();
+        DataClasses2DataContext db = new DataClasses2DataContext();
         SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
         private void btnChange_Click(object sender, EventArgs e)
         {
-            if (txtuname.Text !=""|| txtNewpass.Text!=""||txtRetypepass.Text!=""||cmbsecq.SelectedText!=""||txtans.Text!="")
+            if ( txtuname.Text != "" || txtNewpass.Text != "" || txtRetypepass.Text != "")
             {
                 if (txtNewpass.Text != "1234" && txtRetypepass.Text != "1234")
                 {
@@ -37,65 +37,55 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
                             db.SP_CHANGEDEFAULTPASS(get_UID2,txtuname.Text,txtNewpass.Text);
                             db.SP_SECUSAVE(cmbsecq.Text,txtans.Text,get_UID2);
-                            DialogResult dialog = MessageBox.Show("Information successfully changed ! \nDo you want to continue logging in ?", "Congrats !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                            if (dialog == DialogResult.Yes)
+                            if (cmbsecq.SelectedValue != null ||txtans.Text != "")
                             {
-                                conn.Open();
-                                SqlCommand username = new SqlCommand("SELECT USER_USERNAME FROM TBL_USERS WHERE USER_USERNAME = '" + lbusername.Text + "'", conn);
-                                SqlCommand password = new SqlCommand("SELECT USER_PASSWORD FROM TBL_USERS WHERE USER_USERNAME = '" + lbusername.Text + "'", conn);
-                                SqlCommand userStat = new SqlCommand("SELECT ISACTIVE FROM TBL_USERS WHERE USER_USERNAME = '" + lbusername.Text + "'", conn);
-                                SqlCommand FName = new SqlCommand("SELECT USER_FIRSTNAME FROM TBL_USERS WHERE USER_USERNAME = '" + lbusername.Text + "'", conn);
-                                SqlCommand LName = new SqlCommand("SELECT USER_LASTNAME FROM TBL_USERS WHERE USER_USERNAME = '" + lbusername.Text + "'", conn);
-                                SqlCommand Utype = new SqlCommand("SELECT USER_TYPEID FROM TBL_USERS WHERE USER_USERNAME = '" + lbusername.Text + "'", conn);
-                                SqlCommand command = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_USERNAME = '" + lbusername.Text + "'", conn);
-
-                                //CREATE STRING VARIABLES
-
-                                string usern = Convert.ToString(username.ExecuteScalar());
-                                string pass = Convert.ToString(password.ExecuteScalar());
-                                string stat = Convert.ToString(userStat.ExecuteScalar());
-                                string FIname = Convert.ToString(FName.ExecuteScalar());
-                                string LAname = Convert.ToString(LName.ExecuteScalar());
-                                string type = Convert.ToString(Utype.ExecuteScalar());
-                                conn.Close();
-
-
-                                if (type == "1")
+                                DialogResult dialog = MessageBox.Show("Information successfully changed ! \nDo you want to continue logging in ?", "Congrats !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                if (dialog == DialogResult.Yes)
                                 {
-                                    HomeForm h = new HomeForm();
-
-                                    // GET PICTURE 
                                     conn.Open();
-                                    SqlCommand get_pic = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_USERNAME='" + lbusername.Text + "'", conn);
-                                    Control_variables.img = Convert.ToString(get_pic.ExecuteScalar());
-                                    h.pictureBox2.ImageLocation = Control_variables.img;
-
-                                    h.lbUsername.Text = Control_variables.username;
-                                    h.lbPosition.Text = Control_variables.type;
-                                    this.Close();
-                                    h.ShowDialog();
+                                    SqlCommand Utype = new SqlCommand("SELECT USER_TYPEID FROM TBL_USERS WHERE USER_USERNAME = '" + lbusername.Text + "'", conn);
+                                    string type = Convert.ToString(Utype.ExecuteScalar());
                                     conn.Close();
-                                }
-                                else
-                                {
-                                    HomeForm hs = new HomeForm();
 
-                                    // GET PICTURE 
-                                    conn.Open();
-                                    SqlCommand get_pic = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_USERNAME='" + lbusername.Text + "'", conn);
-                                    Control_variables.img = Convert.ToString(get_pic.ExecuteScalar());
-                                    hs.pictureBox2.ImageLocation = Control_variables.img;
+                                    if (type == "1")
+                                    {
+                                        HomeForm h = new HomeForm();
+                                        conn.Open();
+                                        h.pictureBox2.ImageLocation = Control_variables.img;
+                                        h.lbUsername.Text = Control_variables.username;
+                                        h.lbPosition.Text = Control_variables.type;
+                                        this.Close();
+                                        h.ShowDialog();
+                                        conn.Close();
+                                    }
+                                    else if (type == "2")
+                                    {
+                                        HomeForm hs = new HomeForm();
+                                        conn.Open();
+                                        hs.pictureBox2.ImageLocation = Control_variables.img;
+                                        hs.lbUsername.Text = Control_variables.username;
+                                        hs.lbPosition.Text = Control_variables.type;
+                                        this.Close();
+                                        hs.ShowDialog();
+                                        conn.Close();
+                                    }
 
-                                    hs.lbUsername.Text = Control_variables.username;
-                                    hs.lbPosition.Text = Control_variables.type;
-                                    this.Close();
-                                    hs.ShowDialog();
-                                    conn.Close();
+                                    else
+                                    {
+                                        HomeForm hs = new HomeForm();
+                                        conn.Open();
+                                        hs.pictureBox2.ImageLocation = Control_variables.img;
+                                        hs.lbUsername.Text = Control_variables.username;
+                                        hs.lbPosition.Text = Control_variables.type;
+                                        this.Close();
+                                        hs.ShowDialog();
+                                        conn.Close();
+                                    }
                                 }
                             }
                             else
                             {
-                                this.Close();
+                                MessageBox.Show("Missing Security Question And Answer", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 
                             }
                         }

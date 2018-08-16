@@ -28,58 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherProfileForm));
-            this.Button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtSID = new System.Windows.Forms.TextBox();
+            this.cmbstatus = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTID = new System.Windows.Forms.TextBox();
+            this.dgvTeacher = new System.Windows.Forms.DataGridView();
+            this.txtlname = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.cmbsubject = new System.Windows.Forms.ComboBox();
+            this.tBLSUBJECTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aNS_DATABASEDataSet7 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet7();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.txtcontact = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtmname = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtfname = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.Button3 = new System.Windows.Forms.Button();
+            this.tBL_SUBJECTTableAdapter = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet7TableAdapters.TBL_SUBJECTTableAdapter();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTeacher)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLSUBJECTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet7)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Button3
-            // 
-            this.Button3.BackColor = System.Drawing.Color.SteelBlue;
-            this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button3.ForeColor = System.Drawing.Color.White;
-            this.Button3.Location = new System.Drawing.Point(1335, 5);
-            this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(34, 40);
-            this.Button3.TabIndex = 184;
-            this.Button3.Text = "X";
-            this.Button3.UseVisualStyleBackColor = false;
-            this.Button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(550, 9);
+            this.label4.Location = new System.Drawing.Point(626, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(208, 25);
             this.label4.TabIndex = 108;
@@ -87,207 +79,162 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtSID);
+            this.groupBox1.Controls.Add(this.cmbstatus);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtTID);
+            this.groupBox1.Controls.Add(this.dgvTeacher);
+            this.groupBox1.Controls.Add(this.txtlname);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.txtsearch);
+            this.groupBox1.Controls.Add(this.cmbsubject);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.txtcontact);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.txtmname);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtfname);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(12, 93);
+            this.groupBox1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(64, 63);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(575, 352);
+            this.groupBox1.Size = new System.Drawing.Size(1226, 388);
             this.groupBox1.TabIndex = 118;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Teacher Information";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textBox9
+            // txtSID
             // 
-            this.textBox9.Font = new System.Drawing.Font("Verdana", 12F);
-            this.textBox9.Location = new System.Drawing.Point(240, 113);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(226, 27);
-            this.textBox9.TabIndex = 134;
+            this.txtSID.Font = new System.Drawing.Font("Verdana", 12F);
+            this.txtSID.Location = new System.Drawing.Point(372, 197);
+            this.txtSID.Name = "txtSID";
+            this.txtSID.Size = new System.Drawing.Size(10, 27);
+            this.txtSID.TabIndex = 212;
+            this.txtSID.Visible = false;
             // 
-            // label14
+            // cmbstatus
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Verdana", 12F);
-            this.label14.Location = new System.Drawing.Point(65, 113);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(106, 18);
-            this.label14.TabIndex = 133;
-            this.label14.Text = "Middlename";
+            this.cmbstatus.Enabled = false;
+            this.cmbstatus.Font = new System.Drawing.Font("Verdana", 12F);
+            this.cmbstatus.FormattingEnabled = true;
+            this.cmbstatus.Items.AddRange(new object[] {
+            "Active",
+            "Inactive"});
+            this.cmbstatus.Location = new System.Drawing.Point(179, 231);
+            this.cmbstatus.Name = "cmbstatus";
+            this.cmbstatus.Size = new System.Drawing.Size(191, 26);
+            this.cmbstatus.TabIndex = 211;
+            this.cmbstatus.Text = "Active";
             // 
-            // textBox8
+            // label2
             // 
-            this.textBox8.Font = new System.Drawing.Font("Verdana", 12F);
-            this.textBox8.Location = new System.Drawing.Point(240, 75);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(226, 27);
-            this.textBox8.TabIndex = 132;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Verdana", 12F);
+            this.label2.Location = new System.Drawing.Point(105, 234);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 18);
+            this.label2.TabIndex = 210;
+            this.label2.Text = "Status:";
             // 
-            // label13
+            // txtTID
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Verdana", 12F);
-            this.label13.Location = new System.Drawing.Point(83, 75);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(89, 18);
-            this.label13.TabIndex = 131;
-            this.label13.Text = "Firstname";
+            this.txtTID.Font = new System.Drawing.Font("Verdana", 12F);
+            this.txtTID.Location = new System.Drawing.Point(372, 57);
+            this.txtTID.Name = "txtTID";
+            this.txtTID.Size = new System.Drawing.Size(10, 27);
+            this.txtTID.TabIndex = 209;
+            this.txtTID.Visible = false;
             // 
-            // comboBox2
+            // dgvTeacher
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Verdana", 12F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(240, 148);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(142, 26);
-            this.comboBox2.TabIndex = 129;
+            this.dgvTeacher.AllowUserToAddRows = false;
+            this.dgvTeacher.AllowUserToDeleteRows = false;
+            this.dgvTeacher.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTeacher.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTeacher.Location = new System.Drawing.Point(388, 57);
+            this.dgvTeacher.Name = "dgvTeacher";
+            this.dgvTeacher.ReadOnly = true;
+            this.dgvTeacher.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTeacher.Size = new System.Drawing.Size(832, 321);
+            this.dgvTeacher.TabIndex = 208;
+            this.dgvTeacher.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTeacher_CellContentClick);
+            this.dgvTeacher.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTeacher_CellContentDoubleClick);
             // 
-            // label9
+            // txtlname
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Verdana", 12F);
-            this.label9.Location = new System.Drawing.Point(106, 144);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 18);
-            this.label9.TabIndex = 119;
-            this.label9.Text = "Gender";
+            this.txtlname.Font = new System.Drawing.Font("Verdana", 12F);
+            this.txtlname.Location = new System.Drawing.Point(179, 127);
+            this.txtlname.Name = "txtlname";
+            this.txtlname.Size = new System.Drawing.Size(191, 27);
+            this.txtlname.TabIndex = 134;
             // 
-            // btnSearch
+            // pictureBox1
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1048, 68);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(135, 28);
-            this.btnSearch.TabIndex = 203;
-            this.btnSearch.Text = "VIEW TEACHER";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(1191, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 20);
+            this.pictureBox1.TabIndex = 207;
+            this.pictureBox1.TabStop = false;
             // 
-            // txtSearch
+            // txtsearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(773, 69);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(232, 25);
-            this.txtSearch.TabIndex = 202;
+            this.txtsearch.Location = new System.Drawing.Point(893, 25);
+            this.txtsearch.Multiline = true;
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(327, 26);
+            this.txtsearch.TabIndex = 206;
+            this.txtsearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // dataGridView2
+            // cmbsubject
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(773, 103);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(561, 342);
-            this.dataGridView2.TabIndex = 201;
+            this.cmbsubject.DataSource = this.tBLSUBJECTBindingSource;
+            this.cmbsubject.DisplayMember = "SUBJECTNAME";
+            this.cmbsubject.Font = new System.Drawing.Font("Verdana", 12F);
+            this.cmbsubject.FormattingEnabled = true;
+            this.cmbsubject.Location = new System.Drawing.Point(179, 197);
+            this.cmbsubject.Name = "cmbsubject";
+            this.cmbsubject.Size = new System.Drawing.Size(191, 26);
+            this.cmbsubject.TabIndex = 146;
+            this.cmbsubject.ValueMember = "SUBJECT_ID";
             // 
-            // textBox3
+            // tBLSUBJECTBindingSource
             // 
-            this.textBox3.Font = new System.Drawing.Font("Verdana", 12F);
-            this.textBox3.Location = new System.Drawing.Point(240, 282);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(196, 27);
-            this.textBox3.TabIndex = 143;
+            this.tBLSUBJECTBindingSource.DataMember = "TBL_SUBJECT";
+            this.tBLSUBJECTBindingSource.DataSource = this.aNS_DATABASEDataSet7;
             // 
-            // dateTimePicker1
+            // aNS_DATABASEDataSet7
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 12F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(240, 180);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(226, 27);
-            this.dateTimePicker1.TabIndex = 141;
+            this.aNS_DATABASEDataSet7.DataSetName = "ANS_DATABASEDataSet7";
+            this.aNS_DATABASEDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // textBox5
+            // label1
             // 
-            this.textBox5.Font = new System.Drawing.Font("Verdana", 12F);
-            this.textBox5.Location = new System.Drawing.Point(240, 218);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(195, 27);
-            this.textBox5.TabIndex = 140;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Verdana", 12F);
-            this.label10.Location = new System.Drawing.Point(111, 253);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 18);
-            this.label10.TabIndex = 139;
-            this.label10.Text = "Status";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Verdana", 12F);
-            this.label8.Location = new System.Drawing.Point(81, 218);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 18);
-            this.label8.TabIndex = 138;
-            this.label8.Text = "Section Id";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Verdana", 12F);
-            this.label7.Location = new System.Drawing.Point(80, 180);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 18);
-            this.label7.TabIndex = 137;
-            this.label7.Text = "Birth Date";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Verdana", 12F);
-            this.label5.Location = new System.Drawing.Point(32, 285);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 18);
-            this.label5.TabIndex = 136;
-            this.label5.Text = "Contact Number";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Verdana", 12F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(240, 250);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 26);
-            this.comboBox1.TabIndex = 144;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F);
+            this.label1.Location = new System.Drawing.Point(91, 200);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 18);
+            this.label1.TabIndex = 145;
+            this.label1.Text = "Subject :";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnUpdate);
-            this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(594, 93);
+            this.groupBox2.Controls.Add(this.btnSave);
+            this.groupBox2.Controls.Add(this.btnClear);
+            this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(29, 267);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(173, 340);
+            this.groupBox2.Size = new System.Drawing.Size(353, 111);
             this.groupBox2.TabIndex = 204;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Action";
@@ -295,71 +242,155 @@
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(25, 66);
+            this.btnUpdate.Location = new System.Drawing.Point(129, 36);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(122, 38);
-            this.btnUpdate.TabIndex = 14;
-            this.btnUpdate.Text = "Save";
+            this.btnUpdate.Size = new System.Drawing.Size(104, 52);
+            this.btnUpdate.TabIndex = 129;
+            this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnView_Click);
             // 
-            // button7
+            // btnSave
             // 
-            this.button7.BackColor = System.Drawing.Color.SteelBlue;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(25, 135);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(122, 38);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "Clear";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(7, 36);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(123, 52);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // textBox1
+            // btnClear
             // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 12F);
-            this.textBox1.Location = new System.Drawing.Point(243, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 27);
-            this.textBox1.TabIndex = 146;
+            this.btnClear.BackColor = System.Drawing.Color.Red;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(231, 36);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(116, 52);
+            this.btnClear.TabIndex = 16;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.button7_Click);
             // 
-            // label1
+            // txtcontact
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Verdana", 12F);
-            this.label1.Location = new System.Drawing.Point(77, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 18);
-            this.label1.TabIndex = 145;
-            this.label1.Text = "Teacher ID";
+            this.txtcontact.Font = new System.Drawing.Font("Verdana", 12F);
+            this.txtcontact.Location = new System.Drawing.Point(179, 163);
+            this.txtcontact.MaxLength = 11;
+            this.txtcontact.Name = "txtcontact";
+            this.txtcontact.Size = new System.Drawing.Size(191, 27);
+            this.txtcontact.TabIndex = 143;
             // 
-            // TeacherProfile
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Verdana", 12F);
+            this.label5.Location = new System.Drawing.Point(20, 166);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 18);
+            this.label5.TabIndex = 136;
+            this.label5.Text = "Contact Number :";
+            // 
+            // txtmname
+            // 
+            this.txtmname.Font = new System.Drawing.Font("Verdana", 12F);
+            this.txtmname.Location = new System.Drawing.Point(179, 92);
+            this.txtmname.Name = "txtmname";
+            this.txtmname.Size = new System.Drawing.Size(191, 27);
+            this.txtmname.TabIndex = 134;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Verdana", 12F);
+            this.label14.Location = new System.Drawing.Point(54, 95);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(119, 18);
+            this.label14.TabIndex = 133;
+            this.label14.Text = "Middlename :";
+            // 
+            // txtfname
+            // 
+            this.txtfname.Font = new System.Drawing.Font("Verdana", 12F);
+            this.txtfname.Location = new System.Drawing.Point(179, 57);
+            this.txtfname.Name = "txtfname";
+            this.txtfname.Size = new System.Drawing.Size(191, 27);
+            this.txtfname.TabIndex = 132;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Verdana", 12F);
+            this.label13.Location = new System.Drawing.Point(71, 60);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(102, 18);
+            this.label13.TabIndex = 131;
+            this.label13.Text = "Firstname :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Verdana", 12F);
+            this.label9.Location = new System.Drawing.Point(66, 130);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(107, 18);
+            this.label9.TabIndex = 119;
+            this.label9.Text = "Lastname  :";
+            // 
+            // Button3
+            // 
+            this.Button3.BackColor = System.Drawing.Color.Red;
+            this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button3.ForeColor = System.Drawing.Color.White;
+            this.Button3.Location = new System.Drawing.Point(1320, 12);
+            this.Button3.Name = "Button3";
+            this.Button3.Size = new System.Drawing.Size(34, 31);
+            this.Button3.TabIndex = 205;
+            this.Button3.Text = "X";
+            this.Button3.UseVisualStyleBackColor = false;
+            this.Button3.Click += new System.EventHandler(this.Button3_Click_1);
+            // 
+            // tBL_SUBJECTTableAdapter
+            // 
+            this.tBL_SUBJECTTableAdapter.ClearBeforeFill = true;
+            // 
+            // TeacherProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 467);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.Button3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(0, 223);
-            this.Name = "TeacherProfile";
+            this.Name = "TeacherProfileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TeacherProfile";
             this.Load += new System.EventHandler(this.TeacherProfile_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTeacher)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLSUBJECTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet7)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -368,31 +399,33 @@
 
         #endregion
 
-        internal System.Windows.Forms.Button Button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtmname;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtfname;
         private System.Windows.Forms.Label label13;
-        internal System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtcontact;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
-        internal System.Windows.Forms.Button btnUpdate;
-        internal System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox1;
+        internal System.Windows.Forms.Button btnSave;
+        internal System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ComboBox cmbsubject;
         private System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Button btnUpdate;
+        internal System.Windows.Forms.Button Button3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.TextBox txtlname;
+        private ANS_DATABASEDataSet7 aNS_DATABASEDataSet7;
+        private System.Windows.Forms.BindingSource tBLSUBJECTBindingSource;
+        private ANS_DATABASEDataSet7TableAdapters.TBL_SUBJECTTableAdapter tBL_SUBJECTTableAdapter;
+        private System.Windows.Forms.DataGridView dgvTeacher;
+        private System.Windows.Forms.TextBox txtTID;
+        private System.Windows.Forms.ComboBox cmbstatus;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSID;
     }
 }
