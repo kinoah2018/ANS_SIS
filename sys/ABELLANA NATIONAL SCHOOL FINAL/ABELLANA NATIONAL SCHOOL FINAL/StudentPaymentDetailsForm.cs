@@ -72,13 +72,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void dgvPayDetails_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            lbPYID.Text = dgvPayDetails.CurrentRow.Cells[0].Value.ToString();
-            cmbPayfor.Text = dgvPayDetails.CurrentRow.Cells[1].Value.ToString();
-            txtAmount.Text = dgvPayDetails.CurrentRow.Cells[2].Value.ToString();
-            lbSYID.Text = dgvPayDetails.CurrentRow.Cells[3].Value.ToString();
-            cmbSY.Text = dgvPayDetails.CurrentRow.Cells[4].Value.ToString();
-            btnSave.Enabled = false;
-            btnUpdate.Enabled = true;
+            
         }
 
         private void btnAddPay_Click(object sender, EventArgs e)
@@ -98,6 +92,25 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             {
                 dgvPayDetails.DataSource = db.SP_PAYDETVIEW();
             }
+        }
+
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvPayDetails_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lbPYID.Text = dgvPayDetails.CurrentRow.Cells[0].Value.ToString();
+            cmbPayfor.Text = dgvPayDetails.CurrentRow.Cells[1].Value.ToString();
+            txtAmount.Text = dgvPayDetails.CurrentRow.Cells[2].Value.ToString();
+            lbSYID.Text = dgvPayDetails.CurrentRow.Cells[3].Value.ToString();
+            cmbSY.Text = dgvPayDetails.CurrentRow.Cells[4].Value.ToString();
+            btnSave.Enabled = false;
+            btnUpdate.Enabled = true;
         }
     }
 }

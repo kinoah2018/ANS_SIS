@@ -32,13 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherScheduleForm));
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbsection = new System.Windows.Forms.ComboBox();
+            this.tBLSECTIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aNS_DATABASEDataSet13 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet13();
             this.button2 = new System.Windows.Forms.Button();
             this.cmbStartEnd = new System.Windows.Forms.ComboBox();
+            this.viewCombScheduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.aNS_DATABASEDataSet12 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet12();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,35 +51,31 @@
             this.txtTeachername = new System.Windows.Forms.TextBox();
             this.Button3 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSchedule = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.aNS_DATABASEDataSet11 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet11();
             this.viewCombScheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.view_CombScheduleTableAdapter = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet11TableAdapters.View_CombScheduleTableAdapter();
-            this.aNS_DATABASEDataSet12 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet12();
-            this.viewCombScheduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.view_CombScheduleTableAdapter1 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet12TableAdapters.View_CombScheduleTableAdapter();
             this.aNS_DATABASEDataSet4 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet4();
             this.aNSDATABASEDataSet4BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aNS_DATABASEDataSet3 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet3();
             this.aNSDATABASEDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aNS_DATABASEDataSet13 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet13();
-            this.tBLSECTIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tBL_SECTIONTableAdapter = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet13TableAdapters.TBL_SECTIONTableAdapter();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLSECTIONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewCombScheduleBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewCombScheduleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewCombScheduleBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNSDATABASEDataSet4BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNSDATABASEDataSet3BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLSECTIONBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -93,9 +92,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.btnSave);
-            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(108, 322);
             this.groupBox2.Name = "groupBox2";
@@ -103,19 +101,6 @@
             this.groupBox2.TabIndex = 202;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Actions";
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.SteelBlue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(7, 71);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(402, 38);
-            this.button6.TabIndex = 193;
-            this.button6.Text = "View Advisory Section";
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
@@ -125,24 +110,25 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(7, 26);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(199, 38);
+            this.btnSave.Size = new System.Drawing.Size(199, 62);
             this.btnSave.TabIndex = 191;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button5
+            // btnUpdate
             // 
-            this.button5.BackColor = System.Drawing.Color.SteelBlue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(210, 26);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(199, 38);
-            this.button5.TabIndex = 192;
-            this.button5.Text = "Update";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(210, 26);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(199, 62);
+            this.btnUpdate.TabIndex = 192;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -177,6 +163,16 @@
             this.cmbsection.TabIndex = 198;
             this.cmbsection.ValueMember = "SEC_ID";
             // 
+            // tBLSECTIONBindingSource
+            // 
+            this.tBLSECTIONBindingSource.DataMember = "TBL_SECTION";
+            this.tBLSECTIONBindingSource.DataSource = this.aNS_DATABASEDataSet13;
+            // 
+            // aNS_DATABASEDataSet13
+            // 
+            this.aNS_DATABASEDataSet13.DataSetName = "ANS_DATABASEDataSet13";
+            this.aNS_DATABASEDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.SteelBlue;
@@ -202,6 +198,16 @@
             this.cmbStartEnd.Size = new System.Drawing.Size(202, 26);
             this.cmbStartEnd.TabIndex = 197;
             this.cmbStartEnd.ValueMember = "TIME_ID";
+            // 
+            // viewCombScheduleBindingSource1
+            // 
+            this.viewCombScheduleBindingSource1.DataMember = "View_CombSchedule";
+            this.viewCombScheduleBindingSource1.DataSource = this.aNS_DATABASEDataSet12;
+            // 
+            // aNS_DATABASEDataSet12
+            // 
+            this.aNS_DATABASEDataSet12.DataSetName = "ANS_DATABASEDataSet12";
+            this.aNS_DATABASEDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label6
             // 
@@ -252,6 +258,7 @@
             // 
             // txtsubject
             // 
+            this.txtsubject.Enabled = false;
             this.txtsubject.Location = new System.Drawing.Point(154, 151);
             this.txtsubject.Name = "txtsubject";
             this.txtsubject.Size = new System.Drawing.Size(202, 27);
@@ -270,6 +277,7 @@
             // 
             // txtTeachername
             // 
+            this.txtTeachername.Enabled = false;
             this.txtTeachername.Location = new System.Drawing.Point(154, 82);
             this.txtTeachername.Name = "txtTeachername";
             this.txtTeachername.Size = new System.Drawing.Size(255, 27);
@@ -297,20 +305,21 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(327, 25);
             this.txtSearch.TabIndex = 205;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // dataGridView1
+            // dgvSchedule
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(535, 72);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(755, 371);
-            this.dataGridView1.TabIndex = 204;
+            this.dgvSchedule.AllowUserToAddRows = false;
+            this.dgvSchedule.AllowUserToDeleteRows = false;
+            this.dgvSchedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSchedule.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSchedule.Location = new System.Drawing.Point(535, 72);
+            this.dgvSchedule.Name = "dgvSchedule";
+            this.dgvSchedule.ReadOnly = true;
+            this.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSchedule.Size = new System.Drawing.Size(755, 371);
+            this.dgvSchedule.TabIndex = 204;
             // 
             // pictureBox1
             // 
@@ -337,16 +346,6 @@
             // 
             this.view_CombScheduleTableAdapter.ClearBeforeFill = true;
             // 
-            // aNS_DATABASEDataSet12
-            // 
-            this.aNS_DATABASEDataSet12.DataSetName = "ANS_DATABASEDataSet12";
-            this.aNS_DATABASEDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // viewCombScheduleBindingSource1
-            // 
-            this.viewCombScheduleBindingSource1.DataMember = "View_CombSchedule";
-            this.viewCombScheduleBindingSource1.DataSource = this.aNS_DATABASEDataSet12;
-            // 
             // view_CombScheduleTableAdapter1
             // 
             this.view_CombScheduleTableAdapter1.ClearBeforeFill = true;
@@ -371,16 +370,6 @@
             this.aNSDATABASEDataSet3BindingSource.DataSource = this.aNS_DATABASEDataSet3;
             this.aNSDATABASEDataSet3BindingSource.Position = 0;
             // 
-            // aNS_DATABASEDataSet13
-            // 
-            this.aNS_DATABASEDataSet13.DataSetName = "ANS_DATABASEDataSet13";
-            this.aNS_DATABASEDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBLSECTIONBindingSource
-            // 
-            this.tBLSECTIONBindingSource.DataMember = "TBL_SECTION";
-            this.tBLSECTIONBindingSource.DataSource = this.aNS_DATABASEDataSet13;
-            // 
             // tBL_SECTIONTableAdapter
             // 
             this.tBL_SECTIONTableAdapter.ClearBeforeFill = true;
@@ -394,7 +383,7 @@
             this.ClientSize = new System.Drawing.Size(1366, 467);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSchedule);
             this.Controls.Add(this.Button3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label4);
@@ -408,18 +397,18 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLSECTIONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewCombScheduleBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewCombScheduleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewCombScheduleBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNSDATABASEDataSet4BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNSDATABASEDataSet3BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLSECTIONBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,14 +419,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         internal System.Windows.Forms.Button btnSave;
-        internal System.Windows.Forms.Button button5;
+        internal System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         internal System.Windows.Forms.Button Button3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        internal System.Windows.Forms.Button button6;
         internal System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cmbStartEnd;
         private System.Windows.Forms.Label label6;
@@ -460,5 +446,7 @@
         private ANS_DATABASEDataSet13TableAdapters.TBL_SECTIONTableAdapter tBL_SECTIONTableAdapter;
         public System.Windows.Forms.TextBox txtTeachername;
         public System.Windows.Forms.TextBox txtsubject;
+        public System.Windows.Forms.DataGridView dgvSchedule;
+        public System.Windows.Forms.TextBox txtSearch;
     }
 }

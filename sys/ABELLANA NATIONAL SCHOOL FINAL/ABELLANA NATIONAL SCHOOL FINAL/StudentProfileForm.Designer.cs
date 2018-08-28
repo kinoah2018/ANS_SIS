@@ -393,6 +393,7 @@
             this.txtDiastolic.Name = "txtDiastolic";
             this.txtDiastolic.Size = new System.Drawing.Size(57, 27);
             this.txtDiastolic.TabIndex = 129;
+            this.txtDiastolic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiastolic_KeyPress);
             // 
             // txtSystolic
             // 
@@ -400,6 +401,7 @@
             this.txtSystolic.Name = "txtSystolic";
             this.txtSystolic.Size = new System.Drawing.Size(57, 27);
             this.txtSystolic.TabIndex = 128;
+            this.txtSystolic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSystolic_KeyPress);
             // 
             // label21
             // 
@@ -416,6 +418,7 @@
             this.txtweight.Name = "txtweight";
             this.txtweight.Size = new System.Drawing.Size(134, 27);
             this.txtweight.TabIndex = 126;
+            this.txtweight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtweight_KeyPress_1);
             // 
             // label20
             // 
@@ -432,6 +435,7 @@
             this.txtheight.Name = "txtheight";
             this.txtheight.Size = new System.Drawing.Size(134, 27);
             this.txtheight.TabIndex = 124;
+            this.txtheight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtheight_KeyPress_1);
             // 
             // label19
             // 
@@ -458,6 +462,7 @@
             this.txtcstid.Name = "txtcstid";
             this.txtcstid.Size = new System.Drawing.Size(191, 27);
             this.txtcstid.TabIndex = 119;
+            this.txtcstid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcstid_KeyPress);
             // 
             // cmbgen
             // 
@@ -487,6 +492,7 @@
             this.txtadd.Name = "txtadd";
             this.txtadd.Size = new System.Drawing.Size(315, 45);
             this.txtadd.TabIndex = 116;
+            this.txtadd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtadd_KeyPress);
             // 
             // label12
             // 
@@ -653,6 +659,7 @@
             this.txtbplace.Name = "txtbplace";
             this.txtbplace.Size = new System.Drawing.Size(315, 31);
             this.txtbplace.TabIndex = 10;
+            this.txtbplace.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbplace_KeyPress);
             // 
             // label6
             // 

@@ -83,18 +83,22 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             if (dgvstudent_view.CurrentRow.Cells[15].Value.ToString() == "Submitted")
             {
                 suf.chk_subform137.Checked = true;
+                suf.chk_subform137.Enabled = false;
             }
             if (dgvstudent_view.CurrentRow.Cells[16].Value.ToString() == "Submitted")
             {
                 suf.chk_subform138.Checked = true;
+                suf.chk_subform138.Enabled = false;
             }
             if (dgvstudent_view.CurrentRow.Cells[17].Value.ToString() == "Submitted")
             {
                 suf.chk_subgrademoral.Checked = true;
+                suf.chk_subgrademoral.Enabled = false;
             }
             if (dgvstudent_view.CurrentRow.Cells[18].Value.ToString() == "Submitted")
             {
                 suf.chk_subnso.Checked = true;
+                suf.chk_subnso.Enabled = false;
             }
             suf.lbPID.Text = dgvstudent_view.CurrentRow.Cells[19].Value.ToString();
             suf.txtpname.Text = dgvstudent_view.CurrentRow.Cells[20].Value.ToString();

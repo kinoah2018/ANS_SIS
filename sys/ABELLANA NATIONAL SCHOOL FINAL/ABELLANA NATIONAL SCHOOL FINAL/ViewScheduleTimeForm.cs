@@ -19,7 +19,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         DataClasses2DataContext db = new DataClasses2DataContext();
         private void ViewScheduleTimeForm_Load(object sender, EventArgs e)
         {
-            dgvTime.DataSource = db.SP_VIEWTIME();
+            dgvSchedtime.DataSource = db.SP_VIEWTIME();
+            this.dgvSchedtime.Columns["TIME_ID"].Visible = false;
         }
 
         private void Button3_Click(object sender, EventArgs e)

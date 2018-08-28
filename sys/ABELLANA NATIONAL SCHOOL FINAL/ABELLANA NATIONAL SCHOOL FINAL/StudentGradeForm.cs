@@ -109,11 +109,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                 read.Close();
                 cmd4.Dispose();
             }
-
-          
-            
-
-
             conn.Close();
 
              
@@ -361,7 +356,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void txtgrade_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }

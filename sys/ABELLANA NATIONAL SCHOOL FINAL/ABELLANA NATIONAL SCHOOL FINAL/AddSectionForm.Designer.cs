@@ -86,6 +86,7 @@
             this.dgvSection.TabIndex = 198;
             this.dgvSection.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSection_CellContentClick);
             this.dgvSection.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSection_CellContentDoubleClick);
+            this.dgvSection.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSection_CellDoubleClick);
             // 
             // Button3
             // 
@@ -226,6 +227,7 @@
             this.txtSecCap.Name = "txtSecCap";
             this.txtSecCap.Size = new System.Drawing.Size(250, 27);
             this.txtSecCap.TabIndex = 4;
+            this.txtSecCap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSecCap_KeyPress);
             // 
             // label2
             // 

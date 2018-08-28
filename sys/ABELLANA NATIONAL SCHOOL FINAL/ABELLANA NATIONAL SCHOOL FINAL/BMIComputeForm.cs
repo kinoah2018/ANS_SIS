@@ -240,6 +240,18 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
 
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text != "")
+            {
+                dgvViewBmi.DataSource = db.SP_BMISEARCH(txtSearch.Text);
+            }
+            else
+            {
+                dgvViewBmi.DataSource = db.SP_VIEWBMI();
+            }
+        }
        
     }
 }

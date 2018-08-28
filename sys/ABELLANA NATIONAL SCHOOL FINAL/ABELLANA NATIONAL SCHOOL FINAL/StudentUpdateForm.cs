@@ -36,16 +36,43 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             }
             else
             {
-                string chek;
-                if (chk_subform137.Checked || chk_subform138.Checked||chk_subgrademoral.Checked||chk_subnso.Checked)
+                string chek1;
+                if (chk_subform137.Checked)
                 {
-                    chek = "Submitted";
+                    chek1 = "Submitted";
                 }
                 else
                 {
-                    chek = "Not Submitted";
+                    chek1 = "Not Submitted";
                 }
-                db.SP_STUPDATE(txtcstid.Text,txtfname.Text,txtmname.Text,txtlname.Text,cmbylevel.Text,DateTime.Parse(dtpbdate.Text),int.Parse(txtage.Text),txtbplace.Text,txtadd.Text,cmbgen.Text,isactive,decimal.Parse(txtheight.Text),decimal.Parse(txtweight.Text),int.Parse(txtSystolic.Text),int.Parse(txtDiastolic.Text),chek,chek,chek,chek,int.Parse(lbPID.Text),txtpname.Text,txtcnumber.Text,txtoccu.Text,int.Parse(lbSecID.Text),txtSecname.Text,int.Parse(lbSYID.Text),cmbsyear.Text);
+                string chek2;
+                if (chk_subform138.Checked)
+                {
+                    chek2 = "Submitted";
+                }
+                else
+                {
+                    chek2 = "Not Submitted";
+                }
+                string chek3;
+                if (chk_subgrademoral.Checked)
+                {
+                    chek3 = "Submitted";
+                }
+                else
+                {
+                    chek3 = "Not Submitted";
+                }
+                string chek4;
+                if (chk_subnso.Checked)
+                {
+                    chek4 = "Submitted";
+                }
+                else
+                {
+                    chek4 = "Not Submitted";
+                }
+                db.SP_STUPDATE(txtcstid.Text,txtfname.Text,txtmname.Text,txtlname.Text,cmbylevel.Text,DateTime.Parse(dtpbdate.Text),int.Parse(txtage.Text),txtbplace.Text,txtadd.Text,cmbgen.Text,isactive,decimal.Parse(txtheight.Text),decimal.Parse(txtweight.Text),int.Parse(txtSystolic.Text),int.Parse(txtDiastolic.Text),chek1,chek2,chek3,chek4,int.Parse(lbPID.Text),txtpname.Text,txtcnumber.Text,txtoccu.Text,int.Parse(lbSecID.Text),txtSecname.Text,int.Parse(lbSYID.Text),cmbsyear.Text);
                 MessageBox.Show("Student Successfully Update !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearALL();
                 this.Close();

@@ -164,6 +164,7 @@
             this.dgvTeacher.TabIndex = 208;
             this.dgvTeacher.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTeacher_CellContentClick);
             this.dgvTeacher.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTeacher_CellContentDoubleClick);
+            this.dgvTeacher.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTeacher_CellDoubleClick);
             // 
             // txtlname
             // 
@@ -172,6 +173,7 @@
             this.txtlname.Name = "txtlname";
             this.txtlname.Size = new System.Drawing.Size(191, 27);
             this.txtlname.TabIndex = 134;
+            this.txtlname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlname_KeyPress);
             // 
             // pictureBox1
             // 
@@ -204,6 +206,7 @@
             this.cmbsubject.Size = new System.Drawing.Size(191, 26);
             this.cmbsubject.TabIndex = 146;
             this.cmbsubject.ValueMember = "SUBJECT_ID";
+            this.cmbsubject.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbsubject_KeyPress);
             // 
             // tBLSUBJECTBindingSource
             // 
@@ -290,6 +293,7 @@
             this.txtcontact.Name = "txtcontact";
             this.txtcontact.Size = new System.Drawing.Size(191, 27);
             this.txtcontact.TabIndex = 143;
+            this.txtcontact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcontact_KeyPress);
             // 
             // label5
             // 
@@ -309,6 +313,7 @@
             this.txtmname.Name = "txtmname";
             this.txtmname.Size = new System.Drawing.Size(191, 27);
             this.txtmname.TabIndex = 134;
+            this.txtmname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmname_KeyPress);
             // 
             // label14
             // 
@@ -328,6 +333,7 @@
             this.txtfname.Name = "txtfname";
             this.txtfname.Size = new System.Drawing.Size(191, 27);
             this.txtfname.TabIndex = 132;
+            this.txtfname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtfname_KeyPress);
             // 
             // label13
             // 

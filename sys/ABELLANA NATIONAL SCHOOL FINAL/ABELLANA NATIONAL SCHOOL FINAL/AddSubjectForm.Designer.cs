@@ -172,6 +172,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(302, 25);
             this.textBox1.TabIndex = 212;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dgvSubject
             // 
@@ -188,6 +189,7 @@
             this.dgvSubject.TabIndex = 211;
             this.dgvSubject.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubject_CellContentClick);
             this.dgvSubject.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubject_CellContentDoubleClick);
+            this.dgvSubject.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubject_CellDoubleClick);
             // 
             // AddSubjectForm
             // 

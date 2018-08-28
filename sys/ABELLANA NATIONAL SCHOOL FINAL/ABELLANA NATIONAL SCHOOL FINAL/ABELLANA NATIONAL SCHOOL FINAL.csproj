@@ -93,6 +93,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ANS_DATABASEDataSet13.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ANS_DATABASEDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ANS_DATABASEDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANS_DATABASEDataSet15.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ANS_DATABASEDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,6 +149,12 @@
     <Compile Include="BMIComputeForm.Designer.cs">
       <DependentUpon>BMIComputeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReleasingBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReleasingBookForm.Designer.cs">
+      <DependentUpon>ReleasingBookForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePassForm2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +190,18 @@
     </Compile>
     <Compile Include="InquiryForm.Designer.cs">
       <DependentUpon>InquiryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequisitionOfRequirmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequisitionOfRequirmentForm.Designer.cs">
+      <DependentUpon>RequisitionOfRequirmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturningBooksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturningBooksForm.Designer.cs">
+      <DependentUpon>ReturningBooksForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentGradeForm.cs">
       <SubType>Form</SubType>
@@ -232,6 +260,18 @@
     </Compile>
     <Compile Include="AddSubjectForm.Designer.cs">
       <DependentUpon>AddSubjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYPaymentForm.Designer.cs">
+      <DependentUpon>SYPaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewHonorStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewHonorStudent.Designer.cs">
+      <DependentUpon>ViewHonorStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewPaymentForm.cs">
       <SubType>Form</SubType>
@@ -364,6 +404,28 @@
     <None Include="ANS_DATABASEDataSet13.xss">
       <DependentUpon>ANS_DATABASEDataSet13.xsd</DependentUpon>
     </None>
+    <None Include="ANS_DATABASEDataSet14.xsc">
+      <DependentUpon>ANS_DATABASEDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet14.xss">
+      <DependentUpon>ANS_DATABASEDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet15.xsc">
+      <DependentUpon>ANS_DATABASEDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="ANS_DATABASEDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANS_DATABASEDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANS_DATABASEDataSet15.xss">
+      <DependentUpon>ANS_DATABASEDataSet15.xsd</DependentUpon>
+    </None>
     <None Include="ANS_DATABASEDataSet7.xsc">
       <DependentUpon>ANS_DATABASEDataSet7.xsd</DependentUpon>
     </None>
@@ -400,6 +462,21 @@
     <None Include="DataClasses2.dbml.layout">
       <DependentUpon>DataClasses2.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="ReleasingBookForm.resx">
+      <DependentUpon>ReleasingBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequisitionOfRequirmentForm.resx">
+      <DependentUpon>RequisitionOfRequirmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturningBooksForm.resx">
+      <DependentUpon>ReturningBooksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYPaymentForm.resx">
+      <DependentUpon>SYPaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewHonorStudent.resx">
+      <DependentUpon>ViewHonorStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewPaymentForm.resx">
       <DependentUpon>ViewPaymentForm.cs</DependentUpon>
     </EmbeddedResource>

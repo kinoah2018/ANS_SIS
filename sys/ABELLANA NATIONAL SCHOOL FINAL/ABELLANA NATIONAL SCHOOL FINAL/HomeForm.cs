@@ -41,7 +41,18 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialog = MessageBox.Show("Are you sure you want to logout ?", "Wait !", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (dialog == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                return;
+            }  
+
+           
 
         }
 
@@ -289,6 +300,41 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             AddSubjectForm tsf = new AddSubjectForm();
             tsf.ShowDialog();
+        }
+
+        private void menuStrip9_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            
+        }
+
+        private void ReltoolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            ReleasingBookForm bk = new ReleasingBookForm();
+            bk.ShowDialog();
+        }
+
+        private void RettoolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            ReturningBooksForm br = new ReturningBooksForm();
+            br.ShowDialog();
+        }
+
+        private void toolStripMenuItem3_Click_1(object sender, EventArgs e)
+        {
+            InquiryForm inqf = new InquiryForm();
+            inqf.ShowDialog();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            RequisitionOfRequirmentForm rrf = new RequisitionOfRequirmentForm();
+            rrf.ShowDialog();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            SYPaymentForm sypf = new SYPaymentForm();
+            sypf.ShowDialog();
         }
     }
 }

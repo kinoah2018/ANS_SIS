@@ -31,12 +31,12 @@
             this.txtSYID = new System.Windows.Forms.TextBox();
             this.dgvSYVIEW = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtSYName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSYVIEW)).BeginInit();
@@ -64,7 +64,9 @@
             this.dgvSYVIEW.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSYVIEW.Size = new System.Drawing.Size(489, 307);
             this.dgvSYVIEW.TabIndex = 1;
+            this.dgvSYVIEW.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSYVIEW_CellContentClick);
             this.dgvSYVIEW.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSYVIEW_CellContentDoubleClick);
+            this.dgvSYVIEW.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSYVIEW_CellDoubleClick);
             // 
             // groupBox1
             // 
@@ -79,6 +81,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input SchoolYear";
             // 
+            // txtSYName
+            // 
+            this.txtSYName.Location = new System.Drawing.Point(140, 37);
+            this.txtSYName.Name = "txtSYName";
+            this.txtSYName.Size = new System.Drawing.Size(158, 27);
+            this.txtSYName.TabIndex = 3;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -87,13 +96,6 @@
             this.label2.Size = new System.Drawing.Size(110, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "SchoolYear :";
-            // 
-            // txtSYName
-            // 
-            this.txtSYName.Location = new System.Drawing.Point(140, 37);
-            this.txtSYName.Name = "txtSYName";
-            this.txtSYName.Size = new System.Drawing.Size(158, 27);
-            this.txtSYName.TabIndex = 3;
             // 
             // groupBox2
             // 
@@ -108,18 +110,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Actions";
             // 
-            // btnSave
+            // button3
             // 
-            this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(5, 50);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 47);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(199, 50);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(115, 47);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Cancel";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnUpdate
             // 
@@ -135,18 +137,18 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // button3
+            // btnSave
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(199, 50);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 47);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(5, 50);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 47);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel1
             // 
@@ -168,7 +170,7 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "SCHOOL YEAR MANAGEMENT";
             // 
-            // StudentSchoolYearForm
+            // AddSchoolYearForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -180,7 +182,7 @@
             this.Controls.Add(this.dgvSYVIEW);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(260, 280);
-            this.Name = "StudentSchoolYearForm";
+            this.Name = "AddSchoolYearForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "StudentSchoolYearForm";
             this.Load += new System.EventHandler(this.StudentSchoolYearForm_Load);

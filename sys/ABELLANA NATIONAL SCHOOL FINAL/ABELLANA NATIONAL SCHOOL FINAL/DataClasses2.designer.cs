@@ -75,15 +75,15 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
     partial void InsertTBL_TEACHER(TBL_TEACHER instance);
     partial void UpdateTBL_TEACHER(TBL_TEACHER instance);
     partial void DeleteTBL_TEACHER(TBL_TEACHER instance);
-    partial void InsertTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
-    partial void UpdateTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
-    partial void DeleteTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
     partial void InsertTBL_THRINTERMEDIARYSEC(TBL_THRINTERMEDIARYSEC instance);
     partial void UpdateTBL_THRINTERMEDIARYSEC(TBL_THRINTERMEDIARYSEC instance);
     partial void DeleteTBL_THRINTERMEDIARYSEC(TBL_THRINTERMEDIARYSEC instance);
     partial void InsertTBL_USER(TBL_USER instance);
     partial void UpdateTBL_USER(TBL_USER instance);
     partial void DeleteTBL_USER(TBL_USER instance);
+    partial void InsertTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
+    partial void UpdateTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
+    partial void DeleteTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
     #endregion
 		
 		public DataClasses2DataContext() : 
@@ -236,14 +236,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		public System.Data.Linq.Table<TBL_TEACHERSCHEDULE> TBL_TEACHERSCHEDULEs
-		{
-			get
-			{
-				return this.GetTable<TBL_TEACHERSCHEDULE>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TBL_THRINTERMEDIARYSEC> TBL_THRINTERMEDIARYSECs
 		{
 			get
@@ -324,6 +316,14 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
+		public System.Data.Linq.Table<TBL_TEACHERSCHEDULE> TBL_TEACHERSCHEDULEs
+		{
+			get
+			{
+				return this.GetTable<TBL_TEACHERSCHEDULE>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ACCOUNTRECOVERY")]
 		public ISingleResult<SP_ACCOUNTRECOVERYResult> SP_ACCOUNTRECOVERY([global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_USERNAME", DbType="VarChar(50)")] string uSER_USERNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SECU_QUESTION", DbType="VarChar(50)")] string sECU_QUESTION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SECU_ANSWER", DbType="VarChar(50)")] string sECU_ANSWER)
 		{
@@ -336,6 +336,13 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_BMISEARCH")]
+		public ISingleResult<SP_BMISEARCHResult> SP_BMISEARCH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEARCHKEY", DbType="VarChar(MAX)")] string sEARCHKEY)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEARCHKEY);
+			return ((ISingleResult<SP_BMISEARCHResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_BOOKSEARCH")]
@@ -429,11 +436,32 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECTIONSAVE")]
+		public int SP_SECTIONSAVE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_NAME", DbType="VarChar(50)")] string sEC_NAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_CAPACITY", DbType="VarChar(50)")] string sEC_CAPACITY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_ID", DbType="Int")] System.Nullable<int> t_ID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEC_NAME, sEC_CAPACITY, t_ID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECTIONUPDATE")]
+		public int SP_SECTIONUPDATE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_ID", DbType="Int")] System.Nullable<int> sEC_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_NAME", DbType="VarChar(50)")] string sEC_NAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_CAPACITY", DbType="VarChar(50)")] string sEC_CAPACITY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_ID", DbType="Int")] System.Nullable<int> t_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_FIRSTNAME", DbType="VarChar(50)")] string t_FIRSTNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_MIDDLENAME", DbType="VarChar(50)")] string t_MIDDLENAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_LASTNAME", DbType="VarChar(50)")] string t_LASTNAME)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEC_ID, sEC_NAME, sEC_CAPACITY, t_ID, t_FIRSTNAME, t_MIDDLENAME, t_LASTNAME);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECUSAVE")]
 		public int SP_SECUSAVE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SECU_QUESTION", DbType="VarChar(50)")] string sECU_QUESTION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SECU_ANSWER", DbType="VarChar(50)")] string sECU_ANSWER, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_ID", DbType="Int")] System.Nullable<int> uSER_ID)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sECU_QUESTION, sECU_ANSWER, uSER_ID);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECVIEW")]
+		public ISingleResult<SP_SECVIEWResult> SP_SECVIEW()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_SECVIEWResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STREQSEARCH")]
@@ -528,6 +556,13 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SUBSEARCH")]
+		public ISingleResult<SP_SUBSEARCHResult> SP_SUBSEARCH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEARCHKEY", DbType="VarChar(MAX)")] string sEARCHKEY)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEARCHKEY);
+			return ((ISingleResult<SP_SUBSEARCHResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SUBUPDATE")]
 		public int SP_SUBUPDATE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SUBJECT_ID", DbType="Int")] System.Nullable<int> sUBJECT_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SUBJECTNAME", DbType="VarChar(50)")] string sUBJECTNAME)
 		{
@@ -591,18 +626,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((ISingleResult<SP_TEACHERVIEWResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THSCHEDSAVE")]
-		public int SP_THSCHEDSAVE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TEACHERNAME", DbType="VarChar(50)")] string tEACHERNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_ID", DbType="Int")] System.Nullable<int> sEC_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="THSUBJECT", DbType="VarChar(50)")] string tHSUBJECT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TIME_ID", DbType="Int")] System.Nullable<int> tIME_ID)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THSCHEDUPDATE")]
+		public int SP_THSCHEDUPDATE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_ID", DbType="Int")] System.Nullable<int> sEC_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_NAME", DbType="VarChar(50)")] string sEC_NAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TIME_ID", DbType="Int")] System.Nullable<int> tIME_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TIME_START", DbType="VarChar(50)")] string tIME_START, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TIME_END", DbType="VarChar(50)")] string tIME_END)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tEACHERNAME, sEC_ID, tHSUBJECT, tIME_ID);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEC_ID, sEC_NAME, tIME_ID, tIME_START, tIME_END);
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THSCHEDVIEW")]
-		public ISingleResult<SP_THSCHEDVIEWResult> SP_THSCHEDVIEW()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<SP_THSCHEDVIEWResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_USERSAVE")]
@@ -654,25 +682,32 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((ISingleResult<SP_VIEWTIMEResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECTIONSAVE")]
-		public int SP_SECTIONSAVE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_NAME", DbType="VarChar(50)")] string sEC_NAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_CAPACITY", DbType="VarChar(50)")] string sEC_CAPACITY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_ID", DbType="Int")] System.Nullable<int> t_ID)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THSCHEDSAVE")]
+		public int SP_THSCHEDSAVE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TEARCHER", DbType="VarChar(50)")] string tEARCHER, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_ID", DbType="Int")] System.Nullable<int> sEC_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SUBJECT", DbType="VarChar(50)")] string sUBJECT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TIME_ID", DbType="Int")] System.Nullable<int> tIME_ID)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEC_NAME, sEC_CAPACITY, t_ID);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tEARCHER, sEC_ID, sUBJECT, tIME_ID);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECTIONUPDATE")]
-		public int SP_SECTIONUPDATE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_ID", DbType="Int")] System.Nullable<int> sEC_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_NAME", DbType="VarChar(50)")] string sEC_NAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_CAPACITY", DbType="VarChar(50)")] string sEC_CAPACITY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_ID", DbType="Int")] System.Nullable<int> t_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_FIRSTNAME", DbType="VarChar(50)")] string t_FIRSTNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_MIDDLENAME", DbType="VarChar(50)")] string t_MIDDLENAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_LASTNAME", DbType="VarChar(50)")] string t_LASTNAME)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEC_ID, sEC_NAME, sEC_CAPACITY, t_ID, t_FIRSTNAME, t_MIDDLENAME, t_LASTNAME);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECVIEW")]
-		public ISingleResult<SP_SECVIEWResult> SP_SECVIEW()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THSCHEDVIEW")]
+		public ISingleResult<SP_THSCHEDVIEWResult> SP_THSCHEDVIEW()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<SP_SECVIEWResult>)(result.ReturnValue));
+			return ((ISingleResult<SP_THSCHEDVIEWResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THSCHEDSEARCH")]
+		public ISingleResult<SP_THSCHEDSEARCHResult> SP_THSCHEDSEARCH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEARCHKEY", DbType="VarChar(MAX)")] string sEARCHKEY)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEARCHKEY);
+			return ((ISingleResult<SP_THSCHEDSEARCHResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_EXISTSEC")]
+		public ISingleResult<SP_EXISTSECResult> SP_EXISTSEC([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TEARCHER", DbType="VarChar(50)")] string tEARCHER, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_ID", DbType="Int")] System.Nullable<int> sEC_ID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tEARCHER, sEC_ID);
+			return ((ISingleResult<SP_EXISTSECResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -2251,9 +2286,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private EntitySet<TBL_STUDENT> _TBL_STUDENTs;
 		
-		private EntitySet<TBL_TEACHERSCHEDULE> _TBL_TEACHERSCHEDULEs;
-		
 		private EntitySet<TBL_THRINTERMEDIARYSEC> _TBL_THRINTERMEDIARYSECs;
+		
+		private EntitySet<TBL_TEACHERSCHEDULE> _TBL_TEACHERSCHEDULEs;
 		
 		private EntityRef<TBL_TEACHER> _TBL_TEACHER;
 		
@@ -2274,8 +2309,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		public TBL_SECTION()
 		{
 			this._TBL_STUDENTs = new EntitySet<TBL_STUDENT>(new Action<TBL_STUDENT>(this.attach_TBL_STUDENTs), new Action<TBL_STUDENT>(this.detach_TBL_STUDENTs));
-			this._TBL_TEACHERSCHEDULEs = new EntitySet<TBL_TEACHERSCHEDULE>(new Action<TBL_TEACHERSCHEDULE>(this.attach_TBL_TEACHERSCHEDULEs), new Action<TBL_TEACHERSCHEDULE>(this.detach_TBL_TEACHERSCHEDULEs));
 			this._TBL_THRINTERMEDIARYSECs = new EntitySet<TBL_THRINTERMEDIARYSEC>(new Action<TBL_THRINTERMEDIARYSEC>(this.attach_TBL_THRINTERMEDIARYSECs), new Action<TBL_THRINTERMEDIARYSEC>(this.detach_TBL_THRINTERMEDIARYSECs));
+			this._TBL_TEACHERSCHEDULEs = new EntitySet<TBL_TEACHERSCHEDULE>(new Action<TBL_TEACHERSCHEDULE>(this.attach_TBL_TEACHERSCHEDULEs), new Action<TBL_TEACHERSCHEDULE>(this.detach_TBL_TEACHERSCHEDULEs));
 			this._TBL_TEACHER = default(EntityRef<TBL_TEACHER>);
 			OnCreated();
 		}
@@ -2377,19 +2412,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHERSCHEDULE", Storage="_TBL_TEACHERSCHEDULEs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
-		public EntitySet<TBL_TEACHERSCHEDULE> TBL_TEACHERSCHEDULEs
-		{
-			get
-			{
-				return this._TBL_TEACHERSCHEDULEs;
-			}
-			set
-			{
-				this._TBL_TEACHERSCHEDULEs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_THRINTERMEDIARYSEC", Storage="_TBL_THRINTERMEDIARYSECs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
 		public EntitySet<TBL_THRINTERMEDIARYSEC> TBL_THRINTERMEDIARYSECs
 		{
@@ -2400,6 +2422,19 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			set
 			{
 				this._TBL_THRINTERMEDIARYSECs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHERSCHEDULE", Storage="_TBL_TEACHERSCHEDULEs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
+		public EntitySet<TBL_TEACHERSCHEDULE> TBL_TEACHERSCHEDULEs
+		{
+			get
+			{
+				return this._TBL_TEACHERSCHEDULEs;
+			}
+			set
+			{
+				this._TBL_TEACHERSCHEDULEs.Assign(value);
 			}
 		}
 		
@@ -2469,18 +2504,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			entity.TBL_SECTION = null;
 		}
 		
-		private void attach_TBL_TEACHERSCHEDULEs(TBL_TEACHERSCHEDULE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = this;
-		}
-		
-		private void detach_TBL_TEACHERSCHEDULEs(TBL_TEACHERSCHEDULE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = null;
-		}
-		
 		private void attach_TBL_THRINTERMEDIARYSECs(TBL_THRINTERMEDIARYSEC entity)
 		{
 			this.SendPropertyChanging();
@@ -2488,6 +2511,18 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 		
 		private void detach_TBL_THRINTERMEDIARYSECs(TBL_THRINTERMEDIARYSEC entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_SECTION = null;
+		}
+		
+		private void attach_TBL_TEACHERSCHEDULEs(TBL_TEACHERSCHEDULE entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_SECTION = this;
+		}
+		
+		private void detach_TBL_TEACHERSCHEDULEs(TBL_TEACHERSCHEDULE entity)
 		{
 			this.SendPropertyChanging();
 			entity.TBL_SECTION = null;
@@ -4100,246 +4135,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		{
 			this.SendPropertyChanging();
 			entity.TBL_TEACHER = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_TEACHERSCHEDULE")]
-	public partial class TBL_TEACHERSCHEDULE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _TSCHED_ID;
-		
-		private string _TEACHERNAME;
-		
-		private System.Nullable<int> _SEC_ID;
-		
-		private string _THSUBJECT;
-		
-		private System.Nullable<int> _TIME_ID;
-		
-		private EntityRef<TBL_SECTION> _TBL_SECTION;
-		
-		private EntityRef<TBL_SCHEDULETIME> _TBL_SCHEDULETIME;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTSCHED_IDChanging(int value);
-    partial void OnTSCHED_IDChanged();
-    partial void OnTEACHERNAMEChanging(string value);
-    partial void OnTEACHERNAMEChanged();
-    partial void OnSEC_IDChanging(System.Nullable<int> value);
-    partial void OnSEC_IDChanged();
-    partial void OnTHSUBJECTChanging(string value);
-    partial void OnTHSUBJECTChanged();
-    partial void OnTIME_IDChanging(System.Nullable<int> value);
-    partial void OnTIME_IDChanged();
-    #endregion
-		
-		public TBL_TEACHERSCHEDULE()
-		{
-			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
-			this._TBL_SCHEDULETIME = default(EntityRef<TBL_SCHEDULETIME>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TSCHED_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int TSCHED_ID
-		{
-			get
-			{
-				return this._TSCHED_ID;
-			}
-			set
-			{
-				if ((this._TSCHED_ID != value))
-				{
-					this.OnTSCHED_IDChanging(value);
-					this.SendPropertyChanging();
-					this._TSCHED_ID = value;
-					this.SendPropertyChanged("TSCHED_ID");
-					this.OnTSCHED_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TEACHERNAME", DbType="VarChar(50)")]
-		public string TEACHERNAME
-		{
-			get
-			{
-				return this._TEACHERNAME;
-			}
-			set
-			{
-				if ((this._TEACHERNAME != value))
-				{
-					this.OnTEACHERNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._TEACHERNAME = value;
-					this.SendPropertyChanged("TEACHERNAME");
-					this.OnTEACHERNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int")]
-		public System.Nullable<int> SEC_ID
-		{
-			get
-			{
-				return this._SEC_ID;
-			}
-			set
-			{
-				if ((this._SEC_ID != value))
-				{
-					if (this._TBL_SECTION.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSEC_IDChanging(value);
-					this.SendPropertyChanging();
-					this._SEC_ID = value;
-					this.SendPropertyChanged("SEC_ID");
-					this.OnSEC_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THSUBJECT", DbType="VarChar(50)")]
-		public string THSUBJECT
-		{
-			get
-			{
-				return this._THSUBJECT;
-			}
-			set
-			{
-				if ((this._THSUBJECT != value))
-				{
-					this.OnTHSUBJECTChanging(value);
-					this.SendPropertyChanging();
-					this._THSUBJECT = value;
-					this.SendPropertyChanged("THSUBJECT");
-					this.OnTHSUBJECTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIME_ID", DbType="Int")]
-		public System.Nullable<int> TIME_ID
-		{
-			get
-			{
-				return this._TIME_ID;
-			}
-			set
-			{
-				if ((this._TIME_ID != value))
-				{
-					if (this._TBL_SCHEDULETIME.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTIME_IDChanging(value);
-					this.SendPropertyChanging();
-					this._TIME_ID = value;
-					this.SendPropertyChanged("TIME_ID");
-					this.OnTIME_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHERSCHEDULE", Storage="_TBL_SECTION", ThisKey="SEC_ID", OtherKey="SEC_ID", IsForeignKey=true)]
-		public TBL_SECTION TBL_SECTION
-		{
-			get
-			{
-				return this._TBL_SECTION.Entity;
-			}
-			set
-			{
-				TBL_SECTION previousValue = this._TBL_SECTION.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_SECTION.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_SECTION.Entity = null;
-						previousValue.TBL_TEACHERSCHEDULEs.Remove(this);
-					}
-					this._TBL_SECTION.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_TEACHERSCHEDULEs.Add(this);
-						this._SEC_ID = value.SEC_ID;
-					}
-					else
-					{
-						this._SEC_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_SECTION");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SCHEDULETIME_TBL_TEACHERSCHEDULE", Storage="_TBL_SCHEDULETIME", ThisKey="TIME_ID", OtherKey="TIME_ID", IsForeignKey=true)]
-		public TBL_SCHEDULETIME TBL_SCHEDULETIME
-		{
-			get
-			{
-				return this._TBL_SCHEDULETIME.Entity;
-			}
-			set
-			{
-				TBL_SCHEDULETIME previousValue = this._TBL_SCHEDULETIME.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_SCHEDULETIME.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_SCHEDULETIME.Entity = null;
-						previousValue.TBL_TEACHERSCHEDULEs.Remove(this);
-					}
-					this._TBL_SCHEDULETIME.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_TEACHERSCHEDULEs.Add(this);
-						this._TIME_ID = value.TIME_ID;
-					}
-					else
-					{
-						this._TIME_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_SCHEDULETIME");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -6010,6 +5805,246 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_TEACHERSCHEDULE")]
+	public partial class TBL_TEACHERSCHEDULE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _TSCHED_ID;
+		
+		private string _TEARCHER;
+		
+		private System.Nullable<int> _SEC_ID;
+		
+		private string _SUBJECT;
+		
+		private System.Nullable<int> _TIME_ID;
+		
+		private EntityRef<TBL_SECTION> _TBL_SECTION;
+		
+		private EntityRef<TBL_SCHEDULETIME> _TBL_SCHEDULETIME;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTSCHED_IDChanging(int value);
+    partial void OnTSCHED_IDChanged();
+    partial void OnTEARCHERChanging(string value);
+    partial void OnTEARCHERChanged();
+    partial void OnSEC_IDChanging(System.Nullable<int> value);
+    partial void OnSEC_IDChanged();
+    partial void OnSUBJECTChanging(string value);
+    partial void OnSUBJECTChanged();
+    partial void OnTIME_IDChanging(System.Nullable<int> value);
+    partial void OnTIME_IDChanged();
+    #endregion
+		
+		public TBL_TEACHERSCHEDULE()
+		{
+			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
+			this._TBL_SCHEDULETIME = default(EntityRef<TBL_SCHEDULETIME>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TSCHED_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int TSCHED_ID
+		{
+			get
+			{
+				return this._TSCHED_ID;
+			}
+			set
+			{
+				if ((this._TSCHED_ID != value))
+				{
+					this.OnTSCHED_IDChanging(value);
+					this.SendPropertyChanging();
+					this._TSCHED_ID = value;
+					this.SendPropertyChanged("TSCHED_ID");
+					this.OnTSCHED_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TEARCHER", DbType="VarChar(50)")]
+		public string TEARCHER
+		{
+			get
+			{
+				return this._TEARCHER;
+			}
+			set
+			{
+				if ((this._TEARCHER != value))
+				{
+					this.OnTEARCHERChanging(value);
+					this.SendPropertyChanging();
+					this._TEARCHER = value;
+					this.SendPropertyChanged("TEARCHER");
+					this.OnTEARCHERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int")]
+		public System.Nullable<int> SEC_ID
+		{
+			get
+			{
+				return this._SEC_ID;
+			}
+			set
+			{
+				if ((this._SEC_ID != value))
+				{
+					if (this._TBL_SECTION.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSEC_IDChanging(value);
+					this.SendPropertyChanging();
+					this._SEC_ID = value;
+					this.SendPropertyChanged("SEC_ID");
+					this.OnSEC_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUBJECT", DbType="VarChar(50)")]
+		public string SUBJECT
+		{
+			get
+			{
+				return this._SUBJECT;
+			}
+			set
+			{
+				if ((this._SUBJECT != value))
+				{
+					this.OnSUBJECTChanging(value);
+					this.SendPropertyChanging();
+					this._SUBJECT = value;
+					this.SendPropertyChanged("SUBJECT");
+					this.OnSUBJECTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIME_ID", DbType="Int")]
+		public System.Nullable<int> TIME_ID
+		{
+			get
+			{
+				return this._TIME_ID;
+			}
+			set
+			{
+				if ((this._TIME_ID != value))
+				{
+					if (this._TBL_SCHEDULETIME.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTIME_IDChanging(value);
+					this.SendPropertyChanging();
+					this._TIME_ID = value;
+					this.SendPropertyChanged("TIME_ID");
+					this.OnTIME_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHERSCHEDULE", Storage="_TBL_SECTION", ThisKey="SEC_ID", OtherKey="SEC_ID", IsForeignKey=true)]
+		public TBL_SECTION TBL_SECTION
+		{
+			get
+			{
+				return this._TBL_SECTION.Entity;
+			}
+			set
+			{
+				TBL_SECTION previousValue = this._TBL_SECTION.Entity;
+				if (((previousValue != value) 
+							|| (this._TBL_SECTION.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBL_SECTION.Entity = null;
+						previousValue.TBL_TEACHERSCHEDULEs.Remove(this);
+					}
+					this._TBL_SECTION.Entity = value;
+					if ((value != null))
+					{
+						value.TBL_TEACHERSCHEDULEs.Add(this);
+						this._SEC_ID = value.SEC_ID;
+					}
+					else
+					{
+						this._SEC_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TBL_SECTION");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SCHEDULETIME_TBL_TEACHERSCHEDULE", Storage="_TBL_SCHEDULETIME", ThisKey="TIME_ID", OtherKey="TIME_ID", IsForeignKey=true)]
+		public TBL_SCHEDULETIME TBL_SCHEDULETIME
+		{
+			get
+			{
+				return this._TBL_SCHEDULETIME.Entity;
+			}
+			set
+			{
+				TBL_SCHEDULETIME previousValue = this._TBL_SCHEDULETIME.Entity;
+				if (((previousValue != value) 
+							|| (this._TBL_SCHEDULETIME.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBL_SCHEDULETIME.Entity = null;
+						previousValue.TBL_TEACHERSCHEDULEs.Remove(this);
+					}
+					this._TBL_SCHEDULETIME.Entity = value;
+					if ((value != null))
+					{
+						value.TBL_TEACHERSCHEDULEs.Add(this);
+						this._TIME_ID = value.TIME_ID;
+					}
+					else
+					{
+						this._TIME_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TBL_SCHEDULETIME");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	public partial class SP_ACCOUNTRECOVERYResult
 	{
 		
@@ -6067,6 +6102,68 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 				if ((this._SECU_ANSWER != value))
 				{
 					this._SECU_ANSWER = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_BMISEARCHResult
+	{
+		
+		private string _STUDENT_NAME;
+		
+		private string _BODY_MASS_INDEX;
+		
+		private string _BLOODPRESSURE;
+		
+		public SP_BMISEARCHResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[STUDENT NAME]", Storage="_STUDENT_NAME", DbType="VarChar(152)")]
+		public string STUDENT_NAME
+		{
+			get
+			{
+				return this._STUDENT_NAME;
+			}
+			set
+			{
+				if ((this._STUDENT_NAME != value))
+				{
+					this._STUDENT_NAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[BODY MASS INDEX]", Storage="_BODY_MASS_INDEX", DbType="VarChar(50)")]
+		public string BODY_MASS_INDEX
+		{
+			get
+			{
+				return this._BODY_MASS_INDEX;
+			}
+			set
+			{
+				if ((this._BODY_MASS_INDEX != value))
+				{
+					this._BODY_MASS_INDEX = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BLOODPRESSURE", DbType="VarChar(50)")]
+		public string BLOODPRESSURE
+		{
+			get
+			{
+				return this._BLOODPRESSURE;
+			}
+			set
+			{
+				if ((this._BLOODPRESSURE != value))
+				{
+					this._BLOODPRESSURE = value;
 				}
 			}
 		}
@@ -6557,6 +6654,104 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 				if ((this._PAYMENT_ID != value))
 				{
 					this._PAYMENT_ID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_SECVIEWResult
+	{
+		
+		private int _SEC_ID;
+		
+		private string _SECTION;
+		
+		private int _CAPACITY;
+		
+		private int _T_ID;
+		
+		private string _ADVISORY;
+		
+		public SP_SECVIEWResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int NOT NULL")]
+		public int SEC_ID
+		{
+			get
+			{
+				return this._SEC_ID;
+			}
+			set
+			{
+				if ((this._SEC_ID != value))
+				{
+					this._SEC_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SECTION", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SECTION
+		{
+			get
+			{
+				return this._SECTION;
+			}
+			set
+			{
+				if ((this._SECTION != value))
+				{
+					this._SECTION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CAPACITY", DbType="Int NOT NULL")]
+		public int CAPACITY
+		{
+			get
+			{
+				return this._CAPACITY;
+			}
+			set
+			{
+				if ((this._CAPACITY != value))
+				{
+					this._CAPACITY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_ID", DbType="Int NOT NULL")]
+		public int T_ID
+		{
+			get
+			{
+				return this._T_ID;
+			}
+			set
+			{
+				if ((this._T_ID != value))
+				{
+					this._T_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ADVISORY", DbType="VarChar(152)")]
+		public string ADVISORY
+		{
+			get
+			{
+				return this._ADVISORY;
+			}
+			set
+			{
+				if ((this._ADVISORY != value))
+				{
+					this._ADVISORY = value;
 				}
 			}
 		}
@@ -7504,6 +7699,50 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 	}
 	
+	public partial class SP_SUBSEARCHResult
+	{
+		
+		private int _SUBJECT_ID;
+		
+		private string _SUBJECTNAME;
+		
+		public SP_SUBSEARCHResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUBJECT_ID", DbType="Int NOT NULL")]
+		public int SUBJECT_ID
+		{
+			get
+			{
+				return this._SUBJECT_ID;
+			}
+			set
+			{
+				if ((this._SUBJECT_ID != value))
+				{
+					this._SUBJECT_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUBJECTNAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SUBJECTNAME
+		{
+			get
+			{
+				return this._SUBJECTNAME;
+			}
+			set
+			{
+				if ((this._SUBJECTNAME != value))
+				{
+					this._SUBJECTNAME = value;
+				}
+			}
+		}
+	}
+	
 	public partial class SP_SUBVIEWResult
 	{
 		
@@ -7873,140 +8112,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 				if ((this._SUBJECT != value))
 				{
 					this._SUBJECT = value;
-				}
-			}
-		}
-	}
-	
-	public partial class SP_THSCHEDVIEWResult
-	{
-		
-		private int _TSCHED_ID;
-		
-		private string _TEACHERNAME;
-		
-		private string _THSUBJECT;
-		
-		private int _SEC_ID;
-		
-		private string _SEC_NAME;
-		
-		private int _TIME_ID;
-		
-		private string _SCHEDULE;
-		
-		public SP_THSCHEDVIEWResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TSCHED_ID", DbType="Int NOT NULL")]
-		public int TSCHED_ID
-		{
-			get
-			{
-				return this._TSCHED_ID;
-			}
-			set
-			{
-				if ((this._TSCHED_ID != value))
-				{
-					this._TSCHED_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TEACHERNAME", DbType="VarChar(50)")]
-		public string TEACHERNAME
-		{
-			get
-			{
-				return this._TEACHERNAME;
-			}
-			set
-			{
-				if ((this._TEACHERNAME != value))
-				{
-					this._TEACHERNAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THSUBJECT", DbType="VarChar(50)")]
-		public string THSUBJECT
-		{
-			get
-			{
-				return this._THSUBJECT;
-			}
-			set
-			{
-				if ((this._THSUBJECT != value))
-				{
-					this._THSUBJECT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int NOT NULL")]
-		public int SEC_ID
-		{
-			get
-			{
-				return this._SEC_ID;
-			}
-			set
-			{
-				if ((this._SEC_ID != value))
-				{
-					this._SEC_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SEC_NAME
-		{
-			get
-			{
-				return this._SEC_NAME;
-			}
-			set
-			{
-				if ((this._SEC_NAME != value))
-				{
-					this._SEC_NAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIME_ID", DbType="Int NOT NULL")]
-		public int TIME_ID
-		{
-			get
-			{
-				return this._TIME_ID;
-			}
-			set
-			{
-				if ((this._TIME_ID != value))
-				{
-					this._TIME_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SCHEDULE", DbType="VarChar(101)")]
-		public string SCHEDULE
-		{
-			get
-			{
-				return this._SCHEDULE;
-			}
-			set
-			{
-				if ((this._SCHEDULE != value))
-				{
-					this._SCHEDULE = value;
 				}
 			}
 		}
@@ -8489,60 +8594,60 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 	public partial class SP_VIEWBMIResult
 	{
 		
-		private string _FULLNAME;
+		private string _STUDENT_NAME;
 		
-		private string _BMI_RESULT;
+		private string _BODY_MASS_INDEX;
 		
-		private string _BLOODPRESSURE_RESULT;
+		private string _BLOODPRESSURE;
 		
 		public SP_VIEWBMIResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FULLNAME", DbType="VarChar(152)")]
-		public string FULLNAME
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[STUDENT NAME]", Storage="_STUDENT_NAME", DbType="VarChar(152)")]
+		public string STUDENT_NAME
 		{
 			get
 			{
-				return this._FULLNAME;
+				return this._STUDENT_NAME;
 			}
 			set
 			{
-				if ((this._FULLNAME != value))
+				if ((this._STUDENT_NAME != value))
 				{
-					this._FULLNAME = value;
+					this._STUDENT_NAME = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[BMI RESULT]", Storage="_BMI_RESULT", DbType="VarChar(50)")]
-		public string BMI_RESULT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[BODY MASS INDEX]", Storage="_BODY_MASS_INDEX", DbType="VarChar(50)")]
+		public string BODY_MASS_INDEX
 		{
 			get
 			{
-				return this._BMI_RESULT;
+				return this._BODY_MASS_INDEX;
 			}
 			set
 			{
-				if ((this._BMI_RESULT != value))
+				if ((this._BODY_MASS_INDEX != value))
 				{
-					this._BMI_RESULT = value;
+					this._BODY_MASS_INDEX = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[BLOODPRESSURE RESULT]", Storage="_BLOODPRESSURE_RESULT", DbType="VarChar(50)")]
-		public string BLOODPRESSURE_RESULT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BLOODPRESSURE", DbType="VarChar(50)")]
+		public string BLOODPRESSURE
 		{
 			get
 			{
-				return this._BLOODPRESSURE_RESULT;
+				return this._BLOODPRESSURE;
 			}
 			set
 			{
-				if ((this._BLOODPRESSURE_RESULT != value))
+				if ((this._BLOODPRESSURE != value))
 				{
-					this._BLOODPRESSURE_RESULT = value;
+					this._BLOODPRESSURE = value;
 				}
 			}
 		}
@@ -8610,21 +8715,55 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 	}
 	
-	public partial class SP_SECVIEWResult
+	public partial class SP_THSCHEDVIEWResult
 	{
+		
+		private int _TSCHED_ID;
+		
+		private string _TEARCHER;
 		
 		private int _SEC_ID;
 		
-		private string _SEC_NAME;
+		private string _SECTION;
 		
-		private int _SEC_CAPACITY;
+		private int _TIME_ID;
 		
-		private int _T_ID;
+		private string _SCHEDULE;
 		
-		private string _Advisory;
-		
-		public SP_SECVIEWResult()
+		public SP_THSCHEDVIEWResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TSCHED_ID", DbType="Int NOT NULL")]
+		public int TSCHED_ID
+		{
+			get
+			{
+				return this._TSCHED_ID;
+			}
+			set
+			{
+				if ((this._TSCHED_ID != value))
+				{
+					this._TSCHED_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TEARCHER", DbType="VarChar(50)")]
+		public string TEARCHER
+		{
+			get
+			{
+				return this._TEARCHER;
+			}
+			set
+			{
+				if ((this._TEARCHER != value))
+				{
+					this._TEARCHER = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int NOT NULL")]
@@ -8643,66 +8782,192 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SEC_NAME
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SECTION", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SECTION
 		{
 			get
 			{
-				return this._SEC_NAME;
+				return this._SECTION;
 			}
 			set
 			{
-				if ((this._SEC_NAME != value))
+				if ((this._SECTION != value))
 				{
-					this._SEC_NAME = value;
+					this._SECTION = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_CAPACITY", DbType="Int NOT NULL")]
-		public int SEC_CAPACITY
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIME_ID", DbType="Int NOT NULL")]
+		public int TIME_ID
 		{
 			get
 			{
-				return this._SEC_CAPACITY;
+				return this._TIME_ID;
 			}
 			set
 			{
-				if ((this._SEC_CAPACITY != value))
+				if ((this._TIME_ID != value))
 				{
-					this._SEC_CAPACITY = value;
+					this._TIME_ID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_ID", DbType="Int NOT NULL")]
-		public int T_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SCHEDULE", DbType="VarChar(101)")]
+		public string SCHEDULE
 		{
 			get
 			{
-				return this._T_ID;
+				return this._SCHEDULE;
 			}
 			set
 			{
-				if ((this._T_ID != value))
+				if ((this._SCHEDULE != value))
 				{
-					this._T_ID = value;
+					this._SCHEDULE = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_THSCHEDSEARCHResult
+	{
+		
+		private int _TSCHED_ID;
+		
+		private string _TEARCHER;
+		
+		private int _SEC_ID;
+		
+		private string _SECTION;
+		
+		private int _TIME_ID;
+		
+		private string _SCHEDULE;
+		
+		public SP_THSCHEDSEARCHResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TSCHED_ID", DbType="Int NOT NULL")]
+		public int TSCHED_ID
+		{
+			get
+			{
+				return this._TSCHED_ID;
+			}
+			set
+			{
+				if ((this._TSCHED_ID != value))
+				{
+					this._TSCHED_ID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Advisory", DbType="VarChar(152)")]
-		public string Advisory
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TEARCHER", DbType="VarChar(50)")]
+		public string TEARCHER
 		{
 			get
 			{
-				return this._Advisory;
+				return this._TEARCHER;
 			}
 			set
 			{
-				if ((this._Advisory != value))
+				if ((this._TEARCHER != value))
 				{
-					this._Advisory = value;
+					this._TEARCHER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int NOT NULL")]
+		public int SEC_ID
+		{
+			get
+			{
+				return this._SEC_ID;
+			}
+			set
+			{
+				if ((this._SEC_ID != value))
+				{
+					this._SEC_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SECTION", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SECTION
+		{
+			get
+			{
+				return this._SECTION;
+			}
+			set
+			{
+				if ((this._SECTION != value))
+				{
+					this._SECTION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIME_ID", DbType="Int NOT NULL")]
+		public int TIME_ID
+		{
+			get
+			{
+				return this._TIME_ID;
+			}
+			set
+			{
+				if ((this._TIME_ID != value))
+				{
+					this._TIME_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SCHEDULE", DbType="VarChar(101)")]
+		public string SCHEDULE
+		{
+			get
+			{
+				return this._SCHEDULE;
+			}
+			set
+			{
+				if ((this._SCHEDULE != value))
+				{
+					this._SCHEDULE = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_EXISTSECResult
+	{
+		
+		private System.Nullable<int> _SEC_ID;
+		
+		public SP_EXISTSECResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int")]
+		public System.Nullable<int> SEC_ID
+		{
+			get
+			{
+				return this._SEC_ID;
+			}
+			set
+			{
+				if ((this._SEC_ID != value))
+				{
+					this._SEC_ID = value;
 				}
 			}
 		}

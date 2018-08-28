@@ -80,8 +80,8 @@
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooks.Size = new System.Drawing.Size(774, 363);
             this.dgvBooks.TabIndex = 201;
-            this.dgvBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentClick);
             this.dgvBooks.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentDoubleClick);
+            this.dgvBooks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellDoubleClick);
             // 
             // button1
             // 
@@ -154,6 +154,7 @@
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(250, 34);
             this.txtAuthor.TabIndex = 10;
+            this.txtAuthor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAuthor_KeyPress);
             // 
             // label5
             // 
@@ -211,6 +212,7 @@
             this.txtBookName.Name = "txtBookName";
             this.txtBookName.Size = new System.Drawing.Size(250, 27);
             this.txtBookName.TabIndex = 4;
+            this.txtBookName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBookName_KeyPress);
             // 
             // label2
             // 

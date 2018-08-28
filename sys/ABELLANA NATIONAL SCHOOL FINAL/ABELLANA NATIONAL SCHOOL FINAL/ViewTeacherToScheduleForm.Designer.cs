@@ -58,6 +58,7 @@
             this.Button3.TabIndex = 186;
             this.Button3.Text = "X";
             this.Button3.UseVisualStyleBackColor = false;
+            this.Button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // ViewTeacherToScheduleForm
             // 

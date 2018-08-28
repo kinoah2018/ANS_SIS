@@ -116,6 +116,7 @@
             this.dgvPayDetails.TabIndex = 204;
             this.dgvPayDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayDetails_CellContentClick);
             this.dgvPayDetails.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayDetails_CellContentDoubleClick);
+            this.dgvPayDetails.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayDetails_CellDoubleClick);
             // 
             // groupBox3
             // 
@@ -275,6 +276,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(328, 27);
             this.txtAmount.TabIndex = 11;
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // label6
             // 

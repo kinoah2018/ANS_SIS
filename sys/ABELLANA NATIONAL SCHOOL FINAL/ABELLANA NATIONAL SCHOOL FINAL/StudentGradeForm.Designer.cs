@@ -33,6 +33,13 @@
             this.Button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvGrade = new System.Windows.Forms.DataGridView();
+            this.SUBJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUBJECT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FIRST_GRADING = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SECOND_GRADING = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THIRD_GRADING = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FOURTH_GRADING = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Final_Grade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tBLSTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aNS_DATABASEDataSet2 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet2();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -59,13 +66,7 @@
             this.tBL_STUDENTTableAdapter = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet2TableAdapters.TBL_STUDENTTableAdapter();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tBL_SUBJECTTableAdapter1 = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet9TableAdapters.TBL_SUBJECTTableAdapter();
-            this.SUBJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SUBJECT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FIRST_GRADING = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SECOND_GRADING = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THIRD_GRADING = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FOURTH_GRADING = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Final_Grade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLSTUDENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aNS_DATABASEDataSet2)).BeginInit();
@@ -118,15 +119,57 @@
             this.FOURTH_GRADING,
             this.Final_Grade});
             this.dgvGrade.Enabled = false;
-            this.dgvGrade.Location = new System.Drawing.Point(461, 69);
+            this.dgvGrade.Location = new System.Drawing.Point(461, 55);
             this.dgvGrade.Name = "dgvGrade";
             this.dgvGrade.ReadOnly = true;
             this.dgvGrade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvGrade.Size = new System.Drawing.Size(842, 363);
+            this.dgvGrade.Size = new System.Drawing.Size(842, 400);
             this.dgvGrade.TabIndex = 189;
             this.dgvGrade.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrade_CellContentClick);
             this.dgvGrade.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrade_CellContentDoubleClick);
             this.dgvGrade.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrade_CellDoubleClick);
+            // 
+            // SUBJECT_ID
+            // 
+            this.SUBJECT_ID.HeaderText = "SUBJECT_ID";
+            this.SUBJECT_ID.Name = "SUBJECT_ID";
+            this.SUBJECT_ID.ReadOnly = true;
+            // 
+            // SUBJECT
+            // 
+            this.SUBJECT.HeaderText = "SUBJECT";
+            this.SUBJECT.Name = "SUBJECT";
+            this.SUBJECT.ReadOnly = true;
+            // 
+            // FIRST_GRADING
+            // 
+            this.FIRST_GRADING.HeaderText = "First Grading";
+            this.FIRST_GRADING.Name = "FIRST_GRADING";
+            this.FIRST_GRADING.ReadOnly = true;
+            // 
+            // SECOND_GRADING
+            // 
+            this.SECOND_GRADING.HeaderText = "Second Grading";
+            this.SECOND_GRADING.Name = "SECOND_GRADING";
+            this.SECOND_GRADING.ReadOnly = true;
+            // 
+            // THIRD_GRADING
+            // 
+            this.THIRD_GRADING.HeaderText = "Third Grading";
+            this.THIRD_GRADING.Name = "THIRD_GRADING";
+            this.THIRD_GRADING.ReadOnly = true;
+            // 
+            // FOURTH_GRADING
+            // 
+            this.FOURTH_GRADING.HeaderText = "Fourth Grading";
+            this.FOURTH_GRADING.Name = "FOURTH_GRADING";
+            this.FOURTH_GRADING.ReadOnly = true;
+            // 
+            // Final_Grade
+            // 
+            this.Final_Grade.HeaderText = "Final Grade";
+            this.Final_Grade.Name = "Final_Grade";
+            this.Final_Grade.ReadOnly = true;
             // 
             // tBLSTUDENTBindingSource
             // 
@@ -155,7 +198,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(70, 69);
+            this.groupBox2.Location = new System.Drawing.Point(70, 55);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(385, 275);
             this.groupBox2.TabIndex = 196;
@@ -219,7 +262,7 @@
             this.btnViewStud.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnViewStud.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewStud.ForeColor = System.Drawing.Color.White;
-            this.btnViewStud.Location = new System.Drawing.Point(10, 22);
+            this.btnViewStud.Location = new System.Drawing.Point(7, 22);
             this.btnViewStud.Name = "btnViewStud";
             this.btnViewStud.Size = new System.Drawing.Size(369, 38);
             this.btnViewStud.TabIndex = 19;
@@ -317,9 +360,9 @@
             this.btnUpdate.Enabled = false;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(202, 22);
+            this.btnUpdate.Location = new System.Drawing.Point(199, 26);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(166, 50);
+            this.btnUpdate.Size = new System.Drawing.Size(177, 45);
             this.btnUpdate.TabIndex = 13;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -330,9 +373,9 @@
             this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(30, 22);
+            this.btnSave.Location = new System.Drawing.Point(7, 26);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(166, 50);
+            this.btnSave.Size = new System.Drawing.Size(186, 45);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -348,12 +391,13 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.btnSave);
             this.groupBox3.Controls.Add(this.btnUpdate);
             this.groupBox3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(70, 350);
+            this.groupBox3.Location = new System.Drawing.Point(70, 336);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(385, 82);
+            this.groupBox3.Size = new System.Drawing.Size(385, 119);
             this.groupBox3.TabIndex = 197;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Action";
@@ -362,47 +406,17 @@
             // 
             this.tBL_SUBJECTTableAdapter1.ClearBeforeFill = true;
             // 
-            // SUBJECT_ID
+            // button1
             // 
-            this.SUBJECT_ID.HeaderText = "SUBJECT_ID";
-            this.SUBJECT_ID.Name = "SUBJECT_ID";
-            this.SUBJECT_ID.ReadOnly = true;
-            // 
-            // SUBJECT
-            // 
-            this.SUBJECT.HeaderText = "SUBJECT";
-            this.SUBJECT.Name = "SUBJECT";
-            this.SUBJECT.ReadOnly = true;
-            // 
-            // FIRST_GRADING
-            // 
-            this.FIRST_GRADING.HeaderText = "First Grading";
-            this.FIRST_GRADING.Name = "FIRST_GRADING";
-            this.FIRST_GRADING.ReadOnly = true;
-            // 
-            // SECOND_GRADING
-            // 
-            this.SECOND_GRADING.HeaderText = "Second Grading";
-            this.SECOND_GRADING.Name = "SECOND_GRADING";
-            this.SECOND_GRADING.ReadOnly = true;
-            // 
-            // THIRD_GRADING
-            // 
-            this.THIRD_GRADING.HeaderText = "Third Grading";
-            this.THIRD_GRADING.Name = "THIRD_GRADING";
-            this.THIRD_GRADING.ReadOnly = true;
-            // 
-            // FOURTH_GRADING
-            // 
-            this.FOURTH_GRADING.HeaderText = "Fourth Grading";
-            this.FOURTH_GRADING.Name = "FOURTH_GRADING";
-            this.FOURTH_GRADING.ReadOnly = true;
-            // 
-            // Final_Grade
-            // 
-            this.Final_Grade.HeaderText = "Final Grade";
-            this.Final_Grade.Name = "Final_Grade";
-            this.Final_Grade.ReadOnly = true;
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(7, 73);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(369, 40);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "View Honor Student";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // StudentGradeForm
             // 
@@ -477,5 +491,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn THIRD_GRADING;
         private System.Windows.Forms.DataGridViewTextBoxColumn FOURTH_GRADING;
         private System.Windows.Forms.DataGridViewTextBoxColumn Final_Grade;
+        private System.Windows.Forms.Button button1;
     }
 }

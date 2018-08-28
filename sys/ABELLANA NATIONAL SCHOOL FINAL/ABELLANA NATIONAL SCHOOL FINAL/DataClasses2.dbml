@@ -89,8 +89,8 @@
       <Column Name="SEC_CAPACITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="T_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TBL_SECTION_TBL_STUDENT" Member="TBL_STUDENTs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_STUDENT" />
-      <Association Name="TBL_SECTION_TBL_TEACHERSCHEDULE" Member="TBL_TEACHERSCHEDULEs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_TEACHERSCHEDULE" />
       <Association Name="TBL_SECTION_TBL_THRINTERMEDIARYSEC" Member="TBL_THRINTERMEDIARYSECs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_THRINTERMEDIARYSEC" />
+      <Association Name="TBL_SECTION_TBL_TEACHERSCHEDULE" Member="TBL_TEACHERSCHEDULEs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_TEACHERSCHEDULE" />
       <Association Name="TBL_TEACHER_TBL_SECTION" Member="TBL_TEACHER" ThisKey="T_ID" OtherKey="T_ID" Type="TBL_TEACHER" IsForeignKey="true" />
     </Type>
   </Table>
@@ -165,17 +165,6 @@
       <Association Name="TBL_TEACHER_TBL_SECTION" Member="TBL_SECTIONs" ThisKey="T_ID" OtherKey="T_ID" Type="TBL_SECTION" />
       <Association Name="TBL_TEACHER_TBL_THRINTERMEDIARYSEC" Member="TBL_THRINTERMEDIARYSECs" ThisKey="T_ID" OtherKey="T_ID" Type="TBL_THRINTERMEDIARYSEC" />
       <Association Name="TBL_SUBJECT_TBL_TEACHER" Member="TBL_SUBJECT" ThisKey="SUBJECT_ID" OtherKey="SUBJECT_ID" Type="TBL_SUBJECT" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TBL_TEACHERSCHEDULE" Member="TBL_TEACHERSCHEDULEs">
-    <Type Name="TBL_TEACHERSCHEDULE">
-      <Column Name="TSCHED_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TEACHERNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="THSUBJECT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="TIME_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TBL_SECTION_TBL_TEACHERSCHEDULE" Member="TBL_SECTION" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_SECTION" IsForeignKey="true" />
-      <Association Name="TBL_SCHEDULETIME_TBL_TEACHERSCHEDULE" Member="TBL_SCHEDULETIME" ThisKey="TIME_ID" OtherKey="TIME_ID" Type="TBL_SCHEDULETIME" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_THRINTERMEDIARYSEC" Member="TBL_THRINTERMEDIARYSECs">
@@ -293,6 +282,17 @@
       <Column Name="SUBJECTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.TBL_TEACHERSCHEDULE" Member="TBL_TEACHERSCHEDULEs">
+    <Type Name="TBL_TEACHERSCHEDULE">
+      <Column Name="TSCHED_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TEARCHER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUBJECT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIME_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TBL_SECTION_TBL_TEACHERSCHEDULE" Member="TBL_SECTION" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_SECTION" IsForeignKey="true" />
+      <Association Name="TBL_SCHEDULETIME_TBL_TEACHERSCHEDULE" Member="TBL_SCHEDULETIME" ThisKey="TIME_ID" OtherKey="TIME_ID" Type="TBL_SCHEDULETIME" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.SP_ACCOUNTRECOVERY" Method="SP_ACCOUNTRECOVERY">
     <Parameter Name="USER_USERNAME" Parameter="uSER_USERNAME" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="SECU_QUESTION" Parameter="sECU_QUESTION" Type="System.String" DbType="VarChar(50)" />
@@ -305,6 +305,14 @@
   </Function>
   <Function Name="dbo.ST_CURRENTID" Method="ST_CURRENTID">
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_BMISEARCH" Method="SP_BMISEARCH">
+    <Parameter Name="SEARCHKEY" Parameter="sEARCHKEY" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="SP_BMISEARCHResult">
+      <Column Name="[STUDENT NAME]" Member="STUDENT_NAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="[BODY MASS INDEX]" Member="BODY_MASS_INDEX" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BLOODPRESSURE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
   </Function>
   <Function Name="dbo.SP_BOOKSEARCH" Method="SP_BOOKSEARCH">
     <Parameter Name="SEARCHKEY" Parameter="sEARCHKEY" Type="System.String" DbType="VarChar(MAX)" />
@@ -405,11 +413,36 @@
     <Parameter Name="TIME_END" Parameter="tIME_END" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_SECTIONSAVE" Method="SP_SECTIONSAVE">
+    <Parameter Name="SEC_NAME" Parameter="sEC_NAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SEC_CAPACITY" Parameter="sEC_CAPACITY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="T_ID" Parameter="t_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_SECTIONUPDATE" Method="SP_SECTIONUPDATE">
+    <Parameter Name="SEC_ID" Parameter="sEC_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SEC_NAME" Parameter="sEC_NAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SEC_CAPACITY" Parameter="sEC_CAPACITY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="T_ID" Parameter="t_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="T_FIRSTNAME" Parameter="t_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="T_MIDDLENAME" Parameter="t_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="T_LASTNAME" Parameter="t_LASTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.SP_SECUSAVE" Method="SP_SECUSAVE">
     <Parameter Name="SECU_QUESTION" Parameter="sECU_QUESTION" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="SECU_ANSWER" Parameter="sECU_ANSWER" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_SECVIEW" Method="SP_SECVIEW">
+    <ElementType Name="SP_SECVIEWResult">
+      <Column Name="SEC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SECTION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CAPACITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="T_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ADVISORY" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+    </ElementType>
   </Function>
   <Function Name="dbo.SP_STREQSEARCH" Method="SP_STREQSEARCH">
     <Parameter Name="SEARCH_KEY" Parameter="sEARCH_KEY" Type="System.String" DbType="VarChar(MAX)" />
@@ -536,6 +569,13 @@
     <Parameter Name="SUBJECTNAME" Parameter="sUBJECTNAME" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_SUBSEARCH" Method="SP_SUBSEARCH">
+    <Parameter Name="SEARCHKEY" Parameter="sEARCHKEY" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="SP_SUBSEARCHResult">
+      <Column Name="SUBJECT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUBJECTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.SP_SUBUPDATE" Method="SP_SUBUPDATE">
     <Parameter Name="SUBJECT_ID" Parameter="sUBJECT_ID" Type="System.Int32" DbType="Int" />
     <Parameter Name="SUBJECTNAME" Parameter="sUBJECTNAME" Type="System.String" DbType="VarChar(50)" />
@@ -605,23 +645,13 @@
       <Column Name="SUBJECT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_THSCHEDSAVE" Method="SP_THSCHEDSAVE">
-    <Parameter Name="TEACHERNAME" Parameter="tEACHERNAME" Type="System.String" DbType="VarChar(50)" />
+  <Function Name="dbo.SP_THSCHEDUPDATE" Method="SP_THSCHEDUPDATE">
     <Parameter Name="SEC_ID" Parameter="sEC_ID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="THSUBJECT" Parameter="tHSUBJECT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SEC_NAME" Parameter="sEC_NAME" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="TIME_ID" Parameter="tIME_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TIME_START" Parameter="tIME_START" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TIME_END" Parameter="tIME_END" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.SP_THSCHEDVIEW" Method="SP_THSCHEDVIEW">
-    <ElementType Name="SP_THSCHEDVIEWResult">
-      <Column Name="TSCHED_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TEACHERNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="THSUBJECT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SEC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="TIME_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SCHEDULE" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="dbo.SP_USERSAVE" Method="SP_USERSAVE">
     <Parameter Name="USER_LASTNAME" Parameter="uSER_LASTNAME" Type="System.String" DbType="VarChar(50)" />
@@ -687,9 +717,9 @@
   </Function>
   <Function Name="dbo.SP_VIEWBMI" Method="SP_VIEWBMI">
     <ElementType Name="SP_VIEWBMIResult">
-      <Column Name="FULLNAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
-      <Column Name="[BMI RESULT]" Member="BMI_RESULT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="[BLOODPRESSURE RESULT]" Member="BLOODPRESSURE_RESULT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[STUDENT NAME]" Member="STUDENT_NAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="[BODY MASS INDEX]" Member="BODY_MASS_INDEX" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BLOODPRESSURE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.SP_VIEWTIME" Method="SP_VIEWTIME">
@@ -699,29 +729,39 @@
       <Column Name="TIME_END" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_SECTIONSAVE" Method="SP_SECTIONSAVE">
-    <Parameter Name="SEC_NAME" Parameter="sEC_NAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="SEC_CAPACITY" Parameter="sEC_CAPACITY" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="T_ID" Parameter="t_ID" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.SP_SECTIONUPDATE" Method="SP_SECTIONUPDATE">
+  <Function Name="dbo.SP_THSCHEDSAVE" Method="SP_THSCHEDSAVE">
+    <Parameter Name="TEARCHER" Parameter="tEARCHER" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="SEC_ID" Parameter="sEC_ID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="SEC_NAME" Parameter="sEC_NAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="SEC_CAPACITY" Parameter="sEC_CAPACITY" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="T_ID" Parameter="t_ID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="T_FIRSTNAME" Parameter="t_FIRSTNAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="T_MIDDLENAME" Parameter="t_MIDDLENAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="T_LASTNAME" Parameter="t_LASTNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SUBJECT" Parameter="sUBJECT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TIME_ID" Parameter="tIME_ID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SP_SECVIEW" Method="SP_SECVIEW">
-    <ElementType Name="SP_SECVIEWResult">
+  <Function Name="dbo.SP_THSCHEDVIEW" Method="SP_THSCHEDVIEW">
+    <ElementType Name="SP_THSCHEDVIEWResult">
+      <Column Name="TSCHED_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TEARCHER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="SEC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_CAPACITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="T_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Advisory" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="SECTION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TIME_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SCHEDULE" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_THSCHEDSEARCH" Method="SP_THSCHEDSEARCH">
+    <Parameter Name="SEARCHKEY" Parameter="sEARCHKEY" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="SP_THSCHEDSEARCHResult">
+      <Column Name="TSCHED_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TEARCHER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SEC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SECTION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TIME_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SCHEDULE" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_EXISTSEC" Method="SP_EXISTSEC">
+    <Parameter Name="TEARCHER" Parameter="tEARCHER" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SEC_ID" Parameter="sEC_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_EXISTSECResult">
+      <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

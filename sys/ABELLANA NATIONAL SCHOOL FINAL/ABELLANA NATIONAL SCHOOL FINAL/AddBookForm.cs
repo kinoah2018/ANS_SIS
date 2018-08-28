@@ -77,6 +77,27 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void dgvBooks_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+        }
+
+        private void txtBookName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtAuthor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             txtBookID.Text = dgvBooks.CurrentRow.Cells[0].Value.ToString();
             txtBookName.Text = dgvBooks.CurrentRow.Cells[1].Value.ToString();
             txtBookDesc.Text = dgvBooks.CurrentRow.Cells[2].Value.ToString();
@@ -85,9 +106,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             btnSAVE.Enabled = false;
         }
 
-        private void dgvBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvTime = new System.Windows.Forms.DataGridView();
+            this.dgvSchedtime = new System.Windows.Forms.DataGridView();
             this.Button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedtime)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvTime
+            // dgvSchedtime
             // 
-            this.dgvTime.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTime.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvTime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTime.Location = new System.Drawing.Point(12, 139);
-            this.dgvTime.Name = "dgvTime";
-            this.dgvTime.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTime.Size = new System.Drawing.Size(659, 285);
-            this.dgvTime.TabIndex = 190;
+            this.dgvSchedtime.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSchedtime.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvSchedtime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSchedtime.Location = new System.Drawing.Point(12, 139);
+            this.dgvSchedtime.Name = "dgvSchedtime";
+            this.dgvSchedtime.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSchedtime.Size = new System.Drawing.Size(659, 285);
+            this.dgvSchedtime.TabIndex = 190;
             // 
             // Button3
             // 
@@ -86,7 +86,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 430);
-            this.Controls.Add(this.dgvTime);
+            this.Controls.Add(this.dgvSchedtime);
             this.Controls.Add(this.Button3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
@@ -96,7 +96,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ViewScheduleTimeForm";
             this.Load += new System.EventHandler(this.ViewScheduleTimeForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedtime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,7 +104,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvTime;
+        private System.Windows.Forms.DataGridView dgvSchedtime;
         internal System.Windows.Forms.Button Button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;

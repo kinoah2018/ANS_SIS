@@ -78,6 +78,7 @@
             this.dgViewUser.TabIndex = 109;
             this.dgViewUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewUser_CellContentClick);
             this.dgViewUser.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewUser_CellContentDoubleClick);
+            this.dgViewUser.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewUser_CellDoubleClick);
             // 
             // label4
             // 

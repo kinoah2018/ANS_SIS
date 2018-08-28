@@ -57,6 +57,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         public void loadtable()
         {
             dgvSection.DataSource = db.SP_SECVIEW();
+            this.dgvSection.Columns["Sec_ID"].Visible = false;
+            this.dgvSection.Columns["T_ID"].Visible = false;
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -66,14 +68,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void dgvSection_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //WALAY FUNCTION PA
-            txtSecID.Text = dgvSection.CurrentRow.Cells[0].Value.ToString();
-            txtsname.Text = dgvSection.CurrentRow.Cells[1].Value.ToString();
-            txtSecCap.Text = dgvSection.CurrentRow.Cells[2].Value.ToString();
-            txtTID.Text = dgvSection.CurrentRow.Cells[3].Value.ToString();
-            cmbadvisory.Text = dgvSection.CurrentRow.Cells[4].Value.ToString();
-            btnSave.Enabled = false;
-            btnUpdate.Enabled = true;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,16 +76,15 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT SEC_NAME FROM TBL_SECTION WHERE SEC_NAME ='" + txtsname.Text + "'", conn);
             string cmd1 = Convert.ToString(cmd.ExecuteScalar());
-            SqlCommand getfname = new SqlCommand("SELECT T_FIRSTNAME FROM TBL_TEACHER WHERE T_ID ='" + txtTID.Text + "'", conn);
+            SqlCommand getfname = new SqlCommand("SELECT T_FIRSTNAME FROM TBL_TEACHER WHERE T_ID ='" + cmbadvisory.SelectedValue + "'", conn);
             string getfname1 = Convert.ToString(getfname.ExecuteScalar());
-            SqlCommand getmname = new SqlCommand("SELECT T_MIDDLENAME FROM TBL_TEACHER WHERE T_ID ='" + txtTID.Text + "'", conn);
+            SqlCommand getmname = new SqlCommand("SELECT T_MIDDLENAME FROM TBL_TEACHER WHERE T_ID ='" + cmbadvisory.SelectedValue + "'", conn);
             string getmname1 = Convert.ToString(getmname.ExecuteScalar());
-            SqlCommand getlname = new SqlCommand("SELECT T_LASTNAME FROM TBL_TEACHER WHERE T_ID ='" + txtTID.Text + "'", conn);
+            SqlCommand getlname = new SqlCommand("SELECT T_LASTNAME FROM TBL_TEACHER WHERE T_ID ='" + cmbadvisory.SelectedValue + "'", conn);
             string getlname1 = Convert.ToString(getlname.ExecuteScalar());
             conn.Close();
-            //MessageBox.Show(getfname1+" "+getmname1+" "+getlname1);
-            //MessageBox.Show(get_id1.ToString());
-            //walay functin ang update
+            
+            //walay klaro ang function
             if (txtsname.Text == "" || txtSecCap.Text == "")
             {
                 MessageBox.Show("Input Fields");
@@ -139,6 +133,26 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void dgvSection_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtSecCap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvSection_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //WALAY FUNCTION PA
+            txtSecID.Text = dgvSection.CurrentRow.Cells[0].Value.ToString();
+            txtsname.Text = dgvSection.CurrentRow.Cells[1].Value.ToString();
+            txtSecCap.Text = dgvSection.CurrentRow.Cells[2].Value.ToString();
+            txtTID.Text = dgvSection.CurrentRow.Cells[3].Value.ToString();
+            cmbadvisory.Text = dgvSection.CurrentRow.Cells[4].Value.ToString();
+            btnSave.Enabled = false;
+            btnUpdate.Enabled = true;
         }
 
        

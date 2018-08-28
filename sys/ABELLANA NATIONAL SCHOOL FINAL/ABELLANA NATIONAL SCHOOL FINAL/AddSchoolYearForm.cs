@@ -48,13 +48,25 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             txtSYName.Text = "";
             dgvSYVIEW.DataSource = db.SP_SYVIEW();
             btnUpdate.Enabled = false;
+            btnSave.Enabled = true;
         }
 
         private void dgvSYVIEW_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+
+        private void dgvSYVIEW_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvSYVIEW_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             txtSYID.Text = dgvSYVIEW.CurrentRow.Cells[0].Value.ToString();
             txtSYName.Text = dgvSYVIEW.CurrentRow.Cells[1].Value.ToString();
             btnUpdate.Enabled = true;
+            btnSave.Enabled = false;
         }
     }
 }

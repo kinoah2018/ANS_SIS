@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 {
@@ -17,12 +18,14 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             InitializeComponent();
         }
         DataClasses2DataContext db = new DataClasses2DataContext();
+        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
         private void dgvStudView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             TeacherScheduleForm tsf = new TeacherScheduleForm();
             tsf.txtTeachername.Text = dgvTeacher.CurrentRow.Cells[0].Value.ToString();
             tsf.txtsubject.Text = dgvTeacher.CurrentRow.Cells[1].Value.ToString();
             this.Close();
+            tsf.txtSearch.Enabled = false;
             tsf.ShowDialog();
         }
 
@@ -34,6 +37,11 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void dgvTeacher_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

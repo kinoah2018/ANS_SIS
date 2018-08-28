@@ -69,6 +69,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             else
             {
                 db.SP_TEACHERSAVE(txtfname.Text, txtmname.Text, txtlname.Text, txtcontact.Text, Convert.ToInt32(cmbsubject.SelectedValue));
+                MessageBox.Show("Successfully Saved");
                 Clear();
                 loadtable();
             }
@@ -76,24 +77,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void dgvTeacher_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtTID.Text = dgvTeacher.CurrentRow.Cells[0].Value.ToString();
-            txtfname.Text = dgvTeacher.CurrentRow.Cells[1].Value.ToString();
-            txtmname.Text = dgvTeacher.CurrentRow.Cells[2].Value.ToString();
-            txtlname.Text = dgvTeacher.CurrentRow.Cells[3].Value.ToString();
-            if (dgvTeacher.CurrentRow.Cells[4].Value.ToString() == "True")
-            {
-                cmbstatus.SelectedIndex = 0;
-            }
-            else
-            {
-                cmbstatus.SelectedIndex = 1;
-            }
-            txtcontact.Text = dgvTeacher.CurrentRow.Cells[5].Value.ToString();
-            txtSID.Text = dgvTeacher.CurrentRow.Cells[6].Value.ToString();
-            cmbsubject.Text = dgvTeacher.CurrentRow.Cells[7].Value.ToString();
-            btnSave.Enabled = false;
-            btnUpdate.Enabled = true;
-            cmbstatus.Enabled = true;
+           
             
         }
 
@@ -145,6 +129,68 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void button7_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void txtfname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtmname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtlname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbsubject_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcontact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvTeacher_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtTID.Text = dgvTeacher.CurrentRow.Cells[0].Value.ToString();
+            txtfname.Text = dgvTeacher.CurrentRow.Cells[1].Value.ToString();
+            txtmname.Text = dgvTeacher.CurrentRow.Cells[2].Value.ToString();
+            txtlname.Text = dgvTeacher.CurrentRow.Cells[3].Value.ToString();
+            if (dgvTeacher.CurrentRow.Cells[4].Value.ToString() == "True")
+            {
+                cmbstatus.SelectedIndex = 0;
+            }
+            else
+            {
+                cmbstatus.SelectedIndex = 1;
+            }
+            txtcontact.Text = dgvTeacher.CurrentRow.Cells[5].Value.ToString();
+            txtSID.Text = dgvTeacher.CurrentRow.Cells[6].Value.ToString();
+            cmbsubject.Text = dgvTeacher.CurrentRow.Cells[7].Value.ToString();
+            btnSave.Enabled = false;
+            btnUpdate.Enabled = true;
+            cmbstatus.Enabled = true;
         }
     }
 }

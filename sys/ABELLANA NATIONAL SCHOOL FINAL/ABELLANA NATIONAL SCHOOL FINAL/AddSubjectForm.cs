@@ -41,10 +41,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void dgvSubject_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtsubid.Text = dgvSubject.CurrentRow.Cells[0].Value.ToString();
-            txtsubject.Text = dgvSubject.CurrentRow.Cells[1].Value.ToString();
-            btnSAVE.Enabled = false;
-            btnUpdate.Enabled = true;
+           
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -60,6 +57,26 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void dgvSubject_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                dgvSubject.DataSource = db.SP_SUBVIEW();
+            }
+            else
+            {
+                dgvSubject.DataSource = db.SP_SUBSEARCH(textBox1.Text);
+            }
+        }
+
+        private void dgvSubject_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtsubid.Text = dgvSubject.CurrentRow.Cells[0].Value.ToString();
+            txtsubject.Text = dgvSubject.CurrentRow.Cells[1].Value.ToString();
+            btnSAVE.Enabled = false;
+            btnUpdate.Enabled = true;
         }
     }
 }

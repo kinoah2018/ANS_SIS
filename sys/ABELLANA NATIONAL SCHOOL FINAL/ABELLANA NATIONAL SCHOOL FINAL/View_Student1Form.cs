@@ -26,27 +26,32 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void dgvStudView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            StudentGradeForm sgf = new StudentGradeForm();
 
-            sgf.txtscid.Text = dgvStudView.CurrentRow.Cells[0].Value.ToString();
-            sgf.txtFname.Text = dgvStudView.CurrentRow.Cells[1].Value.ToString() + " " + dgvStudView.CurrentRow.Cells[2].Value.ToString() + " " + dgvStudView.CurrentRow.Cells[3].Value.ToString();
-            sgf.txtSY.Text = dgvStudView.CurrentRow.Cells[4].Value.ToString();
-
-            this.Close();
-            sgf.dgvGrade.Enabled = true;
-            sgf.ShowDialog();
-            
-            
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
+            //StudentGradeForm sgf = new StudentGradeForm();
+            //this.Close();
+            //sgf.ShowDialog();
             this.Close();
+
         }
 
         private void dgvStudView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgvStudView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            StudentGradeForm sgf = new StudentGradeForm();
+            sgf.txtscid.Text = dgvStudView.CurrentRow.Cells[0].Value.ToString();
+            sgf.txtFname.Text = dgvStudView.CurrentRow.Cells[1].Value.ToString() + " " + dgvStudView.CurrentRow.Cells[2].Value.ToString() + " " + dgvStudView.CurrentRow.Cells[3].Value.ToString();
+            sgf.txtSY.Text = dgvStudView.CurrentRow.Cells[4].Value.ToString();
+            this.Close();
+            sgf.dgvGrade.Enabled = true;
+            sgf.ShowDialog();
         }
     }
 }

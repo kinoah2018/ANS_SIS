@@ -53,6 +53,19 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         private void dgViewUser_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                dgViewUser.DataSource = db.View_Users;
+            }
+        }
+
+        private void dgViewUser_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             UpdateUserForm uuf = new UpdateUserForm();
 
 
@@ -69,22 +82,14 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             {
                 uuf.cmbStatus.SelectedIndex = 1;
             }
-            
+
             conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_ID='"+dgViewUser.CurrentRow.Cells[0].Value.ToString()+"'",conn);
+            SqlCommand cmd = new SqlCommand("SELECT USER_IMAGE FROM TBL_USERS WHERE USER_ID='" + dgViewUser.CurrentRow.Cells[0].Value.ToString() + "'", conn);
             string get_pic = Convert.ToString(cmd.ExecuteScalar());
             uuf.PB_image.ImageLocation = get_pic;
             conn.Close();
             uuf.ShowDialog();
             this.Close();
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            if (txtSearch.Text == "")
-            {
-                dgViewUser.DataSource = db.View_Users;
-            }
         }
     }
 }

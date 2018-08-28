@@ -45,6 +45,8 @@
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip9 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
@@ -72,8 +74,6 @@
             this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip9 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRegistration = new System.Windows.Forms.MenuStrip();
             this.msRegistration = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -100,12 +100,12 @@
             this.menuStrip4.SuspendLayout();
             this.menuStrip12.SuspendLayout();
             this.menuStrip8.SuspendLayout();
+            this.menuStrip9.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.menuStrip13.SuspendLayout();
             this.menuStrip11.SuspendLayout();
-            this.menuStrip9.SuspendLayout();
             this.menuRegistration.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -134,12 +134,12 @@
             this.panel2.Controls.Add(this.menuStrip4);
             this.panel2.Controls.Add(this.menuStrip12);
             this.panel2.Controls.Add(this.menuStrip8);
+            this.panel2.Controls.Add(this.menuStrip9);
             this.panel2.Controls.Add(this.menuStrip3);
             this.panel2.Controls.Add(this.menuStrip2);
             this.panel2.Controls.Add(this.menuStrip1);
             this.panel2.Controls.Add(this.menuStrip13);
             this.panel2.Controls.Add(this.menuStrip11);
-            this.panel2.Controls.Add(this.menuStrip9);
             this.panel2.Controls.Add(this.menuRegistration);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -192,12 +192,14 @@
             this.ReltoolStripMenuItem10.Name = "ReltoolStripMenuItem10";
             this.ReltoolStripMenuItem10.Size = new System.Drawing.Size(203, 22);
             this.ReltoolStripMenuItem10.Text = "Releasing Book";
+            this.ReltoolStripMenuItem10.Click += new System.EventHandler(this.ReltoolStripMenuItem10_Click);
             // 
             // RettoolStripMenuItem10
             // 
             this.RettoolStripMenuItem10.Name = "RettoolStripMenuItem10";
             this.RettoolStripMenuItem10.Size = new System.Drawing.Size(203, 22);
             this.RettoolStripMenuItem10.Text = "Returning Book";
+            this.RettoolStripMenuItem10.Click += new System.EventHandler(this.RettoolStripMenuItem10_Click);
             // 
             // menuStrip4
             // 
@@ -262,7 +264,7 @@
             this.menuStrip8.Location = new System.Drawing.Point(793, 4);
             this.menuStrip8.Name = "menuStrip8";
             this.menuStrip8.Padding = new System.Windows.Forms.Padding(2);
-            this.menuStrip8.Size = new System.Drawing.Size(108, 93);
+            this.menuStrip8.Size = new System.Drawing.Size(200, 93);
             this.menuStrip8.TabIndex = 41;
             this.menuStrip8.Text = "menuStrip8";
             // 
@@ -286,12 +288,42 @@
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(235, 22);
             this.toolStripMenuItem4.Text = "Requisition of Requirment";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(235, 22);
             this.toolStripMenuItem5.Text = "Payment";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
+            // menuStrip9
+            // 
+            this.menuStrip9.BackColor = System.Drawing.Color.White;
+            this.menuStrip9.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip9.GripMargin = new System.Windows.Forms.Padding(6, 2, 6, 2);
+            this.menuStrip9.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem7});
+            this.menuStrip9.Location = new System.Drawing.Point(1261, 4);
+            this.menuStrip9.Name = "menuStrip9";
+            this.menuStrip9.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
+            this.menuStrip9.Size = new System.Drawing.Size(106, 94);
+            this.menuStrip9.TabIndex = 24;
+            this.menuStrip9.Text = "menuStrip9";
+            this.menuStrip9.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip9_ItemClicked);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem7.Image")));
+            this.toolStripMenuItem7.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem7.MergeIndex = 0;
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(88, 90);
+            this.toolStripMenuItem7.Text = "Logout";
+            this.toolStripMenuItem7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // menuStrip3
             // 
@@ -318,6 +350,7 @@
             this.toolStripMenuItem3.Size = new System.Drawing.Size(80, 90);
             this.toolStripMenuItem3.Text = "Inquiry";
             this.toolStripMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click_1);
             // 
             // menuStrip2
             // 
@@ -421,7 +454,7 @@
             // 
             this.RequirmentstoolStripMenuItem10.Name = "RequirmentstoolStripMenuItem10";
             this.RequirmentstoolStripMenuItem10.Size = new System.Drawing.Size(176, 22);
-            this.RequirmentstoolStripMenuItem10.Text = "Requirments";
+            this.RequirmentstoolStripMenuItem10.Text = "Requirements";
             this.RequirmentstoolStripMenuItem10.Click += new System.EventHandler(this.RequirmentstoolStripMenuItem10_Click_1);
             // 
             // PaymenttoolStripMenuItem10
@@ -438,7 +471,7 @@
             this.menuStrip13.GripMargin = new System.Windows.Forms.Padding(6, 2, 6, 2);
             this.menuStrip13.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem17});
-            this.menuStrip13.Location = new System.Drawing.Point(1149, 4);
+            this.menuStrip13.Location = new System.Drawing.Point(1158, 4);
             this.menuStrip13.Name = "menuStrip13";
             this.menuStrip13.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
             this.menuStrip13.Size = new System.Drawing.Size(106, 94);
@@ -556,33 +589,6 @@
             this.toolStripMenuItem19.Name = "toolStripMenuItem19";
             this.toolStripMenuItem19.Size = new System.Drawing.Size(243, 22);
             this.toolStripMenuItem19.Text = "Announcement and Events";
-            // 
-            // menuStrip9
-            // 
-            this.menuStrip9.BackColor = System.Drawing.Color.White;
-            this.menuStrip9.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip9.GripMargin = new System.Windows.Forms.Padding(6, 2, 6, 2);
-            this.menuStrip9.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem7});
-            this.menuStrip9.Location = new System.Drawing.Point(1258, 3);
-            this.menuStrip9.Name = "menuStrip9";
-            this.menuStrip9.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
-            this.menuStrip9.Size = new System.Drawing.Size(106, 94);
-            this.menuStrip9.TabIndex = 24;
-            this.menuStrip9.Text = "menuStrip9";
-            // 
-            // toolStripMenuItem7
-            // 
-            this.toolStripMenuItem7.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem7.Image")));
-            this.toolStripMenuItem7.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem7.MergeIndex = 0;
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(88, 90);
-            this.toolStripMenuItem7.Text = "Logout";
-            this.toolStripMenuItem7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // menuRegistration
             // 
@@ -845,6 +851,8 @@
             this.menuStrip12.PerformLayout();
             this.menuStrip8.ResumeLayout(false);
             this.menuStrip8.PerformLayout();
+            this.menuStrip9.ResumeLayout(false);
+            this.menuStrip9.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
@@ -855,8 +863,6 @@
             this.menuStrip13.PerformLayout();
             this.menuStrip11.ResumeLayout(false);
             this.menuStrip11.PerformLayout();
-            this.menuStrip9.ResumeLayout(false);
-            this.menuStrip9.PerformLayout();
             this.menuRegistration.ResumeLayout(false);
             this.menuRegistration.PerformLayout();
             this.panel3.ResumeLayout(false);

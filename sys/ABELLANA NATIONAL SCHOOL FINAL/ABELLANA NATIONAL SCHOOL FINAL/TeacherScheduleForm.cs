@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 {
@@ -17,7 +18,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             InitializeComponent();
         }
         DataClasses2DataContext db = new DataClasses2DataContext();
-            private void Button3_Click_1(object sender, EventArgs e)
+        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ANS_DATABASE;Integrated Security=True");
+        private void Button3_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -31,8 +33,23 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
                 // TODO: This line of code loads data into the 'aNS_DATABASEDataSet11.View_CombSchedule' table. You can move, or remove it, as needed.
                 this.view_CombScheduleTableAdapter.Fill(this.aNS_DATABASEDataSet11.View_CombSchedule);
 
-                dataGridView1.DataSource = db.SP_THSCHEDVIEW();
-                
+
+                if (txtTeachername.Text == "")
+                {
+                    dgvSchedule.DataSource = db.SP_THSCHEDVIEW();
+                    this.dgvSchedule.Columns["TSCHED_ID"].Visible = false;
+                    this.dgvSchedule.Columns["SEC_ID"].Visible = false;
+                    this.dgvSchedule.Columns["TIME_ID"].Visible = false;
+                }
+                else
+                {
+                    dgvSchedule.DataSource = db.SP_THSCHEDSEARCH(txtTeachername.Text);
+                    this.dgvSchedule.Columns["TSCHED_ID"].Visible = false;
+                    this.dgvSchedule.Columns["SEC_ID"].Visible = false;
+                    this.dgvSchedule.Columns["TIME_ID"].Visible = false;
+                }
+                    
+              
             }
 
             private void button1_Click(object sender, EventArgs e)
@@ -57,10 +74,39 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
             private void btnSave_Click(object sender, EventArgs e)
             {
-                db.SP_THSCHEDSAVE(txtTeachername.Text, Convert.ToInt32(cmbsection.SelectedValue.ToString()), txtsubject.Text, Convert.ToInt32(cmbStartEnd.SelectedValue.ToString()));
-                MessageBox.Show("Successfully Saved");
-                ClearALL();
-                dataGridView1.DataSource = db.SP_THSCHEDVIEW();
+                int result = db.SP_EXISTSEC(txtTeachername.Text, Convert.ToInt32(cmbsection.SelectedValue)).Count();
+                if (txtTeachername.Text == "" && txtsubject.Text == "")
+                {
+                    MessageBox.Show("Missing Data!", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                //else if (result > 0)
+                //{
+                //    MessageBox.Show("You have already schedule for this section!", "Ooops !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+                else
+                {
+                    db.SP_THSCHEDSAVE(txtTeachername.Text, Convert.ToInt32(cmbsection.SelectedValue), txtsubject.Text, Convert.ToInt32(cmbStartEnd.SelectedValue));
+                    MessageBox.Show("Successfully Saved");
+                    dgvSchedule.DataSource = db.SP_THSCHEDSEARCH(txtTeachername.Text);
+                    this.dgvSchedule.Columns["TSCHED_ID"].Visible = false;
+                    this.dgvSchedule.Columns["SEC_ID"].Visible = false;
+                    this.dgvSchedule.Columns["TIME_ID"].Visible = false;
+
+                }
+                
+               
+            }
+
+            private void txtSearch_TextChanged(object sender, EventArgs e)
+            {
+                if (txtSearch.Text == "")
+                {
+                    dgvSchedule.DataSource = db.SP_THSCHEDVIEW();
+                }
+                else
+                {
+                    dgvSchedule.DataSource = db.SP_THSCHEDSEARCH(txtSearch.Text);
+                }
             }
     }
 }

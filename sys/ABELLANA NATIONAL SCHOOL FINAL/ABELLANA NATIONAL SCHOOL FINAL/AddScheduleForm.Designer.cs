@@ -31,21 +31,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbsessEnd = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbsessionstart = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnCLose = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
-            this.cmbTimeStartHH = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbTimeStartMM = new System.Windows.Forms.ComboBox();
+            this.btnCLose = new System.Windows.Forms.Button();
             this.cmbTimeEndMM = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbTimeEndHH = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbsessionstart = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cmbsessEnd = new System.Windows.Forms.ComboBox();
+            this.cmbTimeStartMM = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbTimeStartHH = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,15 +93,51 @@
             this.panel3.Size = new System.Drawing.Size(404, 190);
             this.panel3.TabIndex = 131;
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Time Start";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(157, 126);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 18);
+            this.label7.TabIndex = 116;
+            this.label7.Text = ":";
+            // 
+            // cmbsessEnd
+            // 
+            this.cmbsessEnd.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbsessEnd.FormattingEnabled = true;
+            this.cmbsessEnd.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.cmbsessEnd.Location = new System.Drawing.Point(173, 124);
+            this.cmbsessEnd.Name = "cmbsessEnd";
+            this.cmbsessEnd.Size = new System.Drawing.Size(57, 26);
+            this.cmbsessEnd.TabIndex = 115;
+            this.cmbsessEnd.Text = "AM";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(157, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 18);
+            this.label6.TabIndex = 114;
+            this.label6.Text = ":";
+            // 
+            // cmbsessionstart
+            // 
+            this.cmbsessionstart.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbsessionstart.FormattingEnabled = true;
+            this.cmbsessionstart.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.cmbsessionstart.Location = new System.Drawing.Point(173, 61);
+            this.cmbsessionstart.Name = "cmbsessionstart";
+            this.cmbsessionstart.Size = new System.Drawing.Size(57, 26);
+            this.cmbsessionstart.TabIndex = 113;
+            this.cmbsessionstart.Text = "AM";
             // 
             // btnSave
             // 
@@ -117,20 +153,6 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnCLose
-            // 
-            this.btnCLose.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnCLose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCLose.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCLose.ForeColor = System.Drawing.Color.White;
-            this.btnCLose.Location = new System.Drawing.Point(251, 126);
-            this.btnCLose.Name = "btnCLose";
-            this.btnCLose.Size = new System.Drawing.Size(132, 44);
-            this.btnCLose.TabIndex = 112;
-            this.btnCLose.Text = "Close";
-            this.btnCLose.UseVisualStyleBackColor = false;
-            this.btnCLose.Click += new System.EventHandler(this.btnCLose_Click);
-            // 
             // btnView
             // 
             this.btnView.BackColor = System.Drawing.Color.SteelBlue;
@@ -145,115 +167,26 @@
             this.btnView.UseVisualStyleBackColor = false;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
-            // cmbTimeStartHH
+            // btnCLose
             // 
-            this.cmbTimeStartHH.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTimeStartHH.FormattingEnabled = true;
-            this.cmbTimeStartHH.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12"});
-            this.cmbTimeStartHH.Location = new System.Drawing.Point(22, 60);
-            this.cmbTimeStartHH.Name = "cmbTimeStartHH";
-            this.cmbTimeStartHH.Size = new System.Drawing.Size(57, 26);
-            this.cmbTimeStartHH.TabIndex = 6;
-            this.cmbTimeStartHH.Text = "HH";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(81, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 18);
-            this.label1.TabIndex = 7;
-            this.label1.Text = ":";
-            // 
-            // cmbTimeStartMM
-            // 
-            this.cmbTimeStartMM.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTimeStartMM.FormattingEnabled = true;
-            this.cmbTimeStartMM.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "56",
-            "57",
-            "58",
-            "59",
-            ""});
-            this.cmbTimeStartMM.Location = new System.Drawing.Point(96, 60);
-            this.cmbTimeStartMM.Name = "cmbTimeStartMM";
-            this.cmbTimeStartMM.Size = new System.Drawing.Size(57, 26);
-            this.cmbTimeStartMM.TabIndex = 8;
-            this.cmbTimeStartMM.Text = "MM";
+            this.btnCLose.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCLose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCLose.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCLose.ForeColor = System.Drawing.Color.White;
+            this.btnCLose.Location = new System.Drawing.Point(251, 126);
+            this.btnCLose.Name = "btnCLose";
+            this.btnCLose.Size = new System.Drawing.Size(132, 44);
+            this.btnCLose.TabIndex = 112;
+            this.btnCLose.Text = "Close";
+            this.btnCLose.UseVisualStyleBackColor = false;
+            this.btnCLose.Click += new System.EventHandler(this.btnCLose_Click);
             // 
             // cmbTimeEndMM
             // 
             this.cmbTimeEndMM.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTimeEndMM.FormattingEnabled = true;
             this.cmbTimeEndMM.Items.AddRange(new object[] {
+            "00",
             "01",
             "02",
             "03",
@@ -312,8 +245,7 @@
             "56",
             "57",
             "58",
-            "59",
-            ""});
+            "59"});
             this.cmbTimeEndMM.Location = new System.Drawing.Point(96, 124);
             this.cmbTimeEndMM.Name = "cmbTimeEndMM";
             this.cmbTimeEndMM.Size = new System.Drawing.Size(57, 26);
@@ -363,51 +295,119 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Time End";
             // 
-            // cmbsessionstart
+            // cmbTimeStartMM
             // 
-            this.cmbsessionstart.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbsessionstart.FormattingEnabled = true;
-            this.cmbsessionstart.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.cmbsessionstart.Location = new System.Drawing.Point(173, 61);
-            this.cmbsessionstart.Name = "cmbsessionstart";
-            this.cmbsessionstart.Size = new System.Drawing.Size(57, 26);
-            this.cmbsessionstart.TabIndex = 113;
-            this.cmbsessionstart.Text = "AM";
+            this.cmbTimeStartMM.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTimeStartMM.FormattingEnabled = true;
+            this.cmbTimeStartMM.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.cmbTimeStartMM.Location = new System.Drawing.Point(96, 60);
+            this.cmbTimeStartMM.Name = "cmbTimeStartMM";
+            this.cmbTimeStartMM.Size = new System.Drawing.Size(57, 26);
+            this.cmbTimeStartMM.TabIndex = 8;
+            this.cmbTimeStartMM.Text = "MM";
             // 
-            // label6
+            // label1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(157, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 18);
-            this.label6.TabIndex = 114;
-            this.label6.Text = ":";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(81, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 18);
+            this.label1.TabIndex = 7;
+            this.label1.Text = ":";
             // 
-            // label7
+            // cmbTimeStartHH
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(157, 126);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 18);
-            this.label7.TabIndex = 116;
-            this.label7.Text = ":";
+            this.cmbTimeStartHH.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTimeStartHH.FormattingEnabled = true;
+            this.cmbTimeStartHH.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
+            this.cmbTimeStartHH.Location = new System.Drawing.Point(22, 60);
+            this.cmbTimeStartHH.Name = "cmbTimeStartHH";
+            this.cmbTimeStartHH.Size = new System.Drawing.Size(57, 26);
+            this.cmbTimeStartHH.TabIndex = 6;
+            this.cmbTimeStartHH.Text = "HH";
             // 
-            // cmbsessEnd
+            // label2
             // 
-            this.cmbsessEnd.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbsessEnd.FormattingEnabled = true;
-            this.cmbsessEnd.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.cmbsessEnd.Location = new System.Drawing.Point(173, 124);
-            this.cmbsessEnd.Name = "cmbsessEnd";
-            this.cmbsessEnd.Size = new System.Drawing.Size(57, 26);
-            this.cmbsessEnd.TabIndex = 115;
-            this.cmbsessEnd.Text = "AM";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(31, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Time Start";
             // 
             // AddScheduleForm
             // 
