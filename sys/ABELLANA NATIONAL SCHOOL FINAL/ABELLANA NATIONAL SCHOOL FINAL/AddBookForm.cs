@@ -106,6 +106,12 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             btnSAVE.Enabled = false;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BookScheduleFormcs bsf = new BookScheduleFormcs();
+            bsf.ShowDialog();
+        }
+
         
     }
 }

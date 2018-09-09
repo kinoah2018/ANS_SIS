@@ -36,7 +36,6 @@
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.BooktoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.ReltoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.RettoolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip4 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip12 = new System.Windows.Forms.MenuStrip();
@@ -167,8 +166,7 @@
             // 
             this.toolStripMenuItem8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BooktoolStripMenuItem10,
-            this.ReltoolStripMenuItem10,
-            this.RettoolStripMenuItem10});
+            this.ReltoolStripMenuItem10});
             this.toolStripMenuItem8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem8.Image")));
             this.toolStripMenuItem8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -191,15 +189,8 @@
             // 
             this.ReltoolStripMenuItem10.Name = "ReltoolStripMenuItem10";
             this.ReltoolStripMenuItem10.Size = new System.Drawing.Size(203, 22);
-            this.ReltoolStripMenuItem10.Text = "Releasing Book";
+            this.ReltoolStripMenuItem10.Text = "Transaction Books";
             this.ReltoolStripMenuItem10.Click += new System.EventHandler(this.ReltoolStripMenuItem10_Click);
-            // 
-            // RettoolStripMenuItem10
-            // 
-            this.RettoolStripMenuItem10.Name = "RettoolStripMenuItem10";
-            this.RettoolStripMenuItem10.Size = new System.Drawing.Size(203, 22);
-            this.RettoolStripMenuItem10.Text = "Returning Book";
-            this.RettoolStripMenuItem10.Click += new System.EventHandler(this.RettoolStripMenuItem10_Click);
             // 
             // menuStrip4
             // 
@@ -264,7 +255,7 @@
             this.menuStrip8.Location = new System.Drawing.Point(793, 4);
             this.menuStrip8.Name = "menuStrip8";
             this.menuStrip8.Padding = new System.Windows.Forms.Padding(2);
-            this.menuStrip8.Size = new System.Drawing.Size(200, 93);
+            this.menuStrip8.Size = new System.Drawing.Size(108, 93);
             this.menuStrip8.TabIndex = 41;
             this.menuStrip8.Text = "menuStrip8";
             // 
@@ -943,7 +934,6 @@
         public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem BooktoolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem ReltoolStripMenuItem10;
-        private System.Windows.Forms.ToolStripMenuItem RettoolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;

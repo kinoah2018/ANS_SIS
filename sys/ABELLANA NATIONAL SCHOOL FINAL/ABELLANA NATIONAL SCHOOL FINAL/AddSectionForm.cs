@@ -105,14 +105,14 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         private void btnSave_Click(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT SEC_NAME FROM TBL_SECTION WHERE SEC_NAME ='"+txtsname.Text+"'",conn);
+            SqlCommand cmd = new SqlCommand("SELECT SEC_NAME FROM TBL_SECTION WHERE SEC_NAME ='" + txtsname.Text + "'AND SEC_YEARLEVEL ='"+cmbylevel.Text+"'", conn);
             string cmd1 = Convert.ToString(cmd.ExecuteScalar());
             conn.Close();
             if (txtsname.Text ==""||txtSecCap.Text=="")
             {
                 MessageBox.Show("Input Fields");
             }
-            else if (txtsname.Text == cmd1)
+            else if (!String.IsNullOrWhiteSpace(cmd1))
             {
                 MessageBox.Show("Section Name already exist");
                 txtsname.Focus();
@@ -120,7 +120,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             }
             else
             {
-                db.SP_SECTIONSAVE(txtsname.Text, txtSecCap.Text, Convert.ToInt32(cmbadvisory.SelectedValue));
+                db.SP_SECTIONSAVE(txtsname.Text, txtSecCap.Text, Convert.ToInt32(cmbadvisory.SelectedValue),cmbylevel.Text);
                 MessageBox.Show("Succesfully Saved");
                 txtsname.Clear();
                 txtSecCap.Clear();

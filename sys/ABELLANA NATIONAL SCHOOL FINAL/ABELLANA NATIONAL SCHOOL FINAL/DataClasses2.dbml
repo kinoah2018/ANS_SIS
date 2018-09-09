@@ -24,6 +24,7 @@
       <Column Name="BOOK_YEARLEVEL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="B_AUTHOR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="B_PUBLISHED" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="TBL_BOOK_TBL_STUDBOOK" Member="TBL_STUDBOOKs" ThisKey="B_ID" OtherKey="B_ID" Type="TBL_STUDBOOK" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_GRADE" Member="TBL_GRADEs">
@@ -82,18 +83,6 @@
       <Association Name="TBL_SCHOOLYEAR_TBL_STUDENT" Member="TBL_STUDENTs" ThisKey="SCHOOLYEAR_ID" OtherKey="SCHOOLYEAR_ID" Type="TBL_STUDENT" />
     </Type>
   </Table>
-  <Table Name="dbo.TBL_SECTION" Member="TBL_SECTIONs">
-    <Type Name="TBL_SECTION">
-      <Column Name="SEC_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_CAPACITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="T_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TBL_SECTION_TBL_STUDENT" Member="TBL_STUDENTs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_STUDENT" />
-      <Association Name="TBL_SECTION_TBL_THRINTERMEDIARYSEC" Member="TBL_THRINTERMEDIARYSECs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_THRINTERMEDIARYSEC" />
-      <Association Name="TBL_SECTION_TBL_TEACHERSCHEDULE" Member="TBL_TEACHERSCHEDULEs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_TEACHERSCHEDULE" />
-      <Association Name="TBL_TEACHER_TBL_SECTION" Member="TBL_TEACHER" ThisKey="T_ID" OtherKey="T_ID" Type="TBL_TEACHER" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.TBL_SECURITY" Member="TBL_SECURITies">
     <Type Name="TBL_SECURITY">
       <Column Name="SECU_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -140,9 +129,10 @@
       <Association Name="TBL_STUDENT_TBL_BMICOMP" Member="TBL_BMICOMPs" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_BMICOMP" />
       <Association Name="TBL_STUDENT_TBL_GRADE" Member="TBL_GRADEs" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_GRADE" />
       <Association Name="TBL_STUDENT_TBL_STANDPAY" Member="TBL_STANDPAYs" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_STANDPAY" />
+      <Association Name="TBL_STUDENT_TBL_STUDBOOK" Member="TBL_STUDBOOKs" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_STUDBOOK" />
       <Association Name="TBL_SCHOOLYEAR_TBL_STUDENT" Member="TBL_SCHOOLYEAR" ThisKey="SCHOOLYEAR_ID" OtherKey="SCHOOLYEAR_ID" Type="TBL_SCHOOLYEAR" IsForeignKey="true" />
-      <Association Name="TBL_SECTION_TBL_STUDENT" Member="TBL_SECTION" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_SECTION" IsForeignKey="true" />
       <Association Name="TBL_PARENT_TBL_STUDENT" Member="TBL_PARENT" ThisKey="P_ID" OtherKey="P_ID" Type="TBL_PARENT" IsForeignKey="true" />
+      <Association Name="TBL_SECTION_TBL_STUDENT" Member="TBL_SECTION" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_SECTION" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_SUBJECT" Member="TBL_SUBJECTs">
@@ -162,8 +152,8 @@
       <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="T_CONTACTNUMBER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="SUBJECT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TBL_TEACHER_TBL_SECTION" Member="TBL_SECTIONs" ThisKey="T_ID" OtherKey="T_ID" Type="TBL_SECTION" />
       <Association Name="TBL_TEACHER_TBL_THRINTERMEDIARYSEC" Member="TBL_THRINTERMEDIARYSECs" ThisKey="T_ID" OtherKey="T_ID" Type="TBL_THRINTERMEDIARYSEC" />
+      <Association Name="TBL_TEACHER_TBL_SECTION" Member="TBL_SECTIONs" ThisKey="T_ID" OtherKey="T_ID" Type="TBL_SECTION" />
       <Association Name="TBL_SUBJECT_TBL_TEACHER" Member="TBL_SUBJECT" ThisKey="SUBJECT_ID" OtherKey="SUBJECT_ID" Type="TBL_SUBJECT" IsForeignKey="true" />
     </Type>
   </Table>
@@ -172,8 +162,8 @@
       <Column Name="THRANDSEC_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="T_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TBL_SECTION_TBL_THRINTERMEDIARYSEC" Member="TBL_SECTION" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_SECTION" IsForeignKey="true" />
       <Association Name="TBL_TEACHER_TBL_THRINTERMEDIARYSEC" Member="TBL_TEACHER" ThisKey="T_ID" OtherKey="T_ID" Type="TBL_TEACHER" IsForeignKey="true" />
+      <Association Name="TBL_SECTION_TBL_THRINTERMEDIARYSEC" Member="TBL_SECTION" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_SECTION" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TBL_USERS" Member="TBL_USERs">
@@ -289,8 +279,31 @@
       <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SUBJECT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TIME_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TBL_SECTION_TBL_TEACHERSCHEDULE" Member="TBL_SECTION" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_SECTION" IsForeignKey="true" />
       <Association Name="TBL_SCHEDULETIME_TBL_TEACHERSCHEDULE" Member="TBL_SCHEDULETIME" ThisKey="TIME_ID" OtherKey="TIME_ID" Type="TBL_SCHEDULETIME" IsForeignKey="true" />
+      <Association Name="TBL_SECTION_TBL_TEACHERSCHEDULE" Member="TBL_SECTION" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_SECTION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_SECTION" Member="TBL_SECTIONs">
+    <Type Name="TBL_SECTION">
+      <Column Name="SEC_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_CAPACITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="T_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SEC_YEARLEVEL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TBL_SECTION_TBL_STUDENT" Member="TBL_STUDENTs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_STUDENT" />
+      <Association Name="TBL_SECTION_TBL_THRINTERMEDIARYSEC" Member="TBL_THRINTERMEDIARYSECs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_THRINTERMEDIARYSEC" />
+      <Association Name="TBL_SECTION_TBL_TEACHERSCHEDULE" Member="TBL_TEACHERSCHEDULEs" ThisKey="SEC_ID" OtherKey="SEC_ID" Type="TBL_TEACHERSCHEDULE" />
+      <Association Name="TBL_TEACHER_TBL_SECTION" Member="TBL_TEACHER" ThisKey="T_ID" OtherKey="T_ID" Type="TBL_TEACHER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_STUDBOOKS" Member="TBL_STUDBOOKs">
+    <Type Name="TBL_STUDBOOK">
+      <Column Name="STUDBOOKS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="B_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RETURNDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_STUDENT_TBL_STUDBOOK" Member="TBL_STUDENT" ThisKey="ST_CURRENTID" OtherKey="ST_CURRENTID" Type="TBL_STUDENT" IsForeignKey="true" />
+      <Association Name="TBL_BOOK_TBL_STUDBOOK" Member="TBL_BOOK" ThisKey="B_ID" OtherKey="B_ID" Type="TBL_BOOK" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.SP_ACCOUNTRECOVERY" Method="SP_ACCOUNTRECOVERY">
@@ -413,12 +426,6 @@
     <Parameter Name="TIME_END" Parameter="tIME_END" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SP_SECTIONSAVE" Method="SP_SECTIONSAVE">
-    <Parameter Name="SEC_NAME" Parameter="sEC_NAME" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="SEC_CAPACITY" Parameter="sEC_CAPACITY" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="T_ID" Parameter="t_ID" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.SP_SECTIONUPDATE" Method="SP_SECTIONUPDATE">
     <Parameter Name="SEC_ID" Parameter="sEC_ID" Type="System.Int32" DbType="Int" />
     <Parameter Name="SEC_NAME" Parameter="sEC_NAME" Type="System.String" DbType="VarChar(50)" />
@@ -434,15 +441,6 @@
     <Parameter Name="SECU_ANSWER" Parameter="sECU_ANSWER" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="USER_ID" Parameter="uSER_ID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.SP_SECVIEW" Method="SP_SECVIEW">
-    <ElementType Name="SP_SECVIEWResult">
-      <Column Name="SEC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SECTION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CAPACITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="T_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ADVISORY" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="dbo.SP_STREQSEARCH" Method="SP_STREQSEARCH">
     <Parameter Name="SEARCH_KEY" Parameter="sEARCH_KEY" Type="System.String" DbType="VarChar(MAX)" />
@@ -762,6 +760,32 @@
     <Parameter Name="SEC_ID" Parameter="sEC_ID" Type="System.Int32" DbType="Int" />
     <ElementType Name="SP_EXISTSECResult">
       <Column Name="SEC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_SECTIONSAVE" Method="SP_SECTIONSAVE">
+    <Parameter Name="SEC_NAME" Parameter="sEC_NAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SEC_CAPACITY" Parameter="sEC_CAPACITY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="T_ID" Parameter="t_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SEC_YEARLEVEL" Parameter="sEC_YEARLEVEL" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_SECVIEW" Method="SP_SECVIEW">
+    <ElementType Name="SP_SECVIEWResult">
+      <Column Name="SEC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SECTION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CAPACITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[YEAR LEVEL]" Member="YEAR_LEVEL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="T_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ADVISORY" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_VIEWSTUDBOOKS" Method="SP_VIEWSTUDBOOKS">
+    <ElementType Name="SP_VIEWSTUDBOOKSResult">
+      <Column Name="ST_CURRENTID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[STUDENT NAME]" Member="STUDENT_NAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="B_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BOOK" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RETURNDATE" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

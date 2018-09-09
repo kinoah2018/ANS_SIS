@@ -27,7 +27,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
             
            
         }
-
+        6
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Are you sure you want to exit ?", "Wait !", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);

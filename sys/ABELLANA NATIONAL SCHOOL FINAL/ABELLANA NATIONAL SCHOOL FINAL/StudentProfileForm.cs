@@ -495,6 +495,19 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 
         }
 
+        private void cmbylevel_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var section = from s_section in db.TBL_SECTIONs
+                          where s_section.SEC_YEARLEVEL == cmbylevel.Text
+                          select s_section.SEC_NAME;
+
+            txtSecname.Items.Clear(); 
+            foreach (var item in section)
+            {
+                txtSecname.Items.Add(item);
+            }
+        }
+
         
 
        

@@ -51,6 +51,8 @@
             this.tBLTEACHERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tBL_TEACHERTableAdapter = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet8TableAdapters.TBL_TEACHERTableAdapter();
             this.view_GetTHNAMETableAdapter = new ABELLANA_NATIONAL_SCHOOL_FINAL.ANS_DATABASEDataSet10TableAdapters.View_GetTHNAMETableAdapter();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbylevel = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSection)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -107,7 +109,7 @@
             this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Controls.Add(this.btnSave);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(87, 255);
+            this.groupBox2.Location = new System.Drawing.Point(87, 268);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(454, 105);
             this.groupBox2.TabIndex = 211;
@@ -145,6 +147,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbylevel);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTID);
             this.groupBox1.Controls.Add(this.cmbadvisory);
             this.groupBox1.Controls.Add(this.label3);
@@ -158,7 +162,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(87, 74);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(454, 175);
+            this.groupBox1.Size = new System.Drawing.Size(454, 188);
             this.groupBox1.TabIndex = 210;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Section";
@@ -166,7 +170,7 @@
             // txtTID
             // 
             this.txtTID.Enabled = false;
-            this.txtTID.Location = new System.Drawing.Point(432, 114);
+            this.txtTID.Location = new System.Drawing.Point(432, 149);
             this.txtTID.Name = "txtTID";
             this.txtTID.Size = new System.Drawing.Size(12, 27);
             this.txtTID.TabIndex = 9;
@@ -178,7 +182,7 @@
             this.cmbadvisory.DisplayMember = "Fullname";
             this.cmbadvisory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbadvisory.FormattingEnabled = true;
-            this.cmbadvisory.Location = new System.Drawing.Point(180, 115);
+            this.cmbadvisory.Location = new System.Drawing.Point(180, 150);
             this.cmbadvisory.Name = "cmbadvisory";
             this.cmbadvisory.Size = new System.Drawing.Size(250, 26);
             this.cmbadvisory.TabIndex = 8;
@@ -197,7 +201,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 118);
+            this.label3.Location = new System.Drawing.Point(18, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 18);
             this.label3.TabIndex = 7;
@@ -263,6 +267,29 @@
             // 
             this.view_GetTHNAMETableAdapter.ClearBeforeFill = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(68, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 18);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Year Level :";
+            // 
+            // cmbylevel
+            // 
+            this.cmbylevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbylevel.FormattingEnabled = true;
+            this.cmbylevel.Items.AddRange(new object[] {
+            "1ST YEAR",
+            "2ND YEAR",
+            "3RD YEAR",
+            "4TH YEAR"});
+            this.cmbylevel.Location = new System.Drawing.Point(180, 114);
+            this.cmbylevel.Name = "cmbylevel";
+            this.cmbylevel.Size = new System.Drawing.Size(250, 26);
+            this.cmbylevel.TabIndex = 25;
+            // 
             // AddSectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,5 +345,7 @@
         private System.Windows.Forms.BindingSource viewGetTHNAMEBindingSource;
         private ANS_DATABASEDataSet10TableAdapters.View_GetTHNAMETableAdapter view_GetTHNAMETableAdapter;
         private System.Windows.Forms.TextBox txtTID;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.ComboBox cmbylevel;
     }
 }

@@ -176,15 +176,12 @@
             // 
             // txtSecname
             // 
-            this.txtSecname.DataSource = this.tBLSECTIONBindingSource;
-            this.txtSecname.DisplayMember = "SEC_NAME";
             this.txtSecname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtSecname.FormattingEnabled = true;
-            this.txtSecname.Location = new System.Drawing.Point(150, 39);
+            this.txtSecname.Location = new System.Drawing.Point(150, 69);
             this.txtSecname.Name = "txtSecname";
             this.txtSecname.Size = new System.Drawing.Size(161, 26);
             this.txtSecname.TabIndex = 27;
-            this.txtSecname.ValueMember = "SEC_ID";
             // 
             // tBLSECTIONBindingSource
             // 
@@ -199,7 +196,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(10, 42);
+            this.label26.Location = new System.Drawing.Point(10, 72);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(134, 18);
             this.label26.TabIndex = 26;
@@ -236,15 +233,16 @@
             "2ND YEAR",
             "3RD YEAR",
             "4TH YEAR"});
-            this.cmbylevel.Location = new System.Drawing.Point(150, 73);
+            this.cmbylevel.Location = new System.Drawing.Point(150, 37);
             this.cmbylevel.Name = "cmbylevel";
             this.cmbylevel.Size = new System.Drawing.Size(161, 26);
             this.cmbylevel.TabIndex = 24;
+            this.cmbylevel.SelectedValueChanged += new System.EventHandler(this.cmbylevel_SelectedValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 76);
+            this.label4.Location = new System.Drawing.Point(38, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 18);
             this.label4.TabIndex = 22;

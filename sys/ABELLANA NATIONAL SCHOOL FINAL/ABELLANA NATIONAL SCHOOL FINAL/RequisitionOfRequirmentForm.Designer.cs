@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequisitionOfRequirmentForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAddPay = new System.Windows.Forms.Button();
+            this.txtBookName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -44,9 +47,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.Button3 = new System.Windows.Forms.Button();
-            this.btnAddPay = new System.Windows.Forms.Button();
-            this.txtBookName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,6 +73,34 @@
             this.groupBox1.TabIndex = 209;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Request of Requirement";
+            // 
+            // btnAddPay
+            // 
+            this.btnAddPay.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPay.ForeColor = System.Drawing.Color.White;
+            this.btnAddPay.Location = new System.Drawing.Point(457, 37);
+            this.btnAddPay.Name = "btnAddPay";
+            this.btnAddPay.Size = new System.Drawing.Size(46, 29);
+            this.btnAddPay.TabIndex = 25;
+            this.btnAddPay.Text = "...";
+            this.btnAddPay.UseVisualStyleBackColor = false;
+            // 
+            // txtBookName
+            // 
+            this.txtBookName.Location = new System.Drawing.Point(212, 38);
+            this.txtBookName.Name = "txtBookName";
+            this.txtBookName.Size = new System.Drawing.Size(244, 27);
+            this.txtBookName.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(74, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 18);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Student Name :";
             // 
             // textBox2
             // 
@@ -225,34 +253,7 @@
             this.Button3.TabIndex = 215;
             this.Button3.Text = "X";
             this.Button3.UseVisualStyleBackColor = false;
-            // 
-            // btnAddPay
-            // 
-            this.btnAddPay.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAddPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPay.ForeColor = System.Drawing.Color.White;
-            this.btnAddPay.Location = new System.Drawing.Point(457, 37);
-            this.btnAddPay.Name = "btnAddPay";
-            this.btnAddPay.Size = new System.Drawing.Size(46, 29);
-            this.btnAddPay.TabIndex = 25;
-            this.btnAddPay.Text = "...";
-            this.btnAddPay.UseVisualStyleBackColor = false;
-            // 
-            // txtBookName
-            // 
-            this.txtBookName.Location = new System.Drawing.Point(212, 38);
-            this.txtBookName.Name = "txtBookName";
-            this.txtBookName.Size = new System.Drawing.Size(244, 27);
-            this.txtBookName.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 18);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Student Name :";
+            this.Button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // RequisitionOfRequirmentForm
             // 

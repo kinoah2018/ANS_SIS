@@ -57,9 +57,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
     partial void InsertTBL_SCHOOLYEAR(TBL_SCHOOLYEAR instance);
     partial void UpdateTBL_SCHOOLYEAR(TBL_SCHOOLYEAR instance);
     partial void DeleteTBL_SCHOOLYEAR(TBL_SCHOOLYEAR instance);
-    partial void InsertTBL_SECTION(TBL_SECTION instance);
-    partial void UpdateTBL_SECTION(TBL_SECTION instance);
-    partial void DeleteTBL_SECTION(TBL_SECTION instance);
     partial void InsertTBL_SECURITY(TBL_SECURITY instance);
     partial void UpdateTBL_SECURITY(TBL_SECURITY instance);
     partial void DeleteTBL_SECURITY(TBL_SECURITY instance);
@@ -84,6 +81,12 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
     partial void InsertTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
     partial void UpdateTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
     partial void DeleteTBL_TEACHERSCHEDULE(TBL_TEACHERSCHEDULE instance);
+    partial void InsertTBL_SECTION(TBL_SECTION instance);
+    partial void UpdateTBL_SECTION(TBL_SECTION instance);
+    partial void DeleteTBL_SECTION(TBL_SECTION instance);
+    partial void InsertTBL_STUDBOOK(TBL_STUDBOOK instance);
+    partial void UpdateTBL_STUDBOOK(TBL_STUDBOOK instance);
+    partial void DeleteTBL_STUDBOOK(TBL_STUDBOOK instance);
     #endregion
 		
 		public DataClasses2DataContext() : 
@@ -185,14 +188,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			get
 			{
 				return this.GetTable<TBL_SCHOOLYEAR>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TBL_SECTION> TBL_SECTIONs
-		{
-			get
-			{
-				return this.GetTable<TBL_SECTION>();
 			}
 		}
 		
@@ -324,6 +319,22 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
+		public System.Data.Linq.Table<TBL_SECTION> TBL_SECTIONs
+		{
+			get
+			{
+				return this.GetTable<TBL_SECTION>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBL_STUDBOOK> TBL_STUDBOOKs
+		{
+			get
+			{
+				return this.GetTable<TBL_STUDBOOK>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ACCOUNTRECOVERY")]
 		public ISingleResult<SP_ACCOUNTRECOVERYResult> SP_ACCOUNTRECOVERY([global::System.Data.Linq.Mapping.ParameterAttribute(Name="USER_USERNAME", DbType="VarChar(50)")] string uSER_USERNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SECU_QUESTION", DbType="VarChar(50)")] string sECU_QUESTION, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SECU_ANSWER", DbType="VarChar(50)")] string sECU_ANSWER)
 		{
@@ -436,13 +447,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECTIONSAVE")]
-		public int SP_SECTIONSAVE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_NAME", DbType="VarChar(50)")] string sEC_NAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_CAPACITY", DbType="VarChar(50)")] string sEC_CAPACITY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_ID", DbType="Int")] System.Nullable<int> t_ID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEC_NAME, sEC_CAPACITY, t_ID);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECTIONUPDATE")]
 		public int SP_SECTIONUPDATE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_ID", DbType="Int")] System.Nullable<int> sEC_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_NAME", DbType="VarChar(50)")] string sEC_NAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_CAPACITY", DbType="VarChar(50)")] string sEC_CAPACITY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_ID", DbType="Int")] System.Nullable<int> t_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_FIRSTNAME", DbType="VarChar(50)")] string t_FIRSTNAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_MIDDLENAME", DbType="VarChar(50)")] string t_MIDDLENAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_LASTNAME", DbType="VarChar(50)")] string t_LASTNAME)
 		{
@@ -455,13 +459,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sECU_QUESTION, sECU_ANSWER, uSER_ID);
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECVIEW")]
-		public ISingleResult<SP_SECVIEWResult> SP_SECVIEW()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<SP_SECVIEWResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STREQSEARCH")]
@@ -708,6 +705,27 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tEARCHER, sEC_ID);
 			return ((ISingleResult<SP_EXISTSECResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECTIONSAVE")]
+		public int SP_SECTIONSAVE([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_NAME", DbType="VarChar(50)")] string sEC_NAME, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_CAPACITY", DbType="VarChar(50)")] string sEC_CAPACITY, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="T_ID", DbType="Int")] System.Nullable<int> t_ID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SEC_YEARLEVEL", DbType="VarChar(50)")] string sEC_YEARLEVEL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sEC_NAME, sEC_CAPACITY, t_ID, sEC_YEARLEVEL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SECVIEW")]
+		public ISingleResult<SP_SECVIEWResult> SP_SECVIEW()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_SECVIEWResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_VIEWSTUDBOOKS")]
+		public ISingleResult<SP_VIEWSTUDBOOKSResult> SP_VIEWSTUDBOOKS()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_VIEWSTUDBOOKSResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1018,6 +1036,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private System.Nullable<System.DateTime> _B_PUBLISHED;
 		
+		private EntitySet<TBL_STUDBOOK> _TBL_STUDBOOKs;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1038,6 +1058,7 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		public TBL_BOOK()
 		{
+			this._TBL_STUDBOOKs = new EntitySet<TBL_STUDBOOK>(new Action<TBL_STUDBOOK>(this.attach_TBL_STUDBOOKs), new Action<TBL_STUDBOOK>(this.detach_TBL_STUDBOOKs));
 			OnCreated();
 		}
 		
@@ -1161,6 +1182,19 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_BOOK_TBL_STUDBOOK", Storage="_TBL_STUDBOOKs", ThisKey="B_ID", OtherKey="B_ID")]
+		public EntitySet<TBL_STUDBOOK> TBL_STUDBOOKs
+		{
+			get
+			{
+				return this._TBL_STUDBOOKs;
+			}
+			set
+			{
+				this._TBL_STUDBOOKs.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1179,6 +1213,18 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_TBL_STUDBOOKs(TBL_STUDBOOK entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_BOOK = this;
+		}
+		
+		private void detach_TBL_STUDBOOKs(TBL_STUDBOOK entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_BOOK = null;
 		}
 	}
 	
@@ -2270,265 +2316,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_SECTION")]
-	public partial class TBL_SECTION : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _SEC_ID;
-		
-		private string _SEC_NAME;
-		
-		private int _SEC_CAPACITY;
-		
-		private System.Nullable<int> _T_ID;
-		
-		private EntitySet<TBL_STUDENT> _TBL_STUDENTs;
-		
-		private EntitySet<TBL_THRINTERMEDIARYSEC> _TBL_THRINTERMEDIARYSECs;
-		
-		private EntitySet<TBL_TEACHERSCHEDULE> _TBL_TEACHERSCHEDULEs;
-		
-		private EntityRef<TBL_TEACHER> _TBL_TEACHER;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSEC_IDChanging(int value);
-    partial void OnSEC_IDChanged();
-    partial void OnSEC_NAMEChanging(string value);
-    partial void OnSEC_NAMEChanged();
-    partial void OnSEC_CAPACITYChanging(int value);
-    partial void OnSEC_CAPACITYChanged();
-    partial void OnT_IDChanging(System.Nullable<int> value);
-    partial void OnT_IDChanged();
-    #endregion
-		
-		public TBL_SECTION()
-		{
-			this._TBL_STUDENTs = new EntitySet<TBL_STUDENT>(new Action<TBL_STUDENT>(this.attach_TBL_STUDENTs), new Action<TBL_STUDENT>(this.detach_TBL_STUDENTs));
-			this._TBL_THRINTERMEDIARYSECs = new EntitySet<TBL_THRINTERMEDIARYSEC>(new Action<TBL_THRINTERMEDIARYSEC>(this.attach_TBL_THRINTERMEDIARYSECs), new Action<TBL_THRINTERMEDIARYSEC>(this.detach_TBL_THRINTERMEDIARYSECs));
-			this._TBL_TEACHERSCHEDULEs = new EntitySet<TBL_TEACHERSCHEDULE>(new Action<TBL_TEACHERSCHEDULE>(this.attach_TBL_TEACHERSCHEDULEs), new Action<TBL_TEACHERSCHEDULE>(this.detach_TBL_TEACHERSCHEDULEs));
-			this._TBL_TEACHER = default(EntityRef<TBL_TEACHER>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int SEC_ID
-		{
-			get
-			{
-				return this._SEC_ID;
-			}
-			set
-			{
-				if ((this._SEC_ID != value))
-				{
-					this.OnSEC_IDChanging(value);
-					this.SendPropertyChanging();
-					this._SEC_ID = value;
-					this.SendPropertyChanged("SEC_ID");
-					this.OnSEC_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SEC_NAME
-		{
-			get
-			{
-				return this._SEC_NAME;
-			}
-			set
-			{
-				if ((this._SEC_NAME != value))
-				{
-					this.OnSEC_NAMEChanging(value);
-					this.SendPropertyChanging();
-					this._SEC_NAME = value;
-					this.SendPropertyChanged("SEC_NAME");
-					this.OnSEC_NAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_CAPACITY", DbType="Int NOT NULL")]
-		public int SEC_CAPACITY
-		{
-			get
-			{
-				return this._SEC_CAPACITY;
-			}
-			set
-			{
-				if ((this._SEC_CAPACITY != value))
-				{
-					this.OnSEC_CAPACITYChanging(value);
-					this.SendPropertyChanging();
-					this._SEC_CAPACITY = value;
-					this.SendPropertyChanged("SEC_CAPACITY");
-					this.OnSEC_CAPACITYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_ID", DbType="Int")]
-		public System.Nullable<int> T_ID
-		{
-			get
-			{
-				return this._T_ID;
-			}
-			set
-			{
-				if ((this._T_ID != value))
-				{
-					if (this._TBL_TEACHER.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnT_IDChanging(value);
-					this.SendPropertyChanging();
-					this._T_ID = value;
-					this.SendPropertyChanged("T_ID");
-					this.OnT_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_STUDENT", Storage="_TBL_STUDENTs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
-		public EntitySet<TBL_STUDENT> TBL_STUDENTs
-		{
-			get
-			{
-				return this._TBL_STUDENTs;
-			}
-			set
-			{
-				this._TBL_STUDENTs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_THRINTERMEDIARYSEC", Storage="_TBL_THRINTERMEDIARYSECs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
-		public EntitySet<TBL_THRINTERMEDIARYSEC> TBL_THRINTERMEDIARYSECs
-		{
-			get
-			{
-				return this._TBL_THRINTERMEDIARYSECs;
-			}
-			set
-			{
-				this._TBL_THRINTERMEDIARYSECs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHERSCHEDULE", Storage="_TBL_TEACHERSCHEDULEs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
-		public EntitySet<TBL_TEACHERSCHEDULE> TBL_TEACHERSCHEDULEs
-		{
-			get
-			{
-				return this._TBL_TEACHERSCHEDULEs;
-			}
-			set
-			{
-				this._TBL_TEACHERSCHEDULEs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_TEACHER_TBL_SECTION", Storage="_TBL_TEACHER", ThisKey="T_ID", OtherKey="T_ID", IsForeignKey=true)]
-		public TBL_TEACHER TBL_TEACHER
-		{
-			get
-			{
-				return this._TBL_TEACHER.Entity;
-			}
-			set
-			{
-				TBL_TEACHER previousValue = this._TBL_TEACHER.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_TEACHER.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_TEACHER.Entity = null;
-						previousValue.TBL_SECTIONs.Remove(this);
-					}
-					this._TBL_TEACHER.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_SECTIONs.Add(this);
-						this._T_ID = value.T_ID;
-					}
-					else
-					{
-						this._T_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_TEACHER");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TBL_STUDENTs(TBL_STUDENT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = this;
-		}
-		
-		private void detach_TBL_STUDENTs(TBL_STUDENT entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = null;
-		}
-		
-		private void attach_TBL_THRINTERMEDIARYSECs(TBL_THRINTERMEDIARYSEC entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = this;
-		}
-		
-		private void detach_TBL_THRINTERMEDIARYSECs(TBL_THRINTERMEDIARYSEC entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = null;
-		}
-		
-		private void attach_TBL_TEACHERSCHEDULEs(TBL_TEACHERSCHEDULE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = this;
-		}
-		
-		private void detach_TBL_TEACHERSCHEDULEs(TBL_TEACHERSCHEDULE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_SECTION = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_SECURITY")]
 	public partial class TBL_SECURITY : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2954,11 +2741,13 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private EntitySet<TBL_STANDPAY> _TBL_STANDPAYs;
 		
+		private EntitySet<TBL_STUDBOOK> _TBL_STUDBOOKs;
+		
 		private EntityRef<TBL_SCHOOLYEAR> _TBL_SCHOOLYEAR;
 		
-		private EntityRef<TBL_SECTION> _TBL_SECTION;
-		
 		private EntityRef<TBL_PARENT> _TBL_PARENT;
+		
+		private EntityRef<TBL_SECTION> _TBL_SECTION;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3017,9 +2806,10 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			this._TBL_BMICOMPs = new EntitySet<TBL_BMICOMP>(new Action<TBL_BMICOMP>(this.attach_TBL_BMICOMPs), new Action<TBL_BMICOMP>(this.detach_TBL_BMICOMPs));
 			this._TBL_GRADEs = new EntitySet<TBL_GRADE>(new Action<TBL_GRADE>(this.attach_TBL_GRADEs), new Action<TBL_GRADE>(this.detach_TBL_GRADEs));
 			this._TBL_STANDPAYs = new EntitySet<TBL_STANDPAY>(new Action<TBL_STANDPAY>(this.attach_TBL_STANDPAYs), new Action<TBL_STANDPAY>(this.detach_TBL_STANDPAYs));
+			this._TBL_STUDBOOKs = new EntitySet<TBL_STUDBOOK>(new Action<TBL_STUDBOOK>(this.attach_TBL_STUDBOOKs), new Action<TBL_STUDBOOK>(this.detach_TBL_STUDBOOKs));
 			this._TBL_SCHOOLYEAR = default(EntityRef<TBL_SCHOOLYEAR>);
-			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
 			this._TBL_PARENT = default(EntityRef<TBL_PARENT>);
+			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
 			OnCreated();
 		}
 		
@@ -3534,6 +3324,19 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_STUDENT_TBL_STUDBOOK", Storage="_TBL_STUDBOOKs", ThisKey="ST_CURRENTID", OtherKey="ST_CURRENTID")]
+		public EntitySet<TBL_STUDBOOK> TBL_STUDBOOKs
+		{
+			get
+			{
+				return this._TBL_STUDBOOKs;
+			}
+			set
+			{
+				this._TBL_STUDBOOKs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SCHOOLYEAR_TBL_STUDENT", Storage="_TBL_SCHOOLYEAR", ThisKey="SCHOOLYEAR_ID", OtherKey="SCHOOLYEAR_ID", IsForeignKey=true)]
 		public TBL_SCHOOLYEAR TBL_SCHOOLYEAR
 		{
@@ -3568,40 +3371,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_STUDENT", Storage="_TBL_SECTION", ThisKey="SEC_ID", OtherKey="SEC_ID", IsForeignKey=true)]
-		public TBL_SECTION TBL_SECTION
-		{
-			get
-			{
-				return this._TBL_SECTION.Entity;
-			}
-			set
-			{
-				TBL_SECTION previousValue = this._TBL_SECTION.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_SECTION.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_SECTION.Entity = null;
-						previousValue.TBL_STUDENTs.Remove(this);
-					}
-					this._TBL_SECTION.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_STUDENTs.Add(this);
-						this._SEC_ID = value.SEC_ID;
-					}
-					else
-					{
-						this._SEC_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_SECTION");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_PARENT_TBL_STUDENT", Storage="_TBL_PARENT", ThisKey="P_ID", OtherKey="P_ID", IsForeignKey=true)]
 		public TBL_PARENT TBL_PARENT
 		{
@@ -3632,6 +3401,40 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 						this._P_ID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("TBL_PARENT");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_STUDENT", Storage="_TBL_SECTION", ThisKey="SEC_ID", OtherKey="SEC_ID", IsForeignKey=true)]
+		public TBL_SECTION TBL_SECTION
+		{
+			get
+			{
+				return this._TBL_SECTION.Entity;
+			}
+			set
+			{
+				TBL_SECTION previousValue = this._TBL_SECTION.Entity;
+				if (((previousValue != value) 
+							|| (this._TBL_SECTION.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBL_SECTION.Entity = null;
+						previousValue.TBL_STUDENTs.Remove(this);
+					}
+					this._TBL_SECTION.Entity = value;
+					if ((value != null))
+					{
+						value.TBL_STUDENTs.Add(this);
+						this._SEC_ID = value.SEC_ID;
+					}
+					else
+					{
+						this._SEC_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TBL_SECTION");
 				}
 			}
 		}
@@ -3687,6 +3490,18 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 		
 		private void detach_TBL_STANDPAYs(TBL_STANDPAY entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_STUDENT = null;
+		}
+		
+		private void attach_TBL_STUDBOOKs(TBL_STUDBOOK entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_STUDENT = this;
+		}
+		
+		private void detach_TBL_STUDBOOKs(TBL_STUDBOOK entity)
 		{
 			this.SendPropertyChanging();
 			entity.TBL_STUDENT = null;
@@ -3855,9 +3670,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private System.Nullable<int> _SUBJECT_ID;
 		
-		private EntitySet<TBL_SECTION> _TBL_SECTIONs;
-		
 		private EntitySet<TBL_THRINTERMEDIARYSEC> _TBL_THRINTERMEDIARYSECs;
+		
+		private EntitySet<TBL_SECTION> _TBL_SECTIONs;
 		
 		private EntityRef<TBL_SUBJECT> _TBL_SUBJECT;
 		
@@ -3883,8 +3698,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		public TBL_TEACHER()
 		{
-			this._TBL_SECTIONs = new EntitySet<TBL_SECTION>(new Action<TBL_SECTION>(this.attach_TBL_SECTIONs), new Action<TBL_SECTION>(this.detach_TBL_SECTIONs));
 			this._TBL_THRINTERMEDIARYSECs = new EntitySet<TBL_THRINTERMEDIARYSEC>(new Action<TBL_THRINTERMEDIARYSEC>(this.attach_TBL_THRINTERMEDIARYSECs), new Action<TBL_THRINTERMEDIARYSEC>(this.detach_TBL_THRINTERMEDIARYSECs));
+			this._TBL_SECTIONs = new EntitySet<TBL_SECTION>(new Action<TBL_SECTION>(this.attach_TBL_SECTIONs), new Action<TBL_SECTION>(this.detach_TBL_SECTIONs));
 			this._TBL_SUBJECT = default(EntityRef<TBL_SUBJECT>);
 			OnCreated();
 		}
@@ -4033,19 +3848,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_TEACHER_TBL_SECTION", Storage="_TBL_SECTIONs", ThisKey="T_ID", OtherKey="T_ID")]
-		public EntitySet<TBL_SECTION> TBL_SECTIONs
-		{
-			get
-			{
-				return this._TBL_SECTIONs;
-			}
-			set
-			{
-				this._TBL_SECTIONs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_TEACHER_TBL_THRINTERMEDIARYSEC", Storage="_TBL_THRINTERMEDIARYSECs", ThisKey="T_ID", OtherKey="T_ID")]
 		public EntitySet<TBL_THRINTERMEDIARYSEC> TBL_THRINTERMEDIARYSECs
 		{
@@ -4056,6 +3858,19 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			set
 			{
 				this._TBL_THRINTERMEDIARYSECs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_TEACHER_TBL_SECTION", Storage="_TBL_SECTIONs", ThisKey="T_ID", OtherKey="T_ID")]
+		public EntitySet<TBL_SECTION> TBL_SECTIONs
+		{
+			get
+			{
+				return this._TBL_SECTIONs;
+			}
+			set
+			{
+				this._TBL_SECTIONs.Assign(value);
 			}
 		}
 		
@@ -4113,18 +3928,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		private void attach_TBL_SECTIONs(TBL_SECTION entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_TEACHER = this;
-		}
-		
-		private void detach_TBL_SECTIONs(TBL_SECTION entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBL_TEACHER = null;
-		}
-		
 		private void attach_TBL_THRINTERMEDIARYSECs(TBL_THRINTERMEDIARYSEC entity)
 		{
 			this.SendPropertyChanging();
@@ -4132,6 +3935,18 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		}
 		
 		private void detach_TBL_THRINTERMEDIARYSECs(TBL_THRINTERMEDIARYSEC entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_TEACHER = null;
+		}
+		
+		private void attach_TBL_SECTIONs(TBL_SECTION entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_TEACHER = this;
+		}
+		
+		private void detach_TBL_SECTIONs(TBL_SECTION entity)
 		{
 			this.SendPropertyChanging();
 			entity.TBL_TEACHER = null;
@@ -4150,9 +3965,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private System.Nullable<int> _T_ID;
 		
-		private EntityRef<TBL_SECTION> _TBL_SECTION;
-		
 		private EntityRef<TBL_TEACHER> _TBL_TEACHER;
+		
+		private EntityRef<TBL_SECTION> _TBL_SECTION;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -4168,8 +3983,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		public TBL_THRINTERMEDIARYSEC()
 		{
-			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
 			this._TBL_TEACHER = default(EntityRef<TBL_TEACHER>);
+			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
 			OnCreated();
 		}
 		
@@ -4241,40 +4056,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_THRINTERMEDIARYSEC", Storage="_TBL_SECTION", ThisKey="SEC_ID", OtherKey="SEC_ID", IsForeignKey=true)]
-		public TBL_SECTION TBL_SECTION
-		{
-			get
-			{
-				return this._TBL_SECTION.Entity;
-			}
-			set
-			{
-				TBL_SECTION previousValue = this._TBL_SECTION.Entity;
-				if (((previousValue != value) 
-							|| (this._TBL_SECTION.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBL_SECTION.Entity = null;
-						previousValue.TBL_THRINTERMEDIARYSECs.Remove(this);
-					}
-					this._TBL_SECTION.Entity = value;
-					if ((value != null))
-					{
-						value.TBL_THRINTERMEDIARYSECs.Add(this);
-						this._SEC_ID = value.SEC_ID;
-					}
-					else
-					{
-						this._SEC_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBL_SECTION");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_TEACHER_TBL_THRINTERMEDIARYSEC", Storage="_TBL_TEACHER", ThisKey="T_ID", OtherKey="T_ID", IsForeignKey=true)]
 		public TBL_TEACHER TBL_TEACHER
 		{
@@ -4305,6 +4086,40 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 						this._T_ID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("TBL_TEACHER");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_THRINTERMEDIARYSEC", Storage="_TBL_SECTION", ThisKey="SEC_ID", OtherKey="SEC_ID", IsForeignKey=true)]
+		public TBL_SECTION TBL_SECTION
+		{
+			get
+			{
+				return this._TBL_SECTION.Entity;
+			}
+			set
+			{
+				TBL_SECTION previousValue = this._TBL_SECTION.Entity;
+				if (((previousValue != value) 
+							|| (this._TBL_SECTION.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBL_SECTION.Entity = null;
+						previousValue.TBL_THRINTERMEDIARYSECs.Remove(this);
+					}
+					this._TBL_SECTION.Entity = value;
+					if ((value != null))
+					{
+						value.TBL_THRINTERMEDIARYSECs.Add(this);
+						this._SEC_ID = value.SEC_ID;
+					}
+					else
+					{
+						this._SEC_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TBL_SECTION");
 				}
 			}
 		}
@@ -5821,9 +5636,9 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		private System.Nullable<int> _TIME_ID;
 		
-		private EntityRef<TBL_SECTION> _TBL_SECTION;
-		
 		private EntityRef<TBL_SCHEDULETIME> _TBL_SCHEDULETIME;
+		
+		private EntityRef<TBL_SECTION> _TBL_SECTION;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5843,8 +5658,8 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 		
 		public TBL_TEACHERSCHEDULE()
 		{
-			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
 			this._TBL_SCHEDULETIME = default(EntityRef<TBL_SCHEDULETIME>);
+			this._TBL_SECTION = default(EntityRef<TBL_SECTION>);
 			OnCreated();
 		}
 		
@@ -5956,6 +5771,40 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SCHEDULETIME_TBL_TEACHERSCHEDULE", Storage="_TBL_SCHEDULETIME", ThisKey="TIME_ID", OtherKey="TIME_ID", IsForeignKey=true)]
+		public TBL_SCHEDULETIME TBL_SCHEDULETIME
+		{
+			get
+			{
+				return this._TBL_SCHEDULETIME.Entity;
+			}
+			set
+			{
+				TBL_SCHEDULETIME previousValue = this._TBL_SCHEDULETIME.Entity;
+				if (((previousValue != value) 
+							|| (this._TBL_SCHEDULETIME.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBL_SCHEDULETIME.Entity = null;
+						previousValue.TBL_TEACHERSCHEDULEs.Remove(this);
+					}
+					this._TBL_SCHEDULETIME.Entity = value;
+					if ((value != null))
+					{
+						value.TBL_TEACHERSCHEDULEs.Add(this);
+						this._TIME_ID = value.TIME_ID;
+					}
+					else
+					{
+						this._TIME_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TBL_SCHEDULETIME");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHERSCHEDULE", Storage="_TBL_SECTION", ThisKey="SEC_ID", OtherKey="SEC_ID", IsForeignKey=true)]
 		public TBL_SECTION TBL_SECTION
 		{
@@ -5990,36 +5839,501 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SCHEDULETIME_TBL_TEACHERSCHEDULE", Storage="_TBL_SCHEDULETIME", ThisKey="TIME_ID", OtherKey="TIME_ID", IsForeignKey=true)]
-		public TBL_SCHEDULETIME TBL_SCHEDULETIME
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_SECTION")]
+	public partial class TBL_SECTION : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SEC_ID;
+		
+		private string _SEC_NAME;
+		
+		private int _SEC_CAPACITY;
+		
+		private System.Nullable<int> _T_ID;
+		
+		private string _SEC_YEARLEVEL;
+		
+		private EntitySet<TBL_STUDENT> _TBL_STUDENTs;
+		
+		private EntitySet<TBL_THRINTERMEDIARYSEC> _TBL_THRINTERMEDIARYSECs;
+		
+		private EntitySet<TBL_TEACHERSCHEDULE> _TBL_TEACHERSCHEDULEs;
+		
+		private EntityRef<TBL_TEACHER> _TBL_TEACHER;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSEC_IDChanging(int value);
+    partial void OnSEC_IDChanged();
+    partial void OnSEC_NAMEChanging(string value);
+    partial void OnSEC_NAMEChanged();
+    partial void OnSEC_CAPACITYChanging(int value);
+    partial void OnSEC_CAPACITYChanged();
+    partial void OnT_IDChanging(System.Nullable<int> value);
+    partial void OnT_IDChanged();
+    partial void OnSEC_YEARLEVELChanging(string value);
+    partial void OnSEC_YEARLEVELChanged();
+    #endregion
+		
+		public TBL_SECTION()
+		{
+			this._TBL_STUDENTs = new EntitySet<TBL_STUDENT>(new Action<TBL_STUDENT>(this.attach_TBL_STUDENTs), new Action<TBL_STUDENT>(this.detach_TBL_STUDENTs));
+			this._TBL_THRINTERMEDIARYSECs = new EntitySet<TBL_THRINTERMEDIARYSEC>(new Action<TBL_THRINTERMEDIARYSEC>(this.attach_TBL_THRINTERMEDIARYSECs), new Action<TBL_THRINTERMEDIARYSEC>(this.detach_TBL_THRINTERMEDIARYSECs));
+			this._TBL_TEACHERSCHEDULEs = new EntitySet<TBL_TEACHERSCHEDULE>(new Action<TBL_TEACHERSCHEDULE>(this.attach_TBL_TEACHERSCHEDULEs), new Action<TBL_TEACHERSCHEDULE>(this.detach_TBL_TEACHERSCHEDULEs));
+			this._TBL_TEACHER = default(EntityRef<TBL_TEACHER>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int SEC_ID
 		{
 			get
 			{
-				return this._TBL_SCHEDULETIME.Entity;
+				return this._SEC_ID;
 			}
 			set
 			{
-				TBL_SCHEDULETIME previousValue = this._TBL_SCHEDULETIME.Entity;
+				if ((this._SEC_ID != value))
+				{
+					this.OnSEC_IDChanging(value);
+					this.SendPropertyChanging();
+					this._SEC_ID = value;
+					this.SendPropertyChanged("SEC_ID");
+					this.OnSEC_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SEC_NAME
+		{
+			get
+			{
+				return this._SEC_NAME;
+			}
+			set
+			{
+				if ((this._SEC_NAME != value))
+				{
+					this.OnSEC_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._SEC_NAME = value;
+					this.SendPropertyChanged("SEC_NAME");
+					this.OnSEC_NAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_CAPACITY", DbType="Int NOT NULL")]
+		public int SEC_CAPACITY
+		{
+			get
+			{
+				return this._SEC_CAPACITY;
+			}
+			set
+			{
+				if ((this._SEC_CAPACITY != value))
+				{
+					this.OnSEC_CAPACITYChanging(value);
+					this.SendPropertyChanging();
+					this._SEC_CAPACITY = value;
+					this.SendPropertyChanged("SEC_CAPACITY");
+					this.OnSEC_CAPACITYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_ID", DbType="Int")]
+		public System.Nullable<int> T_ID
+		{
+			get
+			{
+				return this._T_ID;
+			}
+			set
+			{
+				if ((this._T_ID != value))
+				{
+					if (this._TBL_TEACHER.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnT_IDChanging(value);
+					this.SendPropertyChanging();
+					this._T_ID = value;
+					this.SendPropertyChanged("T_ID");
+					this.OnT_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_YEARLEVEL", DbType="VarChar(50)")]
+		public string SEC_YEARLEVEL
+		{
+			get
+			{
+				return this._SEC_YEARLEVEL;
+			}
+			set
+			{
+				if ((this._SEC_YEARLEVEL != value))
+				{
+					this.OnSEC_YEARLEVELChanging(value);
+					this.SendPropertyChanging();
+					this._SEC_YEARLEVEL = value;
+					this.SendPropertyChanged("SEC_YEARLEVEL");
+					this.OnSEC_YEARLEVELChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_STUDENT", Storage="_TBL_STUDENTs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
+		public EntitySet<TBL_STUDENT> TBL_STUDENTs
+		{
+			get
+			{
+				return this._TBL_STUDENTs;
+			}
+			set
+			{
+				this._TBL_STUDENTs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_THRINTERMEDIARYSEC", Storage="_TBL_THRINTERMEDIARYSECs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
+		public EntitySet<TBL_THRINTERMEDIARYSEC> TBL_THRINTERMEDIARYSECs
+		{
+			get
+			{
+				return this._TBL_THRINTERMEDIARYSECs;
+			}
+			set
+			{
+				this._TBL_THRINTERMEDIARYSECs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_SECTION_TBL_TEACHERSCHEDULE", Storage="_TBL_TEACHERSCHEDULEs", ThisKey="SEC_ID", OtherKey="SEC_ID")]
+		public EntitySet<TBL_TEACHERSCHEDULE> TBL_TEACHERSCHEDULEs
+		{
+			get
+			{
+				return this._TBL_TEACHERSCHEDULEs;
+			}
+			set
+			{
+				this._TBL_TEACHERSCHEDULEs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_TEACHER_TBL_SECTION", Storage="_TBL_TEACHER", ThisKey="T_ID", OtherKey="T_ID", IsForeignKey=true)]
+		public TBL_TEACHER TBL_TEACHER
+		{
+			get
+			{
+				return this._TBL_TEACHER.Entity;
+			}
+			set
+			{
+				TBL_TEACHER previousValue = this._TBL_TEACHER.Entity;
 				if (((previousValue != value) 
-							|| (this._TBL_SCHEDULETIME.HasLoadedOrAssignedValue == false)))
+							|| (this._TBL_TEACHER.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._TBL_SCHEDULETIME.Entity = null;
-						previousValue.TBL_TEACHERSCHEDULEs.Remove(this);
+						this._TBL_TEACHER.Entity = null;
+						previousValue.TBL_SECTIONs.Remove(this);
 					}
-					this._TBL_SCHEDULETIME.Entity = value;
+					this._TBL_TEACHER.Entity = value;
 					if ((value != null))
 					{
-						value.TBL_TEACHERSCHEDULEs.Add(this);
-						this._TIME_ID = value.TIME_ID;
+						value.TBL_SECTIONs.Add(this);
+						this._T_ID = value.T_ID;
 					}
 					else
 					{
-						this._TIME_ID = default(Nullable<int>);
+						this._T_ID = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("TBL_SCHEDULETIME");
+					this.SendPropertyChanged("TBL_TEACHER");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TBL_STUDENTs(TBL_STUDENT entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_SECTION = this;
+		}
+		
+		private void detach_TBL_STUDENTs(TBL_STUDENT entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_SECTION = null;
+		}
+		
+		private void attach_TBL_THRINTERMEDIARYSECs(TBL_THRINTERMEDIARYSEC entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_SECTION = this;
+		}
+		
+		private void detach_TBL_THRINTERMEDIARYSECs(TBL_THRINTERMEDIARYSEC entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_SECTION = null;
+		}
+		
+		private void attach_TBL_TEACHERSCHEDULEs(TBL_TEACHERSCHEDULE entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_SECTION = this;
+		}
+		
+		private void detach_TBL_TEACHERSCHEDULEs(TBL_TEACHERSCHEDULE entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBL_SECTION = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBL_STUDBOOKS")]
+	public partial class TBL_STUDBOOK : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _STUDBOOKS_ID;
+		
+		private int _B_ID;
+		
+		private string _ST_CURRENTID;
+		
+		private System.Nullable<System.DateTime> _RETURNDATE;
+		
+		private EntityRef<TBL_STUDENT> _TBL_STUDENT;
+		
+		private EntityRef<TBL_BOOK> _TBL_BOOK;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSTUDBOOKS_IDChanging(int value);
+    partial void OnSTUDBOOKS_IDChanged();
+    partial void OnB_IDChanging(int value);
+    partial void OnB_IDChanged();
+    partial void OnST_CURRENTIDChanging(string value);
+    partial void OnST_CURRENTIDChanged();
+    partial void OnRETURNDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnRETURNDATEChanged();
+    #endregion
+		
+		public TBL_STUDBOOK()
+		{
+			this._TBL_STUDENT = default(EntityRef<TBL_STUDENT>);
+			this._TBL_BOOK = default(EntityRef<TBL_BOOK>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STUDBOOKS_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int STUDBOOKS_ID
+		{
+			get
+			{
+				return this._STUDBOOKS_ID;
+			}
+			set
+			{
+				if ((this._STUDBOOKS_ID != value))
+				{
+					this.OnSTUDBOOKS_IDChanging(value);
+					this.SendPropertyChanging();
+					this._STUDBOOKS_ID = value;
+					this.SendPropertyChanged("STUDBOOKS_ID");
+					this.OnSTUDBOOKS_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B_ID", DbType="Int NOT NULL")]
+		public int B_ID
+		{
+			get
+			{
+				return this._B_ID;
+			}
+			set
+			{
+				if ((this._B_ID != value))
+				{
+					if (this._TBL_BOOK.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnB_IDChanging(value);
+					this.SendPropertyChanging();
+					this._B_ID = value;
+					this.SendPropertyChanged("B_ID");
+					this.OnB_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_CURRENTID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_CURRENTID
+		{
+			get
+			{
+				return this._ST_CURRENTID;
+			}
+			set
+			{
+				if ((this._ST_CURRENTID != value))
+				{
+					if (this._TBL_STUDENT.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnST_CURRENTIDChanging(value);
+					this.SendPropertyChanging();
+					this._ST_CURRENTID = value;
+					this.SendPropertyChanged("ST_CURRENTID");
+					this.OnST_CURRENTIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RETURNDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> RETURNDATE
+		{
+			get
+			{
+				return this._RETURNDATE;
+			}
+			set
+			{
+				if ((this._RETURNDATE != value))
+				{
+					this.OnRETURNDATEChanging(value);
+					this.SendPropertyChanging();
+					this._RETURNDATE = value;
+					this.SendPropertyChanged("RETURNDATE");
+					this.OnRETURNDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_STUDENT_TBL_STUDBOOK", Storage="_TBL_STUDENT", ThisKey="ST_CURRENTID", OtherKey="ST_CURRENTID", IsForeignKey=true)]
+		public TBL_STUDENT TBL_STUDENT
+		{
+			get
+			{
+				return this._TBL_STUDENT.Entity;
+			}
+			set
+			{
+				TBL_STUDENT previousValue = this._TBL_STUDENT.Entity;
+				if (((previousValue != value) 
+							|| (this._TBL_STUDENT.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBL_STUDENT.Entity = null;
+						previousValue.TBL_STUDBOOKs.Remove(this);
+					}
+					this._TBL_STUDENT.Entity = value;
+					if ((value != null))
+					{
+						value.TBL_STUDBOOKs.Add(this);
+						this._ST_CURRENTID = value.ST_CURRENTID;
+					}
+					else
+					{
+						this._ST_CURRENTID = default(string);
+					}
+					this.SendPropertyChanged("TBL_STUDENT");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBL_BOOK_TBL_STUDBOOK", Storage="_TBL_BOOK", ThisKey="B_ID", OtherKey="B_ID", IsForeignKey=true)]
+		public TBL_BOOK TBL_BOOK
+		{
+			get
+			{
+				return this._TBL_BOOK.Entity;
+			}
+			set
+			{
+				TBL_BOOK previousValue = this._TBL_BOOK.Entity;
+				if (((previousValue != value) 
+							|| (this._TBL_BOOK.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBL_BOOK.Entity = null;
+						previousValue.TBL_STUDBOOKs.Remove(this);
+					}
+					this._TBL_BOOK.Entity = value;
+					if ((value != null))
+					{
+						value.TBL_STUDBOOKs.Add(this);
+						this._B_ID = value.B_ID;
+					}
+					else
+					{
+						this._B_ID = default(int);
+					}
+					this.SendPropertyChanged("TBL_BOOK");
 				}
 			}
 		}
@@ -6654,104 +6968,6 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 				if ((this._PAYMENT_ID != value))
 				{
 					this._PAYMENT_ID = value;
-				}
-			}
-		}
-	}
-	
-	public partial class SP_SECVIEWResult
-	{
-		
-		private int _SEC_ID;
-		
-		private string _SECTION;
-		
-		private int _CAPACITY;
-		
-		private int _T_ID;
-		
-		private string _ADVISORY;
-		
-		public SP_SECVIEWResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int NOT NULL")]
-		public int SEC_ID
-		{
-			get
-			{
-				return this._SEC_ID;
-			}
-			set
-			{
-				if ((this._SEC_ID != value))
-				{
-					this._SEC_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SECTION", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SECTION
-		{
-			get
-			{
-				return this._SECTION;
-			}
-			set
-			{
-				if ((this._SECTION != value))
-				{
-					this._SECTION = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CAPACITY", DbType="Int NOT NULL")]
-		public int CAPACITY
-		{
-			get
-			{
-				return this._CAPACITY;
-			}
-			set
-			{
-				if ((this._CAPACITY != value))
-				{
-					this._CAPACITY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_ID", DbType="Int NOT NULL")]
-		public int T_ID
-		{
-			get
-			{
-				return this._T_ID;
-			}
-			set
-			{
-				if ((this._T_ID != value))
-				{
-					this._T_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ADVISORY", DbType="VarChar(152)")]
-		public string ADVISORY
-		{
-			get
-			{
-				return this._ADVISORY;
-			}
-			set
-			{
-				if ((this._ADVISORY != value))
-				{
-					this._ADVISORY = value;
 				}
 			}
 		}
@@ -8968,6 +9184,220 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
 				if ((this._SEC_ID != value))
 				{
 					this._SEC_ID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_SECVIEWResult
+	{
+		
+		private int _SEC_ID;
+		
+		private string _SECTION;
+		
+		private int _CAPACITY;
+		
+		private string _YEAR_LEVEL;
+		
+		private int _T_ID;
+		
+		private string _ADVISORY;
+		
+		public SP_SECVIEWResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEC_ID", DbType="Int NOT NULL")]
+		public int SEC_ID
+		{
+			get
+			{
+				return this._SEC_ID;
+			}
+			set
+			{
+				if ((this._SEC_ID != value))
+				{
+					this._SEC_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SECTION", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SECTION
+		{
+			get
+			{
+				return this._SECTION;
+			}
+			set
+			{
+				if ((this._SECTION != value))
+				{
+					this._SECTION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CAPACITY", DbType="Int NOT NULL")]
+		public int CAPACITY
+		{
+			get
+			{
+				return this._CAPACITY;
+			}
+			set
+			{
+				if ((this._CAPACITY != value))
+				{
+					this._CAPACITY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[YEAR LEVEL]", Storage="_YEAR_LEVEL", DbType="VarChar(50)")]
+		public string YEAR_LEVEL
+		{
+			get
+			{
+				return this._YEAR_LEVEL;
+			}
+			set
+			{
+				if ((this._YEAR_LEVEL != value))
+				{
+					this._YEAR_LEVEL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_T_ID", DbType="Int NOT NULL")]
+		public int T_ID
+		{
+			get
+			{
+				return this._T_ID;
+			}
+			set
+			{
+				if ((this._T_ID != value))
+				{
+					this._T_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ADVISORY", DbType="VarChar(152)")]
+		public string ADVISORY
+		{
+			get
+			{
+				return this._ADVISORY;
+			}
+			set
+			{
+				if ((this._ADVISORY != value))
+				{
+					this._ADVISORY = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_VIEWSTUDBOOKSResult
+	{
+		
+		private string _ST_CURRENTID;
+		
+		private string _STUDENT_NAME;
+		
+		private int _B_ID;
+		
+		private string _BOOK;
+		
+		private System.Data.Linq.Binary _RETURNDATE;
+		
+		public SP_VIEWSTUDBOOKSResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ST_CURRENTID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ST_CURRENTID
+		{
+			get
+			{
+				return this._ST_CURRENTID;
+			}
+			set
+			{
+				if ((this._ST_CURRENTID != value))
+				{
+					this._ST_CURRENTID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[STUDENT NAME]", Storage="_STUDENT_NAME", DbType="VarChar(152)")]
+		public string STUDENT_NAME
+		{
+			get
+			{
+				return this._STUDENT_NAME;
+			}
+			set
+			{
+				if ((this._STUDENT_NAME != value))
+				{
+					this._STUDENT_NAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_B_ID", DbType="Int NOT NULL")]
+		public int B_ID
+		{
+			get
+			{
+				return this._B_ID;
+			}
+			set
+			{
+				if ((this._B_ID != value))
+				{
+					this._B_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOOK", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string BOOK
+		{
+			get
+			{
+				return this._BOOK;
+			}
+			set
+			{
+				if ((this._BOOK != value))
+				{
+					this._BOOK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RETURNDATE", DbType="rowversion")]
+		public System.Data.Linq.Binary RETURNDATE
+		{
+			get
+			{
+				return this._RETURNDATE;
+			}
+			set
+			{
+				if ((this._RETURNDATE != value))
+				{
+					this._RETURNDATE = value;
 				}
 			}
 		}

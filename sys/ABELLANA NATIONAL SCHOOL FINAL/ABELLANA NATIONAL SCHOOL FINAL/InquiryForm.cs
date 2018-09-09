@@ -21,5 +21,10 @@ namespace ABELLANA_NATIONAL_SCHOOL_FINAL
         {
             Close();
         }
+
+        private void Button3_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
